@@ -1,7 +1,9 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import { B2White, colors, standardWrapper } from "../styles/helpers"
+import { B2White, colors, medWrapper } from "../styles/helpers"
+
+import FooterLogo from "./Logos/FooterLogo"
 
 const Footer = () => {
   return (
@@ -42,6 +44,11 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-logo">
+          <div className="footer-logo__logo">
+            <Link to="/">
+              <FooterLogo />
+            </Link>
+          </div>
           <div className="footer-logo__social">
             <p>Connect with us on Twitter</p>
           </div>
@@ -56,55 +63,7 @@ const StyledFooter = styled.footer`
   background-color: ${colors.colorPrimary};
 
   .wrapper {
-    ${standardWrapper};
-  }
-
-  .footer-start {
-    width: 100%;
-
-    @media (min-width: 768px) {
-      width: 25%;
-    }
-
-    @media (min-width: 1025px) {
-      width: 20%;
-    }
-  }
-
-  .footer-sector {
-    width: 100%;
-
-    @media (min-width: 768px) {
-      width: 25%;
-    }
-
-    @media (min-width: 1025px) {
-      width: 20%;
-    }
-  }
-
-  .footer-about {
-    width: 100%;
-
-    @media (min-width: 768px) {
-      width: 25%;
-    }
-
-    @media (min-width: 1025px) {
-      width: 20%;
-    }
-  }
-
-  .footer-logo {
-    width: 100%;
-    @media (min-width: 768px) {
-      width: 25%;
-    }
-
-    @media (min-width: 1025px) {
-      width: 20%;
-      margin-left: 20%;
-    }
+    ${medWrapper};
   }
 
   h3,
@@ -115,6 +74,72 @@ const StyledFooter = styled.footer`
 
   h3 {
     text-transform: uppercase;
+  }
+
+  .footer-start {
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      width: calc(25% - 2rem);
+      margin: 0 1rem;
+      text-align: left;
+    }
+
+    @media (min-width: 1025px) {
+      width: calc(20% - 2rem);
+      margin: 0 1rem;
+    }
+  }
+
+  .footer-sector {
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      width: calc(25% - 2rem);
+      margin: 0 1rem;
+      text-align: left;
+    }
+
+    @media (min-width: 1025px) {
+      width: calc(20% - 2rem);
+      margin: 0 1rem;
+    }
+  }
+
+  .footer-about {
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      width: calc(25% - 2rem);
+      margin: 0 1rem;
+      text-align: left;
+    }
+
+    @media (min-width: 1025px) {
+      width: calc(20% - 2rem);
+      margin: 0 1rem;
+    }
+  }
+
+  .footer-logo {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 25%;
+    }
+
+    @media (min-width: 1025px) {
+      width: 20%;
+      margin-top: -2.5rem;
+      margin-left: 20%;
+    }
+
+    p {
+      text-align: center;
+    }
   }
 `
 
