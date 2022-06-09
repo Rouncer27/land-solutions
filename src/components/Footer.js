@@ -9,15 +9,15 @@ const Footer = () => {
   return (
     <StyledFooter>
       <div className="wrapper">
-        <div className="footer-start">
+        <div className="footer-start footer-sec">
           <h3>Start a Project</h3>
           <p>We are here to help you get started.</p>
         </div>
-        <div className="footer-sector">
+        <div className="footer-sector footer-sec">
           <h3>What sector are you in?</h3>
           <p>Find the sector you are interested in and learn more.</p>
         </div>
-        <div className="footer-about">
+        <div className="footer-about footer-sec">
           <h3>About Landsolutions</h3>
           <ul>
             <li>
@@ -76,39 +76,11 @@ const StyledFooter = styled.footer`
     text-transform: uppercase;
   }
 
-  .footer-start {
-    width: 100%;
-    text-align: center;
-
-    @media (min-width: 768px) {
-      width: calc(25% - 2rem);
-      margin: 0 1rem;
-      text-align: left;
-    }
-
-    @media (min-width: 1025px) {
-      width: calc(20% - 2rem);
-      margin: 0 1rem;
-    }
+  a:hover {
+    color: ${colors.colorAccent};
   }
 
-  .footer-sector {
-    width: 100%;
-    text-align: center;
-
-    @media (min-width: 768px) {
-      width: calc(25% - 2rem);
-      margin: 0 1rem;
-      text-align: left;
-    }
-
-    @media (min-width: 1025px) {
-      width: calc(20% - 2rem);
-      margin: 0 1rem;
-    }
-  }
-
-  .footer-about {
+  .footer-sec {
     width: 100%;
     text-align: center;
 
