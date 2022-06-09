@@ -1,6 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import { ListStyles } from "./styles"
+
+import TopLink from "./NavParts/TopLink"
+import SubMenu from "./NavParts/SubMenu"
 
 const getData = graphql`
   {
@@ -119,64 +123,55 @@ const getData = graphql`
 
 const Contact = () => {
   const data = useStaticQuery(getData)
+  const [isSubActive, setIsSubActive] = useState(false)
   const navData = data.contact.acfOptionsMainMenu.mainMenu
+  const hasSub = navData.contactSubOne && navData.contactSubOne.length > 0
+  const hasSubOne =
+    navData.contactSubOne && navData.contactSubOne.length > 0
+      ? navData.contactSubOne
+      : null
+  const hasSubTwo =
+    navData.contactSubTwo && navData.contactSubTwo.length > 0
+      ? navData.contactSubTwo
+      : null
+  const hasSubThree =
+    navData.contactSubThree && navData.contactSubThree.length > 0
+      ? navData.contactSubThree
+      : null
+  const handleIsActiveOn = () => {
+    setIsSubActive(true)
+  }
+
+  const handleIsActiveOff = () => {
+    setIsSubActive(false)
+  }
   return (
-    <li>
-      {navData.contactTopPage ? (
-        <Link to={`/${navData.contactTopPage.slug}`}>
-          {navData.contactTopPageTitle}
-        </Link>
-      ) : (
-        <>{navData.contactTopPageTitle}</>
+    <StyledListItem
+      onMouseEnter={handleIsActiveOn}
+      onMouseLeave={handleIsActiveOff}
+      onFocus={handleIsActiveOn}
+    >
+      <TopLink
+        hasTopPage={navData.contactTopPage}
+        hasSub={hasSub}
+        slug={navData.contactTopPage ? navData.contactTopPage.slug : null}
+        title={navData.contactTopPageTitle}
+      />
+      {hasSub && (
+        <SubMenu
+          isActive={isSubActive}
+          subTitle="Contact"
+          subMenuOne={hasSubOne}
+          subMenuTwo={hasSubTwo}
+          subMenuThree={hasSubThree}
+        />
       )}
-      {navData.contactSubOne && navData.contactSubOne.length > 0 && (
-        <div className="sub-menu">
-          <div>
-            <p>Contact</p>
-          </div>
-          <div>
-            <ul>
-              {navData.contactSubOne.map(item => {
-                return (
-                  <li key={item.page.id}>
-                    <Link to={item.page.uri}>{item.page.title}</Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-
-          {navData.contactSubTwo && navData.contactSubTwo.length > 0 && (
-            <div>
-              <ul>
-                {navData.contactSubTwo.map(item => {
-                  return (
-                    <li key={item.page.id}>
-                      <Link to={item.page.uri}>{item.page.title}</Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )}
-
-          {navData.contactSubThree && navData.contactSubThree.length > 0 && (
-            <div>
-              <ul>
-                {navData.contactSubThree.map(item => {
-                  return (
-                    <li key={item.page.id}>
-                      <Link to={item.page.uri}>{item.page.title}</Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )}
-        </div>
-      )}
-    </li>
+    </StyledListItem>
   )
 }
+
+const StyledListItem = styled.li`
+  ${ListStyles};
+`
 
 export default Contact

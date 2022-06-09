@@ -1,6 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import { ListStyles } from "./styles"
+
+import TopLink from "./NavParts/TopLink"
+import SubMenu from "./NavParts/SubMenu"
 
 const getData = graphql`
   {
@@ -119,65 +123,56 @@ const getData = graphql`
 
 const Insights = () => {
   const data = useStaticQuery(getData)
+  const [isSubActive, setIsSubActive] = useState(false)
   const navData = data.insights.acfOptionsMainMenu.mainMenu
-  console.log("navData: ", navData)
+  const hasSub = navData.insightsSubOne && navData.insightsSubOne.length > 0
+  const hasSubOne =
+    navData.insightsSubOne && navData.insightsSubOne.length > 0
+      ? navData.insightsSubOne
+      : null
+  const hasSubTwo =
+    navData.insightsSubTwo && navData.insightsSubTwo.length > 0
+      ? navData.insightsSubTwo
+      : null
+  const hasSubThree =
+    navData.insightsSubThree && navData.insightsSubThree.length > 0
+      ? navData.insightsSubThree
+      : null
+
+  const handleIsActiveOn = () => {
+    setIsSubActive(true)
+  }
+
+  const handleIsActiveOff = () => {
+    setIsSubActive(false)
+  }
   return (
-    <li>
-      {navData.insightsTopPage ? (
-        <Link to={`/${navData.insightsTopPage.slug}`}>
-          {navData.insightsTopPageTitle}
-        </Link>
-      ) : (
-        <>{navData.insightsTopPageTitle}</>
+    <StyledListItem
+      onMouseEnter={handleIsActiveOn}
+      onMouseLeave={handleIsActiveOff}
+      onFocus={handleIsActiveOn}
+    >
+      <TopLink
+        hasTopPage={navData.insightsTopPage}
+        hasSub={hasSub}
+        slug={navData.insightsTopPage ? navData.insightsTopPage.slug : null}
+        title={navData.insightsTopPageTitle}
+      />
+      {hasSub && (
+        <SubMenu
+          isActive={isSubActive}
+          subTitle="Contact"
+          subMenuOne={hasSubOne}
+          subMenuTwo={hasSubTwo}
+          subMenuThree={hasSubThree}
+        />
       )}
-      {navData.insightsSubOne && navData.insightsSubOne.length > 0 && (
-        <div className="sub-menu">
-          <div>
-            <p>Insights</p>
-          </div>
-          <div>
-            <ul>
-              {navData.insightsSubOne.map(item => {
-                return (
-                  <li key={item.page.id}>
-                    <Link to={item.page.uri}>{item.page.title}</Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-
-          {navData.insightsSubTwo && navData.insightsSubTwo.length > 0 && (
-            <div>
-              <ul>
-                {navData.insightsSubTwo.map(item => {
-                  return (
-                    <li key={item.page.id}>
-                      <Link to={item.page.uri}>{item.page.title}</Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )}
-
-          {navData.insightsSubThree && navData.insightsSubThree.length > 0 && (
-            <div>
-              <ul>
-                {navData.insightsSubThree.map(item => {
-                  return (
-                    <li key={item.page.id}>
-                      <Link to={item.page.uri}>{item.page.title}</Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )}
-        </div>
-      )}
-    </li>
+    </StyledListItem>
   )
 }
+
+const StyledListItem = styled.li`
+  ${ListStyles};
+`
 
 export default Insights

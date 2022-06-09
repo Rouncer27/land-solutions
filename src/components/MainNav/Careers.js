@@ -1,6 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import { ListStyles } from "./styles"
+
+import TopLink from "./NavParts/TopLink"
+import SubMenu from "./NavParts/SubMenu"
 
 const getData = graphql`
   {
@@ -119,65 +123,55 @@ const getData = graphql`
 
 const Careers = () => {
   const data = useStaticQuery(getData)
+  const [isSubActive, setIsSubActive] = useState(false)
   const navData = data.careers.acfOptionsMainMenu.mainMenu
-  console.log("navData: ", navData)
+  const hasSub = navData.careersSubOne && navData.careersSubOne.length > 0
+  const hasSubOne =
+    navData.careersSubOne && navData.careersSubOne.length > 0
+      ? navData.careersSubOne
+      : null
+  const hasSubTwo =
+    navData.careersSubTwo && navData.careersSubTwo.length > 0
+      ? navData.careersSubTwo
+      : null
+  const hasSubThree =
+    navData.careersSubThree && navData.careersSubThree.length > 0
+      ? navData.careersSubThree
+      : null
+  const handleIsActiveOn = () => {
+    setIsSubActive(true)
+  }
+
+  const handleIsActiveOff = () => {
+    setIsSubActive(false)
+  }
   return (
-    <li>
-      {navData.careersTopPage ? (
-        <Link to={`/${navData.careersTopPage.slug}`}>
-          {navData.careersTopPageTitle}
-        </Link>
-      ) : (
-        <>{navData.careersTopPageTitle}</>
+    <StyledListItem
+      onMouseEnter={handleIsActiveOn}
+      onMouseLeave={handleIsActiveOff}
+      onFocus={handleIsActiveOn}
+    >
+      <TopLink
+        hasTopPage={navData.careersTopPage}
+        hasSub={hasSub}
+        slug={navData.careersTopPage ? navData.careersTopPage.slug : null}
+        title={navData.careersTopPageTitle}
+      />
+      {hasSub && (
+        <SubMenu
+          isActive={isSubActive}
+          subTitle="Contact"
+          subMenuOne={hasSubOne}
+          subMenuTwo={hasSubTwo}
+          subMenuThree={hasSubThree}
+        />
       )}
-      {navData.careersSubOne && navData.careersSubOne.length > 0 && (
-        <div className="sub-menu">
-          <div>
-            <p>Careers</p>
-          </div>
-          <div>
-            <ul>
-              {navData.careersSubOne.map(item => {
-                return (
-                  <li key={item.page.id}>
-                    <Link to={item.page.uri}>{item.page.title}</Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-
-          {navData.careersSubTwo && navData.careersSubTwo.length > 0 && (
-            <div>
-              <ul>
-                {navData.careersSubTwo.map(item => {
-                  return (
-                    <li key={item.page.id}>
-                      <Link to={item.page.uri}>{item.page.title}</Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )}
-
-          {navData.careersSubThree && navData.careersSubThree.length > 0 && (
-            <div>
-              <ul>
-                {navData.careersSubThree.map(item => {
-                  return (
-                    <li key={item.page.id}>
-                      <Link to={item.page.uri}>{item.page.title}</Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )}
-        </div>
-      )}
-    </li>
+    </StyledListItem>
   )
 }
+
+const StyledListItem = styled.li`
+  ${ListStyles};
+`
 
 export default Careers

@@ -1,6 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import { ListStyles } from "./styles"
+
+import TopLink from "./NavParts/TopLink"
+import SubMenu from "./NavParts/SubMenu"
 
 const getData = graphql`
   {
@@ -119,60 +123,57 @@ const getData = graphql`
 
 const OurStory = () => {
   const data = useStaticQuery(getData)
+  const [isSubActive, setIsSubActive] = useState(false)
   const navData = data.ourStory.acfOptionsMainMenu.mainMenu
+  const hasSub = navData.ourStorySubOne && navData.ourStorySubOne.length > 0
+  const hasSubOne =
+    navData.ourStorySubOne && navData.ourStorySubOne.length > 0
+      ? navData.ourStorySubOne
+      : null
+  const hasSubTwo =
+    navData.ourStorySubTwo && navData.ourStorySubTwo.length > 0
+      ? navData.ourStorySubTwo
+      : null
+  const hasSubThree =
+    navData.ourStorySubThree && navData.ourStorySubThree.length > 0
+      ? navData.ourStorySubThree
+      : null
+
+  const handleIsActiveOn = () => {
+    setIsSubActive(true)
+  }
+
+  const handleIsActiveOff = () => {
+    setIsSubActive(false)
+  }
   return (
-    <li>
-      <Link to={`/${navData.ourStoryTopPage.slug}`}>
-        {navData.ourStoryTopPageTitle}
-      </Link>
-      {navData.ourStorySubOne && navData.ourStorySubOne.length > 0 && (
-        <div className="sub-menu">
-          <div>
-            <p>Our Story</p>
-          </div>
-          <div>
-            <ul>
-              {navData.ourStorySubOne.map(item => {
-                return (
-                  <li key={item.page.id}>
-                    <Link to={item.page.uri}>{item.page.title}</Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
+    <StyledListItem
+      onMouseEnter={handleIsActiveOn}
+      onMouseLeave={handleIsActiveOff}
+      onFocus={handleIsActiveOn}
+    >
+      <TopLink
+        hasTopPage={navData.ourStoryTopPage}
+        hasSub={hasSub}
+        slug={navData.ourStoryTopPage ? navData.ourStoryTopPage.slug : null}
+        title={navData.ourStoryTopPageTitle}
+      />
 
-          {navData.ourStorySubTwo && navData.ourStorySubTwo.length > 0 && (
-            <div>
-              <ul>
-                {navData.ourStorySubTwo.map(item => {
-                  return (
-                    <li key={item.page.id}>
-                      <Link to={item.page.uri}>{item.page.title}</Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )}
-
-          {navData.ourStorySubThree && navData.ourStorySubThree.length > 0 && (
-            <div>
-              <ul>
-                {navData.ourStorySubThree.map(item => {
-                  return (
-                    <li key={item.page.id}>
-                      <Link to={item.page.uri}>{item.page.title}</Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )}
-        </div>
+      {hasSub && (
+        <SubMenu
+          isActive={isSubActive}
+          subTitle="Our Story"
+          subMenuOne={hasSubOne}
+          subMenuTwo={hasSubTwo}
+          subMenuThree={hasSubThree}
+        />
       )}
-    </li>
+    </StyledListItem>
   )
 }
+
+const StyledListItem = styled.li`
+  ${ListStyles};
+`
 
 export default OurStory

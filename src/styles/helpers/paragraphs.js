@@ -47,6 +47,11 @@ export const B2White = css`
   color: ${colors.white};
 `
 
+export const B2Blue = css`
+  ${B2Base};
+  color: ${colors.colorPrimary};
+`
+
 export const B2OffBlack = css`
   ${B2Base};
   color: #3a3d40;

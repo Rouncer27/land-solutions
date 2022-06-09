@@ -1,6 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import { ListStyles } from "./styles"
+
+import TopLink from "./NavParts/TopLink"
+import SubMenu from "./NavParts/SubMenu"
 
 const getData = graphql`
   {
@@ -119,60 +123,56 @@ const getData = graphql`
 
 const AllSectors = () => {
   const data = useStaticQuery(getData)
+  const [isSubActive, setIsSubActive] = useState(false)
   const navData = data.allSectors.acfOptionsMainMenu.mainMenu
+  const hasSub = navData.allSectorsSubOne && navData.allSectorsSubOne.length > 0
+  const hasSubOne =
+    navData.allSectorsSubOne && navData.allSectorsSubOne.length > 0
+      ? navData.allSectorsSubOne
+      : null
+  const hasSubTwo =
+    navData.allSectorsSubTwo && navData.allSectorsSubTwo.length > 0
+      ? navData.allSectorsSubTwo
+      : null
+  const hasSubThree =
+    navData.allSectorsSubThree && navData.allSectorsSubThree.length > 0
+      ? navData.allSectorsSubThree
+      : null
+
+  const handleIsActiveOn = () => {
+    setIsSubActive(true)
+  }
+
+  const handleIsActiveOff = () => {
+    setIsSubActive(false)
+  }
   return (
-    <li>
-      <Link to={`/${navData.allSectorsTopPage.slug}`}>
-        {navData.allSectorsTopPageTitle}
-      </Link>
-      {navData.allSectorsSubOne && navData.allSectorsSubOne.length > 0 && (
-        <div className="sub-menu">
-          <div>
-            <p>All Sectors</p>
-          </div>
-          <div>
-            <ul>
-              {navData.allSectorsSubOne.map(item => {
-                return (
-                  <li key={item.page.id}>
-                    <Link to={item.page.uri}>{item.page.title}</Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-
-          {navData.allSectorsSubTwo && navData.allSectorsSubTwo.length > 0 && (
-            <div>
-              <ul>
-                {navData.allSectorsSubTwo.map(item => {
-                  return (
-                    <li key={item.page.id}>
-                      <Link to={item.page.uri}>{item.page.title}</Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )}
-
-          {navData.allSectorsSubThree && navData.allSectorsSubThree.length > 0 && (
-            <div>
-              <ul>
-                {navData.allSectorsSubThree.map(item => {
-                  return (
-                    <li key={item.page.id}>
-                      <Link to={item.page.uri}>{item.page.title}</Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )}
-        </div>
+    <StyledListItem
+      onMouseEnter={handleIsActiveOn}
+      onMouseLeave={handleIsActiveOff}
+      onFocus={handleIsActiveOn}
+    >
+      <TopLink
+        hasTopPage={navData.allSectorsTopPage}
+        hasSub={hasSub}
+        slug={navData.allSectorsTopPage ? navData.allSectorsTopPage.slug : null}
+        title={navData.allSectorsTopPageTitle}
+      />
+      {hasSub && (
+        <SubMenu
+          isActive={isSubActive}
+          subTitle="All Sectors"
+          subMenuOne={hasSubOne}
+          subMenuTwo={hasSubTwo}
+          subMenuThree={hasSubThree}
+        />
       )}
-    </li>
+    </StyledListItem>
   )
 }
+
+const StyledListItem = styled.li`
+  ${ListStyles};
+`
 
 export default AllSectors

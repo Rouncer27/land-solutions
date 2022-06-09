@@ -1,6 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import { ListStyles } from "./styles"
+
+import TopLink from "./NavParts/TopLink"
+import SubMenu from "./NavParts/SubMenu"
 
 const getData = graphql`
   {
@@ -119,65 +123,59 @@ const getData = graphql`
 
 const OurAdvantage = () => {
   const data = useStaticQuery(getData)
+  const [isSubActive, setIsSubActive] = useState(false)
   const navData = data.ourAdvantage.acfOptionsMainMenu.mainMenu
+  const hasSub =
+    navData.ourAdvantageSubOne && navData.ourAdvantageSubOne.length > 0
+  const hasSubOne =
+    navData.ourAdvantageSubOne && navData.ourAdvantageSubOne.length > 0
+      ? navData.ourAdvantageSubOne
+      : null
+  const hasSubTwo =
+    navData.ourAdvantageSubTwo && navData.ourAdvantageSubTwo.length > 0
+      ? navData.ourAdvantageSubTwo
+      : null
+  const hasSubThree =
+    navData.ourAdvantageSubThree && navData.ourAdvantageSubThree.length > 0
+      ? navData.ourAdvantageSubThree
+      : null
+
+  const handleIsActiveOn = () => {
+    setIsSubActive(true)
+  }
+
+  const handleIsActiveOff = () => {
+    setIsSubActive(false)
+  }
   return (
-    <li>
-      {navData.ourAdvantageTopPage ? (
-        <Link to={`/${navData.ourAdvantageTopPage.slug}`}>
-          {navData.ourAdvantageTopPageTitle}
-        </Link>
-      ) : (
-        <>{navData.ourAdvantageTopPageTitle}</>
+    <StyledListItem
+      onMouseEnter={handleIsActiveOn}
+      onMouseLeave={handleIsActiveOff}
+      onFocus={handleIsActiveOn}
+    >
+      <TopLink
+        hasTopPage={navData.ourAdvantageTopPage}
+        hasSub={hasSub}
+        slug={
+          navData.ourAdvantageTopPage ? navData.ourAdvantageTopPage.slug : null
+        }
+        title={navData.ourAdvantageTopPageTitle}
+      />
+      {hasSub && (
+        <SubMenu
+          isActive={isSubActive}
+          subTitle="Our Advantage"
+          subMenuOne={hasSubOne}
+          subMenuTwo={hasSubTwo}
+          subMenuThree={hasSubThree}
+        />
       )}
-      {navData.ourAdvantageSubOne && navData.ourAdvantageSubOne.length > 0 && (
-        <div className="sub-menu">
-          <div>
-            <p>Our Advantage</p>
-          </div>
-          <div>
-            <ul>
-              {navData.ourAdvantageSubOne.map(item => {
-                return (
-                  <li key={item.page.id}>
-                    <Link to={item.page.uri}>{item.page.title}</Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-
-          {navData.ourAdvantageSubTwo && navData.ourAdvantageSubTwo.length > 0 && (
-            <div>
-              <ul>
-                {navData.ourAdvantageSubTwo.map(item => {
-                  return (
-                    <li key={item.page.id}>
-                      <Link to={item.page.uri}>{item.page.title}</Link>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )}
-
-          {navData.ourAdvantageSubThree &&
-            navData.ourAdvantageSubThree.length > 0 && (
-              <div>
-                <ul>
-                  {navData.ourAdvantageSubThree.map(item => {
-                    return (
-                      <li key={item.page.id}>
-                        <Link to={item.page.uri}>{item.page.title}</Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            )}
-        </div>
-      )}
-    </li>
+    </StyledListItem>
   )
 }
+
+const StyledListItem = styled.li`
+  ${ListStyles};
+`
 
 export default OurAdvantage

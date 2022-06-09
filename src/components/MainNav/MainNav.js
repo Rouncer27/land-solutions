@@ -10,19 +10,47 @@ import Careers from "./Careers"
 
 const MainNav = () => {
   return (
-    <nav>
-      <ul>
-        <AllSectors />
-        <OurStory />
-        <OurAdvantage />
-        <Contact />
-      </ul>
-      <ul>
-        <Insights />
-        <Careers />
-      </ul>
-    </nav>
+    <StyledNav>
+      <div className="nav-wrap">
+        <ul className="nav-left">
+          <AllSectors />
+          <OurStory />
+          <OurAdvantage />
+          <Contact />
+        </ul>
+        <ul className="nav-right">
+          <Insights />
+          <Careers />
+        </ul>
+      </div>
+    </StyledNav>
   )
 }
+
+const StyledNav = styled.nav`
+  position: relative;
+  width: 100%;
+  padding-left: 5rem;
+
+  .nav-wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  ul {
+    display: flex;
+  }
+
+  .nav-left {
+    width: 75%;
+  }
+
+  .nav-right {
+    width: 25%;
+    justify-content: flex-end;
+  }
+`
 
 export default MainNav
