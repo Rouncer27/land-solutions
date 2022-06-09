@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import { B2White, colors, medWrapper } from "../styles/helpers"
+import { B2White, colors, medWrapper, fontSizer } from "../styles/helpers"
 
 import FooterLogo from "./Logos/FooterLogo"
 
@@ -52,6 +52,26 @@ const Footer = () => {
           <div className="footer-logo__social">
             <p>Connect with us on Twitter</p>
           </div>
+        </div>
+        <div className="footer-copy">
+          <p>
+            Landsolutions © 2022. Designed, and developed by{" "}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://switchbackcreative.ca/"
+            >
+              Switchback Creative
+            </a>
+            , Built with ♡ and{" "}
+            <a target="_blank" rel="noreferrer" href="https://www.gatsbyjs.com">
+              Gatsby
+            </a>
+            {" -- "}
+            <Link to="/disclaimer">Disclaimer</Link>
+            {" | "}
+            <Link to="/privacy-policy">Privacy Policy</Link>
+          </p>
         </div>
       </div>
     </StyledFooter>
@@ -111,6 +131,23 @@ const StyledFooter = styled.footer`
 
     p {
       text-align: center;
+    }
+  }
+
+  .footer-copy {
+    width: 100%;
+    margin-top: 4rem;
+    text-align: center;
+
+    p,
+    a {
+      ${B2White};
+      ${fontSizer(1.2, 1.4, 76.8, 150, 1.2)}
+      margin: 0;
+    }
+
+    a:hover {
+      color: ${colors.colorAccent};
     }
   }
 `
