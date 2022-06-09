@@ -13,8 +13,8 @@ const MainNav = () => {
     <StyledNav>
       <div className="nav-wrap">
         <ul className="nav-left">
-          <AllSectors />
           <OurStory />
+          <AllSectors />
           <OurAdvantage />
           <Contact />
         </ul>

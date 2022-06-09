@@ -162,6 +162,7 @@ const Insights = () => {
         <SubMenu
           isActive={isSubActive}
           subTitle="Contact"
+          subIcon={navData.insightsTopPageIcon}
           subMenuOne={hasSubOne}
           subMenuTwo={hasSubTwo}
           subMenuThree={hasSubThree}

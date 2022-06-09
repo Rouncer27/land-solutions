@@ -161,6 +161,7 @@ const Careers = () => {
         <SubMenu
           isActive={isSubActive}
           subTitle="Contact"
+          subIcon={navData.careersTopPageIcon}
           subMenuOne={hasSubOne}
           subMenuTwo={hasSubTwo}
           subMenuThree={hasSubThree}

@@ -32,7 +32,6 @@ const StyledHeader = styled.header`
   .header__wrapper {
     ${BigWrapper};
     align-items: center;
-    border: 1px solid red;
 
     @media (min-width: 1025px) {
     }

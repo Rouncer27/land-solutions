@@ -163,6 +163,7 @@ const OurStory = () => {
         <SubMenu
           isActive={isSubActive}
           subTitle="Our Story"
+          subIcon={navData.ourStoryTopPageIcon}
           subMenuOne={hasSubOne}
           subMenuTwo={hasSubTwo}
           subMenuThree={hasSubThree}

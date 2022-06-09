@@ -162,6 +162,7 @@ const AllSectors = () => {
         <SubMenu
           isActive={isSubActive}
           subTitle="All Sectors"
+          subIcon={navData.allSectorsTopPageIcon}
           subMenuOne={hasSubOne}
           subMenuTwo={hasSubTwo}
           subMenuThree={hasSubThree}

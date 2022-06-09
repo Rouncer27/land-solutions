@@ -12,13 +12,22 @@ export const ListStyles = css`
     padding: 1rem 2rem;
   }
 
+  .sub-indicator {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transform: rotate(-90deg);
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 0;
+  }
+
   .sub-menu {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     position: absolute;
     top: 150%;
-    left: 0;
+    left: 7rem;
     right: 0;
     padding: 3rem;
     background-color: ${colors.white};
@@ -32,8 +41,21 @@ export const ListStyles = css`
     &__title {
       width: 25%;
 
+      &--icon {
+        display: inline-block;
+        margin-right: 1.5rem;
+        width: 3rem;
+
+        img {
+          width: 100%;
+        }
+      }
+
       p {
         ${B2Blue};
+        display: flex;
+        align-items: center;
+        margin: 0;
         font-weight: bold;
         text-transform: uppercase;
       }
@@ -47,13 +69,26 @@ export const ListStyles = css`
       ul {
         width: 100%;
         height: 100%;
+        padding: 0;
+        margin-bottom: 1.5rem;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
+
+        .sub-menu__item {
+          a {
+            display: flex;
+
+            .sub-menu__item--icon {
+              width: 2rem;
+              margin-right: 1rem;
+            }
+          }
+        }
 
         li {
           width: 100%;
           padding: 0;
-          margin-bottom: 1rem;
+          margin-bottom: 2rem;
 
           a {
             display: block;

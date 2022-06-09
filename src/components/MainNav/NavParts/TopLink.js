@@ -5,12 +5,12 @@ const TopLink = ({ hasTopPage, hasSub, slug, title }) => {
   const topLink = hasTopPage ? (
     <Link to={`/${slug}`}>
       {title}
-      {hasSub && <span>&#8249;</span>}
+      {hasSub && <span className="sub-indicator">&#8249;</span>}
     </Link>
   ) : (
     <>
       {title}
-      {hasSub && <span>&#8249;</span>}
+      {hasSub && <span lassName="sub-indicator">&#8249;</span>}
     </>
   )
 

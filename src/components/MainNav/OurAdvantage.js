@@ -165,6 +165,7 @@ const OurAdvantage = () => {
         <SubMenu
           isActive={isSubActive}
           subTitle="Our Advantage"
+          subIcon={navData.ourAdvantageTopPageIcon}
           subMenuOne={hasSubOne}
           subMenuTwo={hasSubTwo}
           subMenuThree={hasSubThree}

@@ -161,6 +161,7 @@ const Contact = () => {
         <SubMenu
           isActive={isSubActive}
           subTitle="Contact"
+          subIcon={navData.contactTopPageIcon}
           subMenuOne={hasSubOne}
           subMenuTwo={hasSubTwo}
           subMenuThree={hasSubThree}
