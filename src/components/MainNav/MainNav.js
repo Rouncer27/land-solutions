@@ -30,7 +30,10 @@ const MainNav = () => {
 const StyledNav = styled.nav`
   position: relative;
   width: 100%;
-  padding-left: 5rem;
+
+  @media (min-width: 1025px) {
+    padding-left: 5rem;
+  }
 
   .nav-wrap {
     width: 100%;

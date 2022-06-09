@@ -2,9 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import { BigWrapper, colors, medWrapper } from "../styles/helpers"
+import { BigWrapper, colors } from "../styles/helpers"
 import MainLogo from "./Logos/MainLogo"
 import MainNav from "./MainNav/MainNav"
+import MobileNav from "./MobileNav/MobileNav"
 
 const Header = ({ siteTitle }) => {
   return (
@@ -22,6 +23,7 @@ const Header = ({ siteTitle }) => {
           <MainNav />
         </div>
       </div>
+      <MobileNav />
     </StyledHeader>
   )
 }
@@ -47,15 +49,15 @@ const StyledHeader = styled.header`
     }
 
     @media (min-width: 1025px) {
-      width: 30%;
+      width: 100%;
     }
 
     @media (min-width: 1100px) {
-      width: 20%;
+      width: 15%;
     }
 
     @media (min-width: 1200px) {
-      width: 15%;
+      width: 20%;
     }
 
     a {
@@ -94,22 +96,24 @@ const StyledHeader = styled.header`
   }
 
   .headerNav {
+    display: none;
     width: 100%;
 
     @media (min-width: 768px) {
+      display: block;
       width: 100%;
     }
 
     @media (min-width: 1025px) {
-      width: 70%;
+      width: 100%;
     }
 
     @media (min-width: 1100px) {
-      width: 80%;
+      width: 85%;
     }
 
     @media (min-width: 1200px) {
-      width: 85%;
+      width: 80%;
     }
   }
 `

@@ -4,15 +4,31 @@ import { B2Blue, colors } from "../../styles/helpers"
 export const ListStyles = css`
   ${B2Blue};
   display: block;
-  margin: 0 2rem;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    margin: 0 0.5rem;
+    min-width: 10rem;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 0 2rem;
+  }
 
   a {
     ${B2Blue};
     padding: 1rem 2rem;
   }
 
+  .item-span-wrap {
+    position: relative;
+    padding-right: 1rem;
+  }
+
   .sub-indicator {
+    position: absolute;
+    top: 1rem;
+    right: 0;
     display: inline-block;
     margin-left: 0.5rem;
     transform: rotate(-90deg);
