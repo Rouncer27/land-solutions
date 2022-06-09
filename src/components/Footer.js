@@ -1,13 +1,121 @@
+import { Link } from "gatsby"
 import React from "react"
+import styled from "styled-components"
+import { B2White, colors, standardWrapper } from "../styles/helpers"
 
 const Footer = () => {
   return (
-    <footer>
-      © {new Date().getFullYear()} &middot; Built with
-      {` `}
-      <a href="https://www.gatsbyjs.com">Gatsby</a>
-    </footer>
+    <StyledFooter>
+      <div className="wrapper">
+        <div className="footer-start">
+          <h3>Start a Project</h3>
+          <p>We are here to help you get started.</p>
+        </div>
+        <div className="footer-sector">
+          <h3>What sector are you in?</h3>
+          <p>Find the sector you are interested in and learn more.</p>
+        </div>
+        <div className="footer-about">
+          <h3>About Landsolutions</h3>
+          <ul>
+            <li>
+              <Link to="/our-advantage/project-management">
+                Project management
+              </Link>
+            </li>
+            <li>
+              <Link to="/our-advantage/talent-sourcing">Talent sourcing</Link>
+            </li>
+            <li>
+              <Link to="/our-advantage/stakeholder-engagement">
+                Stakeholder Engagement
+              </Link>
+            </li>
+            <li>
+              <Link to="/our-advantage/indigenous-engagement">
+                Indigenous Engagement
+              </Link>
+            </li>
+            <li>
+              <Link to="/our-advantage/asset-management">Asset Management</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="footer-logo">
+          <div className="footer-logo__social">
+            <p>Connect with us on Twitter</p>
+          </div>
+        </div>
+      </div>
+    </StyledFooter>
   )
 }
+
+const StyledFooter = styled.footer`
+  padding: 4rem 0;
+  background-color: ${colors.colorPrimary};
+
+  .wrapper {
+    ${standardWrapper};
+  }
+
+  .footer-start {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 25%;
+    }
+
+    @media (min-width: 1025px) {
+      width: 20%;
+    }
+  }
+
+  .footer-sector {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 25%;
+    }
+
+    @media (min-width: 1025px) {
+      width: 20%;
+    }
+  }
+
+  .footer-about {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 25%;
+    }
+
+    @media (min-width: 1025px) {
+      width: 20%;
+    }
+  }
+
+  .footer-logo {
+    width: 100%;
+    @media (min-width: 768px) {
+      width: 25%;
+    }
+
+    @media (min-width: 1025px) {
+      width: 20%;
+      margin-left: 20%;
+    }
+  }
+
+  h3,
+  p,
+  a {
+    ${B2White};
+  }
+
+  h3 {
+    text-transform: uppercase;
+  }
+`
 
 export default Footer

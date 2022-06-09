@@ -1,7 +1,15 @@
 import React from "react"
 
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
+
 const About = () => {
-  return <div>about</div>
+  return (
+    <Layout>
+      <Seo />
+      <h1>about</h1>
+    </Layout>
+  )
 }
 
 export default About

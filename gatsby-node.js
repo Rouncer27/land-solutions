@@ -18,6 +18,16 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
 
+        sectors: allWpSector {
+          edges {
+            node {
+              id
+              slug
+              uri
+            }
+          }
+        }
+
         posts: allWpPost {
           edges {
             node {
@@ -78,6 +88,21 @@ exports.createPages = async ({ graphql, actions }) => {
           },
         })
       }
+    })
+
+    const sectors = data.sectors.edges
+    sectors.forEach(({ node }, index) => {
+      createPage({
+        path: `/sectors/${node.slug}/`,
+        component: path.resolve("./src/templates/sector.js"),
+        context: {
+          id: node.id,
+          slug: node.slug,
+          next: index === 0 ? null : sectors[index - 1].node.slug,
+          prev:
+            index === sectors.length - 1 ? null : sectors[index + 1].node.slug,
+        },
+      })
     })
 
     const posts = data.posts.edges

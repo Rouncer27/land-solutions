@@ -3,13 +3,13 @@ import React from "react"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 
-const News = () => {
+const Sector = () => {
   return (
     <Layout>
       <Seo />
-      <h1>news</h1>
+      <h1>sector</h1>
     </Layout>
   )
 }
 
-export default News
+export default Sector
