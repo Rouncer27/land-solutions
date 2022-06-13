@@ -98,6 +98,10 @@ const SectionStyled = styled.section`
       width: calc(50%);
     }
 
+    @media (min-width: 1025px) {
+      width: calc(50%);
+    }
+
     &__l {
       position: absolute;
       top: 0;

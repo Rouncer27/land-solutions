@@ -1,6 +1,13 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import {
+  B1Black,
+  colors,
+  H2Blue,
+  H3Blue,
+  standardWrapper,
+} from "../../../styles/helpers"
 
 const ContentImage = ({ data }) => {
   return (
@@ -18,6 +25,31 @@ const ContentImage = ({ data }) => {
   )
 }
 
-const SectionStyled = styled.section``
+const SectionStyled = styled.section`
+  .wrapper {
+    ${standardWrapper};
+  }
+
+  .title {
+    width: 100%;
+    max-width: 77.5rem;
+
+    h2 {
+      ${H2Blue};
+    }
+
+    p {
+      ${H3Blue};
+    }
+
+    a {
+      ${B1Black};
+
+      &:hover {
+        color: ${colors.colorPrimary};
+      }
+    }
+  }
+`
 
 export default ContentImage

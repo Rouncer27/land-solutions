@@ -9,6 +9,7 @@ import Hero from "../components/templates/home/Hero"
 import WeAre from "../components/templates/home/WeAre"
 import DirectYou from "../components/templates/home/DirectYou"
 import ContentImage from "../components/templates/home/ContentImage"
+import ContentBlock from "../components/templates/home/ContentBlock"
 import WeBelong from "../components/templates/home/WeBelong"
 
 const IndexPage = props => {
@@ -18,6 +19,7 @@ const IndexPage = props => {
   const weAre = props?.data?.weAre?.template?.homePage
   const directYou = props?.data?.directYou?.template?.homePage
   const contentImage = props?.data?.contentImage?.template?.homePage
+  const contentBlock = props?.data?.contentBlock?.template?.homePage
   const weBelong = props?.data?.weBelong?.template?.homePage
 
   return (
@@ -33,6 +35,7 @@ const IndexPage = props => {
       <WeAre data={weAre} />
       <DirectYou data={directYou} />
       <ContentImage data={contentImage} />
+      <ContentBlock data={contentBlock} />
       <WeBelong data={weBelong} />
     </Layout>
   )
@@ -149,6 +152,20 @@ export const homeQuery = graphql`
             homeContentWithLinkSubTitle
             homeContentWithLinkButtonText
             homeContentWithLinkButtonSlug
+          }
+        }
+      }
+    }
+
+    contentBlock: wpPage(slug: { eq: "home" }) {
+      template {
+        ... on WpTemplate_Home {
+          templateName
+          homePage {
+            contentBlockTitle
+            contentBlockContent
+            contentBlockButtonText
+            contentBlockButtonSlug
           }
         }
       }

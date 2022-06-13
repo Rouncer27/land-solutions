@@ -1,6 +1,7 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
+import { H3Blue, medWrapper } from "../../../styles/helpers"
 
 const WeBelong = ({ data }) => {
   return (
@@ -16,7 +17,7 @@ const WeBelong = ({ data }) => {
             )
             const logoAlt = logo?.logo?.altText
             return (
-              <div key={index}>
+              <div className="logo" key={index}>
                 <GatsbyImage image={image} alt={logoAlt} layout="fixed" />
               </div>
             )
@@ -27,6 +28,41 @@ const WeBelong = ({ data }) => {
   )
 }
 
-const SectionStyled = styled.section``
+const SectionStyled = styled.section`
+  .wrapper {
+    ${medWrapper};
+  }
+
+  .title {
+    width: 100%;
+    margin-bottom: 5rem;
+    text-align: center;
+
+    h2 {
+      ${H3Blue};
+    }
+  }
+
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .logo {
+      width: calc(100% / 2);
+
+      @media (min-width: 768px) {
+        width: calc(100% / 4);
+      }
+
+      @media (min-width: 1025px) {
+        width: calc((100% / 8) - 3rem);
+        margin: 1.5rem;
+      }
+    }
+  }
+`
 
 export default WeBelong
