@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { B2White, colors, medWrapper, fontSizer } from "../styles/helpers"
 
 import FooterLogo from "./Logos/FooterLogo"
+import Twitter from "./Icons/Twitter"
 
 const Footer = () => {
   return (
@@ -50,7 +51,22 @@ const Footer = () => {
             </Link>
           </div>
           <div className="footer-logo__social">
-            <p>Connect with us on Twitter</p>
+            <p>
+              Connect with us on Twitter{" "}
+              <StyledIcon>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  title="Follow us on Twitter - Link will open in new window"
+                  href={`https://twitter.com`}
+                >
+                  <i>
+                    <Twitter />
+                    <span className="visuallyhidden">Twitter</span>
+                  </i>
+                </a>
+              </StyledIcon>
+            </p>
           </div>
         </div>
         <div className="footer-copy">
@@ -134,6 +150,13 @@ const StyledFooter = styled.footer`
     }
   }
 
+  .footer-logo__social {
+    p {
+      display: flex;
+      align-items: center;
+    }
+  }
+
   .footer-copy {
     width: 100%;
     margin-top: 4rem;
@@ -148,6 +171,73 @@ const StyledFooter = styled.footer`
 
     a:hover {
       color: ${colors.colorAccent};
+    }
+  }
+`
+
+const StyledIcon = styled.span`
+  display: inline-block;
+  margin-right: 1rem;
+  margin-left: 1rem;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: ${colors.colorPrimary};
+
+    @media (min-width: 768px) {
+      width: 4rem;
+      height: 4rem;
+    }
+    @media (min-width: 1025px) {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &:focus {
+      outline: 0.4rem solid ${colors.colorPrimary};
+      transition: outline-width 0.35s ease-in-out;
+    }
+
+    .visuallyhidden {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    svg {
+      display: block;
+      width: 1.75rem;
+      height: 1.75rem;
+      margin: auto;
+      transition: all 0.3s ease-out;
+      fill: ${colors.white};
+
+      @media (min-width: 768px) {
+        width: 2rem;
+        height: 2rem;
+      }
+      @media (min-width: 1025px) {
+        width: 3.25rem;
+        height: 3.25rem;
+      }
+    }
+
+    &:hover {
+      svg {
+        fill: ${colors.colorAccent};
+      }
     }
   }
 `

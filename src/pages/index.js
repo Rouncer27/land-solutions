@@ -1,68 +1,181 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 
-import styled from "styled-components"
-import {
-  H1Blue,
-  H2Green,
-  H3SkyBlue,
-  B1OffBlack,
-  B2OffBlack,
-} from "../styles/helpers"
+import Intro from "../components/templates/home/Intro"
+import Hero from "../components/templates/home/Hero"
+import WeAre from "../components/templates/home/WeAre"
+import DirectYou from "../components/templates/home/DirectYou"
+import ContentImage from "../components/templates/home/ContentImage"
+import WeBelong from "../components/templates/home/WeBelong"
 
-const IndexPage = () => {
+const IndexPage = props => {
+  const { seoInfo } = props.data
+  const intro = props?.data?.intro?.template?.homePage
+  const hero = props?.data?.hero?.template?.homePage
+  const weAre = props?.data?.weAre?.template?.homePage
+  const directYou = props?.data?.directYou?.template?.homePage
+  const contentImage = props?.data?.contentImage?.template?.homePage
+  const weBelong = props?.data?.weBelong?.template?.homePage
+
   return (
     <Layout>
-      <Seo title="Home" />
-      <h1>IndexPage</h1>
-      <Typograpgy>
-        <h1>Aliquam tincidunt mauris eu risus.</h1>
-        <h2>Aliquam tincidunt mauris eu risus.</h2>
-        <h3>Aliquam tincidunt mauris eu risus.</h3>
-        <p className="b1">
-          Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae
-          luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing,
-          commodo quis, gravida id, est. Sed lectus. Praesent elementum
-          hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat,
-          lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc
-          sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et,
-          dapibus sed, urna.
-        </p>
-        <p className="b2">
-          Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a
-          ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis
-          libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing
-          varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam
-          pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida
-          vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu,
-          vulputate vel, nisl.
-        </p>
-      </Typograpgy>
+      <Seo
+        title={seoInfo.seoFields.swbThemeMetaTitle}
+        description={seoInfo.seoFields.swbThemeDescription}
+        //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+        location={props.location.pathname}
+      />
+      <Intro data={intro} />
+      <Hero data={hero} />
+      <WeAre data={weAre} />
+      <DirectYou data={directYou} />
+      <ContentImage data={contentImage} />
+      <WeBelong data={weBelong} />
     </Layout>
   )
 }
 
-const Typograpgy = styled.div`
-  h1 {
-    ${H1Blue};
-  }
+export const homeQuery = graphql`
+  {
+    seoInfo: wpPage(slug: { eq: "home" }) {
+      seoFields {
+        swbThemeDescription
+        swbThemeMetaTitle
+        swbThemeImage {
+          localFile {
+            relativePath
+          }
+        }
+      }
+    }
 
-  h2 {
-    ${H2Green};
-  }
+    intro: wpPage(slug: { eq: "home" }) {
+      template {
+        ... on WpTemplate_Home {
+          templateName
+          homePage {
+            homeIntroButtonSlug
+            homeIntroButtonText
+            homeIntroContent
+            homeIntroTitle
+            homeIntroImage {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 1500)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
-  h3 {
-    ${H3SkyBlue};
-  }
+    hero: wpPage(slug: { eq: "home" }) {
+      template {
+        ... on WpTemplate_Home {
+          templateName
+          homePage {
+            homeHeroTitle
+            homeHeroParagraph
+            homeHeroContent
+            homeHeroImage {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 2500)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
-  .b1 {
-    ${B1OffBlack};
-  }
+    weAre: wpPage(slug: { eq: "home" }) {
+      template {
+        ... on WpTemplate_Home {
+          templateName
+          homePage {
+            weAreLandsolutionsContent
+            weAreLandsolutionsSubTitle
+            weAreLandsolutionsTitle
+            weAreLandsolutionsImage {
+              altText
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 1500)
+                }
+              }
+            }
+            weAreLandsolutionsItems {
+              title
+              content
+            }
+          }
+        }
+      }
+    }
 
-  .b2 {
-    ${B2OffBlack};
+    directYou: wpPage(slug: { eq: "home" }) {
+      template {
+        ... on WpTemplate_Home {
+          templateName
+          homePage {
+            directYouTitle
+            directYouLinks {
+              linkSlug
+              linkText
+            }
+          }
+        }
+      }
+    }
+
+    contentImage: wpPage(slug: { eq: "home" }) {
+      template {
+        ... on WpTemplate_Home {
+          templateName
+          homePage {
+            homeContentWithLinkTitle
+            homeContentWithLinkSubTitle
+            homeContentWithLinkButtonText
+            homeContentWithLinkButtonSlug
+          }
+        }
+      }
+    }
+
+    weBelong: wpPage(slug: { eq: "home" }) {
+      template {
+        ... on WpTemplate_Home {
+          templateName
+          homePage {
+            belongLogos {
+              url
+              logo {
+                altText
+                sourceUrl
+                localFile {
+                  url
+                  childImageSharp {
+                    gatsbyImageData(width: 750)
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `
 
