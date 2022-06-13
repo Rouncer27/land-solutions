@@ -44,7 +44,12 @@ const IndexPage = props => {
       )}
       <ContentImage data={contentImage} />
       <ContentBlock data={contentBlock} />
-      {displayTestimonials.displayTestimonials && <Testimonials />}
+      {displayTestimonials.displayTestimonials && (
+        <Testimonials
+          data={displayTestimonials}
+          testimonials={props.data.testimonials.edges}
+        />
+      )}
       <WeBelong data={weBelong} />
     </Layout>
   )
@@ -220,6 +225,27 @@ export const homeQuery = graphql`
           templateName
           homePage {
             displayTestimonials
+            displayTestimonialsBackgroundImage {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 2500)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    testimonials: allWpTestimonial {
+      edges {
+        node {
+          title
+          testimonials {
+            testimonialContent
           }
         }
       }
