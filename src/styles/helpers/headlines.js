@@ -52,6 +52,11 @@ export const H2Green = css`
   color: ${colors.colorSecondary};
 `
 
+export const H2Blue = css`
+  ${H2Base};
+  color: ${colors.colorPrimary};
+`
+
 // Headline Styles #3 //
 export const H3Base = css`
   ${fontSizer(2, 2.6, 76.8, 150, 2)}
