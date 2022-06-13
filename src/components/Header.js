@@ -30,6 +30,7 @@ const Header = ({ siteTitle }) => {
 
 const StyledHeader = styled.header`
   position: relative;
+  border-bottom: solid 0.2rem #1f527f;
 
   .header__wrapper {
     ${BigWrapper};

@@ -76,6 +76,10 @@ export const H3SkyBlue = css`
   ${H3Base};
   color: ${colors.colorAccent};
 `
+export const H3Blue = css`
+  ${H3Base};
+  color: ${colors.colorPrimary};
+`
 
 export const H3Green = css`
   ${H3Base};
