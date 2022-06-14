@@ -14,6 +14,8 @@ import ContentBlock from "../components/templates/home/ContentBlock"
 import Testimonials from "../components/templates/shared/Testimonials"
 import WeBelong from "../components/templates/home/WeBelong"
 
+import Letter from "../components/templates/shared/Letters"
+
 const IndexPage = props => {
   const { seoInfo } = props.data
   const intro = props?.data?.intro?.template?.homePage
@@ -51,6 +53,7 @@ const IndexPage = props => {
         />
       )}
       <WeBelong data={weBelong} />
+      <Letter />
     </Layout>
   )
 }
@@ -176,6 +179,7 @@ export const homeQuery = graphql`
           sectors {
             excerptContentImageTitle
             excerptContentIntro
+            sectorLetter
             excerptContentImage {
               altText
               sourceUrl

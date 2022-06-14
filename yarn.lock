@@ -4406,6 +4406,11 @@
   "resolved" "https://registry.npmjs.org/csstype/-/csstype-3.1.0.tgz"
   "version" "3.1.0"
 
+"cubic-bezier-easing@^1.0.18":
+  "integrity" "sha512-wSvXBjo1Hq5IpMRHXAhhhMeQzuUJrkcPUDhykRbvwbyXnIKGY/ZeG58OP6QNITxXxCed8kgychK0Pn3F7aZa4A=="
+  "resolved" "https://registry.npmjs.org/cubic-bezier-easing/-/cubic-bezier-easing-1.0.18.tgz"
+  "version" "1.0.18"
+
 "cycle@^1.0.3":
   "integrity" "sha512-TVF6svNzeQCOpjCqsy0/CSy8VgObG3wXusJ73xW2GbG5rGx7lC8zxDSURicsXI2UsGdi2L0QNRCi745/wUDvsA=="
   "resolved" "https://registry.npmjs.org/cycle/-/cycle-1.0.3.tgz"
@@ -4763,6 +4768,11 @@
   "version" "5.0.3"
   dependencies:
     "domelementtype" "^2.3.0"
+
+"dommatrix@^0.0.24":
+  "integrity" "sha512-PatEhAW5pIHr28MvFQGV5iiHNloqvecQZlxs7/8s/eulLqZI3uVqPkrO7YDuqsebovr/9mmcWDSWzVG4amEZgQ=="
+  "resolved" "https://registry.npmjs.org/dommatrix/-/dommatrix-0.0.24.tgz"
+  "version" "0.0.24"
 
 "domutils@^1.7.0":
   "integrity" "sha512-Lgd2XcJ/NjEw+7tFvfKxOzCYKZsdct5lczQ2ZaQY8Djz7pfAD3Gbp8ySJWtreII/vDlMVmxwa6pHmdxIYgttDg=="
@@ -6771,6 +6781,11 @@
   "resolved" "https://registry.npmjs.org/graphql/-/graphql-15.8.0.tgz"
   "version" "15.8.0"
 
+"gsap@^3.10.4":
+  "integrity" "sha512-6QatdkKxXCMfvCW4rM++0RqyLQAzFX5nwl3yHS0XPgkZBkiSEY3VZVbMltrdtsbER/xZonLtyHt684wRp4erlQ=="
+  "resolved" "https://registry.npmjs.org/gsap/-/gsap-3.10.4.tgz"
+  "version" "3.10.4"
+
 "gzip-size@^6.0.0":
   "integrity" "sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q=="
   "resolved" "https://registry.npmjs.org/gzip-size/-/gzip-size-6.0.0.tgz"
@@ -7654,6 +7669,16 @@
   "resolved" "https://registry.npmjs.org/klona/-/klona-2.0.5.tgz"
   "version" "2.0.5"
 
+"kute.js@^2.2.2":
+  "integrity" "sha512-MkTkUR1xXFstIXRSa3K/oqT1IDBSTBWYputTmbucLj9Glx6AHysce+wXz9ubaubNKOGJ5YPdxFma+d6KSsC8Bg=="
+  "resolved" "https://registry.npmjs.org/kute.js/-/kute.js-2.2.2.tgz"
+  "version" "2.2.2"
+  dependencies:
+    "cubic-bezier-easing" "^1.0.18"
+    "minifill" "^0.0.16"
+    "shorter-js" "^0.2.6"
+    "svg-path-commander" "0.1.23"
+
 "language-subtag-registry@~0.3.2":
   "integrity" "sha512-L0IqwlIXjilBVVYKFT37X9Ih11Um5NEl9cbJIuU/SwP/zEEAbBPOnEeeuxVMf45ydWQRDQN3Nqc96OgbH1K+Pg=="
   "resolved" "https://registry.npmjs.org/language-subtag-registry/-/language-subtag-registry-0.3.21.tgz"
@@ -8169,6 +8194,11 @@
   "integrity" "sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg=="
   "resolved" "https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz"
   "version" "1.4.4"
+
+"minifill@^0.0.16":
+  "integrity" "sha512-ya61lgDqSRlaOVbD8neOkZMpMpmbfCbRewzJ/rfzc9nbisFthip3YcmBBL3fu+gneIKTrzcOG7mDysJh5ZDjqQ=="
+  "resolved" "https://registry.npmjs.org/minifill/-/minifill-0.0.16.tgz"
+  "version" "0.0.16"
 
 "minimatch@^3.0.4", "minimatch@^3.1.1", "minimatch@^3.1.2":
   "integrity" "sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw=="
@@ -10233,6 +10263,11 @@
   "resolved" "https://registry.npmjs.org/shell-quote/-/shell-quote-1.7.3.tgz"
   "version" "1.7.3"
 
+"shorter-js@^0.2.6":
+  "integrity" "sha512-gHfrA0/D2DBLB8ARfjX5X6q2AKiGsGpvbDKYKIpJx1B1bhhJAwgDq18bHtcpmp461eF0lsnQzptA9WGtV3c9ew=="
+  "resolved" "https://registry.npmjs.org/shorter-js/-/shorter-js-0.2.24.tgz"
+  "version" "0.2.24"
+
 "side-channel@^1.0.4":
   "integrity" "sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw=="
   "resolved" "https://registry.npmjs.org/side-channel/-/side-channel-1.0.4.tgz"
@@ -10713,6 +10748,13 @@
   "integrity" "sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w=="
   "resolved" "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   "version" "1.0.0"
+
+"svg-path-commander@0.1.23":
+  "integrity" "sha512-v1VSE4PwUrdwoMaiq7WnmGS1bcch57Rr8oaKwuKmNFhUouVgZxvfBYC+QUebweg0cLvQ3N1P57PRYMb8/ue4Lg=="
+  "resolved" "https://registry.npmjs.org/svg-path-commander/-/svg-path-commander-0.1.23.tgz"
+  "version" "0.1.23"
+  dependencies:
+    "dommatrix" "^0.0.24"
 
 "svgo@^2.7.0", "svgo@^2.8.0":
   "integrity" "sha512-+N/Q9kV1+F+UeWYoSiULYo4xYSDQlTgb+ayMobAXPwMnLvop7oxKMo9OzIrX5x3eS4L4f2UHhc9axXwY8DpChg=="

@@ -59,37 +59,28 @@ export const Btn1One = css`
       cursor: not-allowed;
     }
   }
-
-  ${
-    "" /* &::after {
-    position: absolute;
-    top: -4px;
-    right: -3.75rem;
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 55px solid transparent;
-    border-bottom: 0 solid transparent;
-    border-left: 35px solid ${colors.colorPrimary};
-    content: "";
-  } */
-  }
 `
 
 export const Btn1Two = css`
   ${Btn1Base};
-  background: ${colors.colorSecondary};
-  border: solid 0.1rem ${colors.colorSecondary};
+  padding-right: 7.5rem;
+  background: linear-gradient(
+    235deg,
+    rgba(9, 9, 121, 0) 18%,
+    rgba(136, 184, 223, 1) 18%
+  );
   color: ${colors.colorPrimary};
 
   &:hover {
-    background: ${colors.colorPrimary};
-    border-color: ${colors.colorPrimary};
-    color: ${colors.colorSecondary};
+    background: linear-gradient(
+      235deg,
+      rgba(9, 9, 121, 0) 18%,
+      rgba(157, 181, 148, 1) 18%
+    );
+    color: ${colors.white};
   }
 
   &:focus {
-    outline: 0.4rem solid #003b49;
     transition: all 0.35s ease-in-out;
   }
 
@@ -97,8 +88,7 @@ export const Btn1Two = css`
     opacity: 0.5;
 
     &:hover {
-      background: ${colors.colorSecondary};
-      border-color: ${colors.colorSecondary};
+      background: ${colors.white};
       color: ${colors.colorPrimary};
       cursor: not-allowed;
     }
