@@ -28,7 +28,8 @@ const ContentIcon = ({ data }) => {
 }
 
 const SectionStyled = styled.section`
-  padding: 9rem 0;
+  padding: 9rem 0 0;
+
   .wrapper {
     ${standardWrapper};
   }

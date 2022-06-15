@@ -94,3 +94,37 @@ export const Btn1Two = css`
     }
   }
 `
+
+export const Btn1Three = css`
+  ${Btn1Base};
+  padding-right: 7.5rem;
+  background: linear-gradient(
+    235deg,
+    rgba(9, 9, 121, 0) 18%,
+    rgba(255, 255, 255, 1) 18%
+  );
+  color: ${colors.colorPrimary};
+
+  &:hover {
+    background: linear-gradient(
+      235deg,
+      rgba(9, 9, 121, 0) 18%,
+      rgba(157, 181, 148, 1) 18%
+    );
+    color: ${colors.white};
+  }
+
+  &:focus {
+    transition: all 0.35s ease-in-out;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    &:hover {
+      background: ${colors.white};
+      color: ${colors.colorPrimary};
+      cursor: not-allowed;
+    }
+  }
+`
