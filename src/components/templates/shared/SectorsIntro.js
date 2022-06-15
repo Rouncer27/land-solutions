@@ -31,7 +31,7 @@ const SectorsIntro = ({ sectors }) => {
     centerPadding: "0",
     arrows: true,
     dots: true,
-    beforeChange: (current, next) =>
+    beforeChange: next =>
       setActiveLetter(sectors[next].node.sectors.sectorLetter),
   }
 
@@ -42,8 +42,6 @@ const SectorsIntro = ({ sectors }) => {
   useEffect(() => {
     KUTE.to(`#display`, { path: `#${activeLetter}` }).start()
   }, [activeLetter])
-
-  console.log("activeLetter: ", activeLetter)
 
   return (
     <SectionStyled>
@@ -145,6 +143,7 @@ const SectionStyled = styled.section`
   .wrapper {
     position: relative;
     padding: 0rem 0rem;
+    overflow: hidden;
   }
 
   .test-button {
@@ -152,6 +151,7 @@ const SectionStyled = styled.section`
   }
 
   .letter-div {
+    display: none;
     position: absolute;
     top: -56px;
     left: -165px;
@@ -165,12 +165,127 @@ const SectionStyled = styled.section`
     background-color: #fff;
     opacity: 0.75;
     transform: scale(0.5);
+
+    @media (min-width: 768px) {
+    }
+
+    @media (min-width: 1025px) {
+      display: block;
+      top: -113px;
+      left: -236px;
+      transform: scale(0.3);
+    }
+
+    @media (min-width: 1100px) {
+      top: -100px;
+      left: -220px;
+      transform: scale(0.35);
+    }
+
+    @media (min-width: 1200px) {
+      top: -55px;
+      left: -180px;
+      transform: scale(0.4);
+    }
+
+    @media (min-width: 1250px) {
+      top: -55px;
+      left: -185px;
+      transform: scale(0.5);
+    }
+
+    @media (min-width: 1300px) {
+      top: -45px;
+      left: -165px;
+      transform: scale(0.5);
+    }
+    @media (min-width: 1350px) {
+      top: -50px;
+      left: -165px;
+      transform: scale(0.5);
+    }
+    @media (min-width: 1400px) {
+      top: -27px;
+      left: -165px;
+      transform: scale(0.5);
+    }
+    @media (min-width: 1450px) {
+      top: -8px;
+      left: -165px;
+      transform: scale(0.5);
+    }
+    @media (min-width: 1500px) {
+      top: 17px;
+      left: -165px;
+      transform: scale(0.5);
+    }
+    @media (min-width: 1550px) {
+      top: 39px;
+      left: -165px;
+      transform: scale(0.5);
+    }
+
+    @media (min-width: 1550px) {
+      top: 39px;
+      left: -165px;
+      transform: scale(0.5);
+    }
+
+    @media (min-width: 1600px) {
+      top: 103px;
+      left: -120px;
+      transform: scale(0.5);
+    }
+
+    @media (min-width: 1700px) {
+      top: 110px;
+      left: -120px;
+      transform: scale(0.5);
+    }
   }
 
   .slick-slider {
     .slick-dots {
-      bottom: 10rem;
-      left: 15%;
+      bottom: 5rem;
+      left: 0%;
+
+      @media (min-width: 768px) {
+        bottom: 5rem;
+        left: 25%;
+      }
+
+      @media (min-width: 1025px) {
+        bottom: 5rem;
+        left: 15%;
+      }
+
+      @media (min-width: 1200px) {
+        bottom: 5rem;
+        left: 15%;
+      }
+
+      li {
+        button {
+          width: 20px;
+          height: 20px;
+
+          &::before {
+            width: 20px;
+            height: 20px;
+            font-size: 11px;
+            opacity: 1;
+            color: ${colors.colorTertiary};
+          }
+        }
+
+        &.slick-active {
+          button {
+            &::before {
+              color: ${colors.colorAccent};
+            }
+          }
+        }
+      }
     }
   }
 `
@@ -182,28 +297,52 @@ const Slide = styled.div`
   justify-content: center;
 
   .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: 100%;
+    min-height: 40vw;
 
     @media (min-width: 768px) {
       width: calc(50%);
+      min-height: 30vw;
     }
 
     @media (min-width: 1025px) {
+      display: block;
       width: calc(40%);
+      min-height: 46vw;
+    }
+
+    @media (min-width: 1200px) {
       min-height: 46vw;
     }
 
     &__title {
       position: relative;
-      max-width: 55rem;
+      max-width: 40rem;
       margin: auto;
-      padding: 3rem;
+      padding: 3rem 1rem;
       z-index: 100;
+
+      @media (min-width: 768px) {
+        max-width: 55rem;
+        padding: 3rem;
+      }
+
+      @media (min-width: 1025px) {
+      }
 
       p {
         ${H2Blue};
-        font-weight: 300;
+        margin: 0;
+        text-align: center;
+
+        @media (min-width: 1025px) {
+          font-weight: 300;
+          text-align: left;
+        }
       }
     }
 
@@ -220,6 +359,11 @@ const Slide = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
+        background-color: rgba(255, 255, 255, 0.6);
+
+        @media (min-width: 1025px) {
+          display: none;
+        }
       }
 
       .gatsby-image-wrapper {
@@ -239,14 +383,18 @@ const Slide = styled.div`
   .content {
     display: flex;
     width: 100%;
+    min-height: 50rem;
+    padding: 7.5rem 2rem 12.5rem;
     background-color: ${colors.colorPrimary};
 
     @media (min-width: 768px) {
       width: calc(50%);
+      min-height: 50rem;
     }
 
     @media (min-width: 1025px) {
       width: calc(60%);
+      min-height: auto;
       padding: 5rem 10rem;
     }
 
