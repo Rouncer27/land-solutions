@@ -5,9 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {
   Btn1One,
   colors,
-  H2Green,
   H2White,
-  H3Blue,
   standardWrapper,
 } from "../../../styles/helpers"
 const Locations = ({ data }) => {
