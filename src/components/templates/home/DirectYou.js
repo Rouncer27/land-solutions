@@ -6,6 +6,7 @@ import {
   H3Blue,
   H3Green,
   standardWrapper,
+  fonts,
 } from "../../../styles/helpers"
 
 import icon from "../../../images/direct-icon.png"
@@ -74,10 +75,25 @@ const SectionStyled = styled.section`
 
       a {
         ${H3Green};
+        position: relative;
         font-weight: 300;
+
+        &::before {
+          font-family: ${fonts.fontAwesome};
+          position: absolute;
+          top: 0.5em;
+          right: -3rem;
+          transition: all 0.3s ease-out;
+          color: ${colors.colorTertiary};
+          font-size: 1.5rem;
+          content: "\f178";
+        }
 
         &:hover {
           color: ${colors.colorPrimary};
+          &::before {
+            color: ${colors.colorPrimary};
+          }
         }
       }
     }

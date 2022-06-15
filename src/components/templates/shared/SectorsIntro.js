@@ -14,8 +14,6 @@ import {
   H3White,
 } from "../../../styles/helpers"
 
-import Letters from "./Letters"
-
 const SectorsIntro = ({ sectors }) => {
   const [activeLetter, setActiveLetter] = useState("t")
 

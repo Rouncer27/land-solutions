@@ -29,8 +29,32 @@ const WeBelong = ({ data }) => {
 }
 
 const SectionStyled = styled.section`
+  position: relative;
+
   .wrapper {
     ${medWrapper};
+  }
+
+  &::after {
+    position: absolute;
+    top: 5rem;
+    left: 0%;
+    height: 1rem;
+    transform: translateY(-40%);
+    background-color: #9db594;
+    content: "";
+  }
+
+  @media (min-width: 768px) {
+    &::after {
+      width: 30%;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    &::after {
+      width: 37.5%;
+    }
   }
 
   .title {
@@ -46,20 +70,28 @@ const SectionStyled = styled.section`
   .logos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
 
+    @media (min-width: 768px) {
+      justify-content: center;
+    }
+
     .logo {
       width: calc(100% / 2);
+      padding: 3rem;
 
       @media (min-width: 768px) {
-        width: calc(100% / 4);
+        width: calc((100% / 4) - 3rem);
+        padding: 1.5rem;
+        margin: 1.5rem;
       }
 
       @media (min-width: 1025px) {
         width: calc((100% / 8) - 3rem);
         margin: 1.5rem;
+        padding: 0;
       }
     }
   }

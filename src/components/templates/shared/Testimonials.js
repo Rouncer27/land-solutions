@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import { B1White } from "../../../styles/helpers"
+import { B1White, colors } from "../../../styles/helpers"
 
 const settings = {
   slidesToShow: 1,
@@ -37,13 +37,17 @@ const Testimonials = ({ data, testimonials }) => {
               <Slide key={index}>
                 <div className="content">
                   <div className="content__wrapper">
+                    <span className="quote quote-left">&#8220;</span>
                     <div
                       dangerouslySetInnerHTML={{
                         __html: testimonial.testimonials.testimonialContent,
                       }}
                     />
+                    <span className="quote quote-right">&#8221;</span>
                     <div className="image__title">
-                      <p>{testimonial.title}</p>
+                      <p>
+                        <span>&#8211;</span> {testimonial.title}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -70,6 +74,51 @@ const SectionStyled = styled.section`
 
   .wrapper {
     position: relative;
+  }
+
+  .slick-slider {
+    .slick-dots {
+      bottom: 5rem;
+      left: 0%;
+
+      @media (min-width: 768px) {
+        bottom: 5rem;
+        left: 5%;
+        display: flex !important;
+        justify-content: flex-start;
+      }
+
+      @media (min-width: 1025px) {
+        bottom: 5rem;
+      }
+
+      @media (min-width: 1200px) {
+        bottom: 5rem;
+      }
+
+      li {
+        button {
+          width: 20px;
+          height: 20px;
+
+          &::before {
+            width: 20px;
+            height: 20px;
+            font-size: 11px;
+            opacity: 1;
+            color: ${colors.colorTertiary};
+          }
+        }
+
+        &.slick-active {
+          button {
+            &::before {
+              color: ${colors.colorAccent};
+            }
+          }
+        }
+      }
+    }
   }
 
   .test-bg {
@@ -101,18 +150,42 @@ const Slide = styled.div`
   justify-content: center;
 
   .content {
+    display: flex;
+    align-items: center;
     position: relative;
     width: 100%;
+    min-height: 55rem;
     background-color: rgba(3, 51, 70, 0.75);
 
     @media (min-width: 768px) {
       width: calc(50%);
+      min-height: 60rem;
+    }
+
+    @media (min-width: 1025px) {
+      min-height: 50rem;
     }
 
     &__wrapper {
+      position: relative;
       max-width: 58.5rem;
       margin-left: auto;
       padding: 10rem 8rem 10rem 2rem;
+
+      .quote {
+        position: absolute;
+        top: 0;
+        font-size: 9.5rem;
+        color: ${colors.colorTertiary};
+      }
+
+      .quote-left {
+        left: 0;
+      }
+
+      .quote-right {
+        right: 8rem;
+      }
 
       p {
         ${B1White};

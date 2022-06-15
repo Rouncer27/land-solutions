@@ -10,7 +10,6 @@ import {
 } from "../../../styles/helpers"
 
 const ContentBlock = ({ data }) => {
-  console.log("data: ", data)
   return (
     <SectionStyled>
       <div className="wrapper">
