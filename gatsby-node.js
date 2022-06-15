@@ -95,6 +95,14 @@ exports.createPages = async ({ graphql, actions }) => {
             id: node.id,
           },
         })
+      } else if (node.template.templateName === "Advisory Board") {
+        createPage({
+          path: `${node.uri}`,
+          component: path.resolve(`./src/templates/advisoryBoard.js`),
+          context: {
+            id: node.id,
+          },
+        })
       } else if (node.template.templateName === "Default") {
         createPage({
           path: `${node.uri}`,
