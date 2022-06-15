@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { H1White, H2White } from "../../../styles/helpers"
 
 const PageHero = ({ data }) => {
-  console.log("data: ", data)
   const imageDisplay = getImage(
     data.pageHeroIntroImage.localFile.childImageSharp.gatsbyImageData
   )

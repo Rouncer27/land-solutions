@@ -4,14 +4,23 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PageHero from "../components/templates/shared/PageHero"
+import ContentIcon from "../components/templates/ourTeam/ContentIcon"
+import LinkBlocks from "../components/templates/shared/LinkBlocks"
+import QuoteHero from "../components/templates/shared/QuoteHero"
 
 const ourTeam = props => {
   console.log("data: ", props)
   const hero = props.data.hero.template.ourTeam
+  const contentIcon = props.data.contentIcon.template.ourTeam
+  const linkBlocks = props.data.linkBlocks.template.ourTeam
+  const quoteHero = props.data.quoteHero.template.ourTeam
   return (
     <Layout>
       <Seo />
       <PageHero data={hero} />
+      <ContentIcon data={contentIcon} />
+      <LinkBlocks data={linkBlocks} />
+      <QuoteHero data={quoteHero} />
     </Layout>
   )
 }
@@ -37,6 +46,75 @@ export const ourTeamTempQuery = graphql`
             pageHeroIntroSubTitle
             pageHeroIntroTitle
             pageHeroIntroImage {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 2500)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    contentIcon: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_OurTeam {
+          templateName
+          ourTeam {
+            contentIconContent
+            contentIconImage {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 1000)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    linkBlocks: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_OurTeam {
+          templateName
+          ourTeam {
+            linkBlocks {
+              butonSlug
+              buttonText
+              content
+              title
+              image {
+                altText
+                sourceUrl
+                localFile {
+                  url
+                  childImageSharp {
+                    gatsbyImageData(width: 1000)
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    quoteHero: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_OurTeam {
+          templateName
+          ourTeam {
+            pageHeroQuoteAuthor
+            pageHeroQuote
+            pageHeroQuoteImage {
               altText
               sourceUrl
               localFile {
