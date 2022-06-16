@@ -6,6 +6,7 @@ import Seo from "../components/Seo"
 import PageHero from "../components/templates/shared/PageHero"
 import ContentIcon from "../components/templates/shared/ContentIcon"
 import WysiwygIcon from "../components/templates/ourDifference/WysiwygIcon"
+import IconGraphic from "../components/templates/ourDifference/IconGraphic"
 
 const ourDifference = props => {
   const hero = props.data.hero.template.pageOurDifference
@@ -16,6 +17,7 @@ const ourDifference = props => {
       <Seo />
       <PageHero data={hero} />
       <ContentIcon data={contentIcon} />
+      <IconGraphic />
       <WysiwygIcon data={wysiwygIcon} />
     </Layout>
   )
