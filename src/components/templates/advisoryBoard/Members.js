@@ -1,12 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {
-  B1Black,
-  H3Blue,
-  medWrapper,
-  standardWrapper,
-} from "../../../styles/helpers"
+import { B1Black, H3Blue, standardWrapper } from "../../../styles/helpers"
 
 const Members = ({ data }) => {
   return (
