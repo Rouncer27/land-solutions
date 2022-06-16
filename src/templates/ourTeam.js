@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PageHero from "../components/templates/shared/PageHero"
-import ContentIcon from "../components/templates/ourTeam/ContentIcon"
+import ContentIcon from "../components/templates/shared/ContentIcon"
 import LinkBlocks from "../components/templates/shared/LinkBlocks"
 import QuoteHero from "../components/templates/shared/QuoteHero"
 
