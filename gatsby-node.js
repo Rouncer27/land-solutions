@@ -28,6 +28,16 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
 
+        leadershipTeam: allWpLeadershipTeam {
+          edges {
+            node {
+              id
+              slug
+              uri
+            }
+          }
+        }
+
         posts: allWpPost {
           edges {
             node {
@@ -125,6 +135,23 @@ exports.createPages = async ({ graphql, actions }) => {
           next: index === 0 ? null : sectors[index - 1].node.slug,
           prev:
             index === sectors.length - 1 ? null : sectors[index + 1].node.slug,
+        },
+      })
+    })
+
+    const leadershipTeam = data.leadershipTeam.edges
+    leadershipTeam.forEach(({ node }, index) => {
+      createPage({
+        path: `/about/leadership-team/${node.slug}/`,
+        component: path.resolve("./src/templates/singleLeader.js"),
+        context: {
+          id: node.id,
+          slug: node.slug,
+          next: index === 0 ? null : leadershipTeam[index - 1].node.slug,
+          prev:
+            index === leadershipTeam.length - 1
+              ? null
+              : leadershipTeam[index + 1].node.slug,
         },
       })
     })
