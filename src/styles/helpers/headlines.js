@@ -91,6 +91,11 @@ export const H3Green = css`
   color: ${colors.colorSecondary};
 `
 
+export const H3LightGreen = css`
+  ${H3Base};
+  color: ${colors.colorTertiary};
+`
+
 // Headline Styles #4 //
 export const H4Base = css`
   ${fontSizer(2, 2.6, 76.8, 160, 2)};

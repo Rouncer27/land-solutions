@@ -13,7 +13,7 @@ const PageHero = ({ data }) => {
       <div className="hero-content">
         <div className="hero-content__inner">
           <h1>{data.pageHeroIntroTitle}</h1>
-          <p>{data.pageHeroIntroSubTitle}</p>
+          {data.pageHeroIntroSubTitle && <p>{data.pageHeroIntroSubTitle}</p>}
         </div>
       </div>
       <div className="hero-image">

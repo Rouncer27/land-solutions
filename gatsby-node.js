@@ -113,6 +113,14 @@ exports.createPages = async ({ graphql, actions }) => {
             id: node.id,
           },
         })
+      } else if (node.template.templateName === "Our Difference") {
+        createPage({
+          path: `${node.uri}`,
+          component: path.resolve(`./src/templates/ourDifference.js`),
+          context: {
+            id: node.id,
+          },
+        })
       } else if (node.template.templateName === "Default") {
         createPage({
           path: `${node.uri}`,
