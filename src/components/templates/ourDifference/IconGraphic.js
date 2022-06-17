@@ -17,6 +17,7 @@ const IconGraphic = () => {
 
 const StyledDiv = styled.div`
   position: relative;
+
   .icon {
     position: relative;
     width: 100%;
