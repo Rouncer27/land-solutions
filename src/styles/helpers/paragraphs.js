@@ -27,6 +27,11 @@ export const B1OffBlack = css`
   color: #3a3d40;
 `
 
+export const B1Green = css`
+  ${B1Base};
+  color: ${colors.colorSecondary};
+`
+
 // Body copy TWO //
 export const B2Base = css`
   ${fontSizer(1.4, 1.6, 76.8, 150, 1.8)};

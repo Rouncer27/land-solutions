@@ -11,7 +11,6 @@ import {
   medWrapper,
   colors,
 } from "../../../styles/helpers"
-import { Link } from "gatsby"
 
 const WysiwygImage = ({ data }) => {
   const imageDisplay = getImage(

@@ -6,18 +6,22 @@ import Seo from "../components/Seo"
 
 import HeroIntro from "../components/templates/sector/HeroIntro"
 import ContentBlock from "../components/templates/sector/ContentBlock"
+import NavLinks from "../components/templates/sector/NavLinks"
 
 const Sector = ({ data }) => {
-  console.log("Sector: ", data)
-
   const sectorHeroIntro = data.sectorHeroIntro.sectors
   const contentBlock = data.contentBlock.sectors
+
+  const navLinks = data.navLinks.sectors
+
+  console.log("navLinks: ", navLinks)
 
   return (
     <Layout>
       <Seo />
       <HeroIntro data={sectorHeroIntro} title={data.sectorHeroIntro.title} />
       <ContentBlock data={contentBlock} />
+      {navLinks.displaySectionNavigationLinks && <NavLinks data={navLinks} />}
     </Layout>
   )
 }
@@ -69,6 +73,17 @@ export const query = graphql`
       sectors {
         sectorContentBlockContentLeft
         sectorContentBlockWysiwyg
+      }
+    }
+
+    navLinks: wpSector(slug: { eq: $slug }) {
+      sectors {
+        displaySectionNavigationLinks
+        sectionNavigationLinksTitle
+        sectionNavigationLinks {
+          text
+          slug
+        }
       }
     }
   }
