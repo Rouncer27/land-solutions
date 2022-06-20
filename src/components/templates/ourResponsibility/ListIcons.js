@@ -41,6 +41,8 @@ const ListIcons = ({ data }) => {
 }
 
 const StyledSection = styled.section`
+  padding: 2.5rem 0;
+
   .wrapper {
     ${medWrapper};
   }
