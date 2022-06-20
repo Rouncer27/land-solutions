@@ -57,6 +57,11 @@ export const H2Blue = css`
   color: ${colors.colorPrimary};
 `
 
+export const H2LightBlue = css`
+  ${H2Base};
+  color: ${colors.colorAccent};
+`
+
 // Headline Styles #3 //
 export const H3Base = css`
   ${fontSizer(2, 2.6, 76.8, 150, 2)}

@@ -7,7 +7,6 @@ import TopTitle from "../components/templates/singleLeader/TopTitle"
 import LeaderContent from "../components/templates/singleLeader/LeaderContent"
 
 const singleLeader = props => {
-  console.log(props.pageContext.next)
   return (
     <Layout>
       <Seo />
@@ -23,7 +22,7 @@ const singleLeader = props => {
 
 export const query = graphql`
   query singleLeaderQuery($slug: String!) {
-    seoInfo: wpPost(slug: { eq: $slug }) {
+    seoInfo: wpLeadershipTeam(slug: { eq: $slug }) {
       seoFields {
         swbThemeDescription
         swbThemeMetaTitle

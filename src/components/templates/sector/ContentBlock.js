@@ -1,47 +1,31 @@
 import React from "react"
 import styled from "styled-components"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {
+  H3White,
   B1Black,
   H2White,
   fonts,
-  H1Blue,
   H1White,
-  H3Green,
-  medWrapper,
   colors,
 } from "../../../styles/helpers"
-import { Link } from "gatsby"
 
-const WysiwygImage = ({ data }) => {
-  const imageDisplay = getImage(
-    data.wysiwygWithImageImage.localFile.childImageSharp.gatsbyImageData
-  )
-  const imageAlt = data.wysiwygWithImageImage.altText
+const ContentBlock = ({ data }) => {
   return (
     <StyledSection>
       <div className="wrapper">
-        <div className="image">
-          <div>
-            <GatsbyImage
-              image={imageDisplay}
-              alt={imageAlt}
-              layout="fullWidth"
-              formats={["auto", "webp", "avif"]}
+        <div className="content-left">
+          <div className="content-left__inner">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.sectorContentBlockContentLeft,
+              }}
             />
           </div>
-          <div className="image__quote">
-            <p>{data.wysiwygWithImageSubTitle}</p>
-          </div>
         </div>
-        <div className="content">
-          <div className="content__title">
-            <h2>{data.wysiwygWithImageTitle}</h2>
-            <h3>{data.wysiwygWithImageSubTitle}</h3>
-          </div>
+        <div className="content-right">
           <div
-            className="content__wysiwyg"
-            dangerouslySetInnerHTML={{ __html: data.wysiwygWithImageWysiwyg }}
+            className="content-wysiwyg"
+            dangerouslySetInnerHTML={{ __html: data.sectorContentBlockWysiwyg }}
           />
         </div>
       </div>
@@ -50,67 +34,63 @@ const WysiwygImage = ({ data }) => {
 }
 
 const StyledSection = styled.section`
+  padding: 9rem 0;
+
   .wrapper {
-    ${medWrapper};
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
   }
 
-  .image {
+  .content-left {
     width: 100%;
+    background: linear-gradient(
+      255deg,
+      rgba(31, 82, 127, 0) 19%,
+      rgba(31, 82, 127, 1) 19%
+    );
 
     @media (min-width: 768px) {
-      width: calc(30%);
+      width: calc(50% - 4rem);
+      margin-right: 4rem;
     }
 
     @media (min-width: 1025px) {
-      width: calc(30%);
+      padding-top: 6.7rem;
+      padding-right: 15rem;
+      padding-bottom: 6.7rem;
     }
 
-    &__quote {
-      margin-top: 3.5rem;
+    &__inner {
+      width: 37.5rem;
+      margin-right: 0;
+      margin-left: auto;
 
       p {
-        ${H3Green};
+        ${H3White};
         margin: 0;
         font-weight: 300;
       }
     }
   }
 
-  .content {
+  .content-right {
     width: 100%;
 
     @media (min-width: 768px) {
-      width: calc(70%);
-    }
-
-    @media (min-width: 1025px) {
-      width: calc(70% - 4rem);
+      width: calc(50% - 4rem);
       margin-left: 4rem;
     }
 
-    &__title {
-      margin-bottom: 3.5rem;
-
-      h2 {
-        ${H1Blue};
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-        text-transform: uppercase;
-      }
-
-      h3 {
-        ${H3Green};
-        margin: 0;
-      }
-    }
-
-    &__wysiwyg {
+    .content-wysiwyg {
       width: 100%;
-      max-width: 100rem;
+      max-width: 55rem;
       margin-top: 2.5rem;
       margin-right: auto;
       margin-bottom: 2.5rem;
-      margin-left: auto;
+      margin-left: 0;
 
       &::after {
         display: table;
@@ -380,4 +360,4 @@ const StyledSection = styled.section`
   }
 `
 
-export default WysiwygImage
+export default ContentBlock
