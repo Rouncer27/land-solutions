@@ -21,7 +21,6 @@ const settings = {
 }
 
 const Testimonials = ({ data, testimonials }) => {
-  console.log("data: ", data)
   const imageDisplay = getImage(
     data.displayTestimonialsBackgroundImage.localFile.childImageSharp
       .gatsbyImageData
