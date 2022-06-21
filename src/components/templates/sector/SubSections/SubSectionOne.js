@@ -5,14 +5,12 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {
   B1White,
   Btn1One,
-  Btn1Three,
   colors,
   H2White,
   medWrapper,
 } from "../../../../styles/helpers"
 
 const SubSectionOne = ({ data }) => {
-  console.log("SubSectionOne: ", data)
   const imageDisplay = getImage(
     data.backgroundImage.localFile.childImageSharp.gatsbyImageData
   )
