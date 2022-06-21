@@ -207,7 +207,7 @@ export const query = graphql`
             }
             pdfFile {
               localFile {
-                publicURL
+                url
               }
             }
             image {
@@ -216,6 +216,16 @@ export const query = graphql`
                 url
                 childImageSharp {
                   gatsbyImageData(width: 1000)
+                }
+              }
+            }
+
+            backgroundImage {
+              altText
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 2750)
                 }
               }
             }
