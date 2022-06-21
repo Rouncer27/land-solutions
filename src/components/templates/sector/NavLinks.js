@@ -13,6 +13,9 @@ const NavLinks = ({ data }) => {
             return (
               <li key={index}>
                 <Link to={`${link.slug}`}>{link.text}</Link>
+                {index + 1 !== data.sectionNavigationLinks.length ? (
+                  <span>&#124;</span>
+                ) : null}
               </li>
             )
           })}
@@ -23,6 +26,16 @@ const NavLinks = ({ data }) => {
 }
 
 const SectionStyled = styled.section`
+  margin-bottom: 5rem;
+
+  @media (min-width: 768px) {
+    margin-bottom: 7.5rem;
+  }
+
+  @media (min-width: 1025px) {
+    margin-bottom: 9rem;
+  }
+
   .wrapper {
     ${medWrapper};
   }
@@ -42,8 +55,14 @@ const SectionStyled = styled.section`
 
     li {
       display: block;
-      padding: 0.25rem 0.75rem;
+      padding: 0.25rem 0.5rem;
       word-wrap: wrap;
+
+      span {
+        ${B1Green}
+        display: inline-block;
+        padding-left: 0.75rem;
+      }
 
       a {
         ${B1Green}
