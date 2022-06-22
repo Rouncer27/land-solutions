@@ -129,6 +129,14 @@ exports.createPages = async ({ graphql, actions }) => {
             id: node.id,
           },
         })
+      } else if (node.template.templateName === "Project Management") {
+        createPage({
+          path: `${node.uri}`,
+          component: path.resolve(`./src/templates/projectManagement.js`),
+          context: {
+            id: node.id,
+          },
+        })
       } else if (node.template.templateName === "Default") {
         createPage({
           path: `${node.uri}`,

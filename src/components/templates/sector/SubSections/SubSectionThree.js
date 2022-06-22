@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {
   B1OffBlack,
-  B1White,
   B2Black,
   Btn1One,
   colors,
@@ -14,7 +13,6 @@ import {
 } from "../../../../styles/helpers"
 
 const SubSectionthree = ({ data }) => {
-  console.log("SubSectionthree: ", data)
   const imageDisplay = getImage(
     data.backgroundImage.localFile.childImageSharp.gatsbyImageData
   )
