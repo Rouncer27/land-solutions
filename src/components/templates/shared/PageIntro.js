@@ -15,10 +15,16 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
 const PageIntro = ({ data }) => {
+  console.log("data: ", data)
   const iconDisplay = getImage(
     data.pageIntroIcon.localFile.childImageSharp.gatsbyImageData
   )
   const iconAlt = data.pageIntroIcon.altText
+
+  const sideImgDisplay = getImage(
+    data.pageIntroSideImage.localFile.childImageSharp.gatsbyImageData
+  )
+  const sideImgAlt = data.pageIntroSideImage.altText
   return (
     <StyledSection>
       <div className="wrapper">
@@ -54,13 +60,32 @@ const PageIntro = ({ data }) => {
           </div>
         </div>
       </div>
+      <div className="side-image">
+        <GatsbyImage
+          image={sideImgDisplay}
+          alt={sideImgAlt}
+          layout="fullWidth"
+          formats={["auto", "webp", "avif"]}
+        />
+      </div>
     </StyledSection>
   )
 }
 
 const StyledSection = styled.section`
+  position: relative;
+  padding-top: 8rem;
+
   .wrapper {
     ${medWrapper};
+  }
+
+  .side-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25rem;
+    height: 100%;
   }
 
   .title {
@@ -110,11 +135,13 @@ const StyledSection = styled.section`
 
         h2 {
           ${H2Green};
+          max-width: 60rem;
           margin-top: 0;
         }
 
         p {
           ${H3Blue};
+          max-width: 65rem;
         }
       }
 

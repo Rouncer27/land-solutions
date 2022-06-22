@@ -137,6 +137,22 @@ exports.createPages = async ({ graphql, actions }) => {
             id: node.id,
           },
         })
+      } else if (node.template.templateName === "Talent Sourcing") {
+        createPage({
+          path: `${node.uri}`,
+          component: path.resolve(`./src/templates/talentSourcing.js`),
+          context: {
+            id: node.id,
+          },
+        })
+      } else if (node.template.templateName === "Stakeholder Engagement") {
+        createPage({
+          path: `${node.uri}`,
+          component: path.resolve(`./src/templates/stakeholderEngagement.js`),
+          context: {
+            id: node.id,
+          },
+        })
       } else if (node.template.templateName === "Default") {
         createPage({
           path: `${node.uri}`,
