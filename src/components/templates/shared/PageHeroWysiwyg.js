@@ -23,11 +23,13 @@ const PageHeroWysiwyg = ({ data }) => {
         <div className="hero-content__inner">
           <div className="hero-content__inner--titles">
             <h1>{data.pageHeroWithWysiwygTitle}</h1>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: data.pageHeroWithWysiwygIntroContent,
-              }}
-            />
+            {data.pageHeroWithWysiwygIntroContent && (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.pageHeroWithWysiwygIntroContent,
+                }}
+              />
+            )}
           </div>
           <div
             className="hero-content__inner--wysiwyg"
@@ -79,6 +81,8 @@ const SectionStyled = styled.section`
     }
 
     &__inner {
+      width: 100%;
+
       @media (min-width: 1025px) {
         padding-left: calc(17.5%);
       }
