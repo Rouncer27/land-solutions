@@ -153,6 +153,38 @@ exports.createPages = async ({ graphql, actions }) => {
             id: node.id,
           },
         })
+      } else if (node.template.templateName === "Indigenous Engagement") {
+        createPage({
+          path: `${node.uri}`,
+          component: path.resolve(`./src/templates/indigenousEngagement.js`),
+          context: {
+            id: node.id,
+          },
+        })
+      } else if (node.template.templateName === "Gis Mapping") {
+        createPage({
+          path: `${node.uri}`,
+          component: path.resolve(`./src/templates/gisMapping.js`),
+          context: {
+            id: node.id,
+          },
+        })
+      } else if (node.template.templateName === "Asset Management") {
+        createPage({
+          path: `${node.uri}`,
+          component: path.resolve(`./src/templates/assetManagement.js`),
+          context: {
+            id: node.id,
+          },
+        })
+      } else if (node.template.templateName === "Environmental") {
+        createPage({
+          path: `${node.uri}`,
+          component: path.resolve(`./src/templates/environmental.js`),
+          context: {
+            id: node.id,
+          },
+        })
       } else if (node.template.templateName === "Default") {
         createPage({
           path: `${node.uri}`,

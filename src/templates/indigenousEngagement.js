@@ -4,24 +4,20 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PageIntro from "../components/templates/shared/PageIntro"
-import PageHeroWysiwyg from "../components/templates/shared/PageHeroWysiwyg"
 
-const StakeholderEngagement = props => {
-  const pageIntro = props.data.pageIntro.template.pageStakeholderEngagement
-  const pageHeroWysiwyg =
-    props.data.pageHeroWysiwyg.template.pageStakeholderEngagement
+const IndigenousEngagement = props => {
+  const pageIntro = props.data.pageIntro.template.pageIndigenousEngagement
 
   return (
     <Layout>
       <Seo />
       <PageIntro data={pageIntro} />
-      <PageHeroWysiwyg data={pageHeroWysiwyg} />
     </Layout>
   )
 }
 
-export const stakeholderEngagementTempQuery = graphql`
-  query stakeholderEngagementTempPage($id: String!) {
+export const indigenousEngagementTempQuery = graphql`
+  query indigenousEngagementTempPage($id: String!) {
     seoInfo: wpPage(id: { eq: $id }) {
       seoFields {
         swbThemeDescription
@@ -36,8 +32,8 @@ export const stakeholderEngagementTempQuery = graphql`
 
     pageIntro: wpPage(id: { eq: $id }) {
       template {
-        ... on WpTemplate_StakeholderEngagement {
-          pageStakeholderEngagement {
+        ... on WpTemplate_IndigenousEngagement {
+          pageIndigenousEngagement {
             pageIntroMainTitle
             pageIntroSubTitle
             pageIntroBlueContent
@@ -68,28 +64,7 @@ export const stakeholderEngagementTempQuery = graphql`
         }
       }
     }
-
-    pageHeroWysiwyg: wpPage(id: { eq: $id }) {
-      template {
-        ... on WpTemplate_StakeholderEngagement {
-          pageStakeholderEngagement {
-            pageHeroWithWysiwygTitle
-            pageHeroWithWysiwygIntroContent
-            pageHeroWithWysiwygWysiwyg
-            pageHeroWithWysiwygBackgroundImage {
-              altText
-              sourceUrl
-              localFile {
-                url
-                childImageSharp {
-                  gatsbyImageData(width: 2500)
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
 `
-export default StakeholderEngagement
+
+export default IndigenousEngagement
