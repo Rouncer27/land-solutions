@@ -4,14 +4,20 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PageIntro from "../components/templates/shared/PageIntro"
+import WysiwygIcon from "../components/templates/shared/WysiwygIcon"
+import PageHeroContained from "../components/templates/shared/PageHeroContained"
 
 const GisMapping = props => {
   const pageIntro = props.data.pageIntro.template.pageGisMapping
+  const wysiwygIcon = props.data.wysiwygIcon.template.pageGisMapping
+  const pageHeroContained = props.data.pageHeroContained.template.pageGisMapping
 
   return (
     <Layout>
       <Seo />
       <PageIntro data={pageIntro} />
+      <WysiwygIcon data={wysiwygIcon} />
+      <PageHeroContained data={pageHeroContained} />
     </Layout>
   )
 }
@@ -60,6 +66,48 @@ export const gisMappingTempQuery = graphql`
                 }
               }
             }
+          }
+        }
+      }
+    }
+
+    wysiwygIcon: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_GisMapping {
+          pageGisMapping {
+            wysiwygWithIconIcon {
+              altText
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 2500)
+                }
+              }
+            }
+            wysiwygWithIconTitle
+            wysiwygWithIconSubTitle
+            wysiwygWithIconWysiwyg
+          }
+        }
+      }
+    }
+
+    pageHeroContained: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_GisMapping {
+          pageGisMapping {
+            pageHeroContainedImage {
+              altText
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 2500)
+                }
+              }
+            }
+            pageHeroContainedContent
+            pageHeroContainedButtonText
+            pageHeroContainedSlug
           }
         }
       }

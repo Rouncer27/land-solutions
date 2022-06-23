@@ -15,7 +15,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
 const PageIntro = ({ data }) => {
-  console.log("data: ", data)
   const iconDisplay = getImage(
     data.pageIntroIcon.localFile.childImageSharp.gatsbyImageData
   )
