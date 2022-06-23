@@ -5,17 +5,21 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PageIntro from "../components/templates/shared/PageIntro"
 import PageHeroWysiwyg from "../components/templates/shared/PageHeroWysiwyg"
+import InfographicWysiwyg from "../components/templates/shared/InfographicWysiwyg"
 
 const StakeholderEngagement = props => {
   const pageIntro = props.data.pageIntro.template.pageStakeholderEngagement
   const pageHeroWysiwyg =
     props.data.pageHeroWysiwyg.template.pageStakeholderEngagement
+  const infographicWysiwyg =
+    props.data.infographicWysiwyg.template.pageStakeholderEngagement
 
   return (
     <Layout>
       <Seo />
       <PageIntro data={pageIntro} />
       <PageHeroWysiwyg data={pageHeroWysiwyg} />
+      <InfographicWysiwyg data={infographicWysiwyg} />
     </Layout>
   )
 }
@@ -77,6 +81,30 @@ export const stakeholderEngagementTempQuery = graphql`
             pageHeroWithWysiwygIntroContent
             pageHeroWithWysiwygWysiwyg
             pageHeroWithWysiwygBackgroundImage {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 2500)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    infographicWysiwyg: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_StakeholderEngagement {
+          pageStakeholderEngagement {
+            infographicWysiwygTitle
+            infographicWysiwygSubTitle
+            infographicWysiwygWysiwyg
+            infographicWysiwygButtonText
+            infographicWysiwygUrl
+            infographicWysiwygImage {
               altText
               sourceUrl
               localFile {

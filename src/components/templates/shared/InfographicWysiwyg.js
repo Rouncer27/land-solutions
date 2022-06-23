@@ -1,37 +1,56 @@
 import React from "react"
 import styled from "styled-components"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {
   B1Black,
   H2White,
   fonts,
   H1White,
+  H3Green,
+  medWrapper,
   colors,
-  H2Blue,
-  standardWrapper,
-  H3LightGreen,
+  H2Green,
+  H3Blue,
 } from "../../../styles/helpers"
 
-const TitleWysiwyg = ({ data }) => {
+const InfographicWysiwyg = ({ data }) => {
+  const imageDisplay = getImage(
+    data.infographicWysiwygImage.localFile.childImageSharp.gatsbyImageData
+  )
+  const imageAlt = data.infographicWysiwygImage.altText
   return (
     <SectionStyled>
       <div className="wrapper">
-        <div className="title">
-          <h2>{data.titleBesideSimpleContentTitle}</h2>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={data.titleBesideSimpleContentUrl}
-          >
-            {data.titleBesideSimpleContentButtonText}
-          </a>
+        <div className="infographic">
+          <GatsbyImage
+            image={imageDisplay}
+            alt={imageAlt}
+            layout="fullWidth"
+            formats={["auto", "webp", "avif"]}
+          />
         </div>
         <div className="content">
+          <div className="content__titles">
+            <h2>{data.infographicWysiwygTitle}</h2>
+            {data.infographicWysiwygSubTitle && (
+              <p>{data.infographicWysiwygSubTitle}</p>
+            )}
+          </div>
           <div
             className="content__wysiwyg"
-            dangerouslySetInnerHTML={{
-              __html: data.titleBesideSimpleContentWysiwyg,
-            }}
+            dangerouslySetInnerHTML={{ __html: data.infographicWysiwygWysiwyg }}
           />
+          <div className="content__link">
+            <p>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={data.infographicWysiwygUrl}
+              >
+                {data.infographicWysiwygButtonText}
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </SectionStyled>
@@ -39,46 +58,21 @@ const TitleWysiwyg = ({ data }) => {
 }
 
 const SectionStyled = styled.section`
-  margin: 5rem auto;
-
-  @media (min-width: 768px) {
-    margin: 7.5rem auto;
-  }
-
-  @media (min-width: 1025px) {
-    margin: 10rem auto;
-  }
+  margin: 2.5rem auto;
 
   .wrapper {
-    ${standardWrapper};
+    ${medWrapper};
   }
 
-  .title {
+  .infographic {
     width: 100%;
 
     @media (min-width: 768px) {
-      width: calc(40%);
-      text-align: right;
+      width: calc(30%);
     }
 
     @media (min-width: 1025px) {
-      width: calc(40% - 5rem);
-      margin-right: 5rem;
-    }
-
-    h2 {
-      ${H2Blue};
-      margin-top: 0;
-    }
-
-    a {
-      ${H3LightGreen};
-      font-weight: 300;
-      text-decoration: underline;
-
-      &:hover {
-        color: ${colors.colorPrimary};
-      }
+      width: calc(30%);
     }
   }
 
@@ -86,19 +80,30 @@ const SectionStyled = styled.section`
     width: 100%;
 
     @media (min-width: 768px) {
-      width: calc(60%);
+      width: calc(70%);
     }
 
     @media (min-width: 1025px) {
-      width: calc(60% - 9rem);
+      width: calc(70% - 5rem);
       margin-left: 5rem;
-      margin-right: 4rem;
+    }
+
+    &__titles {
+      width: 100%;
+
+      h2 {
+        ${H2Green};
+      }
+
+      p {
+        ${H3Blue};
+      }
     }
 
     &__wysiwyg {
       width: 100%;
       max-width: 100rem;
-      margin-top: 1rem;
+      margin-top: 2.5rem;
       margin-right: auto;
       margin-bottom: 2.5rem;
       margin-left: auto;
@@ -368,7 +373,19 @@ const SectionStyled = styled.section`
         width: auto;
       }
     }
+
+    &__link {
+      a {
+        ${H3Green};
+        font-weight: 300;
+        text-decoration: underline;
+
+        &:hover {
+          color: ${colors.colorPrimary};
+        }
+      }
+    }
   }
 `
 
-export default TitleWysiwyg
+export default InfographicWysiwyg
