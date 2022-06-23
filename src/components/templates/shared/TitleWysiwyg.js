@@ -5,39 +5,29 @@ import {
   H2White,
   fonts,
   H1White,
-  medWrapper,
   colors,
-  H2Green,
-  H3Blue,
+  H2Blue,
+  standardWrapper,
+  H3LightGreen,
 } from "../../../styles/helpers"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const WysiwygIcon = ({ data }) => {
-  const iconDisplay = getImage(
-    data.wysiwygWithIconIcon.localFile.childImageSharp.gatsbyImageData
-  )
-  const iconAlt = data.wysiwygWithIconIcon.altText
+const TitleWysiwyg = ({ data }) => {
+  console.log("TitleWysiwyg: ", data)
   return (
     <SectionStyled>
       <div className="wrapper">
-        <div className="icon">
-          <div className="icon__image">
-            <GatsbyImage
-              image={iconDisplay}
-              alt={iconAlt}
-              layout="fullWidth"
-              formats={["auto", "webp", "avif"]}
-            />
-          </div>
-          <div className="icon__titles">
-            <h2>{data.wysiwygWithIconTitle}</h2>
-            <p>{data.wysiwygWithIconSubTitle}</p>
-          </div>
+        <div className="title">
+          <h2>{data.titleBesideSimpleContentTitle}</h2>
+          <a href={data.titleBesideSimpleContentUrl}>
+            {data.titleBesideSimpleContentButtonText}
+          </a>
         </div>
         <div className="content">
           <div
-            className="wysiwyg"
-            dangerouslySetInnerHTML={{ __html: data.wysiwygWithIconWysiwyg }}
+            className="content__wysiwyg"
+            dangerouslySetInnerHTML={{
+              __html: data.titleBesideSimpleContentWysiwyg,
+            }}
           />
         </div>
       </div>
@@ -46,34 +36,45 @@ const WysiwygIcon = ({ data }) => {
 }
 
 const SectionStyled = styled.section`
-  .wrapper {
-    ${medWrapper};
+  margin: 5rem auto;
+
+  @media (min-width: 768px) {
+    margin: 7.5rem auto;
   }
 
-  .icon {
+  @media (min-width: 1025px) {
+    margin: 10rem auto;
+  }
+
+  .wrapper {
+    ${standardWrapper};
+  }
+
+  .title {
     width: 100%;
 
     @media (min-width: 768px) {
       width: calc(40%);
+      text-align: right;
     }
 
     @media (min-width: 1025px) {
-      width: calc(40% - 9rem);
+      width: calc(40% - 5rem);
       margin-right: 5rem;
-      margin-left: 4rem;
     }
 
-    &__image {
-      max-width: 11rem;
+    h2 {
+      ${H2Blue};
+      margin-top: 0;
     }
 
-    &__titles {
-      h2 {
-        ${H2Green};
-      }
+    a {
+      ${H3LightGreen};
+      font-weight: 300;
+      text-decoration: underline;
 
-      p {
-        ${H3Blue};
+      &:hover {
+        color: ${colors.colorPrimary};
       }
     }
   }
@@ -91,10 +92,10 @@ const SectionStyled = styled.section`
       margin-right: 4rem;
     }
 
-    .wysiwyg {
+    &__wysiwyg {
       width: 100%;
       max-width: 100rem;
-      margin-top: 2.5rem;
+      margin-top: 1rem;
       margin-right: auto;
       margin-bottom: 2.5rem;
       margin-left: auto;
@@ -367,4 +368,4 @@ const SectionStyled = styled.section`
   }
 `
 
-export default WysiwygIcon
+export default TitleWysiwyg
