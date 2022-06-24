@@ -1,13 +1,7 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import {
-  B2Black,
-  colors,
-  H3Green,
-  H3LightGreen,
-  medWrapper,
-} from "../../../styles/helpers"
+import { B2Black, H3Green, medWrapper } from "../../../styles/helpers"
 
 const ThreeColumns = ({ data }) => {
   console.log("ThreeColumns: ", data)

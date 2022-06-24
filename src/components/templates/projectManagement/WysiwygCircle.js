@@ -44,6 +44,7 @@ const WysiwygCircle = ({ data }) => {
           />
           <div className="main__link">
             <a
+              rel="noreferrer"
               target="_blank"
               href={`${data.pageWysiwygWithCircleImageButtonUrl}`}
             >

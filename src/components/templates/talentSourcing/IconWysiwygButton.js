@@ -1,64 +1,84 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 import {
-  B1White,
+  B1Black,
   H2White,
   fonts,
   H1White,
   medWrapper,
   colors,
+  Btn1One,
+  Btn1Two,
 } from "../../../styles/helpers"
 
-const ColorBGWysiwyg = ({ data }) => {
+const IconWysiwygButton = ({ data }) => {
   const imageDisplay = getImage(
-    data.colourBackgroundWysiwygImage.localFile.childImageSharp.gatsbyImageData
+    data.iconWithWysiwygIcon.localFile.childImageSharp.gatsbyImageData
   )
-  const imageAlt = data.colourBackgroundWysiwygImage.altText
+  const imageAlt = data.iconWithWysiwygIcon.altText
   return (
-    <SectionStyled>
+    <StyledDiv>
       <div className="wrapper">
-        <div className="image">
-          <GatsbyImage
-            image={imageDisplay}
-            alt={imageAlt}
-            layout="fullWidth"
-            formats={["auto", "webp", "avif"]}
-          />
+        <div className="icon">
+          <div className="icon__wrapper">
+            <GatsbyImage
+              image={imageDisplay}
+              alt={imageAlt}
+              layout="fullWidth"
+              formats={["auto", "webp", "avif"]}
+            />
+          </div>
         </div>
-        <div className="wysiwyg">
+        <div className="content">
           <div
-            className="wysiwyg__inner"
-            dangerouslySetInnerHTML={{
-              __html: data.colourBackgroundWysiwygWysiwyg,
-            }}
+            className="content__wysiwyg"
+            dangerouslySetInnerHTML={{ __html: data.iconWithWysiwygWysiwyg }}
           />
+          <div className="content__link">
+            <Link
+              className="content__link--one"
+              to={`/${data.iconWithWysiwygButtonOneSlug}`}
+            >
+              {data.iconWithWysiwygButtonOneText}
+            </Link>
+            <Link
+              className="content__link--two"
+              to={`/${data.iconWithWysiwygButtonTwoSlug}`}
+            >
+              {data.iconWithWysiwygButtonTwoText}
+            </Link>
+          </div>
         </div>
       </div>
-    </SectionStyled>
+    </StyledDiv>
   )
 }
 
-const SectionStyled = styled.section`
-  padding: 5rem 0 0;
-  background-color: ${colors.colorSecondary};
-
+const StyledDiv = styled.div`
   .wrapper {
     ${medWrapper};
   }
 
-  .image {
-    width: calc(30% - 3rem);
-    margin-right: 3rem;
+  .icon {
+    width: calc(15%);
+
+    &__wrapper {
+      max-width: 9rem;
+      margin-right: 0;
+      margin-left: auto;
+    }
   }
 
-  .wysiwyg {
-    width: calc(70% - 2rem);
-    margin-left: 2rem;
+  .content {
+    width: calc(85% - 6rem);
+    margin-left: 6rem;
 
-    &__inner {
+    &__wysiwyg {
       width: 100%;
       max-width: 100rem;
+      margin-top: 2.5rem;
       margin-right: auto;
       margin-bottom: 2.5rem;
       margin-left: auto;
@@ -120,7 +140,7 @@ const SectionStyled = styled.section`
         margin-bottom: 2.5rem;
 
         li {
-          ${B1White};
+          ${B1Black};
           position: relative;
           margin-bottom: 0.25em;
           padding-left: 0.75em;
@@ -145,7 +165,7 @@ const SectionStyled = styled.section`
         font-size: 1.6rem;
 
         li {
-          ${B1White};
+          ${B1Black};
           position: relative;
           margin-bottom: 0.75em;
           font-size: 1.6rem;
@@ -170,7 +190,7 @@ const SectionStyled = styled.section`
       }
 
       h3 {
-        ${B1White};
+        ${B1Black};
         margin-bottom: 5rem;
       }
 
@@ -187,10 +207,10 @@ const SectionStyled = styled.section`
       }
 
       p {
-        ${B1White};
+        ${B1Black};
 
         a {
-          ${B1White};
+          ${B1Black};
           transition: all 0.3s;
           color: #636466;
           font-weight: bold;
@@ -203,7 +223,7 @@ const SectionStyled = styled.section`
       }
 
       a {
-        ${B1White};
+        ${B1Black};
         transition: all 0.3s;
         color: #636466;
         font-weight: bold;
@@ -328,7 +348,19 @@ const SectionStyled = styled.section`
         width: auto;
       }
     }
+
+    &__link {
+      width: 100%;
+
+      &--one {
+        ${Btn1Two};
+      }
+
+      &--two {
+        ${Btn1One};
+      }
+    }
   }
 `
 
-export default ColorBGWysiwyg
+export default IconWysiwygButton

@@ -7,12 +7,15 @@ import PageIntro from "../components/templates/shared/PageIntro"
 import PageVideo from "../components/templates/talentSourcing/PageVideo"
 import ThreeColumns from "../components/templates/talentSourcing/ThreeColumns"
 import ColorBGWysiwyg from "../components/templates/talentSourcing/ColorBGWysiwyg"
+import IconWysiwygButton from "../components/templates/talentSourcing/IconWysiwygButton"
 
 const TalentSourcing = props => {
   const pageIntro = props.data.pageIntro.template.pageTalentSourcing
   const pageVideo = props.data.pageVideo.template.pageTalentSourcing
   const threeColumns = props.data.threeColumns.template.pageTalentSourcing
   const colorBGWysiwyg = props.data.colorBGWysiwyg.template.pageTalentSourcing
+  const iconWysiwygButton =
+    props.data.iconWysiwygButton.template.pageTalentSourcing
 
   return (
     <Layout>
@@ -21,6 +24,7 @@ const TalentSourcing = props => {
       <PageVideo data={pageVideo} />
       <ThreeColumns data={threeColumns} />
       <ColorBGWysiwyg data={colorBGWysiwyg} />
+      <IconWysiwygButton data={iconWysiwygButton} />
     </Layout>
   )
 }
@@ -119,6 +123,31 @@ export const talentSourcingTempQuery = graphql`
                 url
                 childImageSharp {
                   gatsbyImageData(width: 1500)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    iconWysiwygButton: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_TalentSourcing {
+          pageTalentSourcing {
+            iconWithWysiwygWysiwyg
+            iconWithWysiwygLinksTitle
+            iconWithWysiwygButtonOneText
+            iconWithWysiwygButtonOneSlug
+            iconWithWysiwygButtonTwoText
+            iconWithWysiwygButtonTwoSlug
+            iconWithWysiwygIcon {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 1000)
                 }
               }
             }

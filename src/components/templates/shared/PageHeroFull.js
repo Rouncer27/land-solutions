@@ -1,8 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import { Btn1Three, H3White, medWrapper } from "../../../styles/helpers"
+import { H3White } from "../../../styles/helpers"
 
 const PageHeroFull = ({ data }) => {
   const imageDisplay = getImage(
