@@ -11,7 +11,6 @@ import {
 } from "../../../styles/helpers"
 
 const LinkBlockLogos = ({ data }) => {
-  console.log("linkBlockLogos: ", data)
   const imageDisplay = getImage(
     data.linkBlockWithLogosImage.localFile.childImageSharp.gatsbyImageData
   )
