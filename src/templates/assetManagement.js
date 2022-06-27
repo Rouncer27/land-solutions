@@ -4,14 +4,18 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PageIntro from "../components/templates/shared/PageIntro"
+import Sections from "../components/templates/assetManagement/Sections"
 
 const AssetManagement = props => {
   const pageIntro = props.data.pageIntro.template.pageAssetManagement
+  const sectionsTabs =
+    props.data.sections.template.pageAssetManagement.tabsContent
 
   return (
     <Layout>
       <Seo />
       <PageIntro data={pageIntro} />
+      <Sections data={sectionsTabs} />
     </Layout>
   )
 }
@@ -57,6 +61,101 @@ export const assetManagementTempQuery = graphql`
                 url
                 childImageSharp {
                   gatsbyImageData(width: 1000)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    sections: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_AssetManagement {
+          pageAssetManagement {
+            tabsContent {
+              tabId
+              tabTitle
+              sections {
+                ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_Wysiwyg {
+                  content
+                  fieldGroupName
+                  subTitle
+                  title
+                }
+
+                ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_BoxLists {
+                  fieldGroupName
+                  boxLists {
+                    listItems {
+                      item
+                    }
+                    title
+                  }
+                }
+
+                ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_ImageWysiwyg {
+                  content
+                  fieldGroupName
+                  image {
+                    altText
+                    sourceUrl
+                    localFile {
+                      url
+                      childImageSharp {
+                        gatsbyImageData(width: 1000)
+                      }
+                    }
+                  }
+                }
+
+                ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_BoxLink {
+                  fieldGroupName
+                  buttonSlug
+                  buttonText
+                  content
+                }
+
+                ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_WysiwygLightTitles {
+                  fieldGroupName
+                  subTitle
+                  title
+                  wysiwyg
+                }
+
+                ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_IconsRows {
+                  fieldGroupName
+                  iconsRows {
+                    content
+                    title
+                    icon {
+                      altText
+                      sourceUrl
+                      localFile {
+                        url
+                        childImageSharp {
+                          gatsbyImageData(width: 1000)
+                        }
+                      }
+                    }
+                  }
+                }
+
+                ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_PageHero {
+                  buttonSlug
+                  buttonText
+                  image {
+                    altText
+                    sourceUrl
+                    localFile {
+                      url
+                      childImageSharp {
+                        gatsbyImageData(width: 1000)
+                      }
+                    }
+                  }
+                  content
+                  fieldGroupName
                 }
               }
             }
