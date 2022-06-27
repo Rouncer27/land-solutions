@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
+import styled from "styled-components"
+import { B2Blue, BigWrapper, colors } from "../../../styles/helpers"
 
 import Wysiwyg from "./Sections/Wysiwyg"
 import BoxLists from "./Sections/BoxLists"
@@ -9,16 +11,30 @@ import IconsRows from "./Sections/IconsRows"
 import PageHero from "./Sections/PageHero"
 
 const Sections = ({ data }) => {
-  console.log("data", data)
+  const [activeTab, setActiveTab] = useState(1)
+  const handleChangeActiveTab = index => {
+    setActiveTab(index)
+  }
   return (
-    <div>
+    <StyledSection>
       <div className="wrapper">
         <div className="tabs">
           {data.map((tab, index) => {
             return (
-              <div id={tab.tabId} key={index}>
-                <p>{tab.tabTitle}</p>
-              </div>
+              <TabStyled
+                activetab={index + 1 === activeTab}
+                id={tab.tabId}
+                key={index}
+              >
+                <button
+                  onClick={() => {
+                    handleChangeActiveTab(index + 1)
+                  }}
+                  type="button"
+                >
+                  {tab.tabTitle}
+                </button>
+              </TabStyled>
             )
           })}
         </div>
@@ -26,7 +42,11 @@ const Sections = ({ data }) => {
       <div className="tab-content">
         {data.map((section, index) => {
           return (
-            <div key={index}>
+            <ContentWrapper
+              activetab={index + 1 === activeTab}
+              data-id={section.tabId}
+              key={index}
+            >
               {section.sections.map((section, index) => {
                 switch (section?.fieldGroupName) {
                   case "Template_AssetManagement_Pageassetmanagement_tabsContent_Sections_Wysiwyg":
@@ -49,12 +69,48 @@ const Sections = ({ data }) => {
                     )
                 }
               })}
-            </div>
+            </ContentWrapper>
           )
         })}
       </div>
-    </div>
+    </StyledSection>
   )
 }
+
+const StyledSection = styled.section`
+  .wrapper {
+    ${BigWrapper};
+  }
+
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 0.1rem solid ${colors.colorPrimary};
+  }
+`
+
+const TabStyled = styled.div`
+  button {
+    ${B2Blue};
+    margin: 0;
+    padding: 1rem 2rem;
+    margin: auto 1rem;
+    border-top: 0.1rem solid ${colors.colorPrimary};
+    border-right: 0.1rem solid ${colors.colorPrimary};
+    border-bottom: 0rem solid ${colors.colorPrimary};
+    border-left: 0.1rem solid ${colors.colorPrimary};
+    background-color: ${props =>
+      props.activetab ? colors.colorPrimary : colors.white};
+    color: ${props => (props.activetab ? colors.white : colors.colorPrimary)};
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+`
+
+const ContentWrapper = styled.div`
+  display: ${props => (props.activetab ? "block" : "none")};
+`
 
 export default Sections
