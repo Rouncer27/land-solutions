@@ -4,8 +4,6 @@ import styled from "styled-components"
 import { B2Black, H3Green, medWrapper } from "../../../styles/helpers"
 
 const ThreeColumns = ({ data }) => {
-  console.log("ThreeColumns: ", data)
-
   return (
     <StyledSection>
       <div className="wrapper">

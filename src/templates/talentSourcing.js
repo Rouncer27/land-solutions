@@ -7,15 +7,22 @@ import PageIntro from "../components/templates/shared/PageIntro"
 import PageVideo from "../components/templates/talentSourcing/PageVideo"
 import ThreeColumns from "../components/templates/talentSourcing/ThreeColumns"
 import ColorBGWysiwyg from "../components/templates/talentSourcing/ColorBGWysiwyg"
+import PageHeroAnimate from "../components/templates/talentSourcing/PageHeroAnimate"
 import IconWysiwygButton from "../components/templates/talentSourcing/IconWysiwygButton"
+import TeamTestimonials from "../components/templates/shared/TeamTestimonials"
 
 const TalentSourcing = props => {
   const pageIntro = props.data.pageIntro.template.pageTalentSourcing
   const pageVideo = props.data.pageVideo.template.pageTalentSourcing
   const threeColumns = props.data.threeColumns.template.pageTalentSourcing
   const colorBGWysiwyg = props.data.colorBGWysiwyg.template.pageTalentSourcing
+  const pageHeroAnimate = props.data.pageHeroAnimate.template.pageTalentSourcing
   const iconWysiwygButton =
     props.data.iconWysiwygButton.template.pageTalentSourcing
+  const teamTestimonialsDisplay =
+    props.data.teamTestimonialsDisplay.template.pageTalentSourcing
+
+  const teamTestimonials = props.data.teamTestimonials.edges
 
   return (
     <Layout>
@@ -24,7 +31,12 @@ const TalentSourcing = props => {
       <PageVideo data={pageVideo} />
       <ThreeColumns data={threeColumns} />
       <ColorBGWysiwyg data={colorBGWysiwyg} />
+      <PageHeroAnimate data={pageHeroAnimate} />
       <IconWysiwygButton data={iconWysiwygButton} />
+      <TeamTestimonials
+        data={teamTestimonialsDisplay}
+        testimonials={teamTestimonials}
+      />
     </Layout>
   )
 }
@@ -131,6 +143,28 @@ export const talentSourcingTempQuery = graphql`
       }
     }
 
+    pageHeroAnimate: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_TalentSourcing {
+          pageTalentSourcing {
+            pageHeroAnimationText {
+              text
+            }
+            pageHeroAnimationImage {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 1500)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
     iconWysiwygButton: wpPage(id: { eq: $id }) {
       template {
         ... on WpTemplate_TalentSourcing {
@@ -151,6 +185,37 @@ export const talentSourcingTempQuery = graphql`
                 }
               }
             }
+          }
+        }
+      }
+    }
+
+    teamTestimonialsDisplay: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_TalentSourcing {
+          pageTalentSourcing {
+            teamTestimonialsDisplay
+            teamTestimonialsBackgroundImage {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 2000)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    teamTestimonials: allWpTeamTestimonial {
+      edges {
+        node {
+          title
+          testimonials {
+            testimonialContent
           }
         }
       }
