@@ -5,7 +5,6 @@ import {
   Btn1One,
   colors,
   H2Blue,
-  H3Blue,
   standardWrapper,
 } from "../../../../styles/helpers"
 
