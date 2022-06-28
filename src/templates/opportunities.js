@@ -8,12 +8,20 @@ import WysiwygIcon from "../components/templates/shared/WysiwygIconRepeater"
 import ContentImage from "../components/templates/opportunities/ContentImage"
 import WysiwygWithImage from "../components/templates/shared/WysiwygWithImage"
 import PageHeroContained from "../components/templates/shared/PageHeroContained"
+import ListLinks from "../components/templates/opportunities/ListLinks"
 
 const Opportunities = props => {
   console.log(props)
   const hero = props?.data?.hero?.template?.pageOpportunities
   const wysiwygIcon =
     props?.data?.wysiwygIcon?.template?.pageOpportunities?.wysiwygWithIcon
+
+  const links = props?.data?.links?.template?.pageOpportunities?.links
+  const linksTitle = props?.data?.links?.template?.pageOpportunities?.linksTitle
+  const linksTwo = props?.data?.links?.template?.pageOpportunities?.links
+  const linksTwoTitle =
+    props?.data?.links?.template?.pageOpportunities?.linksTitle
+
   const contentImage = props?.data?.contentImage?.template?.pageOpportunities
   const wysiwygWithImage =
     props.data.wysiwygWithImage.template.pageOpportunities
@@ -25,7 +33,9 @@ const Opportunities = props => {
       <Seo />
       <PageHero data={hero} />
       <WysiwygIcon data={wysiwygIcon} />
+      <ListLinks data={links} title={linksTitle} />
       <ContentImage data={contentImage} />
+      <ListLinks data={linksTwo} title={linksTwoTitle} />
       <WysiwygWithImage data={wysiwygWithImage} />
       <PageHeroContained data={pageHeroContained} />
     </Layout>
@@ -92,6 +102,20 @@ export const opportunitiesTempQuery = graphql`
       }
     }
 
+    links: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_Opportunities {
+          pageOpportunities {
+            linksTitle
+            links {
+              text
+              url
+            }
+          }
+        }
+      }
+    }
+
     contentImage: wpPage(id: { eq: $id }) {
       template {
         ... on WpTemplate_Opportunities {
@@ -107,6 +131,20 @@ export const opportunitiesTempQuery = graphql`
                   gatsbyImageData(width: 1000)
                 }
               }
+            }
+          }
+        }
+      }
+    }
+
+    linksTwo: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_Opportunities {
+          pageOpportunities {
+            linksTitle
+            links {
+              text
+              url
             }
           }
         }
