@@ -1,9 +1,10 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import { H1White, H2White } from "../../../styles/helpers"
+import { H1White, H2White, H3White } from "../../../styles/helpers"
 
 const PageHero = ({ data }) => {
+  console.log("PageHero: ", data.pageHeroIntroSubTitle)
   const imageDisplay = getImage(
     data.pageHeroIntroImage.localFile.childImageSharp.gatsbyImageData
   )
@@ -14,6 +15,9 @@ const PageHero = ({ data }) => {
         <div className="hero-content__inner">
           <h1>{data.pageHeroIntroTitle}</h1>
           {data.pageHeroIntroSubTitle && <p>{data.pageHeroIntroSubTitle}</p>}
+          {data.pageHeroIntroContent && (
+            <p className="content">{data.pageHeroIntroContent}</p>
+          )}
         </div>
       </div>
       <div className="hero-image">
@@ -78,6 +82,11 @@ const SectionStyled = styled.section`
     p {
       ${H2White};
       margin: 0;
+    }
+
+    p.content {
+      ${H3White};
+      margin-top: 2.5rem;
     }
   }
 
