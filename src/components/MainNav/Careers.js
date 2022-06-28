@@ -160,7 +160,7 @@ const Careers = () => {
       {hasSub && (
         <SubMenu
           isActive={isSubActive}
-          subTitle="Contact"
+          subTitle="Careers"
           subIcon={navData.careersTopPageIcon}
           subMenuOne={hasSubOne}
           subMenuTwo={hasSubTwo}
