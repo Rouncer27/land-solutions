@@ -9,6 +9,7 @@ import ContentBlock from "../components/templates/home/ContentBlock"
 import ImageStrip from "../components/templates/shared/ImageStrip"
 import TeamTestimonials from "../components/templates/shared/TeamTestimonials"
 import WysiwygWithImage from "../components/templates/shared/WysiwygWithImage"
+import PageHeroQuote from "../components/templates/shared/PageHeroQuote"
 
 const Careers = props => {
   console.log(props)
@@ -26,9 +27,8 @@ const Careers = props => {
   const teamTestimonialsDisplay =
     props.data.teamTestimonialsDisplay.template.pageCareers
   const teamTestimonials = props.data.teamTestimonials.edges
-
   const wysiwygWithImage = props.data.wysiwygWithImage.template.pageCareers
-
+  const pageHeroQuote = props.data.pageHeroQuote.template.pageCareers
   return (
     <Layout>
       <Seo />
@@ -44,6 +44,7 @@ const Careers = props => {
       <WysiwygWithImage data={wysiwygWithImage} />
       <ImageStrip data={imageStripTwo} />
       <WysiwygIcon data={wysiwygIconThree} />
+      <PageHeroQuote data={pageHeroQuote} />
     </Layout>
   )
 }
@@ -246,6 +247,26 @@ export const careersTempQuery = graphql`
             wysiwygWithImageSubTitle
             wysiwygWithImageWysiwyg
             wysiwygWithImageImage {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 1000)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    pageHeroQuote: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_Careers {
+          pageCareers {
+            pageHeroCenterQuoteContent
+            pageHeroCenterQuoteImage {
               altText
               sourceUrl
               localFile {

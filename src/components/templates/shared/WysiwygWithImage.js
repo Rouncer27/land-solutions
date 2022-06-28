@@ -5,7 +5,6 @@ import {
   B1Black,
   colors,
   H3Blue,
-  H3LightGreen,
   medWrapper,
   H2Blue,
   fonts,
