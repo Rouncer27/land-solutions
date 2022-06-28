@@ -8,6 +8,7 @@ import WysiwygIcon from "../components/templates/shared/WysiwygIconRepeater"
 import ContentBlock from "../components/templates/home/ContentBlock"
 import ImageStrip from "../components/templates/shared/ImageStrip"
 import TeamTestimonials from "../components/templates/shared/TeamTestimonials"
+import WysiwygWithImage from "../components/templates/shared/WysiwygWithImage"
 
 const Careers = props => {
   console.log(props)
@@ -26,6 +27,8 @@ const Careers = props => {
     props.data.teamTestimonialsDisplay.template.pageCareers
   const teamTestimonials = props.data.teamTestimonials.edges
 
+  const wysiwygWithImage = props.data.wysiwygWithImage.template.pageCareers
+
   return (
     <Layout>
       <Seo />
@@ -38,6 +41,7 @@ const Careers = props => {
         data={teamTestimonialsDisplay}
         testimonials={teamTestimonials}
       />
+      <WysiwygWithImage data={wysiwygWithImage} />
       <ImageStrip data={imageStripTwo} />
       <WysiwygIcon data={wysiwygIconThree} />
     </Layout>
@@ -229,6 +233,28 @@ export const careersTempQuery = graphql`
           title
           testimonials {
             testimonialContent
+          }
+        }
+      }
+    }
+
+    wysiwygWithImage: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_Careers {
+          pageCareers {
+            wysiwygWithImageTitle
+            wysiwygWithImageSubTitle
+            wysiwygWithImageWysiwyg
+            wysiwygWithImageImage {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 1000)
+                }
+              }
+            }
           }
         }
       }
