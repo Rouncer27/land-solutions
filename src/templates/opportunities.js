@@ -6,14 +6,16 @@ import Seo from "../components/Seo"
 import PageHero from "../components/templates/shared/PageHero"
 import WysiwygIcon from "../components/templates/shared/WysiwygIconRepeater"
 import ContentImage from "../components/templates/opportunities/ContentImage"
+import WysiwygWithImage from "../components/templates/shared/WysiwygWithImage"
 
 const Opportunities = props => {
   console.log(props)
   const hero = props?.data?.hero?.template?.pageOpportunities
   const wysiwygIcon =
     props?.data?.wysiwygIcon?.template?.pageOpportunities?.wysiwygWithIcon
-
   const contentImage = props?.data?.contentImage?.template?.pageOpportunities
+  const wysiwygWithImage =
+    props.data.wysiwygWithImage.template.pageOpportunities
 
   return (
     <Layout>
@@ -21,6 +23,7 @@ const Opportunities = props => {
       <PageHero data={hero} />
       <WysiwygIcon data={wysiwygIcon} />
       <ContentImage data={contentImage} />
+      <WysiwygWithImage data={wysiwygWithImage} />
     </Layout>
   )
 }
@@ -113,6 +116,10 @@ export const opportunitiesTempQuery = graphql`
             wysiwygWithImageTitle
             wysiwygWithImageSubTitle
             wysiwygWithImageWysiwyg
+            wysiwygWithImageButtonRequired
+            wysiwygWithImageType
+            wysiwygWithImageUrl
+            wysiwygWithImageEmail
             wysiwygWithImageImage {
               altText
               sourceUrl

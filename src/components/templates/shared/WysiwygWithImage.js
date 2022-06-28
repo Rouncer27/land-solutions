@@ -13,6 +13,7 @@ import {
 } from "../../../styles/helpers"
 
 const WysiwygWithImage = ({ data }) => {
+  console.log("WysiwygWithImage: ", data)
   const image = getImage(
     data?.wysiwygWithImageImage?.localFile?.childImageSharp?.gatsbyImageData
   )
