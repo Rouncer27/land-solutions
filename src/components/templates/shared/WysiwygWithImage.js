@@ -10,10 +10,10 @@ import {
   fonts,
   H1Blue,
   H2Green,
+  Btn1One,
 } from "../../../styles/helpers"
 
 const WysiwygWithImage = ({ data }) => {
-  console.log("WysiwygWithImage: ", data)
   const image = getImage(
     data?.wysiwygWithImageImage?.localFile?.childImageSharp?.gatsbyImageData
   )
@@ -32,6 +32,23 @@ const WysiwygWithImage = ({ data }) => {
               className="content__wysiwyg"
               dangerouslySetInnerHTML={{ __html: data.wysiwygWithImageWysiwyg }}
             />
+            {data.wysiwygWithImageButtonRequired && (
+              <div className="content__links">
+                {data.wysiwygWithImageType === "email" ? (
+                  <a href={`mailto: ${data.wysiwygWithImageEmail}`}>
+                    {data.wysiwygWithImageButtonText}
+                  </a>
+                ) : (
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href={`${data.wysiwygWithImageUrl}`}
+                  >
+                    {data.wysiwygWithImageButtonText}
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </BlockDiv>
       </div>
@@ -73,6 +90,14 @@ const BlockDiv = styled.div`
       max-width: 75rem;
       margin-right: auto;
       margin-left: 2rem;
+    }
+
+    &__links {
+      width: 100%;
+
+      a {
+        ${Btn1One};
+      }
     }
 
     h2 {

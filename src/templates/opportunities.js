@@ -7,6 +7,7 @@ import PageHero from "../components/templates/shared/PageHero"
 import WysiwygIcon from "../components/templates/shared/WysiwygIconRepeater"
 import ContentImage from "../components/templates/opportunities/ContentImage"
 import WysiwygWithImage from "../components/templates/shared/WysiwygWithImage"
+import PageHeroContained from "../components/templates/shared/PageHeroContained"
 
 const Opportunities = props => {
   console.log(props)
@@ -16,6 +17,8 @@ const Opportunities = props => {
   const contentImage = props?.data?.contentImage?.template?.pageOpportunities
   const wysiwygWithImage =
     props.data.wysiwygWithImage.template.pageOpportunities
+  const pageHeroContained =
+    props.data.pageHeroContained.template.pageOpportunities
 
   return (
     <Layout>
@@ -24,6 +27,7 @@ const Opportunities = props => {
       <WysiwygIcon data={wysiwygIcon} />
       <ContentImage data={contentImage} />
       <WysiwygWithImage data={wysiwygWithImage} />
+      <PageHeroContained data={pageHeroContained} />
     </Layout>
   )
 }
@@ -117,6 +121,7 @@ export const opportunitiesTempQuery = graphql`
             wysiwygWithImageSubTitle
             wysiwygWithImageWysiwyg
             wysiwygWithImageButtonRequired
+            wysiwygWithImageButtonText
             wysiwygWithImageType
             wysiwygWithImageUrl
             wysiwygWithImageEmail
@@ -130,6 +135,32 @@ export const opportunitiesTempQuery = graphql`
                 }
               }
             }
+          }
+        }
+      }
+    }
+
+    pageHeroContained: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_Opportunities {
+          pageOpportunities {
+            pageHeroContainedImage {
+              altText
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 2500)
+                }
+              }
+            }
+            pageHeroContainedContent
+            pageHeroContainedButtonText
+            pageHeroContainedSlug
+            pageHeroContainedSecondButtonRequired
+            pageHeroContainedSecondButtonText
+            pageHeroContainedSecondButtonType
+            pageHeroContainedSecondButtonSlug
+            pageHeroContainedSecondButtonUrl
           }
         }
       }

@@ -2,9 +2,15 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import { Btn1Three, H3White, medWrapper } from "../../../styles/helpers"
+import {
+  Btn1One,
+  Btn1Three,
+  H3White,
+  medWrapper,
+} from "../../../styles/helpers"
 
 const PageHeroContained = ({ data }) => {
+  console.log("PageHeroContained: ", data)
   const imageDisplay = getImage(
     data.pageHeroContainedImage.localFile.childImageSharp.gatsbyImageData
   )
@@ -23,6 +29,27 @@ const PageHeroContained = ({ data }) => {
               <Link to={`/${data.pageHeroContainedSlug}`}>
                 {data.pageHeroContainedButtonText}
               </Link>
+              {data.pageHeroContainedSecondButtonRequired && (
+                <>
+                  {data.pageHeroContainedSecondButtonType === "external" ? (
+                    <a
+                      className="btn-two"
+                      target="_blank"
+                      rel="noreferrer"
+                      href={data.pageHeroContainedSecondButtonUrl}
+                    >
+                      {data.pageHeroContainedSecondButtonText}
+                    </a>
+                  ) : (
+                    <Link
+                      className="btn-two"
+                      to={`/${data.pageHeroContainedSecondButtonSlug}`}
+                    >
+                      {data.pageHeroContainedSecondButtonText}
+                    </Link>
+                  )}
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -65,18 +92,18 @@ const StyledSection = styled.section`
     width: 100%;
     height: 100%;
     background: linear-gradient(
-      256deg,
-      rgba(0, 51, 70, 0.7) 80%,
-      rgba(0, 0, 0, 0) 80%
+      258deg,
+      rgba(0, 51, 70, 0.7) 85%,
+      rgba(0, 0, 0, 0) 85%
     );
     z-index: 100;
 
     @media (min-width: 768px) {
-      width: 55%;
+      width: 65%;
     }
 
     &__inner {
-      padding-left: 15rem;
+      padding-left: 17.5rem;
       padding-right: 6rem;
 
       p {
@@ -85,6 +112,11 @@ const StyledSection = styled.section`
 
       a {
         ${Btn1Three};
+      }
+
+      a.btn-two {
+        ${Btn1One};
+        margin-left: 1rem;
       }
     }
   }
