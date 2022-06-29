@@ -5,8 +5,8 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PageHero from "../components/templates/shared/PageHero"
 
-const Contact = props => {
-  const hero = props?.data?.hero?.template?.pageContact
+const Locations = props => {
+  const hero = props?.data?.hero?.template?.pageLocations
   return (
     <Layout>
       <Seo />
@@ -15,8 +15,8 @@ const Contact = props => {
   )
 }
 
-export const contactTempQuery = graphql`
-  query contactTempPage($id: String!) {
+export const locationsTempQuery = graphql`
+  query locationsTempPage($id: String!) {
     seoInfo: wpPage(id: { eq: $id }) {
       seoFields {
         swbThemeDescription
@@ -31,8 +31,8 @@ export const contactTempQuery = graphql`
 
     hero: wpPage(id: { eq: $id }) {
       template {
-        ... on WpTemplate_Contact {
-          pageContact {
+        ... on WpTemplate_Locations {
+          pageLocations {
             pageHeroIntroSubTitle
             pageHeroIntroTitle
             pageHeroIntroContent
@@ -53,4 +53,4 @@ export const contactTempQuery = graphql`
   }
 `
 
-export default Contact
+export default Locations
