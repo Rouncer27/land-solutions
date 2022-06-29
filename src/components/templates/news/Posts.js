@@ -208,7 +208,7 @@ const Posts = () => {
             const imageAlt = post.node.post.featuredImage.altText
             return (
               <PostCard key={post.node.id}>
-                <Link to={`/news-updates/${post.node.slug}`}>
+                <Link to={`/insights/${post.node.slug}`}>
                   <div className="post-image">
                     <div className="post-image__wrap">
                       <GatsbyImage
