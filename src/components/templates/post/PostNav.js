@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { B1Blue, Btn1Blue, medWrapper } from "../../../styles/helpers"
+import { B1Green, Btn1One, medWrapper } from "../../../styles/helpers"
 
 const PostNav = ({ data }) => {
   return (
@@ -61,7 +61,7 @@ const PostNavStyled = styled.div`
 
     a,
     button {
-      ${B1Blue};
+      ${B1Green};
       border: none;
       background: none;
       font-weight: bold;
@@ -73,7 +73,7 @@ const PostNavStyled = styled.div`
     }
 
     a.btn-back {
-      ${Btn1Blue};
+      ${Btn1One};
     }
   }
 `

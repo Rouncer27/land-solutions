@@ -128,7 +128,8 @@ const StyledSection = styled.section`
       }
 
       &__inner {
-        padding-top: 8.5rem;
+        padding-top: 3rem;
+        padding-right: 2rem;
       }
 
       &__link {

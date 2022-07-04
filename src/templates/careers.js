@@ -12,7 +12,6 @@ import WysiwygWithImage from "../components/templates/shared/WysiwygWithImage"
 import PageHeroQuote from "../components/templates/shared/PageHeroQuote"
 
 const Careers = props => {
-  console.log(props)
   const hero = props?.data?.hero?.template?.pageCareers
   const wysiwygIcon =
     props?.data?.wysiwygIcon?.template?.pageCareers?.wysiwygWithIcon
