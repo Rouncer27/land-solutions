@@ -18,7 +18,7 @@ const ListLinks = ({ data, title }) => {
           {data.map((link, index) => {
             return (
               <li key={index}>
-                <a target="_blank" href={link.url}>
+                <a target="_blank" rel="noreferrer" href={link.url}>
                   {link.text}
                 </a>
               </li>
