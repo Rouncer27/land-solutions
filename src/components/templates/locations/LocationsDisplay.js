@@ -37,9 +37,7 @@ const LocationsDisplay = ({ data }) => {
           )
         })}
       </div>
-      <div className="map-image">
-        <img src={mapImg} alt="Map" />
-      </div>
+      <div className="map-image" />
     </StyledDiv>
   )
 }
@@ -49,6 +47,7 @@ const StyledDiv = styled.div`
   padding-top: 10rem;
   padding-bottom: 5rem;
   background-color: ${colors.colorSecondary};
+  overflow: hidden;
 
   .wrapper {
     ${standardWrapper};
@@ -60,8 +59,15 @@ const StyledDiv = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
+    max-width: 160rem;
+    margin: auto;
+    background-image: url("${mapImg}");
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
   }
 `
 
