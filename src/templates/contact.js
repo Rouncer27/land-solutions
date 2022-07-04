@@ -12,7 +12,7 @@ const Contact = props => {
   const hero = props?.data?.hero?.template?.pageContact
   const contactInfo = props?.data?.contactInfo?.template?.pageContact
   const contactForm = props?.data?.contactForm?.template?.pageContact
-  const linkListBlock = props?.linkListBlock?.hero?.template?.pageContact
+  const linkListBlock = props?.data?.linkListBlock?.template?.pageContact
 
   return (
     <Layout>
