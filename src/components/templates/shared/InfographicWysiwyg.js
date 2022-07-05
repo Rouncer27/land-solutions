@@ -66,9 +66,11 @@ const SectionStyled = styled.section`
 
   .infographic {
     width: 100%;
+    margin-bottom: 3rem;
 
     @media (min-width: 768px) {
       width: calc(30%);
+      margin-bottom: 0;
     }
 
     @media (min-width: 1025px) {
@@ -80,7 +82,8 @@ const SectionStyled = styled.section`
     width: 100%;
 
     @media (min-width: 768px) {
-      width: calc(70%);
+      width: calc(70% - 5rem);
+      margin-left: 5rem;
     }
 
     @media (min-width: 1025px) {

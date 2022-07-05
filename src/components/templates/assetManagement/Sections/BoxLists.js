@@ -31,6 +31,7 @@ const StyledSection = styled.section`
 
 const BoxItem = styled.div`
   width: 100%;
+  margin-bottom: 2.5rem;
   padding: 2.5rem 6rem 5rem;
   border: solid 1px #1f527f;
 

@@ -41,18 +41,35 @@ const ImageWysiwyg = ({ data }) => {
 
 const StyledSection = styled.section`
   position: relative;
-  margin-top: 5rem;
+
+  @media (min-width: 768px) {
+    margin-top: 5rem;
+  }
 
   .wrapper {
     ${medWrapper};
   }
 
   .side-image {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
-    width: 25rem;
+    width: 15rem;
     height: 100%;
+
+    @media (min-width: 768px) {
+      display: block;
+      width: 15rem;
+    }
+
+    @media (min-width: 1025px) {
+      width: 21rem;
+    }
+
+    @media (min-width: 1200px) {
+      width: 25rem;
+    }
   }
 
   .content-wrap {
@@ -66,7 +83,8 @@ const StyledSection = styled.section`
       width: calc(100%);
 
       @media (min-width: 768px) {
-        width: calc(85%);
+        width: calc(80%);
+        margin-left: 20%;
       }
 
       @media (min-width: 1025px) {

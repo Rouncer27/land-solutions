@@ -30,6 +30,7 @@ const SectionStyled = styled.section`
 
   .content {
     width: 100%;
+    padding: 3.5rem 2rem;
     border: 0.1rem solid ${colors.colorPrimary};
     border-radius: 0.7rem;
     box-shadow: 2px 4px 7px 0 rgba(0, 0, 0, 0.16);

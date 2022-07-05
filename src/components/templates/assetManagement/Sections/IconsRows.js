@@ -42,10 +42,12 @@ const StyledSection = styled.section`
 
 const IconRow = styled.div`
   width: 100%;
+  margin-bottom: 3rem;
 
   @media (min-width: 768px) {
     width: calc((100% / 3) - 2rem);
     margin: 1rem;
+    margin-bottom: 0;
   }
 
   .icon {

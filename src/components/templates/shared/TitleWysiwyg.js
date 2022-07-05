@@ -57,7 +57,8 @@ const SectionStyled = styled.section`
     width: 100%;
 
     @media (min-width: 768px) {
-      width: calc(40%);
+      width: calc(40% - 2rem);
+      margin-right: 2rem;
       text-align: right;
     }
 
@@ -86,7 +87,8 @@ const SectionStyled = styled.section`
     width: 100%;
 
     @media (min-width: 768px) {
-      width: calc(60%);
+      width: calc(60% - 2rem);
+      margin-left: 2rem;
     }
 
     @media (min-width: 1025px) {

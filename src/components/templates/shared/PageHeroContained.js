@@ -83,6 +83,9 @@ const StyledSection = styled.section`
   }
 
   .content {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     align-items: center;
     width: 100%;
