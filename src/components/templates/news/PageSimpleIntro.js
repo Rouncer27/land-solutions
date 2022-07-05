@@ -13,7 +13,11 @@ const PageSimpleIntro = ({ data }) => {
 }
 
 const StyledDiv = styled.div`
-  margin: 7.5rem auto;
+  margin: 2rem auto;
+
+  @media (min-width: 768px) {
+    margin: 7.5rem auto;
+  }
 
   .wrapper {
     ${standardWrapper}

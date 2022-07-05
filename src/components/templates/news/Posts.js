@@ -9,6 +9,7 @@ import {
   colors,
   H3LightGreen,
 } from "../../../styles/helpers"
+import SpinnerAnimation from "../../Animations/SpinnerAnimation"
 
 const getData = graphql`
   {
@@ -180,7 +181,7 @@ const Posts = () => {
                     }}
                   >
                     {cat.node.name}
-                    <span>&#124;</span>
+                    <span className="pipe">&#124;</span>
                   </button>
                 </li>
               )
@@ -268,6 +269,27 @@ const Posts = () => {
           </button>
         </div>
       </div>
+      {postsStore.loading && (
+        <LoadingModal>
+          <div className="innerLoading">
+            <div className="innerLoading__spinner">
+              <SpinnerAnimation />
+            </div>
+            <p>Loading more {activeCat === "all" ? "" : activeCat} posts</p>
+          </div>
+        </LoadingModal>
+      )}
+
+      {postsStore.catChange && (
+        <LoadingModal>
+          <div className="innerLoading">
+            <div className="innerLoading__spinner">
+              <SpinnerAnimation />
+            </div>
+            <p>Loading Category</p>
+          </div>
+        </LoadingModal>
+      )}
     </StyledSection>
   )
 }
@@ -276,6 +298,34 @@ const StyledSection = styled.section`
   .wrapper {
     ${standardWrapper};
     justify-content: flex-start;
+  }
+
+  .moreLink {
+    width: 100%;
+    text-align: center;
+
+    button {
+      ${B1OffBlack};
+      padding: 1rem 2rem;
+      background: ${colors.white};
+      border: 0.1rem solid ${colors.black};
+      transition: all 0.3s ease-out;
+      cursor: pointer;
+
+      &:hover {
+        color: ${colors.white};
+        background: ${colors.colorSecondary};
+        border-color: ${colors.colorSecondary};
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        color: ${colors.black};
+        background: ${colors.white};
+        border-color: ${colors.black};
+        cursor: not-allowed;
+      }
+    }
   }
 `
 
@@ -437,10 +487,52 @@ const CatNav = styled.div`
         }
 
         span {
-          display: inline-block;
-          margin-left: 1rem;
+          display: none;
+          @media (min-width: 768px) {
+            display: inline-block;
+            margin-left: 1rem;
+          }
         }
       }
+    }
+  }
+`
+
+const LoadingModal = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 66, 144, 0.7);
+  z-index: 999999;
+
+  .innerLoading {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    background-color: ${colors.white};
+    width: 40rem;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
+
+    &__spinner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-self: center;
+      width: 100%;
+      height: 3.5rem;
+      margin: 0 auto;
     }
   }
 `
