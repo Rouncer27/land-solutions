@@ -381,8 +381,8 @@ const StyledDiv = styled.div`
 `
 
 const InputField = styled.div`
-  width: calc(100% - 4rem);
-  margin: 1rem 2rem;
+  width: calc(100%);
+  margin: 1rem 0;
   padding: 1rem 0;
 
   @media (min-width: 768px) {
@@ -441,8 +441,8 @@ const InputField = styled.div`
 `
 
 const DropdownInputStyled = styled.div`
-  width: calc(100% - 4rem);
-  margin: 1rem 2rem;
+  width: calc(100%);
+  margin: 1rem 0;
   padding: 1rem 0;
 
   @media (min-width: 768px) {

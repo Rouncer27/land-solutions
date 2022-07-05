@@ -55,18 +55,29 @@ const ContactInfo = ({ data }) => {
 }
 
 const SectionStyled = styled.section`
-  padding: 9rem 0 4.5rem;
+  @media (min-width: 768px) {
+    padding: 9rem 0 4.5rem;
+  }
 
   .wrapper {
     ${standardWrapper};
+    justify-content: flex-start;
+
+    @media (min-width: 768px) {
+      justify-content: center;
+    }
   }
 
   .logo {
     width: 100%;
+    max-width: 20rem;
+    margin-bottom: 2.5rem;
 
     @media (min-width: 768px) {
       width: calc(15% - 2rem);
+      max-width: 100%;
       margin-right: 2rem;
+      margin-bottom: 0;
     }
   }
 

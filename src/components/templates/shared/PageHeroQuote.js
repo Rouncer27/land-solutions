@@ -89,6 +89,11 @@ const SectionStyled = styled.section`
       width: 100%;
       max-width: 75rem;
       margin: 2rem auto;
+      padding: 2rem;
+
+      @media (min-width: 768px) {
+        padding: 0;
+      }
     }
 
     p {

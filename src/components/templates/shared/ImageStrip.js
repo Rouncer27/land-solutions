@@ -37,7 +37,8 @@ const StyledSection = styled.div`
 `
 
 const ImageWrap = styled.div`
-  width: calc(100%);
+  width: calc((100% / 2) - 1rem);
+  margin: 0.5rem;
 
   @media (min-width: 768px) {
     width: calc((100% / 4) - 1rem);

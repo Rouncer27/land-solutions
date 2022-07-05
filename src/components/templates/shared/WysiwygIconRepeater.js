@@ -52,13 +52,16 @@ const BlockDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  padding: 2rem 5rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding: 2rem 0;
   box-shadow: 4px 8px 4px 0 rgba(0, 0, 0, 0.1);
 
   @media (min-width: 768px) {
     justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 2rem 5rem;
   }
 
   .icon {

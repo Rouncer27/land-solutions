@@ -9,6 +9,7 @@ import {
   B1White,
   Btn1Three,
   standardWrapper,
+  Btn1One,
 } from "../../../styles/helpers"
 
 const LinkListBlock = ({ data }) => {
@@ -86,6 +87,11 @@ const StyledSection = styled.section`
 
       li {
         ${B1OffBlack};
+        margin-bottom: 1rem;
+
+        @media (min-width: 768px) {
+          margin-bottom: 0;
+        }
 
         a {
           ${B1OffBlack};
@@ -107,6 +113,28 @@ const StyledSection = styled.section`
     @media (min-width: 768px) {
       width: calc(50% - 1rem);
       margin: 2rem 0.5rem;
+    }
+
+    .icon {
+      @media (min-width: 768px) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .gatsby-image-wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: calc(100%);
+          height: 100%;
+
+          img {
+            width: 100% !important;
+          }
+        }
+      }
     }
 
     .content {
@@ -138,8 +166,12 @@ const StyledSection = styled.section`
         right: 4rem;
 
         a {
-          ${Btn1Three};
+          ${Btn1One};
           text-transform: uppercase;
+
+          @media (min-width: 768px) {
+            ${Btn1Three};
+          }
         }
       }
 

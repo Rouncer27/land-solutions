@@ -169,13 +169,21 @@ const Slide = styled.div`
       position: relative;
       max-width: 58.5rem;
       margin-left: auto;
-      padding: 10rem 8rem 10rem 2rem;
+      padding: 5rem 2rem;
+
+      @media (min-width: 768px) {
+        padding: 10rem 8rem 10rem 2rem;
+      }
 
       .quote {
         position: absolute;
-        top: 0;
+        top: -2rem;
         font-size: 9.5rem;
         color: ${colors.colorTertiary};
+
+        @media (min-width: 768px) {
+          top: 0;
+        }
       }
 
       .quote-left {
@@ -183,7 +191,11 @@ const Slide = styled.div`
       }
 
       .quote-right {
-        right: 8rem;
+        right: 0;
+
+        @media (min-width: 768px) {
+          right: 8rem;
+        }
       }
 
       p {

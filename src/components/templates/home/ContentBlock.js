@@ -28,7 +28,11 @@ const ContentBlock = ({ data }) => {
 }
 
 const SectionStyled = styled.section`
-  padding: 4rem 0;
+  padding: 2rem 0;
+
+  @media (min-width: 768px) {
+    padding: 4rem 0;
+  }
 
   .wrapper {
     ${standardWrapper};
@@ -36,6 +40,7 @@ const SectionStyled = styled.section`
 
   .content {
     width: 100%;
+    padding: 3.5rem;
     border: 0.1rem solid ${colors.colorPrimary};
     border-radius: 0.7rem;
     box-shadow: 2px 4px 7px 0 rgba(0, 0, 0, 0.16);

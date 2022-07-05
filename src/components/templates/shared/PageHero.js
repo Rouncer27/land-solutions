@@ -70,9 +70,16 @@ const SectionStyled = styled.section`
     }
 
     &__inner {
+      padding-top: 2rem;
+      padding-right: 2rem;
+      padding-bottom: 2rem;
+      padding-left: 2rem;
+
       @media (min-width: 768px) {
-        padding-left: 25%;
+        padding-top: 0;
         padding-right: 5rem;
+        padding-bottom: 0;
+        padding-left: 25%;
       }
 
       @media (min-width: 1025px) {
