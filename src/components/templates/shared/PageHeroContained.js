@@ -10,7 +10,6 @@ import {
 } from "../../../styles/helpers"
 
 const PageHeroContained = ({ data }) => {
-  console.log("PageHeroContained: ", data)
   const imageDisplay = getImage(
     data.pageHeroContainedImage.localFile.childImageSharp.gatsbyImageData
   )
@@ -86,25 +85,41 @@ const StyledSection = styled.section`
   .content {
     display: flex;
     align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      258deg,
-      rgba(0, 51, 70, 0.7) 85%,
-      rgba(0, 0, 0, 0) 85%
-    );
+    background: rgba(0, 51, 70, 0.7);
     z-index: 100;
 
     @media (min-width: 768px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 85%;
+      background: linear-gradient(
+        258deg,
+        rgba(0, 51, 70, 0.7) 85%,
+        rgba(0, 0, 0, 0) 85%
+      );
+    }
+
+    @media (min-width: 1025px) {
       width: 65%;
+      background: linear-gradient(
+        258deg,
+        rgba(0, 51, 70, 0.7) 85%,
+        rgba(0, 0, 0, 0) 85%
+      );
     }
 
     &__inner {
-      padding-left: 17.5rem;
-      padding-right: 6rem;
+      padding: 4rem 2rem;
+
+      @media (min-width: 768px) {
+        padding-top: 2rem;
+        padding-right: 6rem;
+        padding-bottom: 2rem;
+        padding-left: 17.5rem;
+      }
 
       p {
         ${H3White};

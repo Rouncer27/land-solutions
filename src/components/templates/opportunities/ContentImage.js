@@ -43,29 +43,57 @@ const StyledSection = styled.section`
 
   .side-image {
     position: absolute;
-    top: 0;
+    top: 7.5rem;
     left: 0;
-    width: 25rem;
+    width: 12.5rem;
     height: 100%;
+
+    @media (min-width: 400px) {
+      width: 15rem;
+    }
+
+    @media (min-width: 768px) {
+      top: 0;
+      width: 20rem;
+    }
+
+    @media (min-width: 1025px) {
+      top: 0;
+      width: 25rem;
+    }
   }
 
   .content-wrap {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-end;
     width: 100%;
     margin-top: 3.5rem;
 
+    @media (min-width: 768px) {
+    }
+
+    @media (min-width: 1025px) {
+      justify-content: center;
+    }
+
     &__content {
-      width: calc(100%);
+      width: calc(65%);
+      margin-left: 35%;
+
+      @media (min-width: 400px) {
+        width: calc(70%);
+        margin-left: 30%;
+      }
 
       @media (min-width: 768px) {
-        width: calc(85%);
+        width: calc(75%);
+        margin-left: 25%;
       }
 
       @media (min-width: 1025px) {
-        width: calc(80%);
-        margin-left: 20%;
+        width: calc(75%);
+        margin-left: 25%;
       }
 
       h2 {
