@@ -122,14 +122,18 @@ const StyledSection = styled.section`
     }
 
     .content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(31, 82, 127, 0.8);
+
       @media (min-width: 768px) {
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 75%;
+        width: 85%;
         height: 100%;
         padding-left: 20%;
         background: linear-gradient(
@@ -139,8 +143,24 @@ const StyledSection = styled.section`
         );
       }
 
+      @media (min-width: 1025px) {
+        width: 75%;
+      }
+
       &__inner {
-        padding-top: 8.5rem;
+        padding: 2rem;
+
+        @media (min-width: 768px) {
+          padding: 0;
+          padding-top: 2rem;
+          padding-right: 2rem;
+        }
+
+        @media (min-width: 1025px) {
+          padding: 0;
+          padding-top: 8.5rem;
+          padding-right: 2rem;
+        }
       }
 
       &__link {

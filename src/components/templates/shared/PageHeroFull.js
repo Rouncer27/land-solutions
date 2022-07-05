@@ -1,7 +1,7 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import { H3White } from "../../../styles/helpers"
+import { H3Black, H3White } from "../../../styles/helpers"
 
 const PageHeroFull = ({ data }) => {
   const imageDisplay = getImage(
@@ -49,17 +49,19 @@ const StyledSection = styled.section`
 
   .content {
     display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
     width: 100%;
     height: 100%;
+    padding: 2rem;
     z-index: 100;
 
     @media (min-width: 768px) {
+      position: absolute;
+      top: 0;
+      right: 0;
       width: 47.5rem;
       top: 9rem;
       right: 5%;
+      padding: 0;
     }
 
     @media (min-width: 1025px) {
@@ -69,26 +71,32 @@ const StyledSection = styled.section`
     }
 
     p {
-      ${H3White};
+      ${H3Black};
+
+      @media (min-width: 768px) {
+        ${H3White};
+      }
     }
   }
 
   .image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    .gatsby-image-wrapper {
+    @media (min-width: 768px) {
       position: absolute;
       top: 0;
       left: 0;
-      width: calc(100%);
+      width: 100%;
       height: 100%;
 
-      img {
-        width: 100% !important;
+      .gatsby-image-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100%);
+        height: 100%;
+
+        img {
+          width: 100% !important;
+        }
       }
     }
   }
