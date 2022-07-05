@@ -57,23 +57,41 @@ const IconWysiwygButton = ({ data }) => {
 }
 
 const StyledDiv = styled.div`
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   .wrapper {
     ${medWrapper};
   }
 
   .icon {
-    width: calc(15%);
+    width: calc(100%);
+
+    @media (min-width: 768px) {
+      width: calc(15%);
+    }
 
     &__wrapper {
       max-width: 9rem;
-      margin-right: 0;
-      margin-left: auto;
+      @media (min-width: 768px) {
+        margin-right: 0;
+        margin-left: auto;
+      }
     }
   }
 
   .content {
-    width: calc(85% - 6rem);
-    margin-left: 6rem;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: calc(85% - 6rem);
+      margin-left: 6rem;
+    }
 
     &__wysiwyg {
       width: 100%;
@@ -354,6 +372,11 @@ const StyledDiv = styled.div`
 
       &--one {
         ${Btn1Two};
+        margin-bottom: 2.5rem;
+
+        @media (min-width: 768px) {
+          margin-bottom: 0;
+        }
       }
 
       &--two {

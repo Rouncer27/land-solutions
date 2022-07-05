@@ -46,8 +46,12 @@ const StyledSection = styled.section`
   }
 
   .title {
-    width: calc(25% - 5rem);
-    margin-right: 5rem;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: calc(25% - 5rem);
+      margin-right: 5rem;
+    }
 
     h2 {
       ${H3Green};
@@ -59,13 +63,21 @@ const StyledSection = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 75%;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 75%;
+    }
   }
 `
 
 const Item = styled.div`
-  width: calc((100% / 3) - 2rem);
-  margin: 1rem;
+  width: calc(100%);
+
+  @media (min-width: 768px) {
+    width: calc((100% / 3) - 2rem);
+    margin: 1rem;
+  }
 
   .image {
     padding: 2rem 5rem;

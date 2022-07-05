@@ -48,13 +48,23 @@ const SectionStyled = styled.section`
   }
 
   .image {
-    width: calc(30% - 3rem);
-    margin-right: 3rem;
+    width: calc(100%);
+    margin-bottom: 3rem;
+
+    @media (min-width: 768px) {
+      width: calc(30% - 3rem);
+      margin-right: 3rem;
+      margin-bottom: 0;
+    }
   }
 
   .wysiwyg {
-    width: calc(70% - 2rem);
-    margin-left: 2rem;
+    width: calc(100%);
+
+    @media (min-width: 768px) {
+      width: calc(70% - 2rem);
+      margin-left: 2rem;
+    }
 
     &__inner {
       width: 100%;

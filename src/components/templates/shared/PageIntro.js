@@ -120,9 +120,10 @@ const StyledSection = styled.section`
       margin-bottom: 4rem;
 
       @media (min-width: 768px) {
-        width: calc(15%);
+        width: calc(15% - 2rem);
         max-width: 100%;
         margin: 0;
+        margin-right: 2rem;
       }
 
       @media (min-width: 1025px) {
@@ -137,11 +138,13 @@ const StyledSection = styled.section`
       width: calc(100%);
 
       @media (min-width: 768px) {
-        width: calc(85%);
+        width: calc(85% - 2rem);
+        margin-left: 2rem;
       }
 
       @media (min-width: 1025px) {
         width: calc(82.5%);
+        margin-left: 0;
       }
 
       &--titles {
