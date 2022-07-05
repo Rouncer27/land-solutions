@@ -51,15 +51,23 @@ const SectionStyled = styled.section`
 const BlockDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 5rem;
   margin-bottom: 5rem;
   padding: 2rem 5rem;
   box-shadow: 4px 8px 4px 0 rgba(0, 0, 0, 0.1);
 
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+
   .icon {
+    max-width: 15rem;
+    margin: 2rem 0;
+
     @media (min-width: 768px) {
       width: calc(15% - 2rem);
+      max-width: 100%;
       margin-right: 2rem;
     }
 
