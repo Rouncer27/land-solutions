@@ -65,9 +65,14 @@ const StyledSection = styled.section`
 
   .image {
     width: calc(100%);
+    max-width: 20rem;
+    margin-right: auto;
+    margin-left: 0;
 
     @media (min-width: 768px) {
       width: calc(15%);
+      max-width: 100%;
+      margin: 0;
     }
 
     @media (min-width: 1025px) {

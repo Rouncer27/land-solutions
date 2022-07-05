@@ -83,12 +83,21 @@ const StyledSection = styled.section`
     position: absolute;
     top: 0;
     right: 0;
-    width: 25rem;
+    width: 15rem;
     height: 100%;
+
+    @media (min-width: 768px) {
+      width: 25rem;
+    }
   }
 
   .title {
     width: 100%;
+    margin-top: 7.5rem;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
 
     h1 {
       ${H1Blue};
@@ -105,9 +114,15 @@ const StyledSection = styled.section`
 
     &__icon {
       width: calc(100%);
+      max-width: 10rem;
+      margin-right: auto;
+      margin-left: 0;
+      margin-bottom: 4rem;
 
       @media (min-width: 768px) {
         width: calc(15%);
+        max-width: 100%;
+        margin: 0;
       }
 
       @media (min-width: 1025px) {
