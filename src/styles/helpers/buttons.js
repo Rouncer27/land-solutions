@@ -31,7 +31,7 @@ export const Btn1One = css`
   ${Btn1Base};
   padding-right: 7.5rem;
   background: linear-gradient(
-    235deg,
+    250deg,
     rgba(9, 9, 121, 0) 18%,
     rgba(31, 82, 127, 1) 18%
   );
@@ -39,7 +39,7 @@ export const Btn1One = css`
 
   &:hover {
     background: linear-gradient(
-      235deg,
+      250deg,
       rgba(9, 9, 121, 0) 18%,
       rgba(157, 181, 148, 1) 18%
     );
@@ -65,7 +65,7 @@ export const Btn1Two = css`
   ${Btn1Base};
   padding-right: 7.5rem;
   background: linear-gradient(
-    235deg,
+    250deg,
     rgba(9, 9, 121, 0) 18%,
     rgba(136, 184, 223, 1) 18%
   );
@@ -73,7 +73,7 @@ export const Btn1Two = css`
 
   &:hover {
     background: linear-gradient(
-      235deg,
+      250deg,
       rgba(9, 9, 121, 0) 18%,
       rgba(157, 181, 148, 1) 18%
     );
@@ -99,7 +99,7 @@ export const Btn1Three = css`
   ${Btn1Base};
   padding-right: 7.5rem;
   background: linear-gradient(
-    235deg,
+    250deg,
     rgba(9, 9, 121, 0) 18%,
     rgba(255, 255, 255, 1) 18%
   );
@@ -107,7 +107,7 @@ export const Btn1Three = css`
 
   &:hover {
     background: linear-gradient(
-      235deg,
+      250deg,
       rgba(9, 9, 121, 0) 18%,
       rgba(157, 181, 148, 1) 18%
     );

@@ -8,6 +8,7 @@ import {
   fonts,
   H1White,
   colors,
+  medWrapper,
 } from "../../../styles/helpers"
 import { Link } from "gatsby"
 
@@ -19,25 +20,27 @@ const Hero = ({ data }) => {
   return (
     <>
       <SectionStyled>
-        <div className="wrapper">
-          <div className="content-left">
-            <div className="content-left__title">
-              <h2>{data.homeHeroTitle}</h2>
+        <div className="main-wrapper">
+          <div className="wrapper">
+            <div className="content-left">
+              <div className="content-left__title">
+                <h2>{data.homeHeroTitle}</h2>
+              </div>
+              <div
+                className="content-left__content"
+                dangerouslySetInnerHTML={{ __html: data.homeHeroParagraph }}
+              />
             </div>
-            <div
-              className="content-left__content"
-              dangerouslySetInnerHTML={{ __html: data.homeHeroParagraph }}
-            />
+            <div className="content-right">
+              <div
+                className="content-right__wysiwyg"
+                dangerouslySetInnerHTML={{ __html: data.homeHeroContent }}
+              />
+            </div>
           </div>
-          <div className="content-right">
-            <div
-              className="content-right__wysiwyg"
-              dangerouslySetInnerHTML={{ __html: data.homeHeroContent }}
-            />
+          <div className="hero-image">
+            <GatsbyImage image={image} alt={logoAlt} layout="fixed" />
           </div>
-        </div>
-        <div className="hero-image">
-          <GatsbyImage image={image} alt={logoAlt} layout="fixed" />
         </div>
       </SectionStyled>
       <LearnLink>
@@ -51,10 +54,16 @@ const Hero = ({ data }) => {
 }
 
 const SectionStyled = styled.section`
-  position: relative;
-  overflow: hidden;
+  .main-wrapper {
+    ${medWrapper};
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
 
   .wrapper {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -100,7 +109,7 @@ const SectionStyled = styled.section`
     }
 
     @media (min-width: 1025px) {
-      width: calc(50%);
+      width: calc(47.5%);
       padding: 6rem;
       background: linear-gradient(
         255deg,
@@ -146,7 +155,7 @@ const SectionStyled = styled.section`
     }
 
     @media (min-width: 1025px) {
-      width: calc(50%);
+      width: calc(52.5%);
       padding: 2rem 2rem 2rem 6rem;
       padding-left: 15rem;
       background: linear-gradient(
@@ -157,7 +166,7 @@ const SectionStyled = styled.section`
     }
 
     @media (min-width: 1400px) {
-      padding: 12.5rem 6rem;
+      padding: 8rem 6rem;
       padding-left: 20rem;
     }
 

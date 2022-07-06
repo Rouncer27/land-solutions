@@ -169,74 +169,72 @@ const SectionStyled = styled.section`
 
     @media (min-width: 1025px) {
       display: block;
-      top: -113px;
+      top: auto;
+      bottom: -170px;
       left: -236px;
       transform: scale(0.3);
     }
 
     @media (min-width: 1100px) {
-      top: -100px;
+      bottom: -250px;
       left: -220px;
       transform: scale(0.35);
     }
 
     @media (min-width: 1200px) {
-      top: -55px;
+      bottom: -170px;
       left: -180px;
       transform: scale(0.4);
     }
 
     @media (min-width: 1250px) {
-      top: -55px;
+      bottom: -170px;
       left: -185px;
+      width: 88rem);
+      height: 90rem;
       transform: scale(0.5);
     }
 
     @media (min-width: 1300px) {
-      top: -45px;
+      bottom: -170px;
       left: -165px;
       transform: scale(0.5);
     }
     @media (min-width: 1350px) {
-      top: -50px;
+      bottom: -170px;
       left: -165px;
       transform: scale(0.5);
     }
     @media (min-width: 1400px) {
-      top: -27px;
+      bottom: -160px;
       left: -165px;
       transform: scale(0.5);
     }
     @media (min-width: 1450px) {
-      top: -8px;
+      bottom: -160px;
       left: -165px;
       transform: scale(0.5);
     }
     @media (min-width: 1500px) {
-      top: 17px;
-      left: -165px;
-      transform: scale(0.5);
-    }
-    @media (min-width: 1550px) {
-      top: 39px;
+      bottom: -160px;
       left: -165px;
       transform: scale(0.5);
     }
 
     @media (min-width: 1550px) {
-      top: 39px;
+      bottom: -160px;
       left: -165px;
       transform: scale(0.5);
     }
 
     @media (min-width: 1600px) {
-      top: 103px;
+      bottom: -120px;
       left: -120px;
       transform: scale(0.5);
     }
 
     @media (min-width: 1700px) {
-      top: 110px;
+      bottom: -120px;
       left: -120px;
       transform: scale(0.5);
     }
