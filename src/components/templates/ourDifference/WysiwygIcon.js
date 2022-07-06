@@ -51,8 +51,12 @@ const BlockDiv = styled.div`
   justify-content: center;
   margin-top: 5rem;
   margin-bottom: 5rem;
-  padding: 2rem 5rem;
+  padding: 2rem;
   box-shadow: 4px 8px 4px 0 rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 768px) {
+    padding: 2rem 5rem;
+  }
 
   .icon {
     @media (min-width: 768px) {

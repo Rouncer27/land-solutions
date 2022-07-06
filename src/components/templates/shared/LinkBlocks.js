@@ -62,6 +62,21 @@ const Block = styled.div`
   }
 
   .content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 20%;
+    background: linear-gradient(
+      255deg,
+      rgba(31, 82, 127, 1) 81%,
+      rgba(0, 0, 0, 0) 81%
+    );
+
     @media (min-width: 768px) {
       display: flex;
       align-items: flex-start;
@@ -69,7 +84,7 @@ const Block = styled.div`
       position: absolute;
       top: 0;
       right: 0;
-      width: 75%;
+      width: 90%;
       height: 100%;
       padding-left: 20%;
       background: linear-gradient(
@@ -79,8 +94,23 @@ const Block = styled.div`
       );
     }
 
+    @media (min-width: 1025px) {
+      width: 75%;
+    }
+
     &__inner {
-      padding-top: 8.5rem;
+      width: 100%;
+      padding: 2rem;
+      padding-top: 2rem;
+
+      @media (min-width: 768px) {
+        padding: 0;
+        padding-top: 2rem;
+      }
+
+      @media (min-width: 1025px) {
+        padding-top: 8.5rem;
+      }
     }
 
     &__link {

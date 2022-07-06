@@ -76,15 +76,20 @@ const SectionStyled = styled.section`
     right: 0;
     width: 100%;
     height: 100%;
+    padding: 2rem;
     z-index: 10;
-    background: linear-gradient(
-      255deg,
-      rgba(0, 51, 70, 0.7) 81%,
-      rgba(0, 0, 0, 0) 81%
-    );
+    background: rgba(0, 51, 70, 0.7);
 
     @media (min-width: 768px) {
-      width: 60%;
+      width: 75%;
+      padding: 0;
+      padding-left: 15%;
+      padding-right: 2rem;
+      background: linear-gradient(
+        255deg,
+        rgba(0, 51, 70, 0.7) 81%,
+        rgba(0, 0, 0, 0) 81%
+      );
     }
 
     @media (min-width: 1025px) {

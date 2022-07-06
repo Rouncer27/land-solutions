@@ -56,12 +56,33 @@ const ItemDiv = styled.div`
   margin-bottom: 5rem;
 
   .icon {
-    width: 12.5%;
-    padding: 2rem 4rem;
+    width: 100%;
+    max-width: 10rem;
+    margin-right: auto;
+    margin-left: 0;
+    padding-bottom: 3rem;
+
+    @media (min-width: 768px) {
+      width: 20%;
+      max-width: 100%;
+      padding: 2rem 4rem;
+    }
+
+    @media (min-width: 1025px) {
+      width: 12.5%;
+    }
   }
 
   .content {
-    width: 87.5%;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 80%;
+    }
+
+    @media (min-width: 1025px) {
+      width: 87.5%;
+    }
 
     h2 {
       ${B1Black};

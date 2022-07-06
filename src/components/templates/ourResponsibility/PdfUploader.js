@@ -121,9 +121,13 @@ const StyledSection = styled.section`
 
       &__icon {
         width: 100%;
+        max-width: 12.5rem;
+        margin-left: 0;
+        margin-right: auto;
 
         @media (min-width: 768px) {
           width: calc(20%);
+          max-width: 100%;
         }
       }
 
@@ -137,8 +141,12 @@ const StyledSection = styled.section`
 
         p {
           ${B2Black};
-          margin: 0;
+          margin-bottom: 2rem;
           text-transform: uppercase;
+
+          @media (min-width: 768px) {
+            margin: 0;
+          }
         }
 
         a {
