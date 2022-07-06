@@ -162,9 +162,15 @@ const StyledSection = styled.section`
 
         &__thumbnail {
           width: 100%;
+          max-width: 12.5rem;
+          margin-right: auto;
+          margin-bottom: 2.5rem;
+          margin-left: 0;
 
           @media (min-width: 768px) {
             width: calc(25%);
+            max-width: 100%;
+            margin-bottom: 0;
           }
         }
 
@@ -196,6 +202,7 @@ const StyledSection = styled.section`
     width: 100%;
     margin-top: 5rem;
     margin-bottom: 5rem;
+    padding: 2.75rem 2rem;
     border-radius: 7px;
     box-shadow: 2px 4px 7px 0 rgba(0, 0, 0, 0.16);
     border: solid 1px #fff;

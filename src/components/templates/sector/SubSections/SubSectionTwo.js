@@ -79,10 +79,12 @@ const StyledSection = styled.section`
   .content-top {
     .image {
       width: 100%;
+      margin-bottom: 3rem;
 
       @media (min-width: 768px) {
         width: calc(40% - 2rem);
         margin-right: 2rem;
+        margin-bottom: 0;
       }
     }
 
@@ -134,9 +136,15 @@ const StyledSection = styled.section`
     a {
       ${H3LightGreen};
       display: block;
+      margin-bottom: 2.5rem;
       font-weight: 300;
-      text-align: right;
+      text-align: left;
       text-decoration: underline;
+
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+        text-align: right;
+      }
     }
 
     p {

@@ -107,10 +107,12 @@ const SectionStyled = styled.section`
 
     &__image {
       width: 100%;
+      margin-bottom: 2.5rem;
 
       @media (min-width: 768px) {
         width: calc(30% - 2rem);
         margin-right: 2rem;
+        margin-bottom: 0;
       }
     }
 
@@ -201,6 +203,7 @@ const SectionStyled = styled.section`
     width: 100%;
     margin-top: 5rem;
     margin-bottom: 5rem;
+    padding: 2.75rem 2rem;
     border-radius: 7px;
     box-shadow: 2px 4px 7px 0 rgba(0, 0, 0, 0.16);
     border: solid 1px #fff;

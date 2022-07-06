@@ -34,7 +34,11 @@ const ContentBlock = ({ data }) => {
 }
 
 const StyledSection = styled.section`
-  padding: 9rem 0;
+  padding: 5rem 0 2rem;
+
+  @media (min-width: 768px) {
+    padding: 9rem 0;
+  }
 
   .wrapper {
     display: flex;
@@ -46,15 +50,21 @@ const StyledSection = styled.section`
 
   .content-left {
     width: 100%;
-    background: linear-gradient(
-      255deg,
-      rgba(31, 82, 127, 0) 19%,
-      rgba(31, 82, 127, 1) 19%
-    );
+    padding: 3rem 2rem;
+    background: rgba(31, 82, 127, 1);
 
     @media (min-width: 768px) {
       width: calc(50% - 4rem);
       margin-right: 4rem;
+      padding-top: 5rem;
+      padding-right: 20rem;
+      padding-bottom: 5rem;
+      padding-left: 2rem;
+      background: linear-gradient(
+        255deg,
+        rgba(31, 82, 127, 0) 19%,
+        rgba(31, 82, 127, 1) 19%
+      );
     }
 
     @media (min-width: 1025px) {
@@ -64,9 +74,21 @@ const StyledSection = styled.section`
     }
 
     &__inner {
-      width: 37.5rem;
+      width: 100%;
       margin-right: 0;
       margin-left: auto;
+
+      @media (min-width: 768px) {
+        width: 27rem;
+      }
+
+      @media (min-width: 850px) {
+        width: 30rem;
+      }
+
+      @media (min-width: 1025px) {
+        width: 37.5rem;
+      }
 
       p {
         ${H3White};
@@ -78,6 +100,7 @@ const StyledSection = styled.section`
 
   .content-right {
     width: 100%;
+    padding: 2rem;
 
     @media (min-width: 768px) {
       width: calc(50% - 4rem);
@@ -89,8 +112,12 @@ const StyledSection = styled.section`
       max-width: 55rem;
       margin-top: 2.5rem;
       margin-right: auto;
-      margin-bottom: 2.5rem;
+      margin-bottom: 0;
       margin-left: 0;
+
+      @media (min-width: 768px) {
+        margin-bottom: 2.5rem;
+      }
 
       &::after {
         display: table;
