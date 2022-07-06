@@ -80,7 +80,7 @@ const SectionStyled = styled.section`
 
     .logo {
       width: calc(100% / 2);
-      padding: 3rem;
+      padding: 1.5rem 2rem;
 
       @media (min-width: 768px) {
         width: calc((100% / 4) - 3rem);

@@ -47,9 +47,13 @@ const SectionStyled = styled.section`
 
   .icon {
     width: 100%;
+    max-width: 12.5rem;
+    margin-right: auto;
+    margin-left: 0;
 
     @media (min-width: 768px) {
       width: calc(10% - 2rem);
+      max-width: 100%;
       margin-right: 2rem;
     }
   }
@@ -103,8 +107,10 @@ const SectionStyled = styled.section`
     position: relative;
     width: 100%;
     margin-top: 5rem;
+    padding: 2rem;
 
     @media (min-width: 768px) {
+      padding-left: 10%;
     }
 
     @media (min-width: 1025px) {
@@ -123,12 +129,14 @@ const SectionStyled = styled.section`
 
     @media (min-width: 768px) {
       &::after {
-        width: 13%;
+        top: 35%;
+        width: 7%;
       }
     }
 
     @media (min-width: 1025px) {
       &::after {
+        top: 50%;
         width: 13%;
       }
     }

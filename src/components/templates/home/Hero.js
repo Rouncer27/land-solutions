@@ -87,17 +87,26 @@ const SectionStyled = styled.section`
     padding: 5rem 2rem;
     background: rgba(31, 82, 127, 0.9);
 
-    @media (min-width: 768px) {
+    ${
+      "" /* @media (min-width: 768px) {
       width: calc(50%);
+      padding: 3rem 5rem 3rem 2rem;
       background: linear-gradient(
         255deg,
         rgba(0, 0, 0, 0) 12%,
         rgba(31, 82, 127, 0.9) 12%
       );
+    } */
     }
 
     @media (min-width: 1025px) {
+      width: calc(50%);
       padding: 6rem;
+      background: linear-gradient(
+        255deg,
+        rgba(0, 0, 0, 0) 12%,
+        rgba(31, 82, 127, 0.9) 12%
+      );
     }
 
     &__title {
@@ -124,18 +133,27 @@ const SectionStyled = styled.section`
     padding: 5rem 2rem;
     background: rgba(0, 51, 70, 0.7);
 
-    @media (min-width: 768px) {
+    ${
+      "" /* @media (min-width: 768px) {
       width: calc(50%);
+      padding: 2rem 2rem 2rem 7rem;
+      background: linear-gradient(
+        255deg,
+        rgba(0, 51, 70, 0.7) 85%,
+        rgba(0, 0, 0, 0) 85%
+      );
+    } */
+    }
+
+    @media (min-width: 1025px) {
+      width: calc(50%);
+      padding: 2rem 2rem 2rem 6rem;
+      padding-left: 15rem;
       background: linear-gradient(
         255deg,
         rgba(0, 51, 70, 0.7) 81%,
         rgba(0, 0, 0, 0) 81%
       );
-    }
-
-    @media (min-width: 1025px) {
-      padding: 9rem 6rem;
-      padding-left: 15rem;
     }
 
     @media (min-width: 1400px) {

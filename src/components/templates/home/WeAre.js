@@ -58,10 +58,15 @@ const SectionStyled = styled.section`
   }
 
   .titles {
-    width: 100%;
+    width: 80%;
+    padding: 2rem;
+    margin-left: auto;
 
     @media (min-width: 768px) {
       width: calc(50%);
+      max-width: 30rem;
+      margin-left: auto;
+      padding: 0;
     }
 
     @media (min-width: 1025px) {
@@ -71,7 +76,11 @@ const SectionStyled = styled.section`
 
     h2 {
       ${H2Blue};
-      margin-bottom: 8.1rem;
+      margin-bottom: 4rem;
+
+      @media (min-width: 768px) {
+        margin-bottom: 8.1rem;
+      }
     }
 
     p {
@@ -82,10 +91,20 @@ const SectionStyled = styled.section`
 
   .content {
     width: 100%;
+    margin-top: 8rem;
+    padding: 0 4rem;
+
+    @media (min-width: 600px) {
+      margin-top: 10rem;
+    }
 
     @media (min-width: 768px) {
-      width: calc(50%);
+      width: calc(50% - 2rem);
+      margin-top: 0;
+      margin-left: 2rem;
+      padding: 0 2rem;
     }
+
     @media (min-width: 1025px) {
       width: calc(50% - 10rem);
       margin-left: 10rem;
@@ -117,7 +136,19 @@ const SectionStyled = styled.section`
     position: absolute;
     top: 0;
     left: 0;
-    width: 40rem;
+    width: 20rem;
+
+    @media (min-width: 768px) {
+      width: 22.5rem;
+    }
+
+    @media (min-width: 850px) {
+      width: 30rem;
+    }
+
+    @media (min-width: 1025px) {
+      width: 40rem;
+    }
   }
 `
 
