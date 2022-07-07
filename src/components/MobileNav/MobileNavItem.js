@@ -30,7 +30,7 @@ const MobileNavItem = ({ item }) => {
               handleToggleActive()
             }}
           >
-            {subActive ? <>&#8963;</> : <>&#8964;</>}
+            {subActive ? <span>&#8963;</span> : <span>&#8964;</span>}
           </button>
           <MobileSubMenu subActive={subActive} items={item.subItems} />
         </SubMenuContainer>
@@ -54,7 +54,7 @@ const MobileNavItemStyled = styled.li`
       top: 10%;
       right: 0;
       width: 4rem;
-      height: 4rem;
+      height: 6rem;
       font-size: 2.5rem;
       font-weight: bold;
       border-radius: 0 !important;
@@ -93,7 +93,7 @@ const MobileNavItemStyled = styled.li`
 
 const SubMenuContainer = styled.div`
   button.sub-menu-control {
-    top: ${props => (props.issubactive ? "10%" : "40%")};
+    top: ${props => (props.issubactive ? "3rem" : "50%")};
   }
 `
 
