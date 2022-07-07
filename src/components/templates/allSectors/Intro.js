@@ -62,7 +62,7 @@ const Intro = ({ data }) => {
 }
 
 const StyledSection = styled.section`
-  padding: 4rem 0;
+  padding: 4rem 0 0;
   background-color: ${colors.colorPrimary};
 
   @media (min-width: 768px) {

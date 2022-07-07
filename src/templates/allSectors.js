@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Intro from "../components/templates/allSectors/Intro"
+import Connections from "../components/templates/allSectors/Connections"
 import SectorsList from "../components/templates/allSectors/SectorsList"
 
 const AllSectors = props => {
@@ -15,6 +16,7 @@ const AllSectors = props => {
     <Layout>
       <Seo />
       <Intro data={intro} />
+      <Connections />
       <SectorsList data={displaySector} sectors={sectors} />
     </Layout>
   )
