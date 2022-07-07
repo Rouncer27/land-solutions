@@ -24,7 +24,9 @@ const NavLinksIcon = ({ data }) => {
           <ul className="links">
             {data.navigationLinksWithIconLinks.map((item, index) => (
               <li key={index}>
-                <Link to={`/${item.slug}`}>{item.text}</Link>
+                <Link to={`/${item.slug}`}>
+                  {item.text} <span>&#8594;</span>
+                </Link>
               </li>
             ))}
           </ul>

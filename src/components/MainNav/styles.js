@@ -95,7 +95,7 @@ export const ListStyles = css`
             display: flex;
 
             .sub-menu__item--icon {
-              width: 2rem;
+              width: 2.5rem;
               margin-right: 1rem;
             }
           }
