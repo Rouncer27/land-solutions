@@ -8,7 +8,7 @@ import Intro from "../components/templates/home/Intro"
 import Hero from "../components/templates/home/Hero"
 import WeAre from "../components/templates/home/WeAre"
 import DirectYou from "../components/templates/home/DirectYou"
-import SectorsIntro from "../components/templates/shared/SectorsIntro"
+import SectorsIntroSlider from "../components/templates/shared/SectorsIntroSlider"
 import ContentImage from "../components/templates/home/ContentImage"
 import ContentBlock from "../components/templates/home/ContentBlock"
 import Testimonials from "../components/templates/shared/Testimonials"
@@ -40,7 +40,7 @@ const IndexPage = props => {
       <WeAre data={weAre} />
       <DirectYou data={directYou} />
       {displaySectors.displaySectors && (
-        <SectorsIntro sectors={props.data.sectors.edges} />
+        <SectorsIntroSlider sectors={props.data.sectors.edges} />
       )}
       <ContentImage data={contentImage} />
       <ContentBlock data={contentBlock} />

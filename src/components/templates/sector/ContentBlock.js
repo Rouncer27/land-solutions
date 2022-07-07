@@ -37,7 +37,7 @@ const StyledSection = styled.section`
   padding: 5rem 0 2rem;
 
   @media (min-width: 768px) {
-    padding: 9rem 0;
+    padding: 8rem 0 2rem;
   }
 
   .wrapper {
