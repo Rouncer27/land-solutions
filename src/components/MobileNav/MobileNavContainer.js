@@ -15,7 +15,7 @@ const MobileNavContainer = ({ navitems }) => {
 
   return (
     <MobileNavContainerStyled>
-      <ul>
+      <ul className="top-level">
         {navItemsWithSubs.map(item => (
           <MobileNavItem key={item.id} item={item} />
         ))}
@@ -34,6 +34,10 @@ const MobileNavContainerStyled = styled.nav`
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+  }
+
+  ul.top-level {
+    text-align: left;
   }
 `
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { colors, Nav1White } from "../../styles/helpers"
+import { B2OffBlack, colors, Nav1White } from "../../styles/helpers"
 
 import MobileSubMenu from "./MobileSubMenu"
 
@@ -23,16 +23,17 @@ const MobileNavItem = ({ item }) => {
     <MobileNavItemStyled>
       <Link to={`/${slug === "home" ? "" : slug}`}>{item.label}</Link>
       {item.subItems && item.subItems.length > 0 && (
-        <div className="subContainer">
+        <SubMenuContainer issubactive={subActive} className="subContainer">
           <button
+            className="sub-menu-control"
             onClick={() => {
               handleToggleActive()
             }}
           >
-            {subActive ? <>&#8722;</> : <>&#43;</>}
+            {subActive ? <>&#8963;</> : <>&#8964;</>}
           </button>
           <MobileSubMenu subActive={subActive} items={item.subItems} />
-        </div>
+        </SubMenuContainer>
       )}
     </MobileNavItemStyled>
   )
@@ -41,8 +42,8 @@ const MobileNavItem = ({ item }) => {
 const MobileNavItemStyled = styled.li`
   position: relative;
   width: 100%;
-  border-bottom: 0.1rem solid ${colors.white};
-  text-align: center;
+  border-bottom: 0.1rem solid #707070;
+  text-align: left;
 
   .subContainer {
     width: 100%;
@@ -50,13 +51,15 @@ const MobileNavItemStyled = styled.li`
 
     button {
       position: absolute;
-      top: 50%;
+      top: 10%;
       right: 0;
       width: 4rem;
       height: 4rem;
       font-size: 2.5rem;
       font-weight: bold;
       border-radius: 0 !important;
+      border: none;
+      background-color: transparent;
       transform: translateY(-50%);
       line-height: 1.25;
       z-index: 150;
@@ -68,13 +71,13 @@ const MobileNavItemStyled = styled.li`
   }
 
   a {
-    ${Nav1White};
+    ${B2OffBlack};
     display: block;
     width: 100%;
     padding: 2rem;
 
     &:hover {
-      color: ${colors.colorTertiary};
+      color: ${colors.colorPrimary};
     }
 
     &[aria-current="page"] {
@@ -85,6 +88,12 @@ const MobileNavItemStyled = styled.li`
         cursor: default;
       }
     }
+  }
+`
+
+const SubMenuContainer = styled.div`
+  button.sub-menu-control {
+    top: ${props => (props.issubactive ? "10%" : "40%")};
   }
 `
 

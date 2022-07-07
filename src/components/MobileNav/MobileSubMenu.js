@@ -18,7 +18,8 @@ const MobileSubMenuStyled = styled.ul`
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
-  width: 100%;
+  width: 90%;
+  margin-left: 10%;
   height: ${props =>
     props.subactive ? `calc(6rem * ${props.sublenght})` : `0rem`};
   transition: all 0.3s ease-out;

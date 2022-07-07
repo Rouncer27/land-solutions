@@ -53,9 +53,9 @@ const NavDrawer = styled.div`
   background-image: linear-gradient(
     to bottom,
     ${colors.white} 0%,
-    ${colors.white} 16rem,
-    ${colors.colorPrimary} 16rem,
-    ${colors.colorPrimary} 100%
+    ${colors.white} 13rem,
+    ${colors.white} 13rem,
+    ${colors.white} 100%
   );
   opacity: ${props => (props.isOpen ? 1 : 0)};
   z-index: ${props => (props.isOpen ? 9999999 : -9999999)};
@@ -81,7 +81,7 @@ const NavDrawer = styled.div`
 
   .mobileLogo {
     width: 100%;
-    max-width: 30rem;
+    max-width: 19.6rem;
     margin: 3rem auto 1rem;
     padding: 0 2rem;
   }
