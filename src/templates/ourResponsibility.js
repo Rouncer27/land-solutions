@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PageHero from "../components/templates/shared/PageHero"
-import ContentIcon from "../components/templates/shared/ContentIcon"
+import ContentIcon from "../components/templates/ourResponsibility/ContentIcon"
 import PdfUploader from "../components/templates/ourResponsibility/PdfUploader"
 import Testimonials from "../components/templates/shared/Testimonials"
 import ListIcons from "../components/templates/ourResponsibility/ListIcons"
@@ -79,6 +79,12 @@ export const ourResponsibilityTempQuery = graphql`
         ... on WpTemplate_OurResponsibility {
           pageOurResponsibility {
             contentIconContent
+            contentIconButtonOneRequired
+            contentIconButtonOneText
+            contentIconButtonOneId
+            contentIconButtonTwoRequired
+            contentIconButtonTwoText
+            contentIconButtonTwoId
             contentIconImage {
               altText
               sourceUrl
@@ -98,6 +104,7 @@ export const ourResponsibilityTempQuery = graphql`
       template {
         ... on WpTemplate_OurResponsibility {
           pageOurResponsibility {
+            pdfUploaderContentSectionId
             pdfUploaderContentButtonText
             pdfUploaderContentContent
             pdfUploaderContentDownloadTitle
@@ -195,6 +202,7 @@ export const ourResponsibilityTempQuery = graphql`
       template {
         ... on WpTemplate_OurResponsibility {
           pageOurResponsibility {
+            wysiwygWithImageId
             wysiwygWithImageContentUnderImage
             wysiwygWithImageSubTitle
             wysiwygWithImageTitle

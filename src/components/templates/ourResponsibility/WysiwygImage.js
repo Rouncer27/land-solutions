@@ -18,7 +18,7 @@ const WysiwygImage = ({ data }) => {
   )
   const imageAlt = data.wysiwygWithImageImage.altText
   return (
-    <StyledSection>
+    <StyledSection id={data.wysiwygWithImageId}>
       <div className="wrapper">
         <div className="image">
           <div>

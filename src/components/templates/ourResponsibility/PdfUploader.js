@@ -21,7 +21,7 @@ const PdfUploader = ({ data }) => {
   )
   const iconAlt = data.pdfUploaderContentThumbnail.altText
   return (
-    <StyledSection>
+    <StyledSection id={data.pdfUploaderContentSectionId}>
       <div className="wrapper">
         <div className="image">
           <GatsbyImage
