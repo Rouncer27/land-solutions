@@ -51,7 +51,6 @@ const StyledSection = styled.section`
       width: 100%;
       margin-top: 1rem;
       margin-bottom: 1rem;
-      padding: 3rem 4rem;
       background-color: ${colors.white};
       box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.42);
 
@@ -59,6 +58,7 @@ const StyledSection = styled.section`
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        padding: 3rem 4rem;
 
         .icon {
           width: 15%;
