@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { B1Green, Btn1One, medWrapper } from "../../../styles/helpers"
 
+import arrow from "../../../images/arrow.png"
+
 const PostNav = ({ data }) => {
   return (
     <PostNavStyled>
@@ -22,7 +24,7 @@ const PostNav = ({ data }) => {
           )}
 
           <Link className="btn-back" to="/insights">
-            Back
+            Insights Page
           </Link>
           {data.next ? (
             <Link to={`/insights/${data.next}`}>
@@ -64,7 +66,9 @@ const PostNavStyled = styled.div`
       ${B1Green};
       border: none;
       background: none;
+      color: #9db594;
       font-weight: bold;
+      text-transform: uppercase;
     }
 
     button:disabled {

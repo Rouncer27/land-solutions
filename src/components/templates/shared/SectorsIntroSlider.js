@@ -231,7 +231,7 @@ const Slide = styled.div`
         background-size: 100% 100%;
         background-position: center bottom;
         background-repeat: no-repeat;
-        z-index: 999999;
+        z-index: 50;
       }
 
       .gatsby-image-wrapper {
@@ -249,11 +249,13 @@ const Slide = styled.div`
   }
 
   .content {
+    position: relative;
     display: flex;
     width: 100%;
     min-height: 50rem;
     padding: 7.5rem 2rem 12.5rem;
     background-color: ${colors.colorPrimary};
+    z-index: 100;
 
     @media (min-width: 768px) {
       width: calc(50%);

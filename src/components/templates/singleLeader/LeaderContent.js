@@ -4,11 +4,15 @@ import {
   B1Black,
   B2LightGreen,
   Btn1One,
+  colors,
   H2Green,
   medWrapper,
 } from "../../../styles/helpers"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
+
+import arrowLeft from "../../../images/arrow-left.png"
+import arrowRight from "../../../images/arrow-right.png"
 
 const LeaderContent = ({ data, next, prev }) => {
   const imageDisplay = getImage(
@@ -49,14 +53,18 @@ const LeaderContent = ({ data, next, prev }) => {
                 <Link to={`/about/leadership-team/${prev}`}>
                   Prev Team Member
                 </Link>
-                <span> ----------------- </span>
+                <span>
+                  <img src={arrowLeft} alt="" />
+                </span>
               </>
             )}
-            <Link to="/about/leadership-team/">Return to team</Link>
+            <Link to="/about/leadership-team/">Leadership Team</Link>
 
             {next && (
               <>
-                <span> ----------------- </span>
+                <span>
+                  <img src={arrowRight} alt="" />
+                </span>
                 <Link to={`/about/leadership-team/${next}`}>
                   Next Team Member
                 </Link>
@@ -121,8 +129,23 @@ const SectionStyled = styled.section`
       margin-top: 5rem;
       margin-bottom: 5rem;
 
+      span {
+        display: inline-block;
+        width: 5rem;
+        margin: 0 2rem;
+
+        img {
+          width: 100%;
+        }
+      }
+
       a {
         ${B2LightGreen};
+        text-transform: uppercase;
+
+        &:hover {
+          color: ${colors.colorPrimary};
+        }
       }
     }
   }
