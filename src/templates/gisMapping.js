@@ -18,8 +18,8 @@ const GisMapping = props => {
     <Layout>
       <Seo />
       <PageIntro data={pageIntro} />
-      <WysiwygIcon data={wysiwygIcon} />
-      <PageHeroContained data={pageHeroContained} />
+      <WysiwygIcon bgcolor={true} data={wysiwygIcon} />
+      <PageHeroContained bgcolor={true} data={pageHeroContained} />
       <TitleWysiwyg data={titleWysiwyg} />
     </Layout>
   )

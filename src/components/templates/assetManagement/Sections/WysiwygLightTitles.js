@@ -33,6 +33,9 @@ const StyledSection = styled.section`
 
   .titles {
     width: 100%;
+    max-width: 100rem;
+    margin-right: auto;
+    margin-left: auto;
 
     h2 {
       ${H3Blue};

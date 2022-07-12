@@ -12,13 +12,13 @@ import {
 } from "../../../styles/helpers"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const WysiwygIcon = ({ data }) => {
+const WysiwygIcon = ({ bgcolor, data }) => {
   const iconDisplay = getImage(
     data.wysiwygWithIconIcon.localFile.childImageSharp.gatsbyImageData
   )
   const iconAlt = data.wysiwygWithIconIcon.altText
   return (
-    <SectionStyled>
+    <SectionStyled bgcolor={bgcolor}>
       <div className="wrapper">
         <div className="icon">
           <div className="icon__image">
@@ -46,6 +46,9 @@ const WysiwygIcon = ({ data }) => {
 }
 
 const SectionStyled = styled.section`
+  background-color: ${props =>
+    props.bgcolor ? "rgba(157, 181, 148, 0.1)" : "transparent"};
+
   .wrapper {
     ${medWrapper};
   }

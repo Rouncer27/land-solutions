@@ -9,13 +9,13 @@ import {
   medWrapper,
 } from "../../../styles/helpers"
 
-const PageHeroContained = ({ data }) => {
+const PageHeroContained = ({ bgcolor, data }) => {
   const imageDisplay = getImage(
     data.pageHeroContainedImage.localFile.childImageSharp.gatsbyImageData
   )
   const imageAlt = data.pageHeroContainedImage.altText
   return (
-    <StyledSection>
+    <StyledSection bgcolor={bgcolor}>
       <div className="wrapper">
         <div className="content">
           <div className="content__inner">
@@ -66,10 +66,14 @@ const PageHeroContained = ({ data }) => {
 }
 
 const StyledSection = styled.section`
+  padding: 0 2rem 5rem;
+  background-color: ${props =>
+    props.bgcolor ? "rgba(157, 181, 148, 0.1)" : "transparent"};
+
   .wrapper {
     ${medWrapper};
     min-height: 30rem;
-    padding: 0;
+
     position: relative;
 
     @media (min-width: 768px) {

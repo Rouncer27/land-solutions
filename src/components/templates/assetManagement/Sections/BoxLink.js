@@ -24,6 +24,9 @@ const BoxLink = ({ data }) => {
 }
 
 const SectionStyled = styled.section`
+  background-color: rgba(157, 181, 148, 0.1);
+  padding-bottom: 3rem;
+
   .wrapper {
     ${standardWrapper};
   }

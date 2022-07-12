@@ -41,6 +41,7 @@ const ImageWysiwyg = ({ data }) => {
 
 const StyledSection = styled.section`
   position: relative;
+  background-color: rgba(157, 181, 148, 0.1);
 
   @media (min-width: 768px) {
     margin-top: 5rem;
