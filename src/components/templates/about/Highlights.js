@@ -122,7 +122,7 @@ const StyledSection = styled.section`
     z-index: 10;
 
     @media (min-width: 768px) {
-      adding: 4rem;
+      padding: 4rem;
     }
   }
 
@@ -184,14 +184,6 @@ const StyledSection = styled.section`
 
       @media (min-width: 768px) {
         right: -25px;
-      }
-
-      @media (min-width: 1025px) {
-        right: 1%;
-      }
-
-      @media (min-width: 1300px) {
-        right: 0.5%;
       }
     }
 
@@ -311,7 +303,6 @@ const StyledSlide = styled.div`
   z-index: 10;
 
   .date {
-    position: relative;
     width: calc(100%);
 
     @media (min-width: 768px) {
@@ -325,15 +316,10 @@ const StyledSlide = styled.div`
       @media (min-width: 768px) {
         position: relative;
         top: 200px;
-        left: 30%;
         width: 200px;
         transform-origin: top left;
         transform: rotate(-90deg);
         text-align: right;
-      }
-
-      @media (min-width: 1025px) {
-        width: 200px;
       }
 
       span {
