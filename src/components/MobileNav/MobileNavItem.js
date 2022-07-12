@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { B2OffBlack, colors, Nav1White } from "../../styles/helpers"
+import { B2OffBlack, colors } from "../../styles/helpers"
 
 import MobileSubMenu from "./MobileSubMenu"
 
