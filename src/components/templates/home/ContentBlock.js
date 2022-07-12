@@ -9,9 +9,9 @@ import {
   standardWrapper,
 } from "../../../styles/helpers"
 
-const ContentBlock = ({ data }) => {
+const ContentBlock = ({ displaybg, data }) => {
   return (
-    <SectionStyled>
+    <SectionStyled displaybg={displaybg}>
       <div className="wrapper">
         <div className="content">
           <h2>{data.contentBlockTitle}</h2>
@@ -37,6 +37,7 @@ const SectionStyled = styled.section`
   }
 
   .graphic-bg {
+    display: ${props => (props.displaybg ? "block" : "none")};
     position: absolute;
     top: -140%;
     left: 0;

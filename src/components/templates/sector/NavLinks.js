@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { H2Green, medWrapper, B1Green } from "../../../styles/helpers"
 
+import waves from "../../../images/waves.png"
+
 const NavLinks = ({ data }) => {
   return (
     <SectionStyled>
@@ -21,11 +23,13 @@ const NavLinks = ({ data }) => {
           })}
         </ul>
       </div>
+      <div className="wave-bg" />
     </SectionStyled>
   )
 }
 
 const SectionStyled = styled.section`
+  position: relative;
   margin-bottom: 5rem;
 
   @media (min-width: 768px) {
@@ -34,6 +38,19 @@ const SectionStyled = styled.section`
 
   @media (min-width: 1025px) {
     margin-bottom: 9rem;
+  }
+
+  .wave-bg {
+    position: absolute;
+    top: -10rem;
+    left: 0;
+    width: 100%;
+    height: 30rem;
+    background-image: url(${waves});
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
   }
 
   .wrapper {

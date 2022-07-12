@@ -33,9 +33,9 @@ const Careers = props => {
       <Seo />
       <PageHero data={hero} />
       <WysiwygIcon data={wysiwygIcon} />
-      <ContentBlock data={contentBlock} />
-      <WysiwygIcon data={wysiwygIconTwo} />
-      <ImageStrip data={imageStrip} />
+      <ContentBlock displaybg={false} data={contentBlock} />
+      <WysiwygIcon bgcolor={true} data={wysiwygIconTwo} />
+      <ImageStrip bgcolor={true} data={imageStrip} />
       <TeamTestimonials
         data={teamTestimonialsDisplay}
         testimonials={teamTestimonials}

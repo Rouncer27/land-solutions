@@ -12,9 +12,9 @@ import {
   H1Blue,
 } from "../../../styles/helpers"
 
-const WysiwygIconRepeater = ({ data }) => {
+const WysiwygIconRepeater = ({ bgcolor, data }) => {
   return (
-    <SectionStyled>
+    <SectionStyled bgcolor={bgcolor}>
       <div className="wrapper">
         {data.map((block, index) => {
           const image = getImage(
@@ -43,6 +43,8 @@ const WysiwygIconRepeater = ({ data }) => {
 }
 
 const SectionStyled = styled.section`
+  background-color: ${props =>
+    props.bgcolor ? "rgba(157, 181, 148, 0.1)" : "transparent"};
   .wrapper {
     ${medWrapper};
   }
@@ -55,7 +57,10 @@ const BlockDiv = styled.div`
   margin-top: 2rem;
   margin-bottom: 0;
   padding: 2rem 0;
-  box-shadow: 4px 8px 4px 0 rgba(0, 0, 0, 0.1);
+  back-shadow: ${props =>
+    props.bgcolor
+      ? "4px 8px 4px 0 rgba(0, 0, 0, 0)"
+      : "4px 8px 4px 0 rgba(0, 0, 0, 0.1)"};
 
   @media (min-width: 768px) {
     justify-content: center;

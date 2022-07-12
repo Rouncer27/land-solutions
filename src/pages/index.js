@@ -43,7 +43,7 @@ const IndexPage = props => {
         <SectorsIntroSlider sectors={props.data.sectors.edges} />
       )}
       <ContentImage data={contentImage} />
-      <ContentBlock data={contentBlock} />
+      <ContentBlock displaybg={true} data={contentBlock} />
       {displayTestimonials.displayTestimonials && (
         <Testimonials
           data={displayTestimonials}

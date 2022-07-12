@@ -7,9 +7,9 @@ import {
   standardWrapper,
 } from "../../../styles/helpers"
 
-const ListLinks = ({ data, title }) => {
+const ListLinks = ({ bgcolor, data, title }) => {
   return (
-    <StyledSection>
+    <StyledSection bgcolor={bgcolor}>
       <div className="wrapper">
         <div className="title">
           <h2>{title}</h2>
@@ -32,6 +32,8 @@ const ListLinks = ({ data, title }) => {
 
 const StyledSection = styled.section`
   padding: 5rem 0;
+  background-color: ${props =>
+    props.bgcolor ? "rgba(157, 181, 148, 0.1)" : "transparent"};
 
   .wrapper {
     ${standardWrapper};

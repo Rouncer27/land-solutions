@@ -69,8 +69,6 @@ const TeamTestimonials = ({ data, testimonials }) => {
 }
 
 const SectionStyled = styled.section`
-  padding: 5rem 0 0;
-
   .wrapper {
     position: relative;
   }

@@ -3,13 +3,13 @@ import styled from "styled-components"
 import { medWrapper, H3Blue, H2Green } from "../../../styles/helpers"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const ContentImage = ({ data }) => {
+const ContentImage = ({ bgcolor, data }) => {
   const sideImgDisplay = getImage(
     data.contentWithImageImage.localFile.childImageSharp.gatsbyImageData
   )
   const sideImgAlt = data.contentWithImageImage.altText
   return (
-    <StyledSection>
+    <StyledSection bgcolor={bgcolor}>
       <div className="wrapper">
         <div className="content-wrap">
           <div className="content-wrap__content">
@@ -36,6 +36,9 @@ const ContentImage = ({ data }) => {
 const StyledSection = styled.section`
   position: relative;
   margin-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: ${props =>
+    props.bgcolor ? "rgba(157, 181, 148, 0.1)" : "transparent"};
 
   .wrapper {
     ${medWrapper};

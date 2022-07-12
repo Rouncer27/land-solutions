@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { H3LightGreen, standardWrapper } from "../../../styles/helpers"
 import { Link } from "gatsby"
+import waves from "../../../images/waves.png"
 
 const NavLinksIcon = ({ data }) => {
   const imageDisplay = getImage(
@@ -32,11 +33,27 @@ const NavLinksIcon = ({ data }) => {
           </ul>
         </div>
       </div>
+      <div className="wave-bg" />
     </StyledDiv>
   )
 }
 
 const StyledDiv = styled.div`
+  position: relative;
+
+  .wave-bg {
+    position: absolute;
+    top: -15rem;
+    left: 0;
+    width: 100%;
+    height: 30rem;
+    background-image: url(${waves});
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+  }
+
   .wrapper {
     ${standardWrapper};
 

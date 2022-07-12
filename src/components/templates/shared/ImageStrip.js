@@ -2,10 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const ImageStrip = ({ data }) => {
-  console.log("ImageStrip: ", data)
+const ImageStrip = ({ bgcolor, data }) => {
   return (
-    <StyledSection>
+    <StyledSection bgcolor={bgcolor}>
       <div className="wrapper">
         {data.map((image, index) => {
           const imageDisplay = getImage(
@@ -29,6 +28,10 @@ const ImageStrip = ({ data }) => {
 }
 
 const StyledSection = styled.div`
+  background-color: ${props =>
+    props.bgcolor ? "rgba(157, 181, 148, 0.1)" : "transparent"};
+  padding-bottom: 2.5rem;
+
   .wrapper {
     display: flex;
     flex-wrap: wrap;

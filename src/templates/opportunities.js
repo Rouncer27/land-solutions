@@ -32,9 +32,9 @@ const Opportunities = props => {
       <Seo />
       <PageHero data={hero} />
       <WysiwygIcon data={wysiwygIcon} />
-      <ListLinks data={links} title={linksTitle} />
-      <ContentImage data={contentImage} />
-      <ListLinks data={linksTwo} title={linksTwoTitle} />
+      <ListLinks bgcolor={false} data={links} title={linksTitle} />
+      <ContentImage bgcolor={true} data={contentImage} />
+      <ListLinks bgcolor={true} data={linksTwo} title={linksTwoTitle} />
       <WysiwygWithImage data={wysiwygWithImage} />
       <PageHeroContained data={pageHeroContained} />
     </Layout>
