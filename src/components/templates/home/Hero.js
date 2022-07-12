@@ -12,6 +12,8 @@ import {
 } from "../../../styles/helpers"
 import { Link } from "gatsby"
 
+import waves from "../../../images/waves.png"
+
 const Hero = ({ data }) => {
   const image = getImage(
     data?.homeHeroImage?.localFile?.childImageSharp?.gatsbyImageData
@@ -42,6 +44,7 @@ const Hero = ({ data }) => {
             <GatsbyImage image={image} alt={logoAlt} layout="fixed" />
           </div>
         </div>
+        <div className="wave-bg" />
       </SectionStyled>
       <LearnLink>
         <Link to="/about">
@@ -54,6 +57,8 @@ const Hero = ({ data }) => {
 }
 
 const SectionStyled = styled.section`
+  position: relative;
+
   .main-wrapper {
     ${medWrapper};
     margin: 0 auto;
@@ -71,12 +76,26 @@ const SectionStyled = styled.section`
     z-index: 100;
   }
 
+  .wave-bg {
+    position: absolute;
+    top: -7.5rem;
+    left: 0;
+    width: 100%;
+    height: 30rem;
+    background-image: url(${waves});
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+  }
+
   .hero-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 5;
 
     .gatsby-image-wrapper {
       position: absolute;

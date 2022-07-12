@@ -7,6 +7,7 @@ import PageHero from "../components/templates/shared/PageHero"
 import ContentIcon from "../components/templates/shared/ContentIcon"
 import WysiwygIcon from "../components/templates/ourDifference/WysiwygIcon"
 import IconGraphic from "../components/templates/ourDifference/IconGraphic"
+import styled from "styled-components"
 
 const ourDifference = props => {
   const hero = props.data.hero.template.pageOurDifference
@@ -16,12 +17,18 @@ const ourDifference = props => {
     <Layout>
       <Seo />
       <PageHero data={hero} />
-      <ContentIcon data={contentIcon} />
-      <IconGraphic />
-      <WysiwygIcon data={wysiwygIcon} />
+      <StyledDiv>
+        <ContentIcon data={contentIcon} />
+        <IconGraphic />
+        <WysiwygIcon data={wysiwygIcon} />
+      </StyledDiv>
     </Layout>
   )
 }
+
+const StyledDiv = styled.div`
+  background-color: rgba(157, 181, 148, 0.1);
+`
 
 export const ourDifferenceTempQuery = graphql`
   query ourDifferenceTempPage($id: String!) {

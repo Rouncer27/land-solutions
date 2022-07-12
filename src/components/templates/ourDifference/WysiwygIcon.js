@@ -4,6 +4,7 @@ import styled from "styled-components"
 import {
   B1Black,
   colors,
+  fonts,
   H3Blue,
   H3LightGreen,
   medWrapper,
@@ -19,7 +20,10 @@ const WysiwygIcon = ({ data }) => {
           )
           const logoAlt = block?.icon?.altText
           return (
-            <BlockDiv key={index}>
+            <BlockDiv
+              islast={index + 1 === data.wysiwygWithIcon.length}
+              key={index}
+            >
               <div className="icon">
                 <GatsbyImage image={image} alt={logoAlt} layout="fixed" />
               </div>
@@ -46,6 +50,7 @@ const SectionStyled = styled.section`
 `
 
 const BlockDiv = styled.div`
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -53,9 +58,22 @@ const BlockDiv = styled.div`
   margin-bottom: 5rem;
   padding: 2rem;
   box-shadow: 4px 8px 4px 0 rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 1);
 
   @media (min-width: 768px) {
     padding: 2rem 5rem;
+  }
+
+  &::before {
+    display: ${props => (props.islast ? "none" : "block")};
+    position: absolute;
+    bottom: -7.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: ${colors.colorTertiary};
+    font-family: ${fonts.fontAwesome};
+    font-size: 3rem;
+    content: "\f175";
   }
 
   .icon {

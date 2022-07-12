@@ -23,15 +23,31 @@ const ContentBlock = ({ data }) => {
           </div>
         </div>
       </div>
+      <div className="graphic-bg" />
     </SectionStyled>
   )
 }
 
 const SectionStyled = styled.section`
+  position: relative;
   padding: 2rem 0;
 
   @media (min-width: 768px) {
     padding: 4rem 0;
+  }
+
+  .graphic-bg {
+    position: absolute;
+    top: -140%;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(
+      30deg,
+      rgba(243, 245, 239, 1) 25%,
+      rgba(255, 255, 255, 0) 25%
+    );
+    z-index: -1;
   }
 
   .wrapper {

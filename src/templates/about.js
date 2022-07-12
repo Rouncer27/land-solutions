@@ -45,6 +45,16 @@ export const aboutTempQuery = graphql`
             aboutIntroBlueTitle
             aboutIntroBoldText
             aboutIntroContent
+            aboutIntroIcon {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 750)
+                }
+              }
+            }
           }
         }
       }
