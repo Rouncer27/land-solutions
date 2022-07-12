@@ -5,15 +5,18 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 
 import Intro from "../components/templates/about/Intro"
+import Highlights from "../components/templates/about/Highlights"
 import Locations from "../components/templates/about/Locations"
 
 const About = props => {
   const intro = props.data.intro.template.aboutPage
+  const highlights = props.data.highlights.template.aboutPage
   const locations = props.data.locations.template.aboutPage
   return (
     <Layout>
       <Seo />
       <Intro data={intro} />
+      <Highlights data={highlights} />
       <Locations data={locations} />
     </Layout>
   )
@@ -42,6 +45,32 @@ export const aboutTempQuery = graphql`
             aboutIntroBlueTitle
             aboutIntroBoldText
             aboutIntroContent
+          }
+        }
+      }
+    }
+
+    highlights: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_About {
+          aboutPage {
+            highlightsSliderTitle
+            highlightsSliderSlides {
+              year
+              points {
+                point
+              }
+            }
+            highlightsSliderImage {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 2500)
+                }
+              }
+            }
           }
         }
       }
