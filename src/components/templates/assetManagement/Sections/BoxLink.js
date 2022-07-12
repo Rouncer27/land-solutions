@@ -37,6 +37,7 @@ const SectionStyled = styled.section`
     border: 0.1rem solid ${colors.colorPrimary};
     border-radius: 0.7rem;
     box-shadow: 2px 4px 7px 0 rgba(0, 0, 0, 0.16);
+    background-color: rgba(255, 255, 255, 1);
 
     @media (min-width: 1025px) {
       padding: 3.5rem 10rem;
