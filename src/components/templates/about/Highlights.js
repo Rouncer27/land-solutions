@@ -53,7 +53,7 @@ const Highlights = ({ data }) => {
       console.log(i)
       return (
         <a href="#">
-          <span className="dot-span">
+          <span indexdot={i} className="dot-span">
             <span className="dot-span__dot">&#8226;</span>
           </span>
           <span className="tex-span">
@@ -117,21 +117,45 @@ const StyledSection = styled.section`
 
   .wrapper {
     position: relative;
-    width: 95%;
-    margin-left: 5%;
-    padding: 4rem;
+    width: 100%;
+    padding: 0;
     z-index: 10;
+
+    @media (min-width: 768px) {
+      adding: 4rem;
+    }
   }
 
   .main-slider {
-    padding: 2rem 2rem 12.5rem;
+    padding: 2rem 2rem 10rem;
+
+    @media (min-width: 768px) {
+      padding: 2rem 2rem 5rem;
+    }
+
+    @media (min-width: 1025px) {
+      padding: 2rem 2rem 17.5rem;
+    }
+
+    @media (min-width: 1300px) {
+      padding: 2rem 2rem 15rem;
+    }
 
     .slick-arrow {
       top: auto;
-      bottom: -10px;
-      width: 165px;
+      bottom: 10px;
+      width: 200px;
       height: auto;
       z-index: 1000;
+
+      @media (min-width: 768px) {
+        bottom: 10px;
+        width: 165px;
+      }
+
+      @media (min-width: 1300px) {
+        bottom: 35px;
+      }
 
       &::before {
         display: none;
@@ -144,20 +168,53 @@ const StyledSection = styled.section`
     }
 
     .slick-arrow.slick-prev {
-      left: -10px;
+      left: 5%;
+
+      @media (min-width: 1025px) {
+        left: 6%;
+      }
+
+      @media (min-width: 1300px) {
+        left: 7.5%;
+      }
     }
 
     .slick-arrow.slick-next {
+      right: -25px;
+
+      @media (min-width: 768px) {
+        right: -25px;
+      }
+
+      @media (min-width: 1025px) {
+        right: 1%;
+      }
+
+      @media (min-width: 1300px) {
+        right: 0.5%;
+      }
     }
 
     .slick-dots.slick-thumb {
       width: 100%;
-      bottom: -2.5px;
+
+      @media (min-width: 1025px) {
+        bottom: 75px;
+      }
+
+      @media (min-width: 1300px) {
+        bottom: 20px;
+      }
 
       li {
         ${B2LightGreen};
+        display: none;
         position: relative;
         width: 5rem;
+
+        @media (min-width: 1025px) {
+          display: inline-block;
+        }
 
         .dot-span {
           display: block;
@@ -168,6 +225,23 @@ const StyledSection = styled.section`
           height: 7px;
           border-radius: 50%;
           transform: translateX(-50%);
+
+          &::after {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 60px;
+            height: 1px;
+            transform: translateY(-50%);
+            background-color: #9db594;
+            content: "";
+          }
+
+          &[indexdot="0"] {
+            &::after {
+              display: none;
+            }
+          }
 
           &__dot {
             position: absolute;
@@ -195,12 +269,16 @@ const StyledSection = styled.section`
   .slide-bg-overlay {
     position: absolute;
     top: 0;
-    left: 5%;
+    left: 0;
     width: calc(100%);
     height: 100%;
     background-color: #033346;
     opacity: 0.85;
     z-index: 5;
+
+    @media (min-width: 768px) {
+      left: 5%;
+    }
   }
 
   .slide-bg-image {
@@ -233,15 +311,30 @@ const StyledSlide = styled.div`
   z-index: 10;
 
   .date {
-    width: calc(15%);
+    position: relative;
+    width: calc(100%);
+
+    @media (min-width: 768px) {
+      width: calc(15%);
+      padding: 0 2rem;
+    }
 
     h2 {
       ${H2LightBlue};
-      position: relative;
-      top: 200px;
-      transform-origin: top left;
-      transform: rotate(-90deg);
-      text-align: right;
+
+      @media (min-width: 768px) {
+        position: relative;
+        top: 200px;
+        left: 30%;
+        width: 200px;
+        transform-origin: top left;
+        transform: rotate(-90deg);
+        text-align: right;
+      }
+
+      @media (min-width: 1025px) {
+        width: 200px;
+      }
 
       span {
         display: block;
@@ -250,10 +343,13 @@ const StyledSlide = styled.div`
   }
 
   .content {
-    width: calc(85%);
-    max-width: 75rem;
-    margin-right: auto;
-    margin-left: 0;
+    width: calc(100%);
+    @media (min-width: 768px) {
+      width: calc(85%);
+      max-width: 75rem;
+      margin-right: auto;
+      margin-left: 0;
+    }
 
     h3 {
       ${H2White};
