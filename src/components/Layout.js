@@ -1,13 +1,15 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
 import PropTypes from "prop-types"
 import { ThemeProvider } from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
+import { LoadingContext } from "../context/LoadingContext"
 
 import theme from "../styles/theme/Theme"
 import GlobalStyle from "../styles/global/Golbal"
 
 import Header from "./Header"
 import Footer from "./Footer"
+import InitalLoad from "./InitalLoad/InitalLoad"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -20,13 +22,24 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const [loadingState, loadingDispatch] = useContext(LoadingContext)
+
+  console.log("loadingState", loadingState)
+  console.log("loadingDispatch", loadingDispatch)
+
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <main>{children}</main>
-        <Footer />
+        {loadingState.initLoad ? (
+          <InitalLoad />
+        ) : (
+          <>
+            <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+            <main>{children}</main>
+            <Footer />
+          </>
+        )}
       </ThemeProvider>
     </>
   )

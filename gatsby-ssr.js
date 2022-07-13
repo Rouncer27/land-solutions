@@ -1,7 +1,6 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/ssr-apis/
- */
+import React from "react"
+import { LoadingContextProvider } from "./src/context/LoadingContext"
 
-// You can delete this file if you're not using it
+export const wrapRootElement = ({ element }) => {
+  return <LoadingContextProvider>{element}</LoadingContextProvider>
+}
