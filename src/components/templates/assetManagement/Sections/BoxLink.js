@@ -29,6 +29,7 @@ const SectionStyled = styled.section`
 
   .wrapper {
     ${standardWrapper};
+    max-width: 100rem !important;
   }
 
   .content {

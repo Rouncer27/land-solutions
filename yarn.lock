@@ -6875,9 +6875,9 @@
   "resolved" "https://registry.npmjs.org/graphql/-/graphql-15.8.0.tgz"
   "version" "15.8.0"
 
-"gsap@^3.10.4":
-  "integrity" "sha512-6QatdkKxXCMfvCW4rM++0RqyLQAzFX5nwl3yHS0XPgkZBkiSEY3VZVbMltrdtsbER/xZonLtyHt684wRp4erlQ=="
-  "resolved" "https://registry.npmjs.org/gsap/-/gsap-3.10.4.tgz"
+"gsap@npm:@gsap/shockingly@^3.10.4":
+  "integrity" "sha512-yHI7bywPYdLEAue7m7bhD7ZYY54OzIq1Hu34yjFyKzVxHqZc1F/fEHlRMl8W9bHbb89f3JXq12Ih3U7g4vowQQ=="
+  "resolved" "https://npm.greensock.com/@gsap%2fshockingly/-/shockingly-3.10.4.tgz"
   "version" "3.10.4"
 
 "gzip-size@^6.0.0":

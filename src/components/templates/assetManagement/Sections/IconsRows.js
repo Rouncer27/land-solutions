@@ -37,6 +37,7 @@ const IconsRows = ({ data }) => {
 const StyledSection = styled.section`
   .wrapper {
     ${standardWrapper};
+    max-width: 120rem !important;
   }
 `
 

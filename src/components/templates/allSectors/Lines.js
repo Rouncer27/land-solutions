@@ -10,6 +10,7 @@ const Lines = () => {
         viewBox="0 0 1382.323 826.686"
       >
         <path
+          className="line line-one"
           fill="none"
           stroke="#000"
           strokeLinecap="round"
@@ -19,6 +20,7 @@ const Lines = () => {
           d="M2.007 451.285l363.443 1.279 271.691 314.821 239.797-311.8 286.5 139.912-130.413 228.461"
         ></path>
         <path
+          className="line line-two"
           fill="none"
           stroke="#000"
           strokeLinecap="round"
@@ -28,6 +30,7 @@ const Lines = () => {
           d="M3.378 435.932l169.43-130.225-7.768-13.251-4.387 7.494 204.8 152.615 336.115-154.443-24.674 1.828 208.817 152.614 305.778 157.367 8.5-12.794-7.768 5.849 184.509-65.707M1378.373 205.73l-384.735-6.305 229.745-94.859 153.346 47.795"
         ></path>
         <path
+          className="line line-three"
           fill="none"
           stroke="#000"
           strokeLinecap="round"
@@ -37,6 +40,7 @@ const Lines = () => {
           d="M3.378 265.039L178.2 305.706l-16.084-13.251 541.554 13.251 300.295-80.785"
         ></path>
         <path
+          className="line line-four"
           fill="none"
           stroke="#000"
           strokeLinecap="round"
@@ -46,6 +50,7 @@ const Lines = () => {
           d="M150.327 146.974l10.327 152.98 347.084-135.713 178.112 133.15 20.562-13.342-27.691-141.375"
         ></path>
         <path
+          className="line line-five"
           fill="none"
           stroke="#000"
           strokeLinecap="round"
@@ -55,6 +60,7 @@ const Lines = () => {
           d="M1003.965 224.469l-500.339-50.176-11.148-10.052h15.26l-357.411-17.272L3.378 190.743"
         ></path>
         <path
+          className="line line-six"
           fill="none"
           stroke="#000"
           strokeLinecap="round"
@@ -64,6 +70,7 @@ const Lines = () => {
           d="M1374.169 545.778l-181.95 57.208-28.786-7.494 192.368-273.61 20.932-70.367"
         ></path>
         <path
+          className="line line-seven"
           fill="none"
           stroke="#000"
           strokeLinecap="round"
@@ -73,6 +80,7 @@ const Lines = () => {
           d="M1374.171 502.095L733.918 296.842l-48.069.548-9.778 7.676s330.361 21.019 357.685 22.847 345.531 35.549 345.531 35.549"
         ></path>
         <path
+          className="line line-eight"
           fill="none"
           stroke="#000"
           strokeLinecap="round"
