@@ -1,16 +1,45 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { Btn1One, colors, H1Blue, H3Blue } from "../../../styles/helpers"
+
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Intro = ({ data }) => {
   const image = getImage(
     data?.homeIntroImage?.localFile?.childImageSharp?.gatsbyImageData
   )
   const logoAlt = data?.homeIntroImage?.altText
+
+  useEffect(() => {
+    const letterL = document.querySelector(".image__l")
+    const contentCover = document.querySelector(".content__cover")
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: `#intro-div-trigger`,
+          markers: false,
+          start: "top 100%",
+          toggleActions: "play none none none",
+        },
+      })
+      .add("start")
+      .fromTo(letterL, { x: -2000 }, { x: 0, duration: 2 })
+      .fromTo(
+        contentCover,
+        { scaleX: 1 },
+        { scaleX: 0, duration: 1.5 },
+        "start+=0.65"
+      )
+  }, [])
+
   return (
-    <SectionStyled>
+    <SectionStyled id="intro-div-trigger">
       <div className="wrapper">
         <div className="content">
           <div className="content__title">
@@ -25,6 +54,7 @@ const Intro = ({ data }) => {
               {data.homeIntroButtonText}
             </Link>
           </div>
+          <div className="content__cover" />
         </div>
 
         <div className="image">
@@ -56,6 +86,7 @@ const SectionStyled = styled.section`
   }
 
   .content {
+    position: relative;
     width: 100%;
     margin-bottom: 5rem;
 
@@ -69,6 +100,17 @@ const SectionStyled = styled.section`
       max-width: 45rem;
       padding-right: 2.5rem;
       margin-left: auto;
+    }
+
+    &__cover {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 175%;
+      height: 100%;
+      background-color: ${colors.white};
+      transform-origin: center right;
+      z-index: 100;
     }
 
     h1 {
