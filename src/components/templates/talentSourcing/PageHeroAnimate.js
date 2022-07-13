@@ -1,25 +1,21 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import { H1White } from "../../../styles/helpers"
+import TextScrambled from "./TextScrambled"
 
 const PageHeroAnimate = ({ data }) => {
-  console.log("PageHeroAnimate: ", data)
   const imageDisplay = getImage(
     data.pageHeroAnimationImage.localFile.childImageSharp.gatsbyImageData
   )
   const imageAlt = data.pageHeroAnimationImage.altText
+
   return (
     <StyledSection>
       <div className="wrapper">
         <div className="content">
-          {data.pageHeroAnimationText.map((text, index) => {
-            return (
-              <div className="text-item" key={index}>
-                <p>{text.text}</p>
-              </div>
-            )
-          })}
+          {data.pageHeroAnimationText.map((text, index) => (
+            <TextScrambled key={index} text={text.text} index={index} />
+          ))}
         </div>
         <div className="image">
           <GatsbyImage
@@ -65,18 +61,6 @@ const StyledSection = styled.section`
     }
 
     @media (min-width: 1025px) {
-    }
-
-    .text-item {
-      width: 100%;
-    }
-
-    p {
-      ${H1White};
-      margin: 0;
-      padding: 0;
-      font-weight: 300;
-      text-transform: uppercase;
     }
   }
 
