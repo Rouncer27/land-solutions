@@ -28,6 +28,7 @@ const InitalLoad = () => {
   const tl = gsap.timeline()
 
   useEffect(() => {
+    const mainDiv = document.querySelector("#main-landing")
     const titles = document.querySelector(".titles")
     const titleH1 = document.querySelector(".title h1")
     const subTitle = document.querySelector(".sub-title")
@@ -44,7 +45,8 @@ const InitalLoad = () => {
     const lineGraphic = document.querySelector(".line-graphic")
 
     // Start by animating the title into view. //
-    tl.fromTo(titles, { autoAlpha: 0 }, { autoAlpha: 1, x: "-40%" })
+    tl.to(mainDiv, { autoAlpha: 1, duration: 0.1 })
+      .fromTo(titles, { autoAlpha: 0 }, { autoAlpha: 1, x: "-40%" })
       .add("first")
       // Morph L into full screen video. //
       .to(
@@ -150,7 +152,7 @@ const InitalLoad = () => {
   }, [])
 
   return (
-    <StyledDiv>
+    <StyledDiv id="main-landing">
       <div id="step-one">
         <div className="container">
           <div className="video">
@@ -245,6 +247,7 @@ const StyledDiv = styled.div`
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  opacity: 0;
 
   .bg-letter-l {
     position: absolute;
@@ -305,12 +308,13 @@ const StyledDiv = styled.div`
   }
 
   .title {
-    max-width: 35rem;
+    max-width: 40rem;
     margin-right: 6.7rem;
 
     h1 {
       ${H1Blue};
       ${fontSizer(7.5, 13.5, 76.8, 150, 5)};
+      width: 100%;
       font-weight: bold;
       text-align: right;
       text-transform: uppercase;
