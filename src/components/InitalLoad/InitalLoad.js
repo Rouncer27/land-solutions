@@ -193,6 +193,7 @@ const InitalLoad = () => {
             loadingDispatch({
               type: "INIT_LOAD_DONE",
             })
+            localStorage.setItem("initLoad", true)
           }}
           type="button"
         >
@@ -230,6 +231,7 @@ const InitalLoad = () => {
                 loadingDispatch({
                   type: "INIT_LOAD_DONE",
                 })
+                localStorage.setItem("initLoad", true)
               }}
               type="button"
             >

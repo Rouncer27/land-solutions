@@ -36,6 +36,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `#1F527F`,
+        // Disable the loading spinner.
+        showSpinner: false,
+        trickle: false,
+        minimum: 0.1,
+      },
+    },
+    {
       resolve: "gatsby-source-wordpress",
       options: {
         url: process.env.WORDPRESS_URL,

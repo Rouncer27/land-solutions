@@ -27,6 +27,17 @@ const Layout = ({ children }) => {
   console.log("loadingState", loadingState)
   console.log("loadingDispatch", loadingDispatch)
 
+  useEffect(() => {
+    const alreadyClickClose = localStorage.getItem("initLoad")
+    if (alreadyClickClose) {
+      loadingDispatch({
+        type: "INIT_LOAD_DONE",
+      })
+    } else {
+      localStorage.setItem("initLoad", true)
+    }
+  }, [])
+
   return (
     <>
       <ThemeProvider theme={theme}>
