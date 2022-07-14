@@ -28,7 +28,7 @@ const SubSectionthree = ({ data }) => {
   )
   const imagePdfAlt = data.pdfThumbnail.altText
   return (
-    <StyledSection>
+    <StyledSection id={data.sectionId ? data.sectionId : ""}>
       <div className="wrapper">
         <div className="content">
           <div className="content__image">

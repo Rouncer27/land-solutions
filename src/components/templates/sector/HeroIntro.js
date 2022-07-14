@@ -139,7 +139,7 @@ const StyledSection = styled.section`
     }
 
     &__icon {
-      width: 5rem;
+      width: 7.5rem;
     }
 
     &__title {

@@ -1,17 +1,43 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { H3LightGreen, standardWrapper } from "../../../styles/helpers"
-import { Link } from "gatsby"
-import waves from "../../../images/waves.png"
+import { colors, H3LightGreen, standardWrapper } from "../../../styles/helpers"
+import scrollTo from "gatsby-plugin-smoothscroll"
+import waves from "../../../images/long-wave.png"
+
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
 const NavLinksIcon = ({ data }) => {
   const imageDisplay = getImage(
     data.navigationLinksWithIconIcon.localFile.childImageSharp.gatsbyImageData
   )
   const imageAlt = data.navigationLinksWithIconIcon.altText
+
+  useEffect(() => {
+    const tigger = document.querySelector("#wave-trigger")
+    const waves = document.querySelector(".wave-bg")
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: tigger,
+          markers: false,
+          start: "top 87.5%",
+          end: "bottom 30%",
+          toggleActions: "play none none reverse",
+          scrub: 5,
+        },
+      })
+      .to(waves, {
+        x: 200,
+        ease: "none",
+      })
+  }, [])
+
   return (
-    <StyledDiv>
+    <StyledDiv id="wave-trigger">
       <div className="wrapper">
         <div className="wrapper__inner">
           <div className="icon">
@@ -25,9 +51,9 @@ const NavLinksIcon = ({ data }) => {
           <ul className="links">
             {data.navigationLinksWithIconLinks.map((item, index) => (
               <li key={index}>
-                <Link to={`/${item.slug}`}>
+                <button type="button" onClick={() => scrollTo(`#${item.slug}`)}>
                   {item.text} <span>&#8594;</span>
-                </Link>
+                </button>
               </li>
             ))}
           </ul>
@@ -44,8 +70,8 @@ const StyledDiv = styled.div`
   .wave-bg {
     position: absolute;
     top: -15rem;
-    left: 0;
-    width: 100%;
+    right: 0%;
+    width: 200%;
     height: 30rem;
     background-image: url(${waves});
     background-size: 100% 100%;
@@ -56,6 +82,8 @@ const StyledDiv = styled.div`
 
   .wrapper {
     ${standardWrapper};
+    position: relative;
+    z-index: 1000;
 
     &__inner {
       display: flex;
@@ -75,9 +103,17 @@ const StyledDiv = styled.div`
   .links {
     width: 75%;
 
-    a {
+    button {
       ${H3LightGreen};
+      transition: all 0.3s ease-out;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
       font-weight: 300;
+
+      &:hover {
+        color: ${colors.colorPrimary};
+      }
     }
   }
 `

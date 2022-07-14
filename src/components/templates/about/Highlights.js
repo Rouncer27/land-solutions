@@ -114,6 +114,7 @@ const Highlights = ({ data }) => {
 
 const StyledSection = styled.section`
   position: relative;
+  margin-bottom: 0.3rem;
 
   .wrapper {
     position: relative;

@@ -1,20 +1,43 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { H2Green, medWrapper, B1Green } from "../../../styles/helpers"
 
-import waves from "../../../images/waves.png"
+import waves from "../../../images/long-wave.png"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
 const NavLinks = ({ data }) => {
+  useEffect(() => {
+    const tigger = document.querySelector("#links-wave-trigger")
+    const waves = document.querySelector(".wave-bg")
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: tigger,
+          markers: false,
+          start: "top 87.5%",
+          end: "bottom 30%",
+          toggleActions: "play none none reverse",
+          scrub: 5,
+        },
+      })
+      .to(waves, {
+        x: 200,
+        ease: "none",
+      })
+  }, [])
   return (
-    <SectionStyled>
+    <SectionStyled id="links-wave-trigger">
       <div className="wrapper">
         <h2>{data.sectionNavigationLinksTitle}</h2>
         <ul>
           {data.sectionNavigationLinks.map((link, index) => {
             return (
               <li key={index}>
-                <Link to={`${link.slug}`}>{link.text}</Link>
+                <Link to={`/${link.slug}`}>{link.text}</Link>
                 {index + 1 !== data.sectionNavigationLinks.length ? (
                   <span>&#124;</span>
                 ) : null}
@@ -43,8 +66,8 @@ const SectionStyled = styled.section`
   .wave-bg {
     position: absolute;
     top: -10rem;
-    left: 0;
-    width: 100%;
+    right: 0%;
+    width: 200%;
     height: 30rem;
     background-image: url(${waves});
     background-size: 100% 100%;
@@ -55,6 +78,8 @@ const SectionStyled = styled.section`
 
   .wrapper {
     ${medWrapper};
+    position: relative;
+    z-index: 1000;
   }
 
   h2 {

@@ -17,7 +17,7 @@ const SubSectionTwo = ({ data }) => {
   const imageAlt = data.image.altText
 
   return (
-    <StyledSection>
+    <StyledSection id={data.sectionId ? data.sectionId : ""}>
       <div className="wrapper">
         <div className="content-top">
           <div className="image">

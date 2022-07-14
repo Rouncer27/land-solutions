@@ -2,11 +2,21 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { colors, H2Green, standardWrapper } from "../../../styles/helpers"
+import {
+  B1White,
+  colors,
+  H2Green,
+  standardWrapper,
+} from "../../../styles/helpers"
+
+import arrowRight from "../../../images/arrow-right.png"
 
 const SectorsList = ({ data, sectors }) => {
   return (
     <StyledSection>
+      <div className="sectors-title">
+        <p>Click on your sector to learn more.</p>
+      </div>
       <ul className="wrapper">
         {sectors.map(sector => {
           const imageDisplay = getImage(
@@ -26,6 +36,9 @@ const SectorsList = ({ data, sectors }) => {
                   />
                 </span>
                 <span className="title">{sector.node.title}</span>
+                <span className="arrow">
+                  <img src={arrowRight} alt="" />
+                </span>
               </Link>
             </li>
           )
@@ -43,6 +56,19 @@ const StyledSection = styled.section`
     padding-bottom: 10rem;
   }
 
+  .sectors-title {
+    ${standardWrapper};
+    max-width: 85rem !important;
+    margin: auto;
+    padding: 0 2rem;
+
+    p {
+      ${B1White};
+      width: 100%;
+      margin: 0;
+    }
+  }
+
   .wrapper {
     ${standardWrapper};
     max-width: 85rem !important;
@@ -51,23 +77,54 @@ const StyledSection = styled.section`
       width: 100%;
       margin-top: 1rem;
       margin-bottom: 1rem;
-      background-color: ${colors.white};
+      background-color: #f3f5ef;
       box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.42);
+      transition: all 0.3s ease-out;
 
       a {
+        position: relative;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         padding: 3rem 4rem;
+        transition: all 0.3s ease-out;
+
+        span {
+          transition: all 0.3s ease-out;
+        }
 
         .icon {
           width: 15%;
           padding: 1rem;
         }
+
         .title {
           ${H2Green};
           width: 85%;
           font-weight: 300;
+        }
+
+        .arrow {
+          position: absolute;
+          top: 50%;
+          right: 5rem;
+          width: 7rem;
+          transform: translateY(300%);
+          opacity: 0;
+        }
+      }
+
+      &:hover {
+        background-color: #fff;
+
+        a {
+          .title {
+          }
+
+          .arrow {
+            transform: translateY(-50%);
+            opacity: 1;
+          }
         }
       }
     }

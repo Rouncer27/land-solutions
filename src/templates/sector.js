@@ -140,6 +140,7 @@ export const query = graphql`
         sectorSubSection {
           ... on WpSector_Sectors_SectorSubSection_SubSectionStyleOne {
             fieldGroupName
+            sectionId
             bottomBoxContent
             bottomBoxSlug
             bottomBoxText
@@ -171,6 +172,7 @@ export const query = graphql`
           }
           ... on WpSector_Sectors_SectorSubSection_SubSectionStyleTwo {
             fieldGroupName
+            sectionId
             bottomContent
             bottomTitle
             bottomTitleLink
@@ -189,6 +191,7 @@ export const query = graphql`
           }
           ... on WpSector_Sectors_SectorSubSection_SubSectionStyleThree {
             fieldGroupName
+            sectionId
             bottomBoxButtonSlug
             bottomBoxButtonText
             bottomBoxTitle

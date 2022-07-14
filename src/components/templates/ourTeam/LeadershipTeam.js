@@ -60,6 +60,7 @@ const StyledSection = styled.section`
 const TeamMember = styled.div`
   width: 100%;
   margin-bottom: 5rem;
+  transition: all 0.3s ease-out;
   box-shadow: 4px 5px 10px 0 rgba(0, 0, 0, 0.16);
   border: solid 2px ${colors.colorTertiary};
 
@@ -71,6 +72,10 @@ const TeamMember = styled.div`
   @media (min-width: 1025px) {
     width: calc(33.33333333% - 2rem);
     margin: 3rem 1rem;
+  }
+
+  &:hover {
+    box-shadow: 4px 5px 15px 5px rgba(0, 0, 0, 0.4);
   }
 
   .bio-content {
