@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import {
@@ -12,16 +12,41 @@ import {
 } from "../../../styles/helpers"
 import { Link } from "gatsby"
 
-import waves from "../../../images/waves.png"
+import waves from "../../../images/long-wave.png"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
 const Hero = ({ data }) => {
   const image = getImage(
     data?.homeHeroImage?.localFile?.childImageSharp?.gatsbyImageData
   )
   const logoAlt = data?.homeHeroImage?.altText
+
+  useEffect(() => {
+    const tigger = document.querySelector("#hero-wave-trigger")
+    const waves = document.querySelector(".wave-bg")
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: tigger,
+          markers: false,
+          start: "top 87.5%",
+          end: "bottom 30%",
+          toggleActions: "play none none reverse",
+          scrub: 5,
+        },
+      })
+      .to(waves, {
+        x: 200,
+        ease: "none",
+      })
+  }, [])
+
   return (
     <>
-      <SectionStyled>
+      <SectionStyled id="hero-wave-trigger">
         <div className="main-wrapper">
           <div className="wrapper">
             <div className="content-left">
@@ -79,8 +104,8 @@ const SectionStyled = styled.section`
   .wave-bg {
     position: absolute;
     top: -7.5rem;
-    left: 0;
-    width: 100%;
+    right: 0%;
+    width: 200%;
     height: 30rem;
     background-image: url(${waves});
     background-size: 100% 100%;

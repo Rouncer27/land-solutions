@@ -24,9 +24,6 @@ const Layout = ({ children }) => {
 
   const [loadingState, loadingDispatch] = useContext(LoadingContext)
 
-  console.log("loadingState", loadingState)
-  console.log("loadingDispatch", loadingDispatch)
-
   useEffect(() => {
     const alreadyClickClose = localStorage.getItem("initLoad")
     if (alreadyClickClose) {

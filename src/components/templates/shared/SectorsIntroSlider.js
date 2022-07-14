@@ -49,9 +49,6 @@ const SectorsIntroSlider = ({ sectors }) => {
             return (
               <Slide key={index} bgimage={sector.sectors.sectorLetter}>
                 <div className="image">
-                  <div className="image__title">
-                    <p>{sector.sectors.excerptContentImageTitle}</p>
-                  </div>
                   <div className="image__wrapper">
                     <GatsbyImage
                       image={imageDisplay}
@@ -64,6 +61,9 @@ const SectorsIntroSlider = ({ sectors }) => {
                 </div>
                 <div className="content">
                   <div className="content__inner">
+                    <div className="image__title">
+                      <p>{sector.sectors.excerptContentImageTitle}</p>
+                    </div>
                     <div className="content__title">
                       <h3>{sector.title}</h3>
                     </div>
@@ -178,27 +178,16 @@ const Slide = styled.div`
 
     &__title {
       position: relative;
-      max-width: 40rem;
-      margin: auto;
-      padding: 3rem 1rem;
+      width: 100%;
+      margin: 0;
       z-index: 100;
 
-      @media (min-width: 768px) {
-        max-width: 55rem;
-        padding: 3rem;
-      }
-
-      @media (min-width: 1025px) {
-      }
-
       p {
-        ${H2Blue};
-        margin: 0;
-        text-align: center;
+        ${H3White};
+        margin-bottom: 2rem;
 
         @media (min-width: 1025px) {
           font-weight: 300;
-          text-align: left;
         }
       }
     }
@@ -260,12 +249,13 @@ const Slide = styled.div`
     @media (min-width: 768px) {
       width: calc(50%);
       min-height: 50rem;
+      padding: 5rem 2rem 12rem 2rem;
     }
 
     @media (min-width: 1025px) {
       width: calc(60%);
       min-height: auto;
-      padding: 5rem 10rem;
+      padding: 12rem 10rem;
     }
 
     &__inner {

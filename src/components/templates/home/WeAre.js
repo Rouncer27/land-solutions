@@ -1,6 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {
   B1Black,
   B2OffBlack,
@@ -9,13 +8,40 @@ import {
   H2Green,
 } from "../../../styles/helpers"
 
+import bgimage from "../../../images/background-image-para.jpg"
+import letter from "../../../images/letter-reversed.png"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
+
 const WeAre = ({ data }) => {
-  const image = getImage(
-    data?.weAreLandsolutionsImage?.localFile?.childImageSharp?.gatsbyImageData
-  )
-  const logoAlt = data?.weAreLandsolutionsImage?.altText
+  useEffect(() => {
+    const tigger = document.querySelector("#letter-background-trigger")
+    const img = document.querySelector(".image__background")
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: tigger,
+          markers: false,
+          start: "top 95%",
+          end: "bottom 0%",
+          scrub: true,
+          invalidateOnRefresh: true, // to make it responsive
+        },
+      })
+      .fromTo(
+        img,
+        {
+          y: 75,
+          ease: "none",
+        },
+        { y: -75, ease: "none" }
+      )
+  }, [])
+
   return (
-    <SectionStyled>
+    <SectionStyled id="letter-background-trigger">
       <div className="wrapper">
         <div className="titles">
           <h2>{data.weAreLandsolutionsTitle}</h2>
@@ -42,7 +68,8 @@ const WeAre = ({ data }) => {
         </div>
       </div>
       <div className="image">
-        <GatsbyImage image={image} alt={logoAlt} layout="fixed" />
+        <div className="image__letter" />
+        <div className="image__background" />
       </div>
     </SectionStyled>
   )
@@ -50,6 +77,7 @@ const WeAre = ({ data }) => {
 
 const SectionStyled = styled.section`
   position: relative;
+  overflow: hidden;
 
   .wrapper {
     display: flex;
@@ -58,6 +86,7 @@ const SectionStyled = styled.section`
   }
 
   .titles {
+    position: relative;
     width: 80%;
     padding: 2rem;
     margin-left: auto;
@@ -72,6 +101,14 @@ const SectionStyled = styled.section`
     @media (min-width: 1025px) {
       width: calc(50%);
       max-width: 40rem;
+    }
+
+    @media (min-width: 1500px) {
+      min-height: 85rem;
+    }
+
+    @media (min-width: 1800px) {
+      min-height: 95rem;
     }
 
     h2 {
@@ -137,17 +174,55 @@ const SectionStyled = styled.section`
     top: 0;
     left: 0;
     width: 20rem;
+    z-index: -1;
 
     @media (min-width: 768px) {
-      width: 22.5rem;
+      width: 50%;
+      height: 100%;
     }
 
     @media (min-width: 850px) {
-      width: 30rem;
+      width: 100%;
     }
 
     @media (min-width: 1025px) {
-      width: 40rem;
+      width: 100%;
+    }
+
+    &__letter {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      background-image: url(${letter});
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 5;
+
+      @media (min-width: 1500px) {
+        background-size: 100% auto;
+        background-position: 50% 50%;
+      }
+    }
+
+    &__background {
+      position: absolute;
+      top: 10%;
+      bottom: 10%;
+      left: -10%;
+      width: 120%;
+      background-image: url(${bgimage});
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 1;
+
+      @media (min-width: 1025px) {
+        top: -10%;
+        bottom: -10%;
+      }
     }
   }
 `

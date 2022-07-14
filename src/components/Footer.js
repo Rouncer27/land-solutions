@@ -79,10 +79,6 @@ const Footer = () => {
             >
               Switchback Creative
             </a>
-            , Built with ♡ and{" "}
-            <a target="_blank" rel="noreferrer" href="https://www.gatsbyjs.com">
-              Gatsby
-            </a>
             {" -- "}
             <Link to="/disclaimer">Disclaimer</Link>
             {" | "}
