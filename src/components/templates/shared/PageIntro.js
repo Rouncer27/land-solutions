@@ -49,13 +49,16 @@ const PageIntro = ({ data }) => {
               className="content-wrap__content--wysiwyg"
               dangerouslySetInnerHTML={{ __html: data.pageIntroContent }}
             />
-            <div className="content-wrap__content--link">
-              <p>
-                <Link to={`/${data.pageIntroLinkSlug}`}>
-                  {data.pageIntroLinkText}
-                </Link>
-              </p>
-            </div>
+            {data.pageIntroLinkText && data.pageIntroLinkSlug ? (
+              <div className="content-wrap__content--link">
+                <p>
+                  <Link to={`/${data.pageIntroLinkSlug}`}>
+                    {data.pageIntroLinkText}
+                  </Link>
+                  <span>&#8594;</span>
+                </p>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
@@ -168,7 +171,7 @@ const StyledSection = styled.section`
         max-width: 100rem;
         margin-top: 2.5rem;
         margin-right: auto;
-        margin-bottom: 2.5rem;
+        margin-bottom: 0;
         margin-left: auto;
 
         &::after {
@@ -439,9 +442,21 @@ const StyledSection = styled.section`
 
       &--link {
         width: 100%;
+        margin-bottom: 3rem;
+
+        p {
+          margin: 0;
+
+          span {
+            display: inline-block;
+            margin-left: 2rem;
+            color: ${colors.black};
+          }
+        }
 
         a {
           ${B1Black};
+          text-decoration: underline;
 
           &:hover {
             color: ${colors.colorPrimary};

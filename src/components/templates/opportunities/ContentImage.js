@@ -36,9 +36,17 @@ const ContentImage = ({ bgcolor, data }) => {
 const StyledSection = styled.section`
   position: relative;
   margin-top: 5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 0;
   background-color: ${props =>
     props.bgcolor ? "rgba(157, 181, 148, 0.1)" : "transparent"};
+
+  @media (min-width: 768px) {
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 1025px) {
+    padding-bottom: 5rem;
+  }
 
   .wrapper {
     ${medWrapper};
@@ -57,12 +65,12 @@ const StyledSection = styled.section`
 
     @media (min-width: 768px) {
       top: 0;
-      width: 20rem;
+      width: 18%;
     }
 
     @media (min-width: 1025px) {
       top: 0;
-      width: 25rem;
+      width: 18%;
     }
   }
 
@@ -85,18 +93,21 @@ const StyledSection = styled.section`
       margin-left: 35%;
 
       @media (min-width: 400px) {
-        width: calc(70%);
-        margin-left: 30%;
+        width: calc(85%);
+        margin-left: 15%;
+        margin-right: auto;
       }
 
       @media (min-width: 768px) {
         width: calc(75%);
-        margin-left: 25%;
+        margin-left: 18.5%;
+        margin-right: auto;
       }
 
       @media (min-width: 1025px) {
         width: calc(75%);
-        margin-left: 25%;
+        margin-left: 18%;
+        margin-right: auto;
       }
 
       h2 {

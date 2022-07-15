@@ -7,6 +7,7 @@ import {
   fonts,
   H1White,
   colors,
+  H3Blue,
 } from "../../../../styles/helpers"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -20,6 +21,11 @@ const ImageWysiwyg = ({ data }) => {
       <div className="wrapper">
         <div className="content-wrap">
           <div className="content-wrap__content">
+            {data.title && (
+              <div className="content-wrap__title">
+                <h2>{data.title}</h2>
+              </div>
+            )}
             <div
               className="content-wrap__content--wysiwyg"
               dangerouslySetInnerHTML={{ __html: data.content }}
@@ -80,6 +86,19 @@ const StyledSection = styled.section`
     width: 100%;
     margin-top: 3.5rem;
 
+    &__title {
+      width: 100%;
+      max-width: 100rem;
+      margin-top: 0;
+      margin-right: auto;
+      margin-bottom: 0;
+      margin-left: auto;
+
+      h2 {
+        ${H3Blue};
+      }
+    }
+
     &__content {
       width: calc(100%);
 
@@ -94,7 +113,6 @@ const StyledSection = styled.section`
       }
 
       &--wysiwyg {
-        width: 100%;
         width: 100%;
         max-width: 100rem;
         margin-top: 2.5rem;

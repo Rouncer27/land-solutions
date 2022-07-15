@@ -1,99 +1,115 @@
 import React from "react"
-import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
+import styled from "styled-components"
 import {
   B1Black,
-  H2White,
-  fonts,
-  H1White,
-  medWrapper,
   colors,
-  Btn1One,
-  Btn1Two,
   H3Blue,
+  medWrapper,
+  H2Blue,
+  fonts,
+  H1Blue,
+  H2Green,
+  Btn1One,
 } from "../../../styles/helpers"
 
-const IconWysiwygButton = ({ data }) => {
-  const imageDisplay = getImage(
-    data.iconWithWysiwygIcon.localFile.childImageSharp.gatsbyImageData
+const WysiwygWithImage = ({ data }) => {
+  const image = getImage(
+    data?.wysiwygWithImageImage?.localFile?.childImageSharp?.gatsbyImageData
   )
-  const imageAlt = data.iconWithWysiwygIcon.altText
+  const logoAlt = data?.wysiwygWithImageImage?.altText
   return (
-    <StyledDiv>
+    <SectionStyled>
       <div className="wrapper">
-        <div className="icon">
-          <div className="icon__wrapper">
-            <GatsbyImage
-              image={imageDisplay}
-              alt={imageAlt}
-              layout="fullWidth"
-              formats={["auto", "webp", "avif"]}
+        <BlockDiv>
+          <div className="image">
+            <GatsbyImage image={image} alt={logoAlt} layout="fixed" />
+          </div>
+          <div className="content">
+            <h2>{data.wysiwygWithImageTitle}</h2>
+            <h3>{data.wysiwygWithImageSubTitle}</h3>
+            <div
+              className="content__wysiwyg"
+              dangerouslySetInnerHTML={{ __html: data.wysiwygWithImageWysiwyg }}
             />
+            {data.wysiwygWithImageButtonRequired && (
+              <div className="content__links">
+                {data.wysiwygWithImageType === "email" ? (
+                  <a href={`mailto: ${data.wysiwygWithImageEmail}`}>
+                    {data.wysiwygWithImageButtonText}
+                  </a>
+                ) : (
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href={`${data.wysiwygWithImageUrl}`}
+                  >
+                    {data.wysiwygWithImageButtonText}
+                  </a>
+                )}
+              </div>
+            )}
           </div>
-        </div>
-        <div className="content">
-          <div
-            className="content__wysiwyg"
-            dangerouslySetInnerHTML={{ __html: data.iconWithWysiwygWysiwyg }}
-          />
-          <div className="content__link">
-            <Link
-              className="content__link--one"
-              to={`/${data.iconWithWysiwygButtonOneSlug}`}
-            >
-              {data.iconWithWysiwygButtonOneText}
-            </Link>
-            <Link
-              className="content__link--two"
-              to={`/${data.iconWithWysiwygButtonTwoSlug}`}
-            >
-              {data.iconWithWysiwygButtonTwoText}
-            </Link>
-          </div>
-        </div>
+        </BlockDiv>
       </div>
-    </StyledDiv>
+    </SectionStyled>
   )
 }
 
-const StyledDiv = styled.div`
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  padding-bottom: 5.5rem;
-
-  @media (min-width: 768px) {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+const SectionStyled = styled.section`
+  margin-bottom: 6.6rem;
 
   .wrapper {
     ${medWrapper};
   }
+`
 
-  .icon {
-    width: calc(100%);
+const BlockDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
+  .image {
     @media (min-width: 768px) {
-      width: calc(15%);
+      width: calc(15% - 2rem);
+      margin-right: 2rem;
     }
 
-    &__wrapper {
-      max-width: 9rem;
+    @media (min-width: 1025px) {
+      width: calc(30% - 2rem);
       margin-top: 2.5rem;
-      @media (min-width: 768px) {
-        margin-right: 0;
-        margin-left: auto;
-      }
+      margin-right: 2rem;
     }
   }
 
   .content {
-    width: 100%;
-
     @media (min-width: 768px) {
-      width: calc(85% - 6rem);
-      margin-left: 6rem;
+      width: calc(85%);
+    }
+
+    @media (min-width: 1025px) {
+      width: calc(70% - 2rem);
+      max-width: 75rem;
+      margin-right: auto;
+      margin-left: 2rem;
+    }
+
+    &__links {
+      width: 100%;
+
+      a {
+        ${Btn1One};
+      }
+    }
+
+    h2 {
+      ${H2Green};
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      ${H3Blue};
+      margin-top: 0;
     }
 
     &__wysiwyg {
@@ -206,7 +222,7 @@ const StyledDiv = styled.div`
 
       h1,
       h2 {
-        ${H1White};
+        ${H1Blue};
         margin-top: 10rem;
       }
 
@@ -216,15 +232,15 @@ const StyledDiv = styled.div`
       }
 
       h4 {
-        ${H2White}
+        ${H2Blue}
       }
 
       h5 {
-        ${H2White}
+        ${H2Blue}
       }
 
       h6 {
-        ${H2White}
+        ${H2Blue}
       }
 
       p {
@@ -368,31 +384,8 @@ const StyledDiv = styled.div`
       img {
         width: auto;
       }
-
-      .blue-para {
-        ${H3Blue};
-      }
-    }
-
-    &__link {
-      width: 100%;
-
-      &--one {
-        ${Btn1Two};
-        margin-bottom: 2.5rem;
-        text-transform: uppercase;
-
-        @media (min-width: 768px) {
-          margin-bottom: 0;
-        }
-      }
-
-      &--two {
-        ${Btn1One};
-        text-transform: uppercase;
-      }
     }
   }
 `
 
-export default IconWysiwygButton
+export default WysiwygWithImage

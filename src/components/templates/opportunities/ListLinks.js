@@ -4,6 +4,7 @@ import {
   B1OffBlack,
   colors,
   H3Blue,
+  medWrapper,
   standardWrapper,
 } from "../../../styles/helpers"
 
@@ -11,20 +12,22 @@ const ListLinks = ({ bgcolor, data, title }) => {
   return (
     <StyledSection bgcolor={bgcolor}>
       <div className="wrapper">
-        <div className="title">
-          <h2>{title}</h2>
+        <div className="content">
+          <div className="title">
+            <h2>{title}</h2>
+          </div>
+          <ul>
+            {data.map((link, index) => {
+              return (
+                <li key={index}>
+                  <a target="_blank" rel="noreferrer" href={link.url}>
+                    {link.text}
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
         </div>
-        <ul>
-          {data.map((link, index) => {
-            return (
-              <li key={index}>
-                <a target="_blank" rel="noreferrer" href={link.url}>
-                  {link.text}
-                </a>
-              </li>
-            )
-          })}
-        </ul>
       </div>
     </StyledSection>
   )
@@ -35,9 +38,21 @@ const StyledSection = styled.section`
   background-color: ${props =>
     props.bgcolor ? "rgba(157, 181, 148, 0.1)" : "transparent"};
 
+  @media (min-width: 768px) {
+    padding: 0;
+    padding-bottom: 5rem;
+  }
+
   .wrapper {
-    ${standardWrapper};
-    max-width: 75rem !important;
+    ${medWrapper};
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .content {
+    width: 82%;
+    margin-right: auto;
+    margin-left: 18%;
   }
 
   .title {
@@ -55,6 +70,7 @@ const StyledSection = styled.section`
 
       a {
         ${B1OffBlack};
+        text-decoration: underline;
 
         &:hover {
           color: ${colors.colorPrimary};

@@ -87,10 +87,32 @@ const SectionStyled = styled.section`
 
       @media (min-width: 1025px) {
         bottom: 5rem;
+        left: 3%;
       }
 
       @media (min-width: 1200px) {
         bottom: 5rem;
+        left: 6%;
+      }
+
+      @media (min-width: 1300px) {
+        bottom: 5rem;
+        left: 8%;
+      }
+
+      @media (min-width: 1400px) {
+        bottom: 5rem;
+        left: 10%;
+      }
+
+      @media (min-width: 1500px) {
+        bottom: 5rem;
+        left: 12%;
+      }
+
+      @media (min-width: 1600px) {
+        bottom: 5rem;
+        left: 14%;
       }
 
       li {

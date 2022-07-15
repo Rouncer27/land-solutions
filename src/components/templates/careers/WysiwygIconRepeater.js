@@ -1,99 +1,111 @@
 import React from "react"
-import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
+import styled from "styled-components"
 import {
   B1Black,
-  H2White,
-  fonts,
-  H1White,
-  medWrapper,
   colors,
-  Btn1One,
-  Btn1Two,
   H3Blue,
+  medWrapper,
+  H2Blue,
+  fonts,
+  H1Blue,
+  H2Green,
 } from "../../../styles/helpers"
 
-const IconWysiwygButton = ({ data }) => {
-  const imageDisplay = getImage(
-    data.iconWithWysiwygIcon.localFile.childImageSharp.gatsbyImageData
-  )
-  const imageAlt = data.iconWithWysiwygIcon.altText
+const WysiwygIconRepeater = ({ removepadding, bgcolor, data }) => {
+  console.log("removepadding: ", removepadding)
   return (
-    <StyledDiv>
+    <SectionStyled bgcolor={bgcolor}>
       <div className="wrapper">
-        <div className="icon">
-          <div className="icon__wrapper">
-            <GatsbyImage
-              image={imageDisplay}
-              alt={imageAlt}
-              layout="fullWidth"
-              formats={["auto", "webp", "avif"]}
-            />
-          </div>
-        </div>
-        <div className="content">
-          <div
-            className="content__wysiwyg"
-            dangerouslySetInnerHTML={{ __html: data.iconWithWysiwygWysiwyg }}
-          />
-          <div className="content__link">
-            <Link
-              className="content__link--one"
-              to={`/${data.iconWithWysiwygButtonOneSlug}`}
-            >
-              {data.iconWithWysiwygButtonOneText}
-            </Link>
-            <Link
-              className="content__link--two"
-              to={`/${data.iconWithWysiwygButtonTwoSlug}`}
-            >
-              {data.iconWithWysiwygButtonTwoText}
-            </Link>
-          </div>
-        </div>
+        {data.map((block, index) => {
+          const image = getImage(
+            block?.icon?.localFile?.childImageSharp?.gatsbyImageData
+          )
+          const logoAlt = block?.icon?.altText
+          return (
+            <BlockDiv removepadding={removepadding} key={index}>
+              <div className="icon">
+                <GatsbyImage image={image} alt={logoAlt} layout="fixed" />
+              </div>
+              <div className="content">
+                <h2>{block.mainTitle}</h2>
+                <h3>{block.subTitle}</h3>
+                <div
+                  className="content__wysiwyg"
+                  dangerouslySetInnerHTML={{ __html: block.wysiwyg }}
+                />
+              </div>
+            </BlockDiv>
+          )
+        })}
       </div>
-    </StyledDiv>
+    </SectionStyled>
   )
 }
 
-const StyledDiv = styled.div`
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  padding-bottom: 5.5rem;
-
-  @media (min-width: 768px) {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
+const SectionStyled = styled.section`
+  background-color: ${props =>
+    props.bgcolor ? "rgba(157, 181, 148, 0.1)" : "transparent"};
   .wrapper {
     ${medWrapper};
   }
+`
+
+const BlockDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding: 2rem 0;
+  back-shadow: ${props =>
+    props.bgcolor
+      ? "4px 8px 4px 0 rgba(0, 0, 0, 0)"
+      : "4px 8px 4px 0 rgba(0, 0, 0, 0.1)"};
+
+  @media (min-width: 768px) {
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 0;
+    padding: 2rem 5rem;
+    ${props => (props.removepadding ? "margin-top: 0px;" : null)}
+    ${props => (props.removepadding ? "padding-top: 0px;" : null)}
+    ${props => (props.removepadding ? "padding-bottom: 0px;" : null)}
+  }
 
   .icon {
-    width: calc(100%);
+    max-width: 15rem;
+    margin: 2rem 0;
 
     @media (min-width: 768px) {
-      width: calc(15%);
+      width: calc(15% - 2rem);
+      max-width: 100%;
+      margin-right: 2rem;
     }
 
-    &__wrapper {
-      max-width: 9rem;
-      margin-top: 2.5rem;
-      @media (min-width: 768px) {
-        margin-right: 0;
-        margin-left: auto;
-      }
+    @media (min-width: 1025px) {
+      width: calc(15% - 2rem);
+      margin-right: 2rem;
     }
   }
 
   .content {
-    width: 100%;
-
     @media (min-width: 768px) {
-      width: calc(85% - 6rem);
-      margin-left: 6rem;
+      width: calc(85%);
+    }
+
+    @media (min-width: 1025px) {
+      width: calc(85%);
+    }
+
+    h2 {
+      ${H2Green};
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      ${H3Blue};
+      margin-top: 0;
     }
 
     &__wysiwyg {
@@ -101,7 +113,7 @@ const StyledDiv = styled.div`
       max-width: 100rem;
       margin-top: 2.5rem;
       margin-right: auto;
-      margin-bottom: 2.5rem;
+      margin-bottom: 0;
       margin-left: auto;
 
       &::after {
@@ -177,6 +189,14 @@ const StyledDiv = styled.div`
             font-size: 0.75rem;
             content: "\f111";
           }
+
+          ul {
+            li {
+              &::before {
+                content: "\f068";
+              }
+            }
+          }
         }
       }
 
@@ -206,7 +226,7 @@ const StyledDiv = styled.div`
 
       h1,
       h2 {
-        ${H1White};
+        ${H1Blue};
         margin-top: 10rem;
       }
 
@@ -216,15 +236,15 @@ const StyledDiv = styled.div`
       }
 
       h4 {
-        ${H2White}
+        ${H2Blue}
       }
 
       h5 {
-        ${H2White}
+        ${H2Blue}
       }
 
       h6 {
-        ${H2White}
+        ${H2Blue}
       }
 
       p {
@@ -368,31 +388,8 @@ const StyledDiv = styled.div`
       img {
         width: auto;
       }
-
-      .blue-para {
-        ${H3Blue};
-      }
-    }
-
-    &__link {
-      width: 100%;
-
-      &--one {
-        ${Btn1Two};
-        margin-bottom: 2.5rem;
-        text-transform: uppercase;
-
-        @media (min-width: 768px) {
-          margin-bottom: 0;
-        }
-      }
-
-      &--two {
-        ${Btn1One};
-        text-transform: uppercase;
-      }
     }
   }
 `
 
-export default IconWysiwygButton
+export default WysiwygIconRepeater

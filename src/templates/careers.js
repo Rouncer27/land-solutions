@@ -4,11 +4,11 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PageHero from "../components/templates/shared/PageHero"
-import WysiwygIcon from "../components/templates/shared/WysiwygIconRepeater"
+import WysiwygIcon from "../components/templates/careers/WysiwygIconRepeater"
 import ContentBlock from "../components/templates/home/ContentBlock"
 import ImageStrip from "../components/templates/shared/ImageStrip"
 import TeamTestimonials from "../components/templates/shared/TeamTestimonials"
-import WysiwygWithImage from "../components/templates/shared/WysiwygWithImage"
+import WysiwygWithImage from "../components/templates/careers/WysiwygWithImage"
 import PageHeroQuote from "../components/templates/shared/PageHeroQuote"
 
 const Careers = props => {
@@ -42,7 +42,11 @@ const Careers = props => {
       />
       <WysiwygWithImage data={wysiwygWithImage} />
       <ImageStrip data={imageStripTwo} />
-      <WysiwygIcon data={wysiwygIconThree} />
+      <WysiwygIcon
+        bgcolor={false}
+        removepadding={true}
+        data={wysiwygIconThree}
+      />
       <PageHeroQuote data={pageHeroQuote} />
     </Layout>
   )

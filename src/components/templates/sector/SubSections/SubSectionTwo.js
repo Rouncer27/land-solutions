@@ -115,6 +115,7 @@ const StyledSection = styled.section`
       @media (min-width: 768px) {
         width: calc(40% - 2rem);
         margin-right: 2rem;
+        text-align: right;
       }
     }
 

@@ -19,8 +19,13 @@ const StyledDiv = styled.div`
     margin: 7.5rem auto;
   }
 
+  @media (min-width: 1025px) {
+    margin: 7.5rem auto 0;
+  }
+
   .wrapper {
     ${standardWrapper}
+    max-width: 95rem !important;
   }
 
   h2 {

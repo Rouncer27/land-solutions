@@ -4,9 +4,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PageHero from "../components/templates/shared/PageHero"
-import WysiwygIcon from "../components/templates/shared/WysiwygIconRepeater"
+import WysiwygIcon from "../components/templates/opportunities/WysiwygIconRepeater"
 import ContentImage from "../components/templates/opportunities/ContentImage"
-import WysiwygWithImage from "../components/templates/shared/WysiwygWithImage"
+import WysiwygWithImage from "../components/templates/opportunities/WysiwygWithImage"
 import PageHeroContained from "../components/templates/shared/PageHeroContained"
 import ListLinks from "../components/templates/opportunities/ListLinks"
 
@@ -31,7 +31,7 @@ const Opportunities = props => {
     <Layout>
       <Seo />
       <PageHero data={hero} />
-      <WysiwygIcon data={wysiwygIcon} />
+      <WysiwygIcon removepadding={true} data={wysiwygIcon} />
       <ListLinks bgcolor={false} data={links} title={linksTitle} />
       <ContentImage bgcolor={true} data={contentImage} />
       <ListLinks bgcolor={true} data={linksTwo} title={linksTwoTitle} />

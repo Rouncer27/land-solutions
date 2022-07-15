@@ -96,6 +96,7 @@ export const assetManagementTempQuery = graphql`
 
                 ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_ImageWysiwyg {
                   content
+                  title
                   fieldGroupName
                   image {
                     altText
