@@ -1,5 +1,5 @@
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
-import React from "react"
 import styled from "styled-components"
 import {
   Btn1One,
@@ -8,10 +8,41 @@ import {
   H3Blue,
   standardWrapper,
 } from "../../../styles/helpers"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
 const ContentBlock = ({ displaybg, data }) => {
+  useEffect(() => {
+    const tigger = document.querySelector("#content-box-trigger")
+    const graphic = document.querySelectorAll(".graphic-bg")
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: tigger,
+          markers: false,
+          start: "top 40%",
+          scrub: false,
+        },
+      })
+      .fromTo(
+        graphic,
+        {
+          autoAlpha: 0,
+          x: -575,
+        },
+        {
+          autoAlpha: 1,
+          x: 0,
+          duration: 2.5,
+          ease: "power2.out",
+        }
+      )
+  }, [])
+
   return (
-    <SectionStyled displaybg={displaybg}>
+    <SectionStyled id="content-box-trigger" displaybg={displaybg}>
       <div className="wrapper">
         <div className="content">
           <h2>{data.contentBlockTitle}</h2>

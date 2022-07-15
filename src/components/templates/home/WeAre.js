@@ -16,8 +16,53 @@ gsap.registerPlugin(ScrollTrigger)
 
 const WeAre = ({ data }) => {
   useEffect(() => {
+    const arrows = document.querySelectorAll(".point-arrow")
+    const titles = document.querySelectorAll(".point-content")
     const tigger = document.querySelector("#letter-background-trigger")
     const img = document.querySelector(".image__background")
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: tigger,
+          markers: false,
+          start: "top 40%",
+          scrub: false,
+        },
+      })
+      .add("start")
+      .fromTo(
+        arrows,
+        {
+          autoAlpha: 0,
+          x: -75,
+        },
+        {
+          autoAlpha: 1,
+          x: 0,
+          ease: "power2.out",
+          stagger: {
+            amount: 0.5,
+          },
+        }
+      )
+
+      .fromTo(
+        titles,
+        {
+          autoAlpha: 0,
+          x: 75,
+        },
+        {
+          autoAlpha: 1,
+          x: 0,
+          ease: "power2.out",
+          stagger: {
+            amount: 0.5,
+          },
+        },
+        "start+=0.3"
+      )
 
     gsap
       .timeline({
@@ -57,8 +102,8 @@ const WeAre = ({ data }) => {
               return (
                 <div key={index}>
                   <h3>
-                    <span>&#8594;</span>
-                    {item.title}
+                    <span className="point-arrow">&#8594;</span>
+                    <span className="point-content">{item.title}</span>
                   </h3>
                   <div dangerouslySetInnerHTML={{ __html: item.content }} />
                 </div>
@@ -154,6 +199,10 @@ const SectionStyled = styled.section`
       font-weight: bold;
 
       span {
+        display: block;
+      }
+
+      .point-arrow {
         display: block;
         position: absolute;
         top: 0;
