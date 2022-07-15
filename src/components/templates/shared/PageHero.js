@@ -1,15 +1,61 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { H1White, H2White, H3White } from "../../../styles/helpers"
 
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
+
 const PageHero = ({ data }) => {
+  useEffect(() => {
+    const tigger = document.querySelector("#page-hero-trigger")
+    const content = document.querySelectorAll(".hero-content")
+    const inner = document.querySelectorAll(".hero-content__inner")
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: tigger,
+          markers: false,
+          start: "top 40%",
+          scrub: false,
+        },
+      })
+      .fromTo(
+        content,
+        {
+          autoAlpha: 0,
+          x: 575,
+        },
+        {
+          autoAlpha: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
+        }
+      )
+      .fromTo(
+        inner,
+        {
+          autoAlpha: 0,
+          y: 100,
+        },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+        }
+      )
+  }, [])
+
   const imageDisplay = getImage(
     data.pageHeroIntroImage.localFile.childImageSharp.gatsbyImageData
   )
   const imageAlt = data.pageHeroIntroImage.altText
   return (
-    <SectionStyled>
+    <SectionStyled id="page-hero-trigger">
       <div className="hero-content">
         <div className="hero-content__inner">
           <h1>{data.pageHeroIntroTitle}</h1>
