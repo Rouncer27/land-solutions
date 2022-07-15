@@ -1,5 +1,5 @@
 import React from "react"
-import { B1Black, BigWrapper, H1Black } from "../../../styles/helpers"
+import { B1Black, H1Black, medWrapper } from "../../../styles/helpers"
 import styled from "styled-components"
 
 const PostTitle = ({ title, excerpt }) => {
@@ -17,7 +17,7 @@ const PostTitle = ({ title, excerpt }) => {
 
 const StyledHeader = styled.header`
   .wrapper {
-    ${BigWrapper};
+    ${medWrapper};
 
     &__inner {
       width: 100%;

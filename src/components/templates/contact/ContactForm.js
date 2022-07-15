@@ -76,7 +76,6 @@ const ContactForm = ({ data }) => {
         })
       }
     } catch (err) {
-      console.log("ERROR: ", err)
       setFormStatus({
         ...formStatus,
         submitting: false,
@@ -369,7 +368,6 @@ const StyledDiv = styled.div`
 
         .btn-submit {
           margin-top: 2.5rem;
-          margin-left: 2rem;
 
           button {
             ${Btn1One};
@@ -387,7 +385,7 @@ const InputField = styled.div`
 
   @media (min-width: 768px) {
     width: calc(100% - 4rem);
-    margin: 1rem 2rem;
+    margin: 1rem 2rem 1rem 0;
   }
 
   .img-preview {
@@ -447,7 +445,7 @@ const DropdownInputStyled = styled.div`
 
   @media (min-width: 768px) {
     width: calc(100% - 4rem);
-    margin: 1rem 2rem;
+    margin: 1rem 2rem 1rem 0;
   }
 
   label {

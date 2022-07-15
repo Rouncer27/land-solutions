@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { H3White } from "../../../styles/helpers"
 
 const QuoteHero = ({ data }) => {
-  console.log("Data: ", data)
   const imageDisplay = getImage(
     data.pageHeroQuoteImage.localFile.childImageSharp.gatsbyImageData
   )

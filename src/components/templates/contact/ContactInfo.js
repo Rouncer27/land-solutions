@@ -56,7 +56,7 @@ const ContactInfo = ({ data }) => {
 
 const SectionStyled = styled.section`
   @media (min-width: 768px) {
-    padding: 9rem 0 4.5rem;
+    padding: 9rem 0 0;
   }
 
   .wrapper {
@@ -65,6 +65,7 @@ const SectionStyled = styled.section`
 
     @media (min-width: 768px) {
       justify-content: center;
+      padding-bottom: 0;
     }
   }
 

@@ -5,7 +5,6 @@ import { B1OffBlack, colors, standardWrapper } from "../../../styles/helpers"
 import mapImg from "../../../images/map.png"
 
 const LocationsDisplay = ({ data }) => {
-  console.log("Locations: ", data)
   return (
     <StyledDiv>
       <div className="wrapper">

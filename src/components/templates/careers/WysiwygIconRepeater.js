@@ -13,7 +13,6 @@ import {
 } from "../../../styles/helpers"
 
 const WysiwygIconRepeater = ({ removepadding, bgcolor, data }) => {
-  console.log("removepadding: ", removepadding)
   return (
     <SectionStyled bgcolor={bgcolor}>
       <div className="wrapper">

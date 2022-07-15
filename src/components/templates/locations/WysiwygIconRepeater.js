@@ -1,109 +1,113 @@
 import React from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import {
-  H2Green,
-  H3Blue,
-  medWrapper,
   B1Black,
-  H2White,
-  fonts,
-  H1White,
   colors,
-  Btn1One,
+  H3Blue,
+  H3LightGreen,
+  medWrapper,
+  H2Blue,
+  fonts,
+  H1Blue,
 } from "../../../styles/helpers"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const WysiwygCircle = ({ data }) => {
-  const imageDisplay = getImage(
-    data.pageWysiwygWithCircleImageImage.localFile.childImageSharp
-      .gatsbyImageData
-  )
-  const imageAlt = data.pageWysiwygWithCircleImageImage.altText
+const WysiwygIconRepeater = ({ bgcolor, data }) => {
   return (
-    <StyledSection>
+    <SectionStyled bgcolor={bgcolor}>
       <div className="wrapper">
-        <div className="image">
-          <GatsbyImage
-            image={imageDisplay}
-            alt={imageAlt}
-            layout="fullWidth"
-            formats={["auto", "webp", "avif"]}
-          />
-        </div>
-        <div className="main">
-          <div className="main__title">
-            <h2>{data.pageWysiwygWithCircleImageTitle}</h2>
-            <p>{data.pageWysiwygWithCircleImageSubTitle}</p>
-          </div>
-          <div
-            className="main__wysiwyg"
-            dangerouslySetInnerHTML={{
-              __html: data.pageWysiwygWithCircleImageWysiwyg,
-            }}
-          />
-          <div className="main__link">
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href={`${data.pageWysiwygWithCircleImageButtonUrl}`}
-            >
-              {data.pageWysiwygWithCircleImageButtonText}
-            </a>
-          </div>
-        </div>
+        {data.map((block, index) => {
+          const image = getImage(
+            block?.icon?.localFile?.childImageSharp?.gatsbyImageData
+          )
+          const logoAlt = block?.icon?.altText
+          return (
+            <BlockDiv key={index}>
+              <div className="icon">
+                <GatsbyImage image={image} alt={logoAlt} layout="fixed" />
+              </div>
+              <div className="content">
+                {block.mainTitle && <h2>{block.mainTitle}</h2>}
+                {block.subTitle && (
+                  <h3 dangerouslySetInnerHTML={{ __html: block.subTitle }} />
+                )}
+                <div
+                  className="content__wysiwyg"
+                  dangerouslySetInnerHTML={{ __html: block.wysiwyg }}
+                />
+              </div>
+            </BlockDiv>
+          )
+        })}
       </div>
-    </StyledSection>
+    </SectionStyled>
   )
 }
 
-const StyledSection = styled.section`
-  padding: 8.5rem 0;
+const SectionStyled = styled.section`
+  background-color: ${props =>
+    props.bgcolor ? "rgba(157, 181, 148, 0.1)" : "transparent"};
   .wrapper {
     ${medWrapper};
   }
+`
 
-  .image {
-    width: calc(100%);
-    max-width: 20rem;
-    margin-right: auto;
-    margin-left: 0;
+const BlockDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding: 2rem 0;
+  back-shadow: ${props =>
+    props.bgcolor
+      ? "4px 8px 4px 0 rgba(0, 0, 0, 0)"
+      : "4px 8px 4px 0 rgba(0, 0, 0, 0.1)"};
+
+  @media (min-width: 768px) {
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 2rem 5rem;
+  }
+
+  .icon {
+    max-width: 15rem;
+    margin: 2rem 0;
 
     @media (min-width: 768px) {
-      width: calc(15%);
+      width: calc(15% - 2rem);
       max-width: 100%;
-      margin: 0;
+      margin-right: 2rem;
     }
 
     @media (min-width: 1025px) {
-      width: calc(17.5% - 5rem);
-      margin-top: 1rem;
-      margin-right: 5rem;
+      width: calc(15% - 2rem);
+      margin-right: 2rem;
     }
   }
 
-  .main {
-    width: calc(100%);
-
+  .content {
     @media (min-width: 768px) {
       width: calc(85%);
     }
 
     @media (min-width: 1025px) {
-      width: calc(82.5%);
+      width: calc(85%);
     }
 
-    &__title {
-      h2 {
-        ${H2Green};
-      }
+    h2 {
+      ${H3LightGreen};
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
 
-      p {
-        ${H3Blue};
-      }
+    h3 {
+      ${H3Blue};
+      margin-top: 0;
     }
 
     &__wysiwyg {
-      width: 100%;
       width: 100%;
       max-width: 100rem;
       margin-top: 2.5rem;
@@ -213,7 +217,7 @@ const StyledSection = styled.section`
 
       h1,
       h2 {
-        ${H1White};
+        ${H1Blue};
         margin-top: 10rem;
       }
 
@@ -223,15 +227,15 @@ const StyledSection = styled.section`
       }
 
       h4 {
-        ${H2White}
+        ${H2Blue}
       }
 
       h5 {
-        ${H2White}
+        ${H2Blue}
       }
 
       h6 {
-        ${H2White}
+        ${H2Blue}
       }
 
       p {
@@ -376,15 +380,7 @@ const StyledSection = styled.section`
         width: auto;
       }
     }
-
-    &__link {
-      width: 100%;
-
-      a {
-        ${Btn1One};
-      }
-    }
   }
 `
 
-export default WysiwygCircle
+export default WysiwygIconRepeater

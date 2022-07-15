@@ -50,7 +50,6 @@ const Highlights = ({ data }) => {
 
   const settings = {
     customPaging: function (i) {
-      console.log(i)
       return (
         <a href="#">
           <span indexdot={i} className="dot-span">

@@ -27,9 +27,9 @@ const LinkListBlock = ({ data }) => {
             {data.pageListBesideBlockLinkList.map((link, index) => {
               return (
                 <li key={index}>
-                  <Link to={`/${link.slug}`}>
+                  <a href={`mailto:${link.slug}`}>
                     {link.text} <span>&#8594;</span>
-                  </Link>
+                  </a>
                 </li>
               )
             })}

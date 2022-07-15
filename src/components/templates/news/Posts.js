@@ -59,7 +59,7 @@ const Posts = () => {
   const posts = postsData.posts.edges
   const categories = postsData.category.edges
 
-  const DISPLAY_NUMBER = 2
+  const DISPLAY_NUMBER = 6
   const [activeCat, setActiveCat] = useState("all")
 
   const setNewActiveCat = cat => {

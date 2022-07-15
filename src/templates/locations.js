@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PageHero from "../components/templates/shared/PageHero"
-import WysiwygIcon from "../components/templates/shared/WysiwygIconRepeater"
+import WysiwygIcon from "../components/templates/locations/WysiwygIconRepeater"
 import LocationsDisplay from "../components/templates/locations/LocationsDisplay"
 
 const Locations = props => {
