@@ -115,16 +115,19 @@ const SectionStyled = styled.section`
 
     h1 {
       ${H1Blue};
+      padding: 0 2rem;
       text-transform: uppercase;
     }
 
     &__paragraphs {
+      padding: 0 2rem;
       p {
         ${H3Blue};
       }
     }
 
     &__link {
+      padding: 0 2rem;
       a {
         ${Btn1One};
         text-transform: uppercase;
@@ -157,6 +160,7 @@ const SectionStyled = styled.section`
   }
 
   .graphic {
+    display: none;
     position: absolute;
     top: 35%;
     left: 0;
@@ -165,6 +169,7 @@ const SectionStyled = styled.section`
     background-color: ${colors.colorTertiary};
 
     @media (min-width: 1025px) {
+      display: block;
       top: 15%;
       width: 8rem;
     }

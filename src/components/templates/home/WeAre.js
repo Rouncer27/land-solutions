@@ -132,14 +132,17 @@ const SectionStyled = styled.section`
 
   .titles {
     position: relative;
-    width: 80%;
+    width: 100%;
+    max-width: 45rem;
     padding: 2rem;
     margin-left: auto;
+    margin-right: auto;
 
     @media (min-width: 768px) {
       width: calc(50%);
       max-width: 30rem;
       margin-left: auto;
+      margin-right: 0;
       padding: 0;
     }
 
@@ -173,7 +176,7 @@ const SectionStyled = styled.section`
 
   .content {
     width: 100%;
-    margin-top: 8rem;
+    margin-top: 0;
     padding: 0 4rem;
 
     @media (min-width: 600px) {
@@ -226,11 +229,13 @@ const SectionStyled = styled.section`
     z-index: -1;
 
     @media (min-width: 768px) {
+      display: none;
       width: 50%;
       height: 100%;
     }
 
     @media (min-width: 850px) {
+      display: block;
       width: 100%;
     }
 

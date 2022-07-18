@@ -96,7 +96,12 @@ const SectionStyled = styled.section`
 
     &__link {
       width: 100%;
+      margin-bottom: 2.5rem;
       margin-top: 2.5rem;
+
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+      }
 
       a {
         ${Btn1One};

@@ -159,7 +159,7 @@ const Slide = styled.div`
     justify-content: center;
     position: relative;
     width: 100%;
-    min-height: 40vw;
+    min-height: 100vw;
 
     @media (min-width: 768px) {
       width: calc(50%);

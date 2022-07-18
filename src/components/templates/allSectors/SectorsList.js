@@ -49,6 +49,8 @@ const SectorsList = ({ data, sectors }) => {
 }
 
 const StyledSection = styled.section`
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   background-color: ${colors.colorSecondary};
 
   @media (min-width: 1025px) {

@@ -55,10 +55,11 @@ const StyledSection = styled.section`
   .image {
     position: relative;
     width: 100%;
-    min-height: 35rem;
+    min-height: 45rem;
 
     @media (min-width: 768px) {
       width: calc(50%);
+      min-height: 35rem;
     }
 
     .hero-image-wrapper {
@@ -113,12 +114,13 @@ const StyledSection = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    padding: 10rem 8rem;
+    padding: 4rem 5rem;
     background-color: ${colors.colorPrimary};
 
     @media (min-width: 768px) {
       width: calc(50%);
       min-height: 50rem;
+      padding: 10rem 8rem;
     }
 
     @media (min-width: 1025px) {

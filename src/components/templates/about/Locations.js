@@ -88,6 +88,7 @@ const SectionStyled = styled.section`
   .content {
     position: relative;
     width: 100%;
+    padding: 3.5rem 4rem;
     border: 0.1rem solid ${colors.white};
     border-radius: 0.7rem;
     box-shadow: 2px 4px 7px 0 rgba(0, 0, 0, 0.16);

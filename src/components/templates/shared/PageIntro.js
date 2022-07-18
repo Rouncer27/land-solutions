@@ -76,7 +76,10 @@ const PageIntro = ({ data }) => {
 
 const StyledSection = styled.section`
   position: relative;
-  padding-top: 8rem;
+
+  @media (min-width: 768px) {
+    padding-top: 8rem;
+  }
 
   .wrapper {
     ${medWrapper};
@@ -155,8 +158,12 @@ const StyledSection = styled.section`
 
         h2 {
           ${H2Green};
-          max-width: 60rem;
+          max-width: 55rem;
           margin-top: 0;
+
+          @media (min-width: 1025px) {
+            max-width: 60rem;
+          }
         }
 
         p {
