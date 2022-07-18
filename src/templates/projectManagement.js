@@ -6,12 +6,14 @@ import Seo from "../components/Seo"
 import PageIntro from "../components/templates/shared/PageIntro"
 import PageHeroWysiwyg from "../components/templates/shared/PageHeroWysiwyg"
 import WysiwygCircle from "../components/templates/projectManagement/WysiwygCircle"
+import VideoSection from "../components/templates/shared/VideoSection"
 
 const ProjectManagement = props => {
   const pageIntro = props.data.pageIntro.template.pageProjectManagement
   const pageHeroWysiwyg =
     props.data.pageHeroWysiwyg.template.pageProjectManagement
   const wysiwygCircle = props.data.wysiwygCircle.template.pageProjectManagement
+  const video = props.data.video.template.pageProjectManagement
 
   return (
     <Layout>
@@ -19,6 +21,7 @@ const ProjectManagement = props => {
       <PageIntro data={pageIntro} />
       <PageHeroWysiwyg data={pageHeroWysiwyg} />
       <WysiwygCircle data={wysiwygCircle} />
+      <VideoSection data={video} />
     </Layout>
   )
 }
@@ -104,6 +107,25 @@ export const projectManagementTempQuery = graphql`
             pageWysiwygWithCircleImageButtonText
             pageWysiwygWithCircleImageButtonUrl
             pageWysiwygWithCircleImageImage {
+              altText
+              sourceUrl
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 2500)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    video: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_ProjectManagement {
+          pageProjectManagement {
+            pageVideoSection {
               altText
               sourceUrl
               localFile {

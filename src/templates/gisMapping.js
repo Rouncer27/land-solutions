@@ -7,12 +7,14 @@ import PageIntro from "../components/templates/shared/PageIntro"
 import WysiwygIcon from "../components/templates/shared/WysiwygIcon"
 import PageHeroContained from "../components/templates/shared/PageHeroContained"
 import TitleWysiwyg from "../components/templates/shared/TitleWysiwyg"
+import VideoSection from "../components/templates/shared/VideoSection"
 
 const GisMapping = props => {
   const pageIntro = props.data.pageIntro.template.pageGisMapping
   const wysiwygIcon = props.data.wysiwygIcon.template.pageGisMapping
   const pageHeroContained = props.data.pageHeroContained.template.pageGisMapping
   const titleWysiwyg = props.data.titleWysiwyg.template.pageGisMapping
+  const video = props.data.video.template.pageGisMapping
 
   return (
     <Layout>
@@ -21,6 +23,7 @@ const GisMapping = props => {
       <WysiwygIcon bgcolor={true} data={wysiwygIcon} />
       <PageHeroContained bgcolor={true} data={pageHeroContained} />
       <TitleWysiwyg data={titleWysiwyg} />
+      <VideoSection data={video} />
     </Layout>
   )
 }
@@ -124,6 +127,24 @@ export const gisMappingTempQuery = graphql`
             titleBesideSimpleContentButtonText
             titleBesideSimpleContentUrl
             titleBesideSimpleContentWysiwyg
+          }
+        }
+      }
+    }
+
+    video: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_GisMapping {
+          pageGisMapping {
+            pageVideoSection {
+              altText
+              localFile {
+                url
+                childImageSharp {
+                  gatsbyImageData(width: 2500)
+                }
+              }
+            }
           }
         }
       }

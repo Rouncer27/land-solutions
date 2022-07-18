@@ -168,9 +168,10 @@ const StyledSection = styled.section`
           margin-left: 0;
 
           @media (min-width: 768px) {
-            width: calc(25%);
+            width: calc(25% - 1rem);
             max-width: 100%;
             margin-bottom: 0;
+            margin-right: 1rem;
           }
         }
 

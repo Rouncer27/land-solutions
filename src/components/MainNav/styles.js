@@ -18,6 +18,18 @@ export const ListStyles = css`
   a {
     ${B2Blue};
     padding: 1rem 2rem;
+    box-shadow: 0 2px 0 0 transparent;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      color: ${colors.colorPrimary};
+      box-shadow: 0 4px 0 0 ${colors.colorPrimary};
+    }
+
+    &[aria-current="page"] {
+      color: ${colors.colorAccent};
+      box-shadow: 0 4px 0 0 ${colors.colorAccent};
+    }
   }
 
   .item-span-wrap {
