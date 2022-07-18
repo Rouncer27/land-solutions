@@ -162,6 +162,9 @@ const Insights = () => {
         <SubMenu
           isActive={isSubActive}
           subTitle="Contact"
+          subTitleSlug={
+            navData.insightsTopPage ? navData.insightsTopPage.slug : null
+          }
           subIcon={navData.insightsTopPageIcon}
           subMenuOne={hasSubOne}
           subMenuTwo={hasSubTwo}

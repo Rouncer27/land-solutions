@@ -74,6 +74,16 @@ export const ListStyles = css`
         margin: 0;
         font-weight: bold;
         text-transform: uppercase;
+
+        a {
+          ${B2Blue};
+          display: flex;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
       }
     }
 

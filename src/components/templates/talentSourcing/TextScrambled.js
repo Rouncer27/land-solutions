@@ -30,7 +30,7 @@ const TextScrambled = ({ text, index }) => {
         scrollTrigger: {
           trigger: `#scramble-${index}`,
           markers: false,
-          start: "top 45%",
+          start: "top 65%",
           toggleActions: "play none none reverse",
           scrub: false,
         },

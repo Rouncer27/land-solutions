@@ -161,6 +161,9 @@ const Contact = () => {
         <SubMenu
           isActive={isSubActive}
           subTitle="Contact"
+          subTitleSlug={
+            navData.contactTopPage ? navData.contactTopPage.slug : null
+          }
           subIcon={navData.contactTopPageIcon}
           subMenuOne={hasSubOne}
           subMenuTwo={hasSubTwo}
