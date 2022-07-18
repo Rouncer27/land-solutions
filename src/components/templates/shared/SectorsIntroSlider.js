@@ -180,6 +180,7 @@ const Slide = styled.div`
       position: relative;
       width: 100%;
       margin: 0;
+      opacity: 0.7;
       z-index: 100;
 
       p {
