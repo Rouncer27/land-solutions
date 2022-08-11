@@ -31,7 +31,10 @@ const LinkBlocks = ({ data }) => {
               <div className="content">
                 <div className="content__inner">
                   <h2>{block.title}</h2>
-                  <div dangerouslySetInnerHTML={{ __html: block.content }} />
+                  <div
+                    className="content__inner--para"
+                    dangerouslySetInnerHTML={{ __html: block.content }}
+                  />
                   <div className="content__link">
                     <Link to={`/${block.butonSlug}`}>{block.buttonText}</Link>
                   </div>
@@ -109,7 +112,11 @@ const Block = styled.div`
       }
 
       @media (min-width: 1025px) {
-        padding-top: 8.5rem;
+        padding-top: 5rem;
+      }
+
+      &--para {
+        padding-right: 2rem;
       }
     }
 

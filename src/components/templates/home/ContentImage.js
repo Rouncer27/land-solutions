@@ -17,7 +17,7 @@ const ContentImage = ({ data }) => {
           <h2>{data.homeContentWithLinkTitle}</h2>
           <p>{data.homeContentWithLinkSubTitle}</p>
           <Link to={`/${data.homeContentWithLinkButtonSlug}`}>
-            {data.homeContentWithLinkButtonText}
+            {data.homeContentWithLinkButtonText} <span>&#8594;</span>
           </Link>
         </div>
       </div>

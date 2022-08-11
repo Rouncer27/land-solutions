@@ -8,7 +8,7 @@ const SafetyLogos = ({ data }) => {
     <SectionStyled>
       <div className="wrapper">
         <div className="title">
-          <h2>Safety Organizations</h2>
+          <h2>Safety Membership Organizations</h2>
         </div>
         <div className="logos">
           {data.safetyOrganizations.map((logo, index) => {

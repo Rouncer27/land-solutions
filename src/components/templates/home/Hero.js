@@ -74,7 +74,7 @@ const Hero = ({ data }) => {
       <LearnLink>
         <Link to="/about">
           Learn why we’re one of North America’s
-          <br /> leading land companies.
+          <br /> leading land companies. <span>&#8594;</span>
         </Link>
       </LearnLink>
     </>
@@ -519,7 +519,16 @@ const LearnLink = styled.div`
 
   a {
     ${H2Green};
+    position: relative;
     font-weight: 300;
+
+    &:hover {
+      color: ${colors.colorAccent};
+    }
+
+    span {
+      line-height: 1;
+    }
   }
 `
 

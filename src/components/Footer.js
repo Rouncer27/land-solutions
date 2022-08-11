@@ -5,6 +5,7 @@ import { B2White, colors, medWrapper, fontSizer } from "../styles/helpers"
 
 import FooterLogo from "./Logos/FooterLogo"
 import Twitter from "./Icons/Twitter"
+import Linkedin from "./Icons/Linkedin"
 
 const Footer = () => {
   return (
@@ -52,17 +53,30 @@ const Footer = () => {
           </div>
           <div className="footer-logo__social">
             <p>
-              Connect with us on Twitter{" "}
+              Connect with us{" "}
               <StyledIcon>
                 <a
                   target="_blank"
                   rel="noreferrer"
                   title="Follow us on Twitter - Link will open in new window"
-                  href={`https://twitter.com`}
+                  href={`https://twitter.com/LandSolutions_`}
                 >
                   <i>
                     <Twitter />
                     <span className="visuallyhidden">Twitter</span>
+                  </i>
+                </a>
+              </StyledIcon>
+              <StyledIcon>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  title="Follow us on Linkedin - Link will open in new window"
+                  href={`https://www.linkedin.com/company/landsolutions-lp`}
+                >
+                  <i>
+                    <Linkedin />
+                    <span className="visuallyhidden">Linkedin</span>
                   </i>
                 </a>
               </StyledIcon>
@@ -173,7 +187,7 @@ const StyledFooter = styled.footer`
 
 const StyledIcon = styled.span`
   display: inline-block;
-  margin-right: 1rem;
+  margin-right: 0;
   margin-left: 1rem;
 
   a {
@@ -191,8 +205,8 @@ const StyledIcon = styled.span`
       height: 4rem;
     }
     @media (min-width: 1025px) {
-      width: 4rem;
-      height: 4rem;
+      width: 3rem;
+      height: 3rem;
     }
 
     &:focus {
@@ -225,8 +239,8 @@ const StyledIcon = styled.span`
         height: 2rem;
       }
       @media (min-width: 1025px) {
-        width: 3.25rem;
-        height: 3.25rem;
+        width: 2.5rem;
+        height: 2.5rem;
       }
     }
 

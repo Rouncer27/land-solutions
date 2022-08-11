@@ -26,15 +26,15 @@ const OurResponsibility = props => {
       <PageHero data={hero} />
       <ContentIcon data={contentIcon} />
       <PdfUploader data={pdfUploader} />
+      <ListIcons data={listIcons} />
+      <WysiwygImage data={wysiwygImage} />
+      <SafetylLogos data={saftylLogos} />
       {displayTest.testimonialsDisplay && (
         <Testimonials
           data={displayTest}
           testimonials={props.data.testimonials.edges}
         />
       )}
-      <ListIcons data={listIcons} />
-      <WysiwygImage data={wysiwygImage} />
-      <SafetylLogos data={saftylLogos} />
     </Layout>
   )
 }

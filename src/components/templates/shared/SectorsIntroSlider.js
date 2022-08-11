@@ -5,13 +5,7 @@ import "slick-carousel/slick/slick-theme.css"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import {
-  Btn1Two,
-  colors,
-  H2Blue,
-  H2White,
-  H3White,
-} from "../../../styles/helpers"
+import { Btn1Two, colors, H2White, H3White } from "../../../styles/helpers"
 
 import mImg from "../../../images/letters/m-sector.png"
 import pImg from "../../../images/letters/p-sector.png"

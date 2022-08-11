@@ -271,6 +271,9 @@ const StyledSection = styled.section`
     @media (min-width: 768px) {
       left: 5%;
     }
+
+    @media (min-width: 1300px) {
+    }
   }
 
   .slide-bg-image {
@@ -308,6 +311,18 @@ const StyledSlide = styled.div`
     @media (min-width: 768px) {
       width: calc(15%);
       padding: 0 2rem;
+    }
+
+    @media (min-width: 1550px) {
+      padding-left: 5rem;
+    }
+
+    @media (min-width: 1900px) {
+      padding-left: 8rem;
+    }
+
+    @media (min-width: 2100px) {
+      padding-left: 10rem;
     }
 
     h2 {

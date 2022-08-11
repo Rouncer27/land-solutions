@@ -107,6 +107,7 @@ const SectionStyled = styled.section`
     position: relative;
     width: 100%;
     margin-top: 5rem;
+    margin-bottom: 2.5rem;
     padding: 2rem;
 
     @media (min-width: 768px) {
@@ -145,6 +146,10 @@ const SectionStyled = styled.section`
     a {
       ${H3Blue};
       font-weight: normal;
+    }
+
+    p {
+      margin-bottom: 0;
     }
 
     a {

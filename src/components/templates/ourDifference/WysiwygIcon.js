@@ -1,6 +1,6 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import {
   B1Black,
   H1White,
@@ -11,17 +11,6 @@ import {
   fonts,
   medWrapper,
 } from "../../../styles/helpers"
-
-// Create the keyframes
-const shake = keyframes`
- 0%, 10%, 20%, 30%, 100% {
-    bottom: -7.75rem;
-  }
-
-  5%, 15%, 25% {
-    bottom: -7rem;
-  }
-`
 
 const WysiwygIcon = ({ data }) => {
   return (
@@ -86,7 +75,7 @@ const BlockDiv = styled.div`
     color: ${colors.colorTertiary};
     font-family: ${fonts.fontAwesome};
     font-size: 3rem;
-    animation: ${shake} 1.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+
     content: "\f175";
   }
 
