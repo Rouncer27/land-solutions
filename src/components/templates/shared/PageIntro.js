@@ -179,7 +179,7 @@ const StyledSection = styled.section`
         margin-top: 2.5rem;
         margin-right: auto;
         margin-bottom: 0;
-        margin-left: auto;
+        margin-left: 0;
 
         &::after {
           display: table;

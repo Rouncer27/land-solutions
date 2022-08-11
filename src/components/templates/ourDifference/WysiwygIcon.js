@@ -75,7 +75,6 @@ const BlockDiv = styled.div`
     color: ${colors.colorTertiary};
     font-family: ${fonts.fontAwesome};
     font-size: 3rem;
-
     content: "\f175";
   }
 

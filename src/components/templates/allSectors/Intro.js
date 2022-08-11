@@ -55,26 +55,14 @@ const Intro = ({ data }) => {
                 formats={["auto", "webp", "avif"]}
               />
             </div>
-            <div className="title__content--para">
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: data.allSectorIntroSubTitle,
-                }}
-              />
-            </div>
           </div>
         </div>
-
         <div className="content">
           <div
             className="content__large"
             dangerouslySetInnerHTML={{
               __html: data.allSectorIntroLargeContent,
             }}
-          />
-          <div
-            className="content__small"
-            dangerouslySetInnerHTML={{ __html: data.allSectorIntroContent }}
           />
         </div>
       </div>

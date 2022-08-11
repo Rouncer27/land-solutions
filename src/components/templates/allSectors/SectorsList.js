@@ -6,6 +6,7 @@ import {
   B1White,
   colors,
   H2Green,
+  H3White,
   standardWrapper,
 } from "../../../styles/helpers"
 
@@ -65,9 +66,10 @@ const StyledSection = styled.section`
     padding: 0 2rem;
 
     p {
-      ${B1White};
+      ${H3White};
       width: 100%;
       margin: 0;
+      text-align: center;
     }
   }
 

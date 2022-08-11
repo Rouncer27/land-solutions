@@ -40,17 +40,20 @@ const InfographicWysiwyg = ({ data }) => {
             className="content__wysiwyg"
             dangerouslySetInnerHTML={{ __html: data.infographicWysiwygWysiwyg }}
           />
-          <div className="content__link">
-            <p>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href={data.infographicWysiwygUrl}
-              >
-                {data.infographicWysiwygButtonText}
-              </a>
-            </p>
-          </div>
+
+          {data.infographicWysiwygUrl && data.infographicWysiwygButtonText && (
+            <div className="content__link">
+              <p>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href={data.infographicWysiwygUrl}
+                >
+                  {data.infographicWysiwygButtonText}
+                </a>
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </SectionStyled>

@@ -31,6 +31,7 @@ const LinkBlockLogos = ({ data }) => {
             <div className="content__inner">
               <h2>{data.linkBlockWithLogosTitle}</h2>
               <div
+                className="content__inner--para"
                 dangerouslySetInnerHTML={{
                   __html: data.linkBlockWithLogosContent,
                 }}
@@ -161,6 +162,10 @@ const StyledSection = styled.section`
           padding-top: 8.5rem;
           padding-right: 2rem;
         }
+
+        &--para {
+          padding-right: 2rem;
+        }
       }
 
       &__link {
@@ -170,7 +175,6 @@ const StyledSection = styled.section`
 
         a {
           ${Btn1Three};
-          text-transform: uppercase;
         }
       }
 

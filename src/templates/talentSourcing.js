@@ -28,7 +28,6 @@ const TalentSourcing = props => {
     <Layout>
       <Seo />
       <PageIntro data={pageIntro} />
-      <PageVideo data={pageVideo} />
       <ThreeColumns data={threeColumns} />
       <ColorBGWysiwyg data={colorBGWysiwyg} />
       <PageHeroAnimate data={pageHeroAnimate} />
