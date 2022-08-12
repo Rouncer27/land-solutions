@@ -12,6 +12,8 @@ import {
   medWrapper,
 } from "../../../styles/helpers"
 
+import arrowDown from "../../../images/arrow-down.png"
+
 const WysiwygIcon = ({ data }) => {
   return (
     <SectionStyled>
@@ -37,6 +39,9 @@ const WysiwygIcon = ({ data }) => {
                   dangerouslySetInnerHTML={{ __html: block.wysiwyg }}
                 />
               </div>
+              <span className="arrow-down">
+                <img src={arrowDown} alt="arrow down" />
+              </span>
             </BlockDiv>
           )
         })}
@@ -66,16 +71,17 @@ const BlockDiv = styled.div`
     padding: 2rem 5rem;
   }
 
-  &::before {
+  .infographic {
+    max-width: 50rem !important;
+  }
+
+  span.arrow-down {
     display: ${props => (props.islast ? "none" : "block")};
     position: absolute;
     bottom: -7.75rem;
     left: 50%;
+    width: 1.5rem;
     transform: translate(-50%, 0px);
-    color: ${colors.colorTertiary};
-    font-family: ${fonts.fontAwesome};
-    font-size: 3rem;
-    content: "\f175";
   }
 
   .icon {

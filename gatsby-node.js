@@ -28,7 +28,9 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
 
-        leadershipTeam: allWpLeadershipTeam {
+        leadershipTeam: allWpLeadershipTeam(
+          sort: { fields: date, order: ASC }
+        ) {
           edges {
             node {
               id

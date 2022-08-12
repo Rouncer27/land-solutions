@@ -73,6 +73,7 @@ const SectionStyled = styled.section`
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
+    opacity: 0.5;
     z-index: 1;
   }
 

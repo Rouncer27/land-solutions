@@ -1,7 +1,13 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import { colors, H1White, H2LightBlue, H3White } from "../../../styles/helpers"
+import {
+  colors,
+  H1White,
+  H2LightBlue,
+  H3White,
+  fontSizer,
+} from "../../../styles/helpers"
 
 import mImg from "../../../images/letters/m-sector.png"
 import pImg from "../../../images/letters/p-sector.png"
@@ -147,6 +153,7 @@ const StyledSection = styled.section`
     &__title {
       h1 {
         ${H1White};
+        ${fontSizer(3.25, 5, 76.8, 150, 3)};
         margin-top: 1rem;
         margin-bottom: 1rem;
         text-transform: uppercase;

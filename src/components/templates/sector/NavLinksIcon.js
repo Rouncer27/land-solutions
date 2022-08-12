@@ -69,7 +69,7 @@ const StyledDiv = styled.div`
 
   .wave-bg {
     position: absolute;
-    top: -15rem;
+    top: -20rem;
     right: 0%;
     width: 200%;
     height: 30rem;
@@ -77,6 +77,7 @@ const StyledDiv = styled.div`
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
+    opacity: 0.5;
     z-index: 1;
   }
 
