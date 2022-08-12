@@ -4,6 +4,7 @@ import styled from "styled-components"
 import turbineVideo from "../../assets/turbines.mp4"
 import imageTwo from "../../images/background-sample-two.jpg"
 import logo from "../../images/land-solutions.png"
+import logoColour from "../../images/logo-coloured.png"
 import mainL from "../../images/letters/main-l.png"
 import arrowRight from "../../images/arrow-right.png"
 
@@ -218,11 +219,11 @@ const InitalLoad = () => {
       <div id="step-three">
         <div className="logo">
           <div className="logo__wrapper">
-            <img src={logo} alt="Land Solutions" />
+            <img src={logoColour} alt="Land Solutions" />
           </div>
           <div className="logo__title">
             <p>
-              This is your vision <span className="line-graphic" />
+              Land Access the Right Way. <span className="line-graphic" />
             </p>
           </div>
           <div className="logo__button">
@@ -417,7 +418,7 @@ const StyledDiv = styled.div`
     }
 
     &__title {
-      width: 37.5rem;
+      width: 39rem;
       margin: 2rem auto;
       text-align: center;
 
@@ -428,9 +429,10 @@ const StyledDiv = styled.div`
         .line-graphic {
           position: absolute;
           top: 50%;
-          left: 90%;
+          left: 110%;
           width: 100rem;
           height: 1rem;
+          transform: translateY(-50%);
           background-color: ${colors.colorTertiary};
         }
       }
