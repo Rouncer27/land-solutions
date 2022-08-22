@@ -136,6 +136,122 @@ const StyledSection = styled.section`
     margin-left: 20%;
     z-index: 10;
   }
+
+  .slick-arrow {
+    top: auto;
+    bottom: 10px;
+    width: 200px;
+    height: auto;
+    z-index: 1000;
+
+    @media (min-width: 768px) {
+      bottom: 10px;
+      width: 165px;
+    }
+
+    @media (min-width: 1300px) {
+      bottom: 35px;
+    }
+
+    &::before {
+      display: none;
+    }
+
+    p {
+      ${B2LightGreen};
+      margin: 0;
+    }
+  }
+
+  .slick-arrow.slick-prev {
+    left: 5%;
+
+    @media (min-width: 1025px) {
+      left: 6%;
+    }
+
+    @media (min-width: 1300px) {
+      left: 7.5%;
+    }
+  }
+
+  .slick-arrow.slick-next {
+    right: -25px;
+
+    @media (min-width: 768px) {
+      right: 5rem;
+    }
+  }
+
+  .slick-dots.slick-thumb {
+    width: 100%;
+
+    @media (min-width: 1025px) {
+      bottom: 75px;
+    }
+
+    @media (min-width: 1300px) {
+      bottom: -5rem;
+    }
+
+    li {
+      ${B2LightGreen};
+      display: none;
+      position: relative;
+      width: 5rem;
+
+      @media (min-width: 1025px) {
+        display: inline-block;
+      }
+
+      .dot-span {
+        display: block;
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        transform: translateX(-50%);
+
+        &::after {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 60px;
+          height: 1px;
+          transform: translateY(-50%);
+          background-color: #9db594;
+          content: "";
+        }
+
+        &[indexdot="0"] {
+          &::after {
+            display: none;
+          }
+        }
+
+        &__dot {
+          position: absolute;
+          top: 10%;
+          left: 55%;
+          transform: translate(-50%, -50%);
+          display: block;
+          font-size: 36px;
+        }
+      }
+
+      span {
+        ${B2LightGreen};
+      }
+    }
+
+    li.slick-active {
+      .dot-span {
+        box-shadow: 0px 0px 0px 7px rgba(255, 255, 255, 0.35);
+      }
+    }
+  }
 `
 
 const StyledSlide = styled.div`
