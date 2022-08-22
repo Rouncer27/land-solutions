@@ -5,7 +5,8 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 
 import Intro from "../components/templates/about/Intro"
-import Highlights from "../components/templates/about/Highlights"
+// import Highlights from "../components/templates/about/Highlights"
+import HighlightsTwo from "../components/templates/about/HighlightsTwo"
 import Locations from "../components/templates/about/Locations"
 
 const About = props => {
@@ -16,7 +17,8 @@ const About = props => {
     <Layout>
       <Seo />
       <Intro data={intro} />
-      <Highlights data={highlights} />
+      {/* <Highlights data={highlights} /> */}
+      <HighlightsTwo data={highlights} />
       <Locations data={locations} />
     </Layout>
   )
