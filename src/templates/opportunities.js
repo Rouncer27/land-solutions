@@ -17,9 +17,10 @@ const Opportunities = props => {
 
   const links = props?.data?.links?.template?.pageOpportunities?.links
   const linksTitle = props?.data?.links?.template?.pageOpportunities?.linksTitle
-  const linksTwo = props?.data?.links?.template?.pageOpportunities?.links
+
+  const linksTwo = props?.data?.linksTwo?.template?.pageOpportunities?.linksTwo
   const linksTwoTitle =
-    props?.data?.links?.template?.pageOpportunities?.linksTitle
+    props?.data?.linksTwo?.template?.pageOpportunities?.linksTitleTwo
 
   const contentImage = props?.data?.contentImage?.template?.pageOpportunities
   const wysiwygWithImage =
@@ -140,8 +141,8 @@ export const opportunitiesTempQuery = graphql`
       template {
         ... on WpTemplate_Opportunities {
           pageOpportunities {
-            linksTitle
-            links {
+            linksTitleTwo
+            linksTwo {
               text
               url
             }

@@ -20,13 +20,17 @@ const QuoteHero = ({ data }) => {
       </div>
       <div className="quote">
         <div className="quote__inner">
-          <p>
-            <span className="quote-left">&#8220;</span> {data.pageHeroQuote}{" "}
-            <span className="quote-left">&#8221;</span>
-          </p>
-          <p>
-            <span>&#8211;</span> {data.pageHeroQuoteAuthor}
-          </p>
+          {data.pageHeroQuote && (
+            <>
+              <p>
+                <span className="quote-left">&#8220;</span> {data.pageHeroQuote}{" "}
+                <span className="quote-left">&#8221;</span>
+              </p>
+              <p>
+                <span>&#8211;</span> {data.pageHeroQuoteAuthor}
+              </p>
+            </>
+          )}
         </div>
       </div>
     </SectionStyled>

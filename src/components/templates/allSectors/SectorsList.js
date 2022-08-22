@@ -16,7 +16,7 @@ const SectorsList = ({ data, sectors }) => {
   return (
     <StyledSection>
       <div className="sectors-title">
-        <p>Click on your sector to learn more.</p>
+        <p>Click on your sector to learn more</p>
       </div>
       <ul className="wrapper">
         {sectors.map(sector => {

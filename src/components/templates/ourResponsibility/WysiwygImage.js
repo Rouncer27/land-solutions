@@ -13,6 +13,7 @@ import {
 } from "../../../styles/helpers"
 
 const WysiwygImage = ({ data }) => {
+  console.log("data", data)
   const imageDisplay = getImage(
     data.wysiwygWithImageImage.localFile.childImageSharp.gatsbyImageData
   )
@@ -30,7 +31,7 @@ const WysiwygImage = ({ data }) => {
             />
           </div>
           <div className="image__quote">
-            <p>{data.wysiwygWithImageSubTitle}</p>
+            <p>{data.wysiwygWithImageContentUnderImage}</p>
           </div>
         </div>
         <div className="content">

@@ -68,7 +68,7 @@ export const allSectorsTempQuery = graphql`
       }
     }
 
-    sectors: allWpSector(sort: { order: ASC, fields: date }) {
+    sectors: allWpSector(sort: { order: DESC, fields: date }) {
       edges {
         node {
           id

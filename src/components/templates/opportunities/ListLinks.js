@@ -16,17 +16,19 @@ const ListLinks = ({ bgcolor, data, title }) => {
           <div className="title">
             <h2>{title}</h2>
           </div>
-          <ul>
-            {data.map((link, index) => {
-              return (
-                <li key={index}>
-                  <a target="_blank" rel="noreferrer" href={link.url}>
-                    {link.text}
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
+          {data && data.length > 0 && (
+            <ul>
+              {data.map((link, index) => {
+                return (
+                  <li key={index}>
+                    <a target="_blank" rel="noreferrer" href={link.url}>
+                      {link.text}
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          )}
         </div>
       </div>
     </StyledSection>
