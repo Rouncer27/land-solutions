@@ -82,7 +82,7 @@ const HighlightsTwo = ({ data }) => {
               <StyledSlide key={index}>
                 <div className="date">
                   <h2>
-                    <span>{slide.year}</span>
+                    <span>{slide.year} </span>
                     <span>Highlights</span>
                   </h2>
                 </div>
@@ -116,25 +116,39 @@ const HighlightsTwo = ({ data }) => {
 const StyledSection = styled.section`
   .wrapper {
     ${medWrapper};
+    max-width: 100% !important;
     position: relative;
-    padding-top: 12.5rem;
-    padding-bottom: 12.5rem;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+
+    @media (min-width: 768px) {
+      padding-top: 12.5rem;
+      padding-bottom: 12.5rem;
+    }
   }
 
   .slide-bg-image {
     position: absolute;
     top: 0;
     left: 0;
-    width: 75%;
+    width: 100%;
     z-index: 1;
+
+    @media (min-width: 768px) {
+      width: 75%;
+    }
   }
 
   .main-slider {
     position: relative;
-    width: calc(80%);
+    width: calc(100%);
     max-width: 100%;
-    margin-left: 20%;
     z-index: 10;
+
+    @media (min-width: 768px) {
+      width: calc(80%);
+      margin-left: 20%;
+    }
   }
 
   .slick-arrow {
@@ -259,6 +273,7 @@ const StyledSlide = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
+  padding: 4rem 2rem;
   background-color: rgba(3, 51, 70, 0.9);
   z-index: 10;
 
@@ -268,12 +283,17 @@ const StyledSlide = styled.div`
   }
 
   .date {
-    position: absolute;
-    top: 4rem;
-    left: 2rem;
-    transform-origin: top left;
-    transform: rotate(-90deg) translateX(-110%);
-    text-align: right;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      position: absolute;
+      top: 4rem;
+      left: 2rem;
+      width: auto;
+      transform-origin: top left;
+      transform: rotate(-90deg) translateX(-110%);
+      text-align: right;
+    }
 
     h2 {
       ${H2White};
@@ -284,14 +304,20 @@ const StyledSlide = styled.div`
       }
 
       span {
-        display: block;
+        @media (min-width: 768px) {
+          display: block;
+        }
       }
     }
   }
 
   .content {
-    width: 75%;
-    margin-left: 25%;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 75%;
+      margin-left: 25%;
+    }
 
     h3 {
       ${H2White};
