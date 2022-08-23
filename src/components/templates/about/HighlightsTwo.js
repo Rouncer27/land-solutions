@@ -137,6 +137,11 @@ const StyledSection = styled.section`
     @media (min-width: 768px) {
       width: 75%;
     }
+
+    @media (min-width: 1300px) {
+      max-height: 55rem;
+      overflow: hidden;
+    }
   }
 
   .main-slider {
@@ -144,10 +149,12 @@ const StyledSection = styled.section`
     width: calc(100%);
     max-width: 100%;
     z-index: 10;
+    background-color: rgba(3, 51, 70, 0.9);
 
     @media (min-width: 768px) {
       width: calc(80%);
       margin-left: 20%;
+      background-color: transparent;
     }
   }
 
@@ -159,12 +166,24 @@ const StyledSection = styled.section`
     z-index: 1000;
 
     @media (min-width: 768px) {
-      bottom: 10px;
+      bottom: 75px;
       width: 165px;
     }
 
+    @media (min-width: 900px) {
+      bottom: 40px;
+    }
+
+    @media (min-width: 1025px) {
+      bottom: 40px;
+    }
+
+    @media (min-width: 1115px) {
+      bottom: 20px;
+    }
+
     @media (min-width: 1300px) {
-      bottom: 35px;
+      bottom: 45px;
     }
 
     &::before {
@@ -201,7 +220,14 @@ const StyledSection = styled.section`
     width: 100%;
 
     @media (min-width: 1025px) {
-      bottom: 75px;
+      width: 110%;
+      left: -5rem;
+      bottom: -10rem;
+    }
+
+    @media (min-width: 1100px) {
+      left: 0;
+      width: 100%;
     }
 
     @media (min-width: 1300px) {
@@ -274,12 +300,12 @@ const StyledSlide = styled.div`
   justify-content: center;
   position: relative;
   padding: 4rem 2rem;
-  background-color: rgba(3, 51, 70, 0.9);
   z-index: 10;
 
   @media (min-width: 768px) {
     min-height: 51rem;
     padding: 4rem 2rem;
+    background-color: rgba(3, 51, 70, 0.9);
   }
 
   .date {
