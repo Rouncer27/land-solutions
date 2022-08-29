@@ -73,7 +73,6 @@ const StyledSection = styled.section`
   .wrapper {
     ${medWrapper};
     min-height: 30rem;
-
     position: relative;
 
     @media (min-width: 768px) {
@@ -87,9 +86,6 @@ const StyledSection = styled.section`
   }
 
   .content {
-    position: absolute;
-    top: 0;
-    right: 0;
     display: flex;
     align-items: center;
     width: 100%;

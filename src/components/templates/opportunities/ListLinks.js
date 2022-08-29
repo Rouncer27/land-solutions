@@ -52,9 +52,13 @@ const StyledSection = styled.section`
   }
 
   .content {
-    width: 82%;
-    margin-right: auto;
-    margin-left: 18%;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 82%;
+      margin-right: auto;
+      margin-left: 18%;
+    }
   }
 
   .title {

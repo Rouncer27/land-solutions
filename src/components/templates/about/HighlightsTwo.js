@@ -342,7 +342,8 @@ const StyledSlide = styled.div`
 
     @media (min-width: 768px) {
       width: 75%;
-      margin-left: 25%;
+      margin-right: 5%;
+      margin-left: 20%;
     }
 
     h3 {

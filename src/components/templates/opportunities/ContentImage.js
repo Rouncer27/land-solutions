@@ -78,10 +78,12 @@ const StyledSection = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    width: 100%;
+    width: 80%;
     margin-top: 3.5rem;
+    margin-left: auto;
 
     @media (min-width: 768px) {
+      width: 100%;
     }
 
     @media (min-width: 1025px) {

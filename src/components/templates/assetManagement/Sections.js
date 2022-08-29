@@ -96,16 +96,21 @@ const TabStyled = styled.div`
     ${B2Blue};
     margin: 0;
     padding: 1rem 2rem;
-    margin: auto 1rem;
+    margin: 1rem;
     border-top: 0.1rem solid ${colors.colorPrimary};
     border-right: 0.1rem solid ${colors.colorPrimary};
-    border-bottom: 0rem solid ${colors.colorPrimary};
+    border-bottom: 0.1rem solid ${colors.colorPrimary};
     border-left: 0.1rem solid ${colors.colorPrimary};
     background-color: ${props =>
       props.activetab ? colors.colorPrimary : colors.white};
     color: ${props => (props.activetab ? colors.white : colors.colorPrimary)};
     cursor: pointer;
     text-transform: uppercase;
+
+    @media (min-width: 768px) {
+      margin: auto 1rem;
+      border-bottom: 0rem solid ${colors.colorPrimary};
+    }
   }
 `
 
