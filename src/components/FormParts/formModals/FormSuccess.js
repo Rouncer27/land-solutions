@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { colors, B1OffBlack } from "../../../styles/helpers"
+import { colors, B1Black } from "../../../styles/helpers"
 import Lottie from "react-lottie"
 import * as formSuccess from "../../../styles/elements/lottieAnimations/formSuccess.json"
 
@@ -37,7 +37,7 @@ const SuccessModal = styled.div`
 
   .modalInner {
     position: relative;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     padding: 4rem;
     background-color: ${colors.white};
@@ -46,15 +46,13 @@ const SuccessModal = styled.div`
     box-shadow: 8px 9px 19px 0 rgba(0, 0, 0, 0.49);
     transition: all 0.2s ease-in;
     z-index: 999999999;
-
-    @media (min-width: 768px) {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     @media (min-width: 1025px) {
+      width: 100%;
       max-width: 70rem;
       height: auto;
       padding: 8rem;
@@ -70,9 +68,9 @@ const SuccessModal = styled.div`
         height: 3.5rem;
         transition: all 0.3s ease;
         border-radius: 50%;
-        border: 0.25rem solid ${colors.colorSecondary};
-        background-color: ${colors.colorSecondary};
-        color: ${colors.colorPrimary};
+        border: 0.25rem solid ${colors.colorPrimary};
+        background-color: ${colors.colorPrimary};
+        color: ${colors.white};
         font-weight: 700;
         cursor: pointer;
 
@@ -84,12 +82,10 @@ const SuccessModal = styled.div`
     }
 
     &__content {
-      @media (min-width: 768px) {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
 
       &--lottie {
         width: 100%;
@@ -97,7 +93,7 @@ const SuccessModal = styled.div`
       }
 
       h2 {
-        ${B1OffBlack};
+        ${B1Black};
         width: 100%;
         text-align: center;
       }

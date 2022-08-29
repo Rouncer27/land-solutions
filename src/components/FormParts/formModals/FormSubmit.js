@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { colors, B1OffBlack } from "../../../styles/helpers"
+import { colors, B1OffBlack, B1White } from "../../../styles/helpers"
 import { HashLoader } from "react-spinners"
 
 const FormSubmitModal = styled.div`
@@ -28,7 +28,7 @@ const FormSubmitModal = styled.div`
 
   .modalInner {
     position: relative;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     padding: 4rem;
     background-color: ${colors.colorSecondary};
@@ -37,29 +37,28 @@ const FormSubmitModal = styled.div`
     box-shadow: 8px 9px 19px 0 rgba(0, 0, 0, 0.49);
     transition: all 0.2s ease-in;
     z-index: 999999999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(
+      ${props => (props.isActive ? "-50%, -50%" : "-50%, 0%")}
+    );
 
     @media (min-width: 768px) {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(
-        ${props => (props.isActive ? "-50%, -50%" : "-50%, 0%")}
-      );
     }
 
     @media (min-width: 1025px) {
+      width: 100%;
       max-width: 70rem;
       height: auto;
       padding: 8rem;
     }
 
     &__content {
-      @media (min-width: 768px) {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
 
       &--loader {
         width: 100%;
@@ -68,7 +67,7 @@ const FormSubmitModal = styled.div`
       }
 
       h2 {
-        ${B1OffBlack};
+        ${B1White};
         width: 100%;
         text-align: center;
       }

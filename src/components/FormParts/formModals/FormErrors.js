@@ -37,7 +37,7 @@ const ErrorModal = styled.div`
 
   .modalInner {
     position: relative;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     padding: 4rem;
     background-color: ${colors.colorPrimary};
@@ -46,15 +46,13 @@ const ErrorModal = styled.div`
     box-shadow: 8px 9px 19px 0 rgba(0, 0, 0, 0.49);
     transition: all 0.2s ease-in;
     z-index: 999999999;
-
-    @media (min-width: 768px) {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     @media (min-width: 1025px) {
+      width: 100%;
       max-width: 70rem;
       height: auto;
       padding: 8rem;
@@ -70,15 +68,15 @@ const ErrorModal = styled.div`
         height: 3.5rem;
         transition: all 0.3s ease;
         border-radius: 50%;
-        border: 0.25rem solid ${colors.colorSecondary};
-        background-color: ${colors.colorSecondary};
-        color: ${colors.black};
+        border: 0.25rem solid ${colors.colorTertiary};
+        background-color: ${colors.colorTertiary};
+        color: ${colors.white};
         font-weight: 700;
         cursor: pointer;
 
         &:hover {
           background-color: ${colors.white};
-          color: ${colors.colorPrimary};
+          color: ${colors.colorTertiary};
         }
       }
     }
