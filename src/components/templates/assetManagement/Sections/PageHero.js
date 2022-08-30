@@ -15,9 +15,11 @@ const PageHero = ({ data }) => {
         <div className="content">
           <div className="content__inner">
             <p>{data.content}</p>
-            <div>
-              <Link to={`/${data.buttonSlug}`}>{data.buttonText}</Link>
-            </div>
+            {data.buttonSlug && data.buttonText && (
+              <div>
+                <Link to={`/${data.buttonSlug}`}>{data.buttonText}</Link>
+              </div>
+            )}
           </div>
         </div>
         <div className="image">
