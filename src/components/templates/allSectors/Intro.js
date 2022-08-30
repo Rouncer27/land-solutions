@@ -85,7 +85,7 @@ const StyledSection = styled.section`
   }
 
   @media (min-width: 1250px) {
-    padding: 10rem 0 15rem;
+    padding: 10rem 0 0;
   }
 
   .letter-l {

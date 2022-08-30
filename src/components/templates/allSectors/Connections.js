@@ -123,7 +123,7 @@ const StyledDiv = styled.div`
 
   .lines-title {
     position: relative;
-    top: 11.5rem;
+    top: 20rem;
     width: 100%;
     padding: 0 5rem;
     text-align: center;

@@ -55,15 +55,18 @@ const StyledSection = styled.section`
   background-color: ${colors.colorSecondary};
 
   @media (min-width: 1025px) {
-    padding-top: 10rem;
+    margin-top: -4rem;
+    padding-top: 0;
     padding-bottom: 10rem;
   }
 
   .sectors-title {
     ${standardWrapper};
+    position: relative;
     max-width: 85rem !important;
     margin: auto;
     padding: 0 2rem;
+    z-index: 100;
 
     p {
       ${H3White};

@@ -4,6 +4,7 @@ import { H3Blue, standardWrapper, colors } from "../../../styles/helpers"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Twitter from "../../Icons/Twitter"
+import Linkedin from "../../Icons/Linkedin"
 
 const ContactInfo = ({ data }) => {
   const sideImgDisplay = getImage(
@@ -42,6 +43,19 @@ const ContactInfo = ({ data }) => {
                     <i>
                       <Twitter />
                       <span className="visuallyhidden">Twitter</span>
+                    </i>
+                  </a>
+                </StyledIcon>
+                <StyledIcon>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    title="Follow us on Linkedin - Link will open in new window"
+                    href={`https://www.linkedin.com/`}
+                  >
+                    <i>
+                      <Linkedin />
+                      <span className="visuallyhidden">Linkedin</span>
                     </i>
                   </a>
                 </StyledIcon>
