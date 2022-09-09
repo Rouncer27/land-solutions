@@ -25,6 +25,7 @@ const PageHeroAnimate = ({ data }) => {
             formats={["auto", "webp", "avif"]}
           />
         </div>
+        <div className="overlay" />
       </div>
     </StyledSection>
   )
@@ -34,8 +35,8 @@ const StyledSection = styled.section`
   .wrapper {
     width: 100%;
     min-height: 30rem;
-
     position: relative;
+    z-index: 100;
 
     @media (min-width: 768px) {
       min-height: 50rem;
@@ -44,6 +45,16 @@ const StyledSection = styled.section`
     @media (min-width: 1025px) {
       min-height: 70rem;
     }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.7;
   }
 
   .content {

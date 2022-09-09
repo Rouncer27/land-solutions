@@ -102,7 +102,7 @@ const WeAre = ({ data }) => {
               return (
                 <div key={index}>
                   <h3>
-                    <span className="point-arrow">&#8594;</span>
+                    <span className="point-arrow">&#8212;</span>
                     <span className="point-content">{item.title}</span>
                   </h3>
                   <div dangerouslySetInnerHTML={{ __html: item.content }} />

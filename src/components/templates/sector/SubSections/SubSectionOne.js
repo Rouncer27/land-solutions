@@ -160,7 +160,6 @@ const SectionStyled = styled.section`
     h2 {
       ${H2White};
       width: 100%;
-      font-weight: 300;
       text-align: center;
       text-transform: uppercase;
     }

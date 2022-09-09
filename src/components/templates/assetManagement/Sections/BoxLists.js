@@ -54,12 +54,11 @@ const BoxItem = styled.div`
     &::before {
       font-family: ${fonts.fontAwesome};
       position: absolute;
-      top: 1.75em;
+      top: 2.1em;
       left: 0;
       padding-right: 0.75em;
-      color: rgba($grey, 0.75);
       font-size: 0.75rem;
-      content: "\f04d";
+      content: "\f111";
     }
   }
 `

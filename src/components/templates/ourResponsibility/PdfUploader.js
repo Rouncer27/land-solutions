@@ -5,9 +5,9 @@ import {
   B1Black,
   B2Black,
   colors,
-  H3Blue,
   H3Green,
   medWrapper,
+  H1Blue,
 } from "../../../styles/helpers"
 
 const PdfUploader = ({ data }) => {
@@ -41,12 +41,14 @@ const PdfUploader = ({ data }) => {
           />
           <div className="download-link">
             <div className="download-link__icon">
-              <GatsbyImage
-                image={iconDisplay}
-                alt={iconAlt}
-                layout="fullWidth"
-                formats={["auto", "webp", "avif"]}
-              />
+              <a href={`${data.pdfUploaderContentPdf.localFile.url}`}>
+                <GatsbyImage
+                  image={iconDisplay}
+                  alt={iconAlt}
+                  layout="fullWidth"
+                  formats={["auto", "webp", "avif"]}
+                />
+              </a>
             </div>
             <div className="download-link__links">
               <p>{data.pdfUploaderContentDownloadTitle}</p>
@@ -92,15 +94,15 @@ const StyledSection = styled.section`
     }
 
     h2 {
-      ${H3Green};
-      margin-bottom: 0;
-      font-weight: 300;
+      ${H1Blue};
+      margin-top: 0;
+      margin-bottom: 0.5rem;
       text-transform: uppercase;
     }
 
     h3 {
-      ${H3Blue};
-      margin-top: 0;
+      ${H3Green};
+      margin: 0;
     }
 
     p {
