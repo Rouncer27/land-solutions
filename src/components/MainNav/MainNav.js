@@ -12,13 +12,11 @@ const MainNav = () => {
   return (
     <StyledNav>
       <div className="nav-wrap">
-        <ul className="nav-left">
+        <ul>
           <OurStory />
           <AllSectors />
           <OurAdvantage />
           <Contact />
-        </ul>
-        <ul className="nav-right">
           <Insights />
           <Careers />
         </ul>
@@ -35,24 +33,11 @@ const StyledNav = styled.nav`
     padding-left: 5rem;
   }
 
-  .nav-wrap {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
   ul {
     display: flex;
-  }
-
-  .nav-left {
-    width: 75%;
-  }
-
-  .nav-right {
-    width: 25%;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
   }
 `
 

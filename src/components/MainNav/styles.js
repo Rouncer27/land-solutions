@@ -3,21 +3,19 @@ import { B2Blue, colors } from "../../styles/helpers"
 
 export const ListStyles = css`
   ${B2Blue};
-  display: block;
   cursor: pointer;
 
   @media (min-width: 768px) {
     margin: 0 0.5rem;
-    min-width: 10rem;
   }
 
   @media (min-width: 1025px) {
-    margin: 0 2rem;
+    margin: 0 0.5rem;
   }
 
   a {
     ${B2Blue};
-    padding: 1rem 2rem;
+    padding: 1rem;
     box-shadow: 0 2px 0 0 transparent;
     transition: all 0.3s ease-out;
 
@@ -33,13 +31,14 @@ export const ListStyles = css`
   }
 
   .item-span-wrap {
+    display: inline-block;
     position: relative;
     padding-right: 1rem;
   }
 
   .sub-indicator {
     position: absolute;
-    top: 1rem;
+    top: 1.1rem;
     right: 0;
     display: inline-block;
     margin-left: 0.5rem;
