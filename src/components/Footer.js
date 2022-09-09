@@ -11,13 +11,32 @@ const Footer = () => {
   return (
     <StyledFooter>
       <div className="wrapper">
-        <div className="footer-start footer-sec">
-          <h3>Start a Project</h3>
-          <p>We are here to help you get started.</p>
-        </div>
         <div className="footer-sector footer-sec">
           <h3>What sector are you in?</h3>
-          <p>Find the sector you are interested in and learn more.</p>
+          <ul>
+            <li>
+              <Link to="/sectors/renewable-energy">Renewable Energy</Link>
+            </li>
+            <li>
+              <Link to="/sectors/power-generation-transmission-distribution">
+                Power Generation Transmission & Distribution
+              </Link>
+            </li>
+            <li>
+              <Link to="/sectors/public-infrastructure">
+                Public Infrastructure
+              </Link>
+            </li>
+            <li>
+              <Link to="/sectors/telecommunications">Telecommunications</Link>
+            </li>
+            <li>
+              <Link to="/sectors/midstream">Midstream</Link>
+            </li>
+            <li>
+              <Link to="/sectors/upstream">Upstream</Link>
+            </li>
+          </ul>
         </div>
         <div className="footer-about footer-sec">
           <h3>About Landsolutions</h3>
@@ -137,7 +156,7 @@ const StyledFooter = styled.footer`
     }
 
     @media (min-width: 1025px) {
-      width: calc(20% - 2rem);
+      width: calc(30% - 2rem);
       margin: 0 1rem;
     }
   }
@@ -161,6 +180,10 @@ const StyledFooter = styled.footer`
   }
 
   .footer-logo__social {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
     p {
       display: flex;
       align-items: center;
