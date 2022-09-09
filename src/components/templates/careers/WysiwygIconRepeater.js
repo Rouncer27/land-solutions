@@ -22,7 +22,11 @@ const WysiwygIconRepeater = ({ removepadding, bgcolor, data }) => {
           )
           const logoAlt = block?.icon?.altText
           return (
-            <BlockDiv removepadding={removepadding} key={index}>
+            <BlockDiv
+              id={block.sectionId}
+              removepadding={removepadding}
+              key={index}
+            >
               <div className="icon">
                 <GatsbyImage image={image} alt={logoAlt} layout="fixed" />
               </div>

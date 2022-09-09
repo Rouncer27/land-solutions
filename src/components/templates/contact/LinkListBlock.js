@@ -10,6 +10,7 @@ import {
   Btn1Three,
   standardWrapper,
   Btn1One,
+  colors,
 } from "../../../styles/helpers"
 
 const LinkListBlock = ({ data }) => {
@@ -27,7 +28,7 @@ const LinkListBlock = ({ data }) => {
             {data.pageListBesideBlockLinkList.map((link, index) => {
               return (
                 <li key={index}>
-                  <a href={`mailto:${link.slug}`}>
+                  <a href={`mailto:${link.slug}?subject=${link.text}`}>
                     {link.text} <span>&#8594;</span>
                   </a>
                 </li>
@@ -99,6 +100,14 @@ const StyledSection = styled.section`
           span {
             color: #336a6a;
             font-weight: bold;
+          }
+
+          &:hover {
+            color: ${colors.colorAccent};
+
+            span {
+              color: ${colors.colorAccent};
+            }
           }
         }
       }

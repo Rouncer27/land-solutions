@@ -6,7 +6,7 @@ import Seo from "../components/Seo"
 import PageHero from "../components/templates/shared/PageHero"
 import WysiwygIcon from "../components/templates/careers/WysiwygIconRepeater"
 import ContentBlock from "../components/templates/home/ContentBlock"
-import ImageStrip from "../components/templates/shared/ImageStrip"
+import ImageStrip from "../components/templates/careers/ImageStrip"
 import TeamTestimonials from "../components/templates/shared/TeamTestimonials"
 import WysiwygWithImage from "../components/templates/careers/WysiwygWithImage"
 import PageHeroQuote from "../components/templates/shared/PageHeroQuote"
@@ -96,6 +96,7 @@ export const careersTempQuery = graphql`
               mainTitle
               subTitle
               wysiwyg
+              sectionId
               icon {
                 altText
                 sourceUrl
@@ -133,6 +134,7 @@ export const careersTempQuery = graphql`
               mainTitle
               subTitle
               wysiwyg
+              sectionId
               icon {
                 altText
                 sourceUrl
@@ -157,6 +159,7 @@ export const careersTempQuery = graphql`
               mainTitle
               subTitle
               wysiwyg
+              sectionId
               icon {
                 altText
                 sourceUrl

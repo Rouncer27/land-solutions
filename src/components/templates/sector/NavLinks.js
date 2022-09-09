@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { H2Green, medWrapper, B1Green } from "../../../styles/helpers"
+import { H2Green, medWrapper, B1Green, colors } from "../../../styles/helpers"
 
 import waves from "../../../images/long-wave.png"
 import { gsap } from "gsap"
@@ -110,6 +110,10 @@ const SectionStyled = styled.section`
       a {
         ${B1Green}
         word-wrap: wrap;
+
+        &:hover {
+          color: ${colors.colorAccent};
+        }
       }
     }
   }

@@ -41,16 +41,20 @@ const SubSectionthree = ({ data }) => {
           </div>
           <div className="content__paragraphs">
             <h2>{data.title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: data.content }} />
-
+            <div
+              className="content__paragraphs--wysiwyg"
+              dangerouslySetInnerHTML={{ __html: data.content }}
+            />
             <div className="pdf-download">
               <div className="pdf-download__thumbnail">
-                <GatsbyImage
-                  image={imagePdfDisplay}
-                  alt={imagePdfAlt}
-                  layout="fullWidth"
-                  formats={["auto", "webp", "avif"]}
-                />
+                <a href={`${data.pdfFile.localFile.url}`}>
+                  <GatsbyImage
+                    image={imagePdfDisplay}
+                    alt={imagePdfAlt}
+                    layout="fullWidth"
+                    formats={["auto", "webp", "avif"]}
+                  />
+                </a>
               </div>
               <div className="pdf-download__button">
                 <p>View or Download</p>
@@ -148,8 +152,18 @@ const StyledSection = styled.section`
         ${H3LightGreen};
       }
 
-      p {
-        ${B1OffBlack};
+      &--wysiwyg {
+        p {
+          ${B1OffBlack};
+        }
+
+        a {
+          ${B1OffBlack};
+
+          &:hover {
+            color: ${colors.colorAccent};
+          }
+        }
       }
 
       .pdf-download {

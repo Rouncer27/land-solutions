@@ -48,27 +48,26 @@ const LeaderContent = ({ data, next, prev }) => {
             }}
           />
           <div className="bio-content__nav">
-            {prev && (
-              <>
-                <Link to={`/about/leadership-team/${prev}`}>
-                  Prev Team Member
-                </Link>
+            {next && (
+              <div>
                 <span>
                   <img src={arrowLeft} alt="" />
-                </span>
-              </>
-            )}
-            <Link to="/about/leadership-team/">Leadership Team</Link>
-
-            {next && (
-              <>
-                <span>
-                  <img src={arrowRight} alt="" />
                 </span>
                 <Link to={`/about/leadership-team/${next}`}>
                   Next Team Member
                 </Link>
-              </>
+              </div>
+            )}
+
+            {prev && (
+              <div>
+                <Link to={`/about/leadership-team/${prev}`}>
+                  Prev Team Member
+                </Link>
+                <span>
+                  <img src={arrowRight} alt="" />
+                </span>
+              </div>
             )}
           </div>
         </div>
@@ -130,9 +129,19 @@ const SectionStyled = styled.section`
     }
 
     &__nav {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
       margin-top: 5rem;
       margin-bottom: 5rem;
+
+      div {
+        &:first-of-type {
+          span {
+            margin-left: 0 !important;
+          }
+        }
+      }
 
       span {
         display: inline-block;

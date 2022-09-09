@@ -64,7 +64,7 @@ const HighlightsTwo = ({ data }) => {
     },
     dots: true,
     dotsClass: "slick-dots slick-thumb",
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -193,6 +193,10 @@ const StyledSection = styled.section`
     p {
       ${B2LightGreen};
       margin: 0;
+    }
+
+    &.slick-disabled {
+      display: none !important;
     }
   }
 

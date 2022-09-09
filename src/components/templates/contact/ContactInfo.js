@@ -26,6 +26,7 @@ const ContactInfo = ({ data }) => {
         <div className="contact">
           <h2>{data.pageContactInformationTitle}</h2>
           <div
+            className="contact__wysiwyg"
             dangerouslySetInnerHTML={{
               __html: data.pageContactInformationContent,
             }}
@@ -111,6 +112,16 @@ const SectionStyled = styled.section`
 
     p {
       ${H3Blue};
+    }
+
+    &__wysiwyg {
+      a {
+        ${H3Blue};
+
+        &:hover {
+          color: ${colors.colorAccent};
+        }
+      }
     }
   }
 `
