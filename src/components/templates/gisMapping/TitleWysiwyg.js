@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import {
@@ -17,13 +18,9 @@ const TitleWysiwyg = ({ data }) => {
       <div className="wrapper">
         <div className="title">
           <h2>{data.titleBesideSimpleContentTitle}</h2>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={data.titleBesideSimpleContentUrl}
-          >
+          <Link to={`/${data.titleBesideSimpleContentUrl}`}>
             {data.titleBesideSimpleContentButtonText}
-          </a>
+          </Link>
         </div>
         <div className="content">
           <div

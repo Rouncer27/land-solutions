@@ -79,11 +79,13 @@ const BlockDiv = styled.div`
     @media (min-width: 768px) {
       width: calc(15% - 2rem);
       max-width: 100%;
+      margin-top: 0;
       margin-right: 2rem;
     }
 
     @media (min-width: 1025px) {
       width: calc(15% - 2rem);
+      margin-top: 0;
       margin-right: 2rem;
     }
   }

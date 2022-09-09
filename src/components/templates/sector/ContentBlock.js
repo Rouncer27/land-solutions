@@ -54,40 +54,43 @@ const StyledSection = styled.section`
     background: rgba(31, 82, 127, 1);
 
     @media (min-width: 768px) {
-      width: calc(50% - 4rem);
-      margin-right: 4rem;
+      width: calc(50%);
       padding-top: 5rem;
-      padding-right: 20rem;
+      ${"" /* padding-right: 20rem; */}
+      padding-right: 3rem;
       padding-bottom: 5rem;
       padding-left: 2rem;
-      background: linear-gradient(
+      ${
+        "" /* background: linear-gradient(
         255deg,
         rgba(31, 82, 127, 0) 19%,
         rgba(31, 82, 127, 1) 19%
-      );
+      ); */
+      }
     }
 
     @media (min-width: 1025px) {
       padding-top: 6.7rem;
       padding-right: 15rem;
+      padding-right: 5rem;
+      padding-left: 5rem;
       padding-bottom: 6.7rem;
     }
 
     &__inner {
       width: 100%;
+      max-width: 100%;
       margin-right: 0;
       margin-left: auto;
 
       @media (min-width: 768px) {
-        width: 27rem;
       }
 
       @media (min-width: 850px) {
-        width: 30rem;
       }
 
       @media (min-width: 1025px) {
-        width: 37.5rem;
+        max-width: 55rem;
       }
 
       p {

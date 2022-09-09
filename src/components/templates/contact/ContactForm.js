@@ -117,7 +117,7 @@ const ContactForm = ({ data }) => {
   }
 
   return (
-    <StyledDiv>
+    <StyledDiv id="contact-form">
       <div className="wrapper">
         <div className="form">
           <div className="form__title">

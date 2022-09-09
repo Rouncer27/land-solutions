@@ -6,7 +6,7 @@ import Seo from "../components/Seo"
 import PageIntro from "../components/templates/shared/PageIntro"
 import WysiwygIcon from "../components/templates/shared/WysiwygIcon"
 import PageHeroContained from "../components/templates/shared/PageHeroContained"
-import TitleWysiwyg from "../components/templates/shared/TitleWysiwyg"
+import TitleWysiwyg from "../components/templates/gisMapping/TitleWysiwyg"
 import VideoSection from "../components/templates/shared/VideoSection"
 
 const GisMapping = props => {

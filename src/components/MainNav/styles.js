@@ -10,7 +10,7 @@ export const ListStyles = css`
   }
 
   @media (min-width: 1025px) {
-    margin: 0 0.5rem;
+    margin: 0 2rem;
   }
 
   a {

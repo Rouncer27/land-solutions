@@ -36,7 +36,7 @@ const StyledNav = styled.nav`
   ul {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
   }
 `
