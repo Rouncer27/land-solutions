@@ -36,14 +36,16 @@ export const Btn1One = css`
     rgba(31, 82, 127, 1) 18%
   );
   color: ${colors.white};
+  font-weight: bold;
+  text-transform: uppercase;
 
   &:hover {
     background: linear-gradient(
       250deg,
       rgba(9, 9, 121, 0) 18%,
-      rgba(157, 181, 148, 1) 18%
+      rgba(51, 106, 106, 1) 18%
     );
-    color: ${colors.colorSecondary};
+    color: ${colors.white};
   }
 
   &:focus {
@@ -69,13 +71,15 @@ export const Btn1Two = css`
     rgba(9, 9, 121, 0) 18%,
     rgba(136, 184, 223, 1) 18%
   );
-  color: ${colors.colorPrimary};
+  color: ${colors.white};
+  font-weight: bold;
+  text-transform: uppercase;
 
   &:hover {
     background: linear-gradient(
       250deg,
       rgba(9, 9, 121, 0) 18%,
-      rgba(157, 181, 148, 1) 18%
+      rgba(51, 106, 106, 1) 18%
     );
     color: ${colors.white};
   }
@@ -101,15 +105,17 @@ export const Btn1Three = css`
   background: linear-gradient(
     250deg,
     rgba(9, 9, 121, 0) 18%,
-    rgba(255, 255, 255, 1) 18%
+    rgba(136, 184, 223, 1) 18%
   );
-  color: ${colors.colorPrimary};
+  color: ${colors.white};
+  font-weight: bold;
+  text-transform: uppercase;
 
   &:hover {
     background: linear-gradient(
       250deg,
       rgba(9, 9, 121, 0) 18%,
-      rgba(157, 181, 148, 1) 18%
+      rgba(51, 106, 106, 1) 18%
     );
     color: ${colors.white};
   }
