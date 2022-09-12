@@ -100,10 +100,11 @@ const SectionStyled = styled.section`
         }
 
         &:hover {
-          color: ${colors.colorPrimary};
+          color: ${colors.colorAccent};
+
           span {
             &::before {
-              color: ${colors.colorPrimary};
+              color: ${colors.colorAccent};
             }
           }
         }
@@ -164,7 +165,7 @@ const SectionStyled = styled.section`
       text-decoration: underline;
 
       &:hover {
-        color: ${colors.colorSecondary};
+        color: ${colors.colorAccent};
       }
     }
   }

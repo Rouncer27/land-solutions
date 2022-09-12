@@ -113,7 +113,7 @@ const StyledDiv = styled.div`
       font-weight: 300;
 
       &:hover {
-        color: ${colors.colorPrimary};
+        color: ${colors.colorAccent};
       }
     }
   }

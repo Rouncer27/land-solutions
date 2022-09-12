@@ -254,7 +254,7 @@ const BlockDiv = styled.div`
           font-size: 1em;
 
           &:hover {
-            color: ${colors.colorSecondary};
+            color: ${colors.colorAccent};
           }
         }
       }
@@ -267,7 +267,7 @@ const BlockDiv = styled.div`
         font-size: 1em;
 
         &:hover {
-          color: ${colors.colorPrimary};
+          color: ${colors.colorAccent};
         }
       }
 
@@ -396,7 +396,7 @@ const BlockDiv = styled.div`
         text-decoration: underline;
 
         &:hover {
-          color: ${colors.colorPrimary};
+          color: ${colors.colorAccent};
         }
       }
     }

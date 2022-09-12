@@ -103,7 +103,7 @@ const ItemDiv = styled.div`
         text-decoration: underline;
 
         &:hover {
-          color: ${colors.colorTertiary};
+          color: ${colors.colorAccent};
         }
       }
     }

@@ -486,8 +486,15 @@ const StyledSection = styled.section`
 
           span {
             display: inline-block;
-            margin-left: 2rem;
+            margin-left: 1rem;
+            transition: all 0.3s ease-out;
             color: ${colors.black};
+          }
+
+          &:hover {
+            span {
+              color: ${colors.colorAccent};
+            }
           }
         }
 
@@ -496,7 +503,7 @@ const StyledSection = styled.section`
           text-decoration: underline;
 
           &:hover {
-            color: ${colors.colorPrimary};
+            color: ${colors.colorAccent};
           }
         }
       }

@@ -191,7 +191,7 @@ const SectionStyled = styled.section`
           word-break: break-all;
 
           &:hover {
-            color: ${colors.colorTertiary};
+            color: ${colors.colorAccent};
           }
         }
       }

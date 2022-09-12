@@ -8,6 +8,7 @@ import {
   H2Blue,
   H3LightGreen,
   standardWrapper,
+  colors,
 } from "../../../../styles/helpers"
 
 const SubSectionTwo = ({ data }) => {
@@ -145,6 +146,10 @@ const StyledSection = styled.section`
       @media (min-width: 768px) {
         margin-bottom: 0;
         text-align: right;
+      }
+
+      &:hover {
+        color: ${colors.colorAccent};
       }
     }
 

@@ -236,9 +236,8 @@ const Posts = () => {
                   </div>
                   <div className="post-content__bottom">
                     <div className="post-content__date">
-                      <p>
-                        {postDate} <span>&#124;</span>{" "}
-                      </p>
+                      <p>{postDate}</p>
+                      <span>&#124;</span>{" "}
                       <p>
                         {post.node.categories.nodes.map((catName, index) => {
                           const spaceReq =
@@ -427,6 +426,11 @@ const PostCard = styled.article`
       p {
         ${B1OffBlack};
       }
+
+      span {
+        ${B1OffBlack};
+        padding: 0 0.1rem 0 1rem;
+      }
     }
 
     &__button {
@@ -488,6 +492,7 @@ const CatNav = styled.div`
 
         span {
           display: none;
+
           @media (min-width: 768px) {
             display: inline-block;
             margin-left: 1rem;

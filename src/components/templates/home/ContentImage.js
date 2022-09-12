@@ -46,7 +46,7 @@ const SectionStyled = styled.section`
       ${B1Black};
 
       &:hover {
-        color: ${colors.colorPrimary};
+        color: ${colors.colorAccent};
       }
     }
   }

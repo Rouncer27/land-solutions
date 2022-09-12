@@ -79,7 +79,7 @@ const StyledSection = styled.section`
         text-decoration: underline;
 
         &:hover {
-          color: ${colors.colorPrimary};
+          color: ${colors.colorAccent};
         }
       }
     }

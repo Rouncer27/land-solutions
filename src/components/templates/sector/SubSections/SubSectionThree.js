@@ -207,6 +207,10 @@ const StyledSection = styled.section`
             ${H3LightGreen};
             font-weight: 300;
             text-decoration: underline;
+
+            &:hover {
+              color: ${colors.colorAccent};
+            }
           }
         }
       }
