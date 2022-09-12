@@ -7,7 +7,7 @@ module.exports = {
     description: `Land Solutions.`,
     author: `@switchback4ever`,
     metaImg: `src/images/social-media-default.png`,
-    siteLogo: `src/images/landsolutions-logo.png`,
+    siteLogo: `src/images/land-solutions.png`,
     siteUrl: `https://www.landsolutions.ca/`,
   },
   plugins: [
