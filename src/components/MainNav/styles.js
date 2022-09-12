@@ -116,8 +116,13 @@ export const ListStyles = css`
             display: flex;
 
             .sub-menu__item--icon {
-              width: 2.5rem;
+              display: inline-block;
+              width: calc(20% - 1rem) !important;
               margin-right: 1rem;
+            }
+            .sub-menu__title--text {
+              display: inline-block;
+              width: 80% !important;
             }
           }
         }

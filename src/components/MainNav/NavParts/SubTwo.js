@@ -17,7 +17,7 @@ const SubTwo = ({ subMenuTwo }) => {
                 <span className="sub-menu__item--icon">
                   <GatsbyImage image={image} alt={logoAlt} layout="fixed" />
                 </span>
-                <span>{item.page.title}</span>
+                <span className="sub-menu__title--text">{item.page.title}</span>
               </Link>
             </li>
           )
