@@ -87,10 +87,10 @@ function Seo({ description, lang, meta, title, metaImg, location }) {
         logo={siteLogoUrl}
         description={description}
         datePublished="March 21, 2022"
-        canonicalUrl="https://www.christinavaillancourt.com/"
+        canonicalUrl="https://www.landsolutions.ca/"
         author=""
-        organization="Christina Vaillancourt Registered Psychologist"
-        defaultTitle="Christina Vaillancourt Registered Psychologist"
+        organization="Land Solutions"
+        defaultTitle="Land Solutions"
       />
     </React.Fragment>
   )
