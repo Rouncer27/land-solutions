@@ -96,9 +96,23 @@ const SectionStyled = styled.section`
   }
 
   .slick-slider {
+    padding-bottom: 5rem;
+    background-color: ${colors.colorPrimary};
+
+    @media (min-width: 768px) {
+      background-color: transparent;
+    }
+
+    @media (min-width: 450px) {
+      padding-bottom: 0;
+    }
     .slick-dots {
       bottom: 5rem;
       left: 0%;
+
+      @media (min-width: 450px) {
+        bottom: 5rem;
+      }
 
       @media (min-width: 768px) {
         bottom: 5rem;

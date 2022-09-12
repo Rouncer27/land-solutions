@@ -3,6 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {
+  B1Green,
   B1White,
   colors,
   H2Green,
@@ -101,23 +102,38 @@ const StyledSection = styled.section`
         }
 
         .icon {
-          width: 15%;
+          width: 20%;
           padding: 1rem;
+
+          @media (min-width: 768px) {
+            width: 15%;
+          }
         }
 
         .title {
-          ${H2Green};
-          width: 85%;
-          font-weight: 300;
+          ${B1Green};
+          width: 70%;
+          font-weight: bold;
+
+          @media (min-width: 768px) {
+            ${H2Green};
+            width: 75%;
+            font-weight: 300;
+          }
         }
 
         .arrow {
           position: absolute;
           top: 50%;
-          right: 5rem;
-          width: 7rem;
+          right: 2rem;
+          width: 4rem;
           transform: translateY(300%);
           opacity: 0;
+
+          @media (min-width: 768px) {
+            width: 7rem;
+            right: 5rem;
+          }
         }
       }
 
