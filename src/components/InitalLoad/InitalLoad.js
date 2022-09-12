@@ -47,7 +47,7 @@ const InitalLoad = () => {
 
     // Start by animating the title into view. //
     tl.to(mainDiv, { autoAlpha: 1, duration: 0.1 })
-      .fromTo(titles, { autoAlpha: 0 }, { autoAlpha: 1, x: "-40%" })
+      .fromTo(titles, { autoAlpha: 0 }, { autoAlpha: 1, x: "-50%" })
       .add("first")
       // Morph L into full screen video. //
       .to(
@@ -57,10 +57,12 @@ const InitalLoad = () => {
         },
         "first"
       )
+
       // Change main title colour to white.
       .to(titleH1, { color: "#fff" }, "first+=0.75")
       // Move main title over to make room for sub-titles.
       .to(titles, { x: "-75%" }, "first+=1.5")
+
       // Stagger in the sub-titles into view. //
       .fromTo(
         subTitles,
@@ -104,14 +106,17 @@ const InitalLoad = () => {
         },
         "second+=1.5"
       )
+
       // Remove the letter L. //
       .to(letterL, { autoAlpha: 0, x: 500 }, "second+=1.5")
+
       // Move titles up after new background comess in. //
       .to(
         titles,
         { y: "-50%", duration: 1.5, ease: "power2.out" },
         "second+=1.85"
       )
+
       // Bring in new content. //
       .fromTo(
         backgroundContent,
@@ -130,7 +135,9 @@ const InitalLoad = () => {
         },
         "third+=1.0"
       )
+
       // get rid of the main content
+      .to(titles, { x: 100 }, "third+=0.2")
       .to(titles, { autoAlpha: 0, y: -500 })
       .to(backgroundContent, { autoAlpha: 0, x: -750 }, "third+=1.3")
 
@@ -141,6 +148,7 @@ const InitalLoad = () => {
         { autoAlpha: 1, zIndex: 100 },
         "third+=2.5"
       )
+
       // Load in the three elements. //
       .fromTo(logo, { y: 100, autoAlpha: 0 }, { y: 0, autoAlpha: 1 })
       .fromTo(logoTitle, { y: 100, autoAlpha: 0 }, { y: 0, autoAlpha: 1 })
@@ -150,6 +158,7 @@ const InitalLoad = () => {
         { transformOrigin: "center left", scaleX: 0, duration: 4 },
         { scaleX: 1, autoAlpha: 1, duration: 4 }
       )
+      .addPause()
   }, [])
 
   return (
@@ -304,28 +313,63 @@ const StyledDiv = styled.div`
     justify-content: flex-start;
     position: absolute;
     top: 50%;
-    left: 100%;
+    left: 85%;
     width: 100%;
     transform: translateY(-50%);
     z-index: 155;
+
+    @media (min-width: 768px) {
+      left: 90%;
+    }
+
+    @media (min-width: 1025px) {
+      left: 100%;
+    }
   }
 
   .title {
     max-width: 40rem;
-    margin-right: 6.7rem;
+
+    @media (min-width: 768px) {
+      margin-right: 6.7rem;
+    }
 
     h1 {
       ${H1Blue};
       ${fontSizer(7.5, 13.5, 76.8, 150, 5)};
       width: 100%;
       font-weight: bold;
-      text-align: right;
+      text-align: left;
       text-transform: uppercase;
+
+      @media (min-width: 450px) {
+        max-width: 30rem;
+        transform: translateX(30%);
+      }
+
+      @media (min-width: 768px) {
+        text-align: right;
+        max-width: 100%;
+        transform: translateX(0%);
+      }
     }
   }
 
   .sub-title {
     max-width: 35rem;
+    transform: translateX(-30%);
+
+    @media (min-width: 450px) {
+      transform: translateX(-20%);
+    }
+
+    @media (min-width: 575px) {
+      transform: translateX(30%);
+    }
+
+    @media (min-width: 768px) {
+      transform: translateX(0%);
+    }
 
     p {
       ${H1White};
@@ -389,11 +433,15 @@ const StyledDiv = styled.div`
       &__inner {
         position: relative;
         padding: 5rem 2rem 5rem 8.7rem;
-        background: linear-gradient(
-          225deg,
-          rgba(9, 9, 121, 0) 18%,
-          rgba(31, 82, 127, 1) 18%
-        );
+        background: rgba(31, 82, 127, 1);
+
+        @media (min-width: 768px) {
+          background: linear-gradient(
+            225deg,
+            rgba(9, 9, 121, 0) 18%,
+            rgba(31, 82, 127, 1) 18%
+          );
+        }
       }
       p {
         ${H2White};
@@ -408,19 +456,35 @@ const StyledDiv = styled.div`
     top: 20%;
     right: 0;
     left: 0;
-    width: 100%;
+    width: 27.5rem;
+    margin: auto;
     z-index: 9999;
 
+    @media (min-width: 768px) {
+      width: 100%;
+    }
+
     &__wrapper {
-      width: 37.5rem;
+      width: 100%;
       margin: 2rem auto;
       padding: 0 2.5rem;
+
+      @media (min-width: 768px) {
+        width: 37.5rem;
+        padding: 0 2.5rem;
+      }
     }
 
     &__title {
-      width: 39rem;
+      width: 100%;
       margin: 2rem auto;
+      padding: 0 2.5rem;
       text-align: center;
+
+      @media (min-width: 768px) {
+        width: 39rem;
+        padding: 0;
+      }
 
       p {
         ${H2Blue};
