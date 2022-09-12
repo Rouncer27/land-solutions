@@ -23,7 +23,9 @@ const DirectYou = ({ data }) => {
           <div className="content__list">
             {data.directYouLinks.map((item, index) => (
               <p key={index}>
-                <Link to={`/${item.linkSlug}`}>{item.linkText}</Link>
+                <Link to={`/${item.linkSlug}`}>
+                  {item.linkText} <span />
+                </Link>
               </p>
             ))}
           </div>
@@ -82,21 +84,27 @@ const SectionStyled = styled.section`
         position: relative;
         font-weight: 300;
 
-        &::before {
-          font-family: ${fonts.fontAwesome};
-          position: absolute;
-          top: 0.5em;
-          right: -3rem;
-          transition: all 0.3s ease-out;
-          color: ${colors.colorTertiary};
-          font-size: 1.5rem;
-          content: "\f178";
+        span {
+          position: relative;
+
+          &::before {
+            font-family: ${fonts.fontAwesome};
+            position: absolute;
+            top: 0.25em;
+            right: -3rem;
+            transition: all 0.3s ease-out;
+            color: ${colors.colorTertiary};
+            font-size: 1.5rem;
+            content: "\f178";
+          }
         }
 
         &:hover {
           color: ${colors.colorPrimary};
-          &::before {
-            color: ${colors.colorPrimary};
+          span {
+            &::before {
+              color: ${colors.colorPrimary};
+            }
           }
         }
       }

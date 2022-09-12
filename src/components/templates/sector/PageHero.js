@@ -40,7 +40,7 @@ const PageHero = ({ data }) => {
 const StyledSection = styled.section`
   .wrapper {
     ${medWrapper};
-    min-height: 30rem;
+    min-height: 40rem;
     padding: 0;
     position: relative;
 
@@ -62,20 +62,26 @@ const StyledSection = styled.section`
     right: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      256deg,
-      rgba(0, 51, 70, 0.7) 80%,
-      rgba(0, 0, 0, 0) 80%
-    );
+    background: rgba(0, 51, 70, 0.7);
     z-index: 100;
 
     @media (min-width: 768px) {
       width: 55%;
+      background: linear-gradient(
+        256deg,
+        rgba(0, 51, 70, 0.7) 80%,
+        rgba(0, 0, 0, 0) 80%
+      );
     }
 
     &__inner {
-      padding-left: 15rem;
-      padding-right: 6rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+
+      @media (min-width: 768px) {
+        padding-left: 15rem;
+        padding-right: 6rem;
+      }
 
       p {
         ${H3White};

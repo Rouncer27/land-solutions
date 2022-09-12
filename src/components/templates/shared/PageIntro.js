@@ -26,6 +26,14 @@ const PageIntro = ({ data }) => {
   const sideImgAlt = data.pageIntroSideImage.altText
   return (
     <StyledSection>
+      <div className="side-image">
+        <GatsbyImage
+          image={sideImgDisplay}
+          alt={sideImgAlt}
+          layout="fullWidth"
+          formats={["auto", "webp", "avif"]}
+        />
+      </div>
       <div className="wrapper">
         <div className="title">
           <h1>{data.pageIntroMainTitle}</h1>
@@ -62,14 +70,6 @@ const PageIntro = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="side-image">
-        <GatsbyImage
-          image={sideImgDisplay}
-          alt={sideImgAlt}
-          layout="fullWidth"
-          formats={["auto", "webp", "avif"]}
-        />
-      </div>
     </StyledSection>
   )
 }
@@ -86,20 +86,38 @@ const StyledSection = styled.section`
   }
 
   .side-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 15rem;
-    height: 100%;
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    overflow: hidden;
 
     @media (min-width: 768px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+
+    @media (min-width: 768px) {
+      width: 22.5rem;
+    }
+
+    @media (min-width: 1025px) {
       width: 25rem;
+    }
+
+    .gatsby-image-wrapper {
+      @media (max-width: 768px) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
   .title {
     width: 100%;
-    margin-top: 7.5rem;
+    margin-top: 2.5rem;
 
     @media (min-width: 768px) {
       margin-top: 0;
@@ -161,6 +179,10 @@ const StyledSection = styled.section`
           max-width: 55rem;
           margin-top: 0;
 
+          @media (min-width: 768px) {
+            max-width: 45rem;
+          }
+
           @media (min-width: 1025px) {
             max-width: 60rem;
           }
@@ -169,6 +191,14 @@ const StyledSection = styled.section`
         p {
           ${H3Blue};
           max-width: 65rem;
+
+          @media (min-width: 768px) {
+            max-width: 45rem;
+          }
+
+          @media (min-width: 1025px) {
+            max-width: 60rem;
+          }
         }
       }
 

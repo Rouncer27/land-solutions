@@ -58,6 +58,7 @@ const Block = styled.div`
   position: relative;
   width: 100%;
   margin: 2rem auto;
+  background: rgba(31, 82, 127, 1);
 
   @media (min-width: 768px) {
     width: calc(50% - 1rem);
@@ -68,37 +69,29 @@ const Block = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    position: absolute;
-    top: 0;
-    right: 0;
     width: 100%;
-    height: 100%;
-    padding-left: 20%;
-    background: linear-gradient(
-      255deg,
-      rgba(31, 82, 127, 1) 81%,
-      rgba(0, 0, 0, 0) 81%
-    );
+    padding: 2rem;
+    padding-bottom: 5rem;
+    background: rgba(31, 82, 127, 1);
 
     @media (min-width: 768px) {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
+      padding-bottom: 7.5rem;
+    }
+
+    @media (min-width: 1025px) {
       position: absolute;
       top: 0;
       right: 0;
       width: 90%;
       height: 100%;
+      width: 75%;
       padding-left: 20%;
+      padding-bottom: 0;
       background: linear-gradient(
         255deg,
         rgba(31, 82, 127, 1) 81%,
         rgba(0, 0, 0, 0) 81%
       );
-    }
-
-    @media (min-width: 1025px) {
-      width: 75%;
     }
 
     &__inner {
@@ -123,7 +116,18 @@ const Block = styled.div`
     &__link {
       position: absolute;
       bottom: 2rem;
-      right: 4rem;
+      right: auto;
+      left: 4rem;
+
+      @media (min-width: 768px) {
+        right: auto;
+        left: 2rem;
+      }
+
+      @media (min-width: 1025px) {
+        right: 4rem;
+        left: auto;
+      }
 
       a {
         ${Btn1Three};
@@ -134,6 +138,7 @@ const Block = styled.div`
     h2 {
       ${H2White};
       font-weight: 300;
+      margin-top: 0;
     }
 
     p {

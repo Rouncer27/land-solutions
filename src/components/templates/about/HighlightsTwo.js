@@ -161,12 +161,12 @@ const StyledSection = styled.section`
   .slick-arrow {
     top: auto;
     bottom: 10px;
-    width: 200px;
+    width: auto;
     height: auto;
     z-index: 1000;
 
     @media (min-width: 768px) {
-      bottom: 75px;
+      bottom: 3rem;
       width: 165px;
     }
 
@@ -203,6 +203,11 @@ const StyledSection = styled.section`
   .slick-arrow.slick-prev {
     left: 5%;
 
+    @media (max-width: 767px) {
+      right: 3.5rem;
+      left: 3.5rem;
+    }
+
     @media (min-width: 1025px) {
       left: 6%;
     }
@@ -214,6 +219,12 @@ const StyledSection = styled.section`
 
   .slick-arrow.slick-next {
     right: -25px;
+
+    @media (max-width: 767px) {
+      right: 3.5rem;
+      left: 3.5rem;
+      bottom: 5rem;
+    }
 
     @media (min-width: 768px) {
       right: 5rem;
@@ -303,13 +314,17 @@ const StyledSlide = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 8rem;
   z-index: 10;
 
   @media (min-width: 768px) {
     min-height: 51rem;
-    padding: 4rem 2rem;
+    padding: 4rem 2rem 8rem;
     background-color: rgba(3, 51, 70, 0.9);
+  }
+
+  @media (min-width: 1025px) {
+    padding: 4rem 2rem 6rem;
   }
 
   .date {

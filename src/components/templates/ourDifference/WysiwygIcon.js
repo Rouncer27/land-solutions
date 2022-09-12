@@ -117,6 +117,9 @@ const BlockDiv = styled.div`
     }
 
     &__wysiwyg {
+      max-width: 100%;
+      overflow: hidden;
+
       &::after {
         display: table;
         clear: both;
