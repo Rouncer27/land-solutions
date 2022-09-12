@@ -8,6 +8,7 @@ import PageHeroWysiwyg from "../components/templates/shared/PageHeroWysiwyg"
 import InfographicWysiwyg from "../components/templates/shared/InfographicWysiwyg"
 
 const StakeholderEngagement = props => {
+  const seoInfo = props.data.seoInfo
   const pageIntro = props.data.pageIntro.template.pageStakeholderEngagement
   const pageHeroWysiwyg =
     props.data.pageHeroWysiwyg.template.pageStakeholderEngagement

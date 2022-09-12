@@ -8,6 +8,7 @@ import PageSimpleIntro from "../components/templates/news/PageSimpleIntro"
 import Posts from "../components/templates/news/Posts"
 
 const News = props => {
+  const seoInfo = props.data.seoInfo
   const hero = props?.data?.hero?.template?.pageNews
   const pageIntro = props?.data?.pageIntro?.template?.pageNews
   return (

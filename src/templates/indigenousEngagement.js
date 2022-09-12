@@ -9,6 +9,7 @@ import PageSimpleWysiwyg from "../components/templates/shared/PageSimpleWysiwyg"
 import LinkBlockLogos from "../components/templates/shared/LinkBlockLogos"
 
 const IndigenousEngagement = props => {
+  const seoInfo = props.data.seoInfo
   const pageIntro = props.data.pageIntro.template.pageIndigenousEngagement
   const pageHeroFull = props.data.pageHeroFull.template.pageIndigenousEngagement
   const pageSimpleWysiwyg =

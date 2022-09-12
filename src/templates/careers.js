@@ -12,6 +12,7 @@ import WysiwygWithImage from "../components/templates/careers/WysiwygWithImage"
 import PageHeroQuote from "../components/templates/shared/PageHeroQuote"
 
 const Careers = props => {
+  const seoInfo = props.data.seoInfo
   const hero = props?.data?.hero?.template?.pageCareers
   const wysiwygIcon =
     props?.data?.wysiwygIcon?.template?.pageCareers?.wysiwygWithIcon

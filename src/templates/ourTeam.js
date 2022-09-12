@@ -9,6 +9,7 @@ import LinkBlocks from "../components/templates/shared/LinkBlocks"
 import QuoteHero from "../components/templates/shared/QuoteHero"
 
 const ourTeam = props => {
+  const seoInfo = props.data.seoInfo
   const hero = props.data.hero.template.ourTeam
   const contentIcon = props.data.contentIcon.template.ourTeam
   const linkBlocks = props.data.linkBlocks.template.ourTeam

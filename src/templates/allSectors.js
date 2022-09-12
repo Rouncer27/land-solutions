@@ -8,6 +8,7 @@ import Connections from "../components/templates/allSectors/Connections"
 import SectorsList from "../components/templates/allSectors/SectorsList"
 
 const AllSectors = props => {
+  const seoInfo = props.data.seoInfo
   const intro = props.data.intro.template.AllSector
   const displaySector = props.data.displaySector.template.AllSector
   const sectors = props.data.sectors.edges

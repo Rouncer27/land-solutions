@@ -12,6 +12,7 @@ import IconWysiwygButton from "../components/templates/talentSourcing/IconWysiwy
 import TeamTestimonials from "../components/templates/shared/TeamTestimonials"
 
 const TalentSourcing = props => {
+  const seoInfo = props.data.seoInfo
   const pageIntro = props.data.pageIntro.template.pageTalentSourcing
   const pageVideo = props.data.pageVideo.template.pageTalentSourcing
   const threeColumns = props.data.threeColumns.template.pageTalentSourcing

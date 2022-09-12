@@ -12,6 +12,7 @@ import WysiwygImage from "../components/templates/ourResponsibility/WysiwygImage
 import SafetylLogos from "../components/templates/ourResponsibility/SafetylLogos"
 
 const OurResponsibility = props => {
+  const seoInfo = props.data.seoInfo
   const hero = props.data.hero.template.pageOurResponsibility
   const contentIcon = props.data.contentIcon.template.pageOurResponsibility
   const pdfUploader = props.data.pdfUploader.template.pageOurResponsibility

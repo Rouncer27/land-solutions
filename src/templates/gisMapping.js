@@ -10,6 +10,7 @@ import TitleWysiwyg from "../components/templates/gisMapping/TitleWysiwyg"
 import VideoSection from "../components/templates/shared/VideoSection"
 
 const GisMapping = props => {
+  const seoInfo = props.data.seoInfo
   const pageIntro = props.data.pageIntro.template.pageGisMapping
   const wysiwygIcon = props.data.wysiwygIcon.template.pageGisMapping
   const pageHeroContained = props.data.pageHeroContained.template.pageGisMapping

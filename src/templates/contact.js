@@ -9,6 +9,7 @@ import ContactForm from "../components/templates/contact/ContactForm"
 import LinkListBlock from "../components/templates/contact/LinkListBlock"
 
 const Contact = props => {
+  const seoInfo = props.data.seoInfo
   const hero = props?.data?.hero?.template?.pageContact
   const contactInfo = props?.data?.contactInfo?.template?.pageContact
   const contactForm = props?.data?.contactForm?.template?.pageContact

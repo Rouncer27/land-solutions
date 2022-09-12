@@ -8,6 +8,7 @@ import WysiwygIcon from "../components/templates/locations/WysiwygIconRepeater"
 import LocationsDisplay from "../components/templates/locations/LocationsDisplay"
 
 const Locations = props => {
+  const seoInfo = props.data.seoInfo
   const hero = props?.data?.hero?.template?.pageLocations
   const wysiwygIcon =
     props?.data?.wysiwygIcon?.template?.pageLocations?.wysiwygWithIcon

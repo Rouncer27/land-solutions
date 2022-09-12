@@ -9,6 +9,7 @@ import PageSimpleWysiwyg from "../components/templates/shared/PageSimpleWysiwyg"
 import PageHeroContained from "../components/templates/shared/PageHeroContained"
 
 const Environmental = props => {
+  const seoInfo = props.data.seoInfo
   const pageIntro = props.data.pageIntro.template.pageEnvironmental
   const pageHeroWysiwyg = props.data.pageHeroWysiwyg.template.pageEnvironmental
   const pageSimpleWysiwyg =

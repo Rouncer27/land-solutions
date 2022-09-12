@@ -10,6 +10,7 @@ import HighlightsTwo from "../components/templates/about/HighlightsTwo"
 import Locations from "../components/templates/about/Locations"
 
 const About = props => {
+  const seoInfo = props.data.seoInfo
   const intro = props.data.intro.template.aboutPage
   const highlights = props.data.highlights.template.aboutPage
   const locations = props.data.locations.template.aboutPage

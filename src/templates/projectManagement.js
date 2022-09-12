@@ -9,6 +9,7 @@ import WysiwygCircle from "../components/templates/projectManagement/WysiwygCirc
 import VideoSection from "../components/templates/shared/VideoSection"
 
 const ProjectManagement = props => {
+  const seoInfo = props.data.seoInfo
   const pageIntro = props.data.pageIntro.template.pageProjectManagement
   const pageHeroWysiwyg =
     props.data.pageHeroWysiwyg.template.pageProjectManagement

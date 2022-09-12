@@ -8,6 +8,7 @@ import LeadershipTeam from "../components/templates/ourTeam/LeadershipTeam"
 import LinkBlocks from "../components/templates/shared/LinkBlocks"
 
 const leadershipTeam = props => {
+  const seoInfo = props.data.seoInfo
   const hero = props.data.hero.template.leadershipTeam
   const leadershipTeam = props.data.leadershipTeam.edges
   const linkBlocks = props.data.linkBlocks.template.leadershipTeam

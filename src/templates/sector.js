@@ -12,6 +12,7 @@ import SubSectionPicker from "../components/templates/sector/SubSections/SubSect
 import PageHero from "../components/templates/sector/PageHero"
 
 const Sector = ({ data }) => {
+  const seoInfo = data.seoInfo
   const sectorHeroIntro = data.sectorHeroIntro.sectors
   const contentBlock = data.contentBlock.sectors
   const navLinks = data.navLinks.sectors

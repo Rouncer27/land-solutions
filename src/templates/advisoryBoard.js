@@ -9,6 +9,7 @@ import Members from "../components/templates/advisoryBoard/Members"
 import LinkBlocks from "../components/templates/shared/LinkBlocks"
 
 const AdvisoryBoard = props => {
+  const seoInfo = props.data.seoInfo
   const hero = props.data.hero.template.advisoryBoard
   const contentIcon = props.data.contentIcon.template.advisoryBoard
   const members = props.data.members.edges

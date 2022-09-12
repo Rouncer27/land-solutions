@@ -7,6 +7,7 @@ import TopTitle from "../components/templates/singleLeader/TopTitle"
 import LeaderContent from "../components/templates/singleLeader/LeaderContent"
 
 const singleLeader = props => {
+  const seoInfo = props.data.seoInfo
   return (
     <Layout>
       <Seo />

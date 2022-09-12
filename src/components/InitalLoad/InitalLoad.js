@@ -169,11 +169,11 @@ const InitalLoad = () => {
             <video
               className="bg-video"
               src={turbineVideo}
-              autoplay="autoplay"
+              autoPlay="autoplay"
               playsInline
               muted
               loop
-              preload
+              preload="true"
               controls={false}
             ></video>
           </div>

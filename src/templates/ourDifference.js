@@ -10,6 +10,7 @@ import IconGraphic from "../components/templates/ourDifference/IconGraphic"
 import styled from "styled-components"
 
 const ourDifference = props => {
+  const seoInfo = props.data.seoInfo
   const hero = props.data.hero.template.pageOurDifference
   const contentIcon = props.data.contentIcon.template.pageOurDifference
   const wysiwygIcon = props.data.wysiwygIcon.template.pageOurDifference

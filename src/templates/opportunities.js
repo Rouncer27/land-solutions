@@ -11,6 +11,7 @@ import PageHeroContained from "../components/templates/shared/PageHeroContained"
 import ListLinks from "../components/templates/opportunities/ListLinks"
 
 const Opportunities = props => {
+  const seoInfo = props.data.seoInfo
   const hero = props?.data?.hero?.template?.pageOpportunities
   const wysiwygIcon =
     props?.data?.wysiwygIcon?.template?.pageOpportunities?.wysiwygWithIcon

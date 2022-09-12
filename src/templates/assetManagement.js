@@ -7,6 +7,7 @@ import PageIntro from "../components/templates/shared/PageIntro"
 import Sections from "../components/templates/assetManagement/Sections"
 
 const AssetManagement = props => {
+  const seoInfo = props.data.seoInfo
   const pageIntro = props.data.pageIntro.template.pageAssetManagement
   const sectionsTabs =
     props.data.sections.template.pageAssetManagement.tabsContent
