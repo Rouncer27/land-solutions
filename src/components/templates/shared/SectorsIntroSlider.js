@@ -22,10 +22,11 @@ const SectorsIntroSlider = ({ sectors }) => {
     infinite: true,
     speed: 500,
     autoplay: true,
-    autoplaySpeed: 15000,
+    autoplaySpeed: 10000,
     centerPadding: "0",
     arrows: true,
     dots: true,
+    adaptiveHeight: true,
   }
 
   return (
@@ -120,12 +121,12 @@ const SectionStyled = styled.section`
       }
 
       @media (min-width: 1025px) {
-        bottom: 5rem;
+        bottom: 2rem;
         left: 15%;
       }
 
       @media (min-width: 1200px) {
-        bottom: 5rem;
+        bottom: 2rem;
         left: 15%;
       }
 
@@ -264,7 +265,7 @@ const Slide = styled.div`
     @media (min-width: 1025px) {
       width: calc(60%);
       min-height: auto;
-      padding: 12rem 10rem;
+      padding: 6rem 8rem 8rem;
     }
 
     &__inner {

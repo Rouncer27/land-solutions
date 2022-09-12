@@ -19,7 +19,7 @@ function Seo({ description, lang, meta, title, metaImg, location }) {
           }
         }
 
-        siteLogo: file(relativePath: { eq: "christina-vaillancourt.png" }) {
+        siteLogo: file(relativePath: { eq: "land-solutions.png" }) {
           publicURL
         }
 
