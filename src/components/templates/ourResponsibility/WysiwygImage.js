@@ -93,9 +93,13 @@ const StyledSection = styled.section`
 
       h2 {
         ${H1Blue};
-        margin-top: 0;
+        margin-top: 2.5rem;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
+
+        @media (min-width: 768px) {
+          margin-top: 0rem;
+        }
       }
 
       h3 {
