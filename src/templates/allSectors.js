@@ -14,7 +14,12 @@ const AllSectors = props => {
   const sectors = props.data.sectors.edges
   return (
     <Layout>
-      <Seo />
+      <Seo
+        title={seoInfo.seoFields.swbThemeMetaTitle}
+        description={seoInfo.seoFields.swbThemeDescription}
+        //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+        location={props.location.pathname}
+      />
       <Intro data={intro} />
       <Connections />
       <SectorsList data={displaySector} sectors={sectors} />

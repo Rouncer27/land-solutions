@@ -14,7 +14,12 @@ const AssetManagement = props => {
 
   return (
     <Layout>
-      <Seo />
+      <Seo
+        title={seoInfo.seoFields.swbThemeMetaTitle}
+        description={seoInfo.seoFields.swbThemeDescription}
+        //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+        location={props.location.pathname}
+      />
       <PageIntro data={pageIntro} />
       <Sections data={sectionsTabs} />
     </Layout>

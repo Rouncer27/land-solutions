@@ -16,7 +16,12 @@ const About = props => {
   const locations = props.data.locations.template.aboutPage
   return (
     <Layout>
-      <Seo />
+      <Seo
+        title={seoInfo.seoFields.swbThemeMetaTitle}
+        description={seoInfo.seoFields.swbThemeDescription}
+        //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+        location={props.location.pathname}
+      />
       <Intro data={intro} />
       {/* <Highlights data={highlights} /> */}
       <HighlightsTwo data={highlights} />

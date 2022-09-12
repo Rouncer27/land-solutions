@@ -14,7 +14,12 @@ const leadershipTeam = props => {
   const linkBlocks = props.data.linkBlocks.template.leadershipTeam
   return (
     <Layout>
-      <Seo />
+      <Seo
+        title={seoInfo.seoFields.swbThemeMetaTitle}
+        description={seoInfo.seoFields.swbThemeDescription}
+        //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+        location={props.location.pathname}
+      />
       <PageHero data={hero} />
       <LeadershipTeam data={leadershipTeam} />
       <LinkBlocks data={linkBlocks} />

@@ -11,19 +11,27 @@ import NavLinksIcon from "../components/templates/sector/NavLinksIcon"
 import SubSectionPicker from "../components/templates/sector/SubSections/SubSectionPicker"
 import PageHero from "../components/templates/sector/PageHero"
 
-const Sector = ({ data }) => {
-  const seoInfo = data.seoInfo
-  const sectorHeroIntro = data.sectorHeroIntro.sectors
-  const contentBlock = data.contentBlock.sectors
-  const navLinks = data.navLinks.sectors
-  const navLinksIcons = data.navLinksIcons.sectors
-  const subSections = data.subSections.sectors
-  const pageHero = data.pageHero.sectors
+const Sector = props => {
+  const seoInfo = props.data.seoInfo
+  const sectorHeroIntro = props.data.sectorHeroIntro.sectors
+  const contentBlock = props.data.contentBlock.sectors
+  const navLinks = props.data.navLinks.sectors
+  const navLinksIcons = props.data.navLinksIcons.sectors
+  const subSections = props.data.subSections.sectors
+  const pageHero = props.data.pageHero.sectors
 
   return (
     <Layout>
-      <Seo />
-      <HeroIntro data={sectorHeroIntro} title={data.sectorHeroIntro.title} />
+      <Seo
+        title={seoInfo.seoFields.swbThemeMetaTitle}
+        description={seoInfo.seoFields.swbThemeDescription}
+        //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+        location={props.location.pathname}
+      />
+      <HeroIntro
+        data={sectorHeroIntro}
+        title={props.data.sectorHeroIntro.title}
+      />
       <ContentBlock data={contentBlock} />
       {navLinks.displaySectionNavigationLinks && <NavLinks data={navLinks} />}
       {navLinksIcons.displayNavigationLinksWithIcon && (

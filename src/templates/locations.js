@@ -15,7 +15,12 @@ const Locations = props => {
   const locations = props?.data?.locations?.template?.pageLocations
   return (
     <Layout>
-      <Seo />
+      <Seo
+        title={seoInfo.seoFields.swbThemeMetaTitle}
+        description={seoInfo.seoFields.swbThemeDescription}
+        //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+        location={props.location.pathname}
+      />
       <PageHero data={hero} />
       <WysiwygIcon data={wysiwygIcon} />
       {/* <LocationsDisplay data={locations} /> */}

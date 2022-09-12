@@ -10,7 +10,12 @@ const singleLeader = props => {
   const seoInfo = props.data.seoInfo
   return (
     <Layout>
-      <Seo />
+      <Seo
+        title={seoInfo.seoFields.swbThemeMetaTitle}
+        description={seoInfo.seoFields.swbThemeDescription}
+        //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+        location={props.location.pathname}
+      />
       <TopTitle />
       <LeaderContent
         data={props.data.leader}

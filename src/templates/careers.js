@@ -31,7 +31,12 @@ const Careers = props => {
   const pageHeroQuote = props.data.pageHeroQuote.template.pageCareers
   return (
     <Layout>
-      <Seo />
+      <Seo
+        title={seoInfo.seoFields.swbThemeMetaTitle}
+        description={seoInfo.seoFields.swbThemeDescription}
+        //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+        location={props.location.pathname}
+      />
       <PageHero data={hero} />
       <WysiwygIcon data={wysiwygIcon} />
       <ContentBlock displaybg={false} data={contentBlock} />

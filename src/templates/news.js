@@ -13,7 +13,12 @@ const News = props => {
   const pageIntro = props?.data?.pageIntro?.template?.pageNews
   return (
     <Layout>
-      <Seo />
+      <Seo
+        title={seoInfo.seoFields.swbThemeMetaTitle}
+        description={seoInfo.seoFields.swbThemeDescription}
+        //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+        location={props.location.pathname}
+      />
       <PageHero data={hero} />
       <PageSimpleIntro data={pageIntro} />
       <Posts />
