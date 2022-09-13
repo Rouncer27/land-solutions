@@ -130,15 +130,38 @@ const SectionStyled = styled.section`
 
     &__nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       width: 100%;
       margin-top: 5rem;
       margin-bottom: 5rem;
 
       div {
+        width: 100%;
+
+        @media (min-width: 768px) {
+          width: 50%;
+        }
+
         &:first-of-type {
+          margin-bottom: 2.5rem;
+          text-align: center;
+
+          @media (min-width: 768px) {
+            margin-bottom: 0;
+            text-align: left;
+          }
+
           span {
             margin-left: 0 !important;
+          }
+        }
+
+        &:last-of-type {
+          text-align: center;
+
+          @media (min-width: 768px) {
+            text-align: right;
           }
         }
       }

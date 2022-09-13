@@ -61,7 +61,7 @@ const StyledSection = styled.section`
   .image {
     position: relative;
     width: 100%;
-    min-height: 45rem;
+    min-height: 100vw;
 
     @media (min-width: 768px) {
       width: calc(50%);
@@ -125,12 +125,16 @@ const StyledSection = styled.section`
 
     @media (min-width: 768px) {
       width: calc(50%);
-      min-height: 50rem;
+      min-height: 50vw;
       padding: 10rem 8rem;
     }
 
     @media (min-width: 1025px) {
-      min-height: 75rem;
+      min-height: 50vw;
+    }
+
+    @media (min-width: 1500px) {
+      min-height: 50vw;
     }
 
     &__wrapper {

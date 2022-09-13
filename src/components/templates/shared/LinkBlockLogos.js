@@ -171,7 +171,12 @@ const StyledSection = styled.section`
       &__link {
         position: absolute;
         bottom: 2rem;
-        right: 4rem;
+        left: 2rem;
+
+        @media (min-width: 768px) {
+          right: 4rem;
+          left: auto;
+        }
 
         a {
           ${Btn1Three};

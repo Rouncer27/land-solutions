@@ -53,6 +53,12 @@ const SectionStyled = styled.section`
 
   @media (min-width: 1025px) {
     &::after {
+      width: 32.5%;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    &::after {
       width: 37.5%;
     }
   }

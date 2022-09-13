@@ -110,8 +110,13 @@ const StyledSection = styled.section`
     }
 
     &__title {
+      margin-top: 2.5rem;
       margin-bottom: 2rem;
       border-bottom: 0.2rem solid ${colors.colorTertiary};
+
+      @media (min-width: 768px) {
+        margin-top: 0;
+      }
     }
 
     .download-link {
