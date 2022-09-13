@@ -14,6 +14,8 @@ const MobileNavItem = ({ item }) => {
     .filter(item => item !== process.env.GATSBY_WORDPRESS_URL)
     .join("/")
 
+  console.log("slug: ", slug === "our-advantage")
+
   const [subActive, setSubActive] = useState(false)
 
   const handleToggleActive = () => {
@@ -21,7 +23,12 @@ const MobileNavItem = ({ item }) => {
   }
   return (
     <MobileNavItemStyled>
-      <Link to={`/${slug === "home" ? "" : slug}`}>{item.label}</Link>
+      {slug === "our-advantage" ? (
+        <p>{item.label}</p>
+      ) : (
+        <Link to={`/${slug === "home" ? "" : slug}`}>{item.label}</Link>
+      )}
+
       {item.subItems && item.subItems.length > 0 && (
         <SubMenuContainer issubactive={subActive} className="subContainer">
           <button
@@ -67,6 +74,19 @@ const MobileNavItemStyled = styled.li`
       &:hover {
         cursor: pointer;
       }
+    }
+  }
+
+  p {
+    ${B2OffBlack};
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+
+    &[aria-current="page"] {
+      color: ${colors.colorSecondary};
+      background-color: ${colors.colorTertiary};
     }
   }
 

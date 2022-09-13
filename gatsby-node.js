@@ -59,6 +59,8 @@ exports.createPages = async ({ graphql, actions }) => {
           path: `/`,
           component: path.resolve(`./src/pages/index.js`),
         })
+      } else if (node.slug === "our-advantage") {
+        return null
       } else if (node.template.templateName === "About") {
         createPage({
           path: `${node.uri}`,
