@@ -99,6 +99,7 @@ export const ourDifferenceTempQuery = graphql`
               mainTitle
               subTitle
               wysiwyg
+              infographic
               icon {
                 altText
                 sourceUrl

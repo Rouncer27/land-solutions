@@ -13,6 +13,7 @@ import {
 } from "../../../styles/helpers"
 
 import arrowDown from "../../../images/arrow-down.png"
+import infoGraphic from "../../../images/ourdifference-infographic@3x.png"
 
 const WysiwygIcon = ({ data }) => {
   return (
@@ -34,10 +35,18 @@ const WysiwygIcon = ({ data }) => {
               <div className="content">
                 <h2>{block.mainTitle}</h2>
                 <h3>{block.subTitle}</h3>
-                <div
-                  className="content__wysiwyg"
-                  dangerouslySetInnerHTML={{ __html: block.wysiwyg }}
-                />
+                {block.wysiwyg && (
+                  <div
+                    className="content__wysiwyg"
+                    dangerouslySetInnerHTML={{ __html: block.wysiwyg }}
+                  />
+                )}
+                {block.infographic && (
+                  <div className="infographic">
+                    <img src={infoGraphic} alt={`Our Differance`} />
+                  </div>
+                )}
+                <div></div>
               </div>
               <span className="arrow-down">
                 <img src={arrowDown} alt="arrow down" />
@@ -54,6 +63,10 @@ const SectionStyled = styled.section`
   .wrapper {
     ${medWrapper};
   }
+
+  .infographic {
+    max-width: 50rem !important;
+  }
 `
 
 const BlockDiv = styled.div`
@@ -69,10 +82,6 @@ const BlockDiv = styled.div`
 
   @media (min-width: 768px) {
     padding: 2rem 5rem;
-  }
-
-  .infographic {
-    max-width: 50rem !important;
   }
 
   span.arrow-down {
