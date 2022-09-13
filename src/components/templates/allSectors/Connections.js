@@ -123,11 +123,15 @@ const StyledDiv = styled.div`
 
   .lines-title {
     position: relative;
-    top: 20rem;
+    top: 12.5rem;
     width: 100%;
     padding: 0 5rem;
     text-align: center;
     z-index: 100;
+
+    @media (min-width: 500px) {
+      top: 20rem;
+    }
 
     h2 {
       ${H2White};
