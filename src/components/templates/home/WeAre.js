@@ -184,7 +184,7 @@ const SectionStyled = styled.section`
   .content {
     width: 100%;
     margin-top: 0;
-    padding: 0 4rem;
+    padding: 0 2rem;
 
     @media (min-width: 600px) {
       margin-top: 10rem;

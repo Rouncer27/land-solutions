@@ -73,8 +73,10 @@ const Hero = ({ data }) => {
       </SectionStyled>
       <LearnLink>
         <Link to="/about">
-          Learn why we’re one of North America’s
-          <br /> leading land companies. <span>&#8594;</span>
+          <span>Learn why we’re one of North America’s </span>
+          <span className="linebreak">
+            leading land companies. <span className="arrow">&#8594;</span>
+          </span>
         </Link>
       </LearnLink>
     </>
@@ -509,11 +511,12 @@ const SectionStyled = styled.section`
 
 const LearnLink = styled.div`
   width: 100%;
-  max-width: 70rem;
+  max-width: 45rem;
   padding: 4rem 2rem 8rem;
   margin: auto;
 
   @media (min-width: 768px) {
+    max-width: 70rem;
     padding: 4rem 2rem 8rem;
   }
 
@@ -526,7 +529,13 @@ const LearnLink = styled.div`
       color: ${colors.colorAccent};
     }
 
-    span {
+    .linebreak {
+      @media (min-width: 500px) {
+        display: block;
+      }
+    }
+
+    .arrow {
       line-height: 1;
     }
   }
