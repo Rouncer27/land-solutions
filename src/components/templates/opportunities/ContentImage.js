@@ -53,6 +53,7 @@ const StyledSection = styled.section`
   }
 
   .side-image {
+    display: none;
     position: absolute;
     top: 7.5rem;
     left: 0;
@@ -61,6 +62,10 @@ const StyledSection = styled.section`
 
     @media (min-width: 400px) {
       width: 15rem;
+    }
+
+    @media (min-width: 500px) {
+      display: block;
     }
 
     @media (min-width: 768px) {
@@ -78,9 +83,13 @@ const StyledSection = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    width: 80%;
+    width: 100%;
     margin-top: 3.5rem;
     margin-left: auto;
+
+    @media (min-width: 500px) {
+      width: 80%;
+    }
 
     @media (min-width: 768px) {
       width: 100%;
@@ -91,10 +100,13 @@ const StyledSection = styled.section`
     }
 
     &__content {
-      width: calc(65%);
-      margin-left: 35%;
+      width: calc(100%);
 
       @media (min-width: 400px) {
+        width: calc(100%);
+      }
+
+      @media (min-width: 500px) {
         width: calc(85%);
         margin-left: 15%;
         margin-right: auto;

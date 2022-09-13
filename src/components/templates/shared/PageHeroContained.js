@@ -134,7 +134,13 @@ const StyledSection = styled.section`
 
       a.btn-two {
         ${Btn1One};
-        margin-left: 1rem;
+        margin-left: 0;
+        margin-top: 2.5rem;
+
+        @media (min-width: 500px) {
+          margin-left: 1rem;
+          margin-top: 0;
+        }
       }
     }
   }

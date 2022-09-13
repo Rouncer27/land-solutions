@@ -36,7 +36,7 @@ const ListLinks = ({ bgcolor, data, title }) => {
 }
 
 const StyledSection = styled.section`
-  padding: 5rem 0;
+  padding: 1rem 0 5rem;
   background-color: ${props =>
     props.bgcolor ? "rgba(157, 181, 148, 0.1)" : "transparent"};
 

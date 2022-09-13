@@ -94,6 +94,11 @@ const SectionStyled = styled.section`
 
     .btn-one {
       ${Btn1Two};
+      margin-bottom: 2.5rem;
+
+      @media (min-width: 500px) {
+        margin-bottom: 0;
+      }
     }
 
     .btn-two {

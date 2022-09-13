@@ -98,11 +98,21 @@ const StyledDiv = styled.div`
 
   .icon {
     width: calc(25% - 2.5rem);
-    margin-right: 2.5rem;
+    margin-right: auto;
+    margin-left: 0;
+
+    @media (min-width: 500px) {
+      margin-left: auto;
+      margin-right: 2.5rem;
+    }
   }
 
   .links {
-    width: 75%;
+    width: 100%;
+
+    @media (min-width: 500px) {
+      width: 75%;
+    }
 
     button {
       ${H3LightGreen};
