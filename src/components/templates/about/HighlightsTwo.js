@@ -11,6 +11,7 @@ import {
   H2LightBlue,
   B2LightGreen,
   medWrapper,
+  colors,
 } from "../../../styles/helpers"
 
 const HighlightsTwo = ({ data }) => {
@@ -69,6 +70,7 @@ const HighlightsTwo = ({ data }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     fade: true,
+    adaptiveHeight: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   }
@@ -246,7 +248,7 @@ const StyledSection = styled.section`
     }
 
     @media (min-width: 1300px) {
-      bottom: -5rem;
+      bottom: -10rem;
     }
 
     li {
@@ -301,9 +303,22 @@ const StyledSection = styled.section`
       }
     }
 
+    a:focus {
+      outline: 0 solid #003b49;
+    }
+
     li.slick-active {
       .dot-span {
         box-shadow: 0px 0px 0px 7px rgba(255, 255, 255, 0.35);
+
+        .dot-span__dot {
+          color: ${colors.colorAccent};
+        }
+      }
+
+      .tex-span {
+        color: ${colors.colorAccent};
+        font-weight: bold;
       }
     }
   }

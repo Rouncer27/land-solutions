@@ -115,6 +115,8 @@ const WeAre = ({ data }) => {
       <div className="image">
         <div className="image__letter" />
         <div className="image__background" />
+        <div className="image__overlay" />
+        <div className="image__overlay--bottom" />
       </div>
     </SectionStyled>
   )
@@ -147,6 +149,11 @@ const SectionStyled = styled.section`
     }
 
     @media (min-width: 1025px) {
+      width: calc(50%);
+      max-width: 35rem;
+    }
+
+    @media (min-width: 1100px) {
       width: calc(50%);
       max-width: 40rem;
     }
@@ -227,6 +234,7 @@ const SectionStyled = styled.section`
     left: 0;
     width: 20rem;
     z-index: -1;
+    overflow: hidden;
 
     @media (min-width: 768px) {
       display: none;
@@ -276,6 +284,44 @@ const SectionStyled = styled.section`
       @media (min-width: 1025px) {
         top: -10%;
         bottom: -10%;
+      }
+    }
+
+    &__overlay {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2.5rem;
+      background-color: #fff;
+      z-index: 2;
+
+      @media (min-width: 1025px) {
+        display: block;
+      }
+
+      @media (min-width: 1055px) {
+        display: none;
+      }
+    }
+
+    &__overlay--bottom {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2.5rem;
+      background-color: #fff;
+      z-index: 2;
+
+      @media (min-width: 1025px) {
+        display: block;
+      }
+
+      @media (min-width: 1055px) {
+        display: none;
       }
     }
   }

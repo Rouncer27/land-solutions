@@ -147,6 +147,7 @@ const StyledFooter = styled.footer`
 
   .footer-sec {
     width: 100%;
+
     text-align: center;
 
     @media (min-width: 768px) {
@@ -158,6 +159,14 @@ const StyledFooter = styled.footer`
     @media (min-width: 1025px) {
       width: calc(30% - 2rem);
       margin: 0 1rem;
+    }
+  }
+
+  .footer-sector {
+    margin-bottom: 3.5rem;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
     }
   }
 
