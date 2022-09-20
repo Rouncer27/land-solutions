@@ -54,7 +54,7 @@ const LeaderContent = ({ data, next, prev }) => {
                   <img src={arrowLeft} alt="" />
                 </span>
                 <Link to={`/about/leadership-team/${next}`}>
-                  Next Team Member
+                  Prev Team Member
                 </Link>
               </div>
             )}
@@ -62,7 +62,7 @@ const LeaderContent = ({ data, next, prev }) => {
             {prev && (
               <div>
                 <Link to={`/about/leadership-team/${prev}`}>
-                  Prev Team Member
+                  Next Team Member
                 </Link>
                 <span>
                   <img src={arrowRight} alt="" />

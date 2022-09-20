@@ -24,24 +24,26 @@ const LeadershipTeam = ({ data }) => {
 
           return (
             <TeamMember key={team.node.id}>
-              <div className="bio-image">
-                <GatsbyImage
-                  image={imageDisplay}
-                  alt={imageAlt}
-                  layout="fullWidth"
-                  formats={["auto", "webp", "avif"]}
-                />
-              </div>
-              <div className="bio-content">
-                <h2>
-                  {team.node.postLeadershipTeam.firstName}{" "}
-                  {team.node.postLeadershipTeam.lastName}
-                </h2>
-                <p>{team.node.postLeadershipTeam.jobTitle}</p>
-                <Link to={`/about/leadership-team/${team.node.slug}`}>
-                  Meet {team.node.postLeadershipTeam.firstName} <span />
-                </Link>
-              </div>
+              <Link to={`/about/leadership-team/${team.node.slug}`}>
+                <div className="bio-image">
+                  <GatsbyImage
+                    image={imageDisplay}
+                    alt={imageAlt}
+                    layout="fullWidth"
+                    formats={["auto", "webp", "avif"]}
+                  />
+                </div>
+                <div className="bio-content">
+                  <h2>
+                    {team.node.postLeadershipTeam.firstName}{" "}
+                    {team.node.postLeadershipTeam.lastName}
+                  </h2>
+                  <p>{team.node.postLeadershipTeam.jobTitle}</p>
+                  <Link to={`/about/leadership-team/${team.node.slug}`}>
+                    Meet {team.node.postLeadershipTeam.firstName} <span />
+                  </Link>
+                </div>
+              </Link>
             </TeamMember>
           )
         })}
@@ -76,6 +78,10 @@ const TeamMember = styled.div`
 
   &:hover {
     box-shadow: 4px 5px 15px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  .bio-image {
+    overflow: hidden;
   }
 
   .bio-content {
