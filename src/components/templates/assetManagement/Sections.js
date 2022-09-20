@@ -1,6 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { B2Blue, BigWrapper, colors } from "../../../styles/helpers"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 import Wysiwyg from "./Sections/Wysiwyg"
 import BoxLists from "./Sections/BoxLists"
@@ -10,13 +11,34 @@ import WysiwygLightTitles from "./Sections/WysiwygLightTitles"
 import IconsRows from "./Sections/IconsRows"
 import PageHero from "./Sections/PageHero"
 
-const Sections = ({ data }) => {
+const Sections = ({ data, location }) => {
   const [activeTab, setActiveTab] = useState(1)
   const handleChangeActiveTab = index => {
     setActiveTab(index)
   }
+
+  useEffect(() => {
+    const cameFrom = location.search.split("=")[1]
+
+    const newActiveTab =
+      cameFrom === undefined
+        ? 1
+        : cameFrom === "landaccess"
+        ? 1
+        : cameFrom === "acquisitionsdivestitures"
+        ? 2
+        : cameFrom === "recordsmanagement"
+        ? 3
+        : 1
+
+    if (cameFrom) {
+      setActiveTab(newActiveTab)
+      scrollTo(`#tabssection`)
+    }
+  }, [])
+
   return (
-    <StyledSection>
+    <StyledSection id="tabssection">
       <div className="wrapper">
         <div className="tabs">
           {data.map((tab, index) => {

@@ -21,7 +21,7 @@ const AssetManagement = props => {
         location={props.location.pathname}
       />
       <PageIntro data={pageIntro} />
-      <Sections data={sectionsTabs} />
+      <Sections data={sectionsTabs} location={props.location} />
     </Layout>
   )
 }
