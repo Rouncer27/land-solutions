@@ -39,12 +39,15 @@ const Layout = ({ children }) => {
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-
-        <>
-          <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-          <main>{children}</main>
-          <Footer />
-        </>
+        {loadingState.initLoad ? (
+          <InitalLoad />
+        ) : (
+          <>
+            <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+            <main>{children}</main>
+            <Footer />
+          </>
+        )}
       </ThemeProvider>
     </>
   )
