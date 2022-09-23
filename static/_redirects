@@ -1,0 +1,74 @@
+# Redirect domain aliases to primary domain
+
+<!-- https://landsolutions.ca/_ https://www.landsolutions.ca/:splat 301!
+http://landsolutions.ca/_ https://www.landsolutions.ca/:splat 301! -->
+
+# Optional: Redirect default Netlify subdomain to primary domain
+
+<!-- https://landsolutions.netlify.app/* https://www.landsolutions.ca/:splat 301! -->
+
+/about/community /careers
+/about/safety /about/our-responsibility
+/about/service-locations /contact/locations
+/about/service-locations/calgary /contact/locations
+/about/service-locations/bentley /contact/locations
+/about/service-locations/edmonton /contact/locations
+/about/service-locations/lloydminster /contact/locations
+/about/service-locations/grande-prairie /contact/locations
+/about/service-locations/lampman /contact/locations
+/about/service-locations/vaughan /contact/locations
+/about/service-locations/fredericton /contact/locations
+/about/service-locations/usa /contact/locations
+
+/services/land/surface-land-acquisition /our-advantage/asset-management
+/services/land/mineral-land-acquisition /our-advantage/asset-management
+/services/land/acquisitions-and-divestiture /our-advantage/asset-management
+
+/services/operations/staff-placement /our-advantage/talent-sourcing
+/services/operations/asset-obligations-management /our-advantage/talent-sourcing
+/services/operations/operations-and-maintenance /our-advantage/talent-sourcing
+
+/services/consultation-engagement/stakeholder-engagement /our-advantage/stakeholder-engagement
+/services/consultation-engagement/indigenous-consultation-engagement /our-advantage/indigenous-engagement
+
+/services/environmental/environmental-planning /our-advantage/environmental
+/services/environmental/environmental-and-construction-monitoring /our-advantage/environmental
+
+/services/compliance-approvals/third-party-approvals /our-advantage/project-management
+/services/compliance-approvals/regulatory /our-advantage/project-management
+
+/services/software-tracking/landtraxx /our-advantage/project-management
+/services/software-tracking/digital-document-execution /our-advantage/project-management
+/services/software-tracking/gis /our-advantage/gis-mapping
+
+/industries /all-sectors
+/industries/upstream-oil-gas /sectors/upstream
+/industries/midstream-oil-gas /sectors/midstream
+/industries/power-generation /sectors/power-generation-transmission-distribution
+/industries/renewable-energy /sectors/renewable-energy
+/industries/energy-storage /sectors/renewable-energy
+/industries/power-transmission /sectors/power-generation-transmission-distribution
+/industries/telecommunications /sectors/telecommunications
+/industries/transportation-public-works /sectors/public-infrastructure
+
+/news /insights
+
+/careers/current-opportunities /careers/opportunities
+/careers/working-here /careers
+
+/terms-conditions /privacy-policy
+
+/news/2020/career-solutions-landsolutions-partnered-cenera /insights
+/news/2020/keep-your-business-moving-forward-docusign /insights
+/news/2020/mental-health-wellness-resources /insights
+/news/2020/updated-response-landsolutions-covid-19 /insights
+/news/2020/covid-19-government-update-march-25-2020 /insights
+/news/2020/covid-19 /insights
+/news/2019/think-different-ron-vermeulen-founder-advisory-board-member-landsolutions-lp /insights
+/news/2018/being-present-3-ways-maintain-your-focus /insights
+/news/2017/introducing-our-new-bundled-service-option /insights
+/news/2017/alberta-energy-regulator-%E2%80%93-renewal-initiative-project /insights
+/news/2016/congratulations-ron-vermeulen-legacy-leader-honourary-lifetime-member-capla /insights
+/news/2014/vaughan-ontario-office-expansion /insights
+/news/2014/our-core-values-work /insights
+/news/2012/landsolutions-expands-office-lampman-sk /insights
