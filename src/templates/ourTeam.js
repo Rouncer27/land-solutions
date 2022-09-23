@@ -15,7 +15,12 @@ const ourTeam = props => {
   const linkBlocks = props.data.linkBlocks.template.ourTeam
   const quoteHero = props.data.quoteHero.template.ourTeam
   return (
-    <Layout>
+    <Layout
+      title={seoInfo.seoFields.swbThemeMetaTitle}
+      description={seoInfo.seoFields.swbThemeDescription}
+      //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+      location={props.location.pathname}
+    >
       <Seo
         title={seoInfo.seoFields.swbThemeMetaTitle}
         description={seoInfo.seoFields.swbThemeDescription}

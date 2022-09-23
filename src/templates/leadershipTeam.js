@@ -13,7 +13,12 @@ const leadershipTeam = props => {
   const leadershipTeam = props.data.leadershipTeam.edges
   const linkBlocks = props.data.linkBlocks.template.leadershipTeam
   return (
-    <Layout>
+    <Layout
+      title={seoInfo.seoFields.swbThemeMetaTitle}
+      description={seoInfo.seoFields.swbThemeDescription}
+      //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+      location={props.location.pathname}
+    >
       <Seo
         title={seoInfo.seoFields.swbThemeMetaTitle}
         description={seoInfo.seoFields.swbThemeDescription}

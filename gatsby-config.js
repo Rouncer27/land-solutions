@@ -52,27 +52,27 @@ module.exports = {
         url: process.env.WORDPRESS_URL,
       },
     },
-    // `gatsby-plugin-sitemap`,
-    // {
-    //   resolve: `gatsby-plugin-google-gtag`,
-    //   options: {
-    //     trackingIds: ["G-3VBE7MLB82"],
-    //   },
-    // },
-    // {
-    //   resolve: "gatsby-plugin-robots-txt",
-    //   options: {
-    //     host: "https://www.landsolutions.ca/",
-    //     sitemap: "https://www.landsolutions.ca/sitemap.xml",
-    //     policy: [{ userAgent: "*", allow: "/" }],
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-plugin-canonical-urls`,
-    //   options: {
-    //     siteUrl: `https://www.landsolutions.ca/`,
-    //   },
-    // },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["G-3VBE7MLB82"],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.landsolutions.ca/",
+        sitemap: "https://www.landsolutions.ca/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.landsolutions.ca/`,
+      },
+    },
     `gatsby-plugin-netlify`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

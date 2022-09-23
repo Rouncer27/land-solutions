@@ -15,7 +15,12 @@ const About = props => {
   const highlights = props.data.highlights.template.aboutPage
   const locations = props.data.locations.template.aboutPage
   return (
-    <Layout>
+    <Layout
+      title={seoInfo.seoFields.swbThemeMetaTitle}
+      description={seoInfo.seoFields.swbThemeDescription}
+      //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+      location={props.location.pathname}
+    >
       <Seo
         title={seoInfo.seoFields.swbThemeMetaTitle}
         description={seoInfo.seoFields.swbThemeDescription}

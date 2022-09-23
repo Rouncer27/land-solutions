@@ -13,7 +13,12 @@ const AllSectors = props => {
   const displaySector = props.data.displaySector.template.AllSector
   const sectors = props.data.sectors.edges
   return (
-    <Layout>
+    <Layout
+      title={seoInfo.seoFields.swbThemeMetaTitle}
+      description={seoInfo.seoFields.swbThemeDescription}
+      //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+      location={props.location.pathname}
+    >
       <Seo
         title={seoInfo.seoFields.swbThemeMetaTitle}
         description={seoInfo.seoFields.swbThemeDescription}

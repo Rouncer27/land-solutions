@@ -18,7 +18,12 @@ const IndigenousEngagement = props => {
     props.data.linkBlockLogos.template.pageIndigenousEngagement
 
   return (
-    <Layout>
+    <Layout
+      title={seoInfo.seoFields.swbThemeMetaTitle}
+      description={seoInfo.seoFields.swbThemeDescription}
+      //metaImg={seoInfo.seoFields.swbThemeImage.localFile.relativePath}
+      location={props.location.pathname}
+    >
       <Seo
         title={seoInfo.seoFields.swbThemeMetaTitle}
         description={seoInfo.seoFields.swbThemeDescription}

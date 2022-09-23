@@ -8,10 +8,12 @@ import theme from "../styles/theme/Theme"
 import GlobalStyle from "../styles/global/Golbal"
 
 import Header from "./Header"
+import HeaderInit from "./HeaderInit"
+import Seo from "./Seo"
 import Footer from "./Footer"
 import InitalLoad from "./InitalLoad/InitalLoad"
 
-const Layout = ({ children }) => {
+const Layout = ({ title, description, metaImg, location, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -39,8 +41,17 @@ const Layout = ({ children }) => {
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        {loadingState.initLoad ? (
-          <InitalLoad />
+        {loadingState.initLoad && location === "/" ? (
+          <>
+            <Seo
+              title={title}
+              description={description}
+              //metaImg={metaImg}
+              location={location}
+            />
+            <HeaderInit siteTitle={data.site.siteMetadata?.title || `Title`} />
+            <InitalLoad />
+          </>
         ) : (
           <>
             <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
