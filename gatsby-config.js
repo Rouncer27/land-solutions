@@ -66,7 +66,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://www.landsolutions.ca/",
-        sitemap: "https://www.landsolutions.ca/sitemap.xml",
+        sitemap: "https://www.landsolutions.ca/sitemap/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },

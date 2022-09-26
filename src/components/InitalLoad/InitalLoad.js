@@ -209,7 +209,7 @@ const InitalLoad = () => {
         >
           <span>SKIP</span>
           <span>
-            <img src={arrowRight} alt="" />
+            <img src={arrowRight} alt="Arrow Right - LandSolutions" />
           </span>
         </button>
       </div>
