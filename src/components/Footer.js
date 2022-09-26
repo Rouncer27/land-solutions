@@ -42,6 +42,9 @@ const Footer = () => {
           <h3>About Landsolutions</h3>
           <ul>
             <li>
+              <Link to="/about">Our Story</Link>
+            </li>
+            <li>
               <Link to="/our-advantage/project-management">
                 Project management
               </Link>
@@ -55,12 +58,15 @@ const Footer = () => {
               </Link>
             </li>
             <li>
+              <Link to="/our-advantage/asset-management">Asset Management</Link>
+            </li>
+            <li>
               <Link to="/our-advantage/indigenous-engagement">
                 Indigenous Engagement
               </Link>
             </li>
             <li>
-              <Link to="/our-advantage/asset-management">Asset Management</Link>
+              <Link to="/our-advantage/environmental">Environmental</Link>
             </li>
           </ul>
         </div>
