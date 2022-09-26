@@ -1,11 +1,11 @@
 # Redirect domain aliases to primary domain
 
-<!-- https://landsolutions.ca/_ https://www.landsolutions.ca/:splat 301!
-http://landsolutions.ca/_ https://www.landsolutions.ca/:splat 301! -->
+https://landsolutions.ca/_ https://www.landsolutions.ca/:splat 301!
+http://landsolutions.ca/_ https://www.landsolutions.ca/:splat 301!
 
 # Optional: Redirect default Netlify subdomain to primary domain
 
-<!-- https://landsolutions.netlify.app/* https://www.landsolutions.ca/:splat 301! -->
+https://landsolutions.netlify.app/* https://www.landsolutions.ca/:splat 301!
 
 /about/community /careers
 /about/safety /about/our-responsibility
