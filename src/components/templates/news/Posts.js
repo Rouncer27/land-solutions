@@ -8,12 +8,13 @@ import {
   standardWrapper,
   colors,
   H3LightGreen,
+  fontSizer,
 } from "../../../styles/helpers"
 import SpinnerAnimation from "../../Animations/SpinnerAnimation"
 
 const getData = graphql`
   {
-    posts: allWpPost {
+    posts: allWpPost(sort: { fields: date, order: DESC }) {
       edges {
         node {
           post {
@@ -171,7 +172,7 @@ const Posts = () => {
                 <span>&#124;</span>
               </button>
             </li>
-            {categories.map(cat => {
+            {categories.map((cat, index) => {
               return (
                 <li key={cat.node.id}>
                   <button
@@ -181,7 +182,9 @@ const Posts = () => {
                     }}
                   >
                     {cat.node.name}
-                    <span className="pipe">&#124;</span>
+                    {categories.length !== index + 1 ? (
+                      <span className="pipe">&#124;</span>
+                    ) : null}
                   </button>
                 </li>
               )
@@ -464,6 +467,7 @@ const CatNav = styled.div`
 
       button {
         ${H3LightGreen};
+        ${fontSizer(1.6, 2.2, 76.8, 150, 2)}
         width: 100%;
         background-color: transparent;
         border: none;
