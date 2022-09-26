@@ -88,7 +88,7 @@ function Seo({ description, lang, meta, title, metaImg, location }) {
         image={siteLogoUrl}
         logo={siteLogoUrl}
         description={description}
-        datePublished="March 21, 2022"
+        datePublished="September 26, 2022"
         canonicalUrl="https://www.landsolutions.ca/"
         author=""
         organization="Land Solutions"
