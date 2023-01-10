@@ -31,7 +31,7 @@ const Locations = props => {
       {/* <LocationsDisplay data={locations} /> */}
       <div>
         <iframe
-          src="https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fmaps.landsolutions.ca%2Farcgis%2Frest%2Fservices%2FHosted%2FLS_Offices_March_2022%2FFeatureServer%2F8&source=sd"
+          src="https://maps.landsolutions.ca/portal/apps/webappviewer/index.html?id=fa45f566442b4910a810b7ed4f9203c8"
           width="100%"
           height="790px"
           frameBorder="0"
