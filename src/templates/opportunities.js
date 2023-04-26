@@ -19,6 +19,10 @@ const Opportunities = props => {
   const links = props?.data?.links?.template?.pageOpportunities?.links
   const linksTitle = props?.data?.links?.template?.pageOpportunities?.linksTitle
 
+  const linksUsa = props?.data?.linksUsa?.template?.pageOpportunities?.linksUsa
+  const linksTitleUsa =
+    props?.data?.linksUsa?.template?.pageOpportunities?.linksTitleUsa
+
   const linksTwo = props?.data?.linksTwo?.template?.pageOpportunities?.linksTwo
   const linksTwoTitle =
     props?.data?.linksTwo?.template?.pageOpportunities?.linksTitleTwo
@@ -45,6 +49,7 @@ const Opportunities = props => {
       <PageHero data={hero} />
       <WysiwygIcon removepadding={true} data={wysiwygIcon} />
       <ListLinks bgcolor={false} data={links} title={linksTitle} />
+      <ListLinks bgcolor={false} data={linksUsa} title={linksTitleUsa} />
       <ContentImage bgcolor={true} data={contentImage} />
       <ListLinks bgcolor={true} data={linksTwo} title={linksTwoTitle} />
       <WysiwygWithImage data={wysiwygWithImage} />
@@ -119,6 +124,20 @@ export const opportunitiesTempQuery = graphql`
           pageOpportunities {
             linksTitle
             links {
+              text
+              url
+            }
+          }
+        }
+      }
+    }
+
+    linksUsa: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_Opportunities {
+          pageOpportunities {
+            linksTitleUsa
+            linksUsa {
               text
               url
             }
