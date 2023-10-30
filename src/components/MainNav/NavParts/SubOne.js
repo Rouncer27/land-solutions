@@ -7,17 +7,20 @@ const SubOne = ({ subMenuOne }) => {
     <div className="sub-menu__one sub-menu__wrap">
       <ul>
         {subMenuOne.map(item => {
+          if (item.page === null) return null
           const image = getImage(
             item?.icon?.localFile?.childImageSharp?.gatsbyImageData
           )
           const logoAlt = item?.icon?.altText
           return (
-            <li className="sub-menu__item" key={item.page.id}>
-              <Link to={item.page.uri}>
+            <li className="sub-menu__item" key={item?.page?.id}>
+              <Link to={item?.page?.uri}>
                 <span className="sub-menu__item--icon">
                   <GatsbyImage image={image} alt={logoAlt} layout="fixed" />
                 </span>
-                <span className="sub-menu__title--text">{item.page.title}</span>
+                <span className="sub-menu__title--text">
+                  {item?.page?.title}
+                </span>
               </Link>
             </li>
           )

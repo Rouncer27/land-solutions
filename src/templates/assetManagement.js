@@ -84,19 +84,23 @@ export const assetManagementTempQuery = graphql`
       template {
         ... on WpTemplate_AssetManagement {
           pageAssetManagement {
+            tabsContentDisplay
             tabsContent {
               tabId
               tabTitle
+              displayThisTab
               sections {
                 ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_Wysiwyg {
                   content
                   fieldGroupName
                   subTitle
                   title
+                  display
                 }
 
                 ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_BoxLists {
                   fieldGroupName
+                  display
                   boxLists {
                     listItems {
                       item
@@ -109,6 +113,7 @@ export const assetManagementTempQuery = graphql`
                   content
                   title
                   fieldGroupName
+                  display
                   image {
                     altText
                     sourceUrl
@@ -123,6 +128,7 @@ export const assetManagementTempQuery = graphql`
 
                 ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_BoxLink {
                   fieldGroupName
+                  display
                   buttonSlug
                   buttonText
                   content
@@ -130,6 +136,7 @@ export const assetManagementTempQuery = graphql`
 
                 ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_WysiwygLightTitles {
                   fieldGroupName
+                  display
                   subTitle
                   title
                   wysiwyg
@@ -137,6 +144,7 @@ export const assetManagementTempQuery = graphql`
 
                 ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_IconsRows {
                   fieldGroupName
+                  display
                   iconsRows {
                     content
                     title
@@ -167,6 +175,7 @@ export const assetManagementTempQuery = graphql`
                     }
                   }
                   content
+                  display
                   fieldGroupName
                 }
               }

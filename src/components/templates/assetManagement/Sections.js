@@ -37,29 +37,34 @@ const Sections = ({ data, location }) => {
     }
   }, [])
 
+  const noTabs = data.find(tab => tab.displayThisTab) ? true : false
+
   return (
     <StyledSection id="tabssection">
       <div className="wrapper">
-        <div className="tabs">
-          {data.map((tab, index) => {
-            return (
-              <TabStyled
-                activetab={index + 1 === activeTab}
-                id={tab.tabId}
-                key={index}
-              >
-                <button
-                  onClick={() => {
-                    handleChangeActiveTab(index + 1)
-                  }}
-                  type="button"
+        {noTabs && (
+          <div className="tabs">
+            {data.map((tab, index) => {
+              if (!tab.displayThisTab) return null
+              return (
+                <TabStyled
+                  activetab={index + 1 === activeTab}
+                  id={tab.tabId}
+                  key={index}
                 >
-                  {tab.tabTitle}
-                </button>
-              </TabStyled>
-            )
-          })}
-        </div>
+                  <button
+                    onClick={() => {
+                      handleChangeActiveTab(index + 1)
+                    }}
+                    type="button"
+                  >
+                    {tab.tabTitle}
+                  </button>
+                </TabStyled>
+              )
+            })}
+          </div>
+        )}
       </div>
       <div className="tab-content">
         {data.map((section, index) => {
@@ -70,6 +75,8 @@ const Sections = ({ data, location }) => {
               key={index}
             >
               {section.sections.map((section, index) => {
+                if (!section.display) return null
+
                 switch (section?.fieldGroupName) {
                   case "Template_AssetManagement_Pageassetmanagement_tabsContent_Sections_Wysiwyg":
                     return <Wysiwyg key={index} data={section} />
