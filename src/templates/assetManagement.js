@@ -49,6 +49,7 @@ const StyledButton = styled.div`
 
   .wrapper {
     ${medWrapper};
+    text-align: center;
   }
 
   h2 {
@@ -62,6 +63,7 @@ const StyledButton = styled.div`
 
   a {
     ${Btn1One};
+    margin-left: 7.5rem;
   }
 `
 
