@@ -6,6 +6,9 @@ import Seo from "../components/Seo"
 import PageIntro from "../components/templates/shared/PageIntro"
 import Sections from "../components/templates/assetManagement/Sections"
 
+import styled from "styled-components"
+import { Btn1One, H2Blue, medWrapper } from "../styles/helpers"
+
 const AssetManagement = props => {
   const seoInfo = props.data.seoInfo
   const pageIntro = props.data.pageIntro.template.pageAssetManagement
@@ -26,10 +29,41 @@ const AssetManagement = props => {
         location={props.location.pathname}
       />
       <PageIntro data={pageIntro} />
+      <StyledButton>
+        <div className="wrapper">
+          <h2>Get Started</h2>
+          <div className="btn-sec">
+            <a href="mailto: MBeitel@landsolutions.ca?subject=Speak to a Trusted Advisor">
+              Speak to a Trusted Advisor
+            </a>
+          </div>
+        </div>
+      </StyledButton>
       <Sections data={sectionsTabs} location={props.location} />
     </Layout>
   )
 }
+
+const StyledButton = styled.div`
+  width: 100%;
+
+  .wrapper {
+    ${medWrapper};
+  }
+
+  h2 {
+    ${H2Blue};
+    width: 100%;
+  }
+
+  .btn-sec {
+    width: 100%;
+  }
+
+  a {
+    ${Btn1One};
+  }
+`
 
 export const assetManagementTempQuery = graphql`
   query assetManagementTempPage($id: String!) {

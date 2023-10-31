@@ -7,6 +7,7 @@ const SubThree = ({ subMenuThree }) => {
     <div className="sub-menu__three sub-menu__wrap">
       <ul>
         {subMenuThree.map(item => {
+          if (item?.page === null) return null
           const image = getImage(
             item?.icon?.localFile?.childImageSharp?.gatsbyImageData
           )
