@@ -15,7 +15,14 @@ const AssetManagement = props => {
   const sectionsTabs =
     props.data.sections.template.pageAssetManagement.tabsContent
 
-    const emailBtnReq = false
+  const emailBtnReq =
+    props.data.emailButton.template.pageAssetManagement.emailButtonRequired
+
+  console.log("props", props)
+
+  console.log("props", props.data.emailButton.template.pageAssetManagement)
+
+  console.log("emailBtnReq", emailBtnReq)
 
   return (
     <Layout
@@ -31,19 +38,23 @@ const AssetManagement = props => {
         location={props.location.pathname}
       />
       <PageIntro data={pageIntro} />
-      {!!emailBtnReq &&
-      
-      <StyledButton>
-        <div className="wrapper">
-          <h2>Get Started</h2>
-          <div className="btn-sec">
-            <a href="mailto: MBeitel@landsolutions.ca?subject=Speak to a Trusted Advisor">
-              Speak to a Trusted Advisor
-            </a>
+      {!!emailBtnReq && (
+        <StyledButton>
+          <div className="wrapper">
+            <h2>Get Started</h2>
+            <div className="btn-sec">
+              <a
+                href={`mailto: ${props.data.emailButton.template.pageAssetManagement.emailButtonEmail}?subject=${props.data.emailButton.template.pageAssetManagement.emailButtonText}`}
+              >
+                {
+                  props.data.emailButton.template.pageAssetManagement
+                    .emailButtonText
+                }
+              </a>
+            </div>
           </div>
-        </div>
-      </StyledButton>
-      }
+        </StyledButton>
+      )}
       <Sections data={sectionsTabs} location={props.location} />
     </Layout>
   )
@@ -116,6 +127,18 @@ export const assetManagementTempQuery = graphql`
                 }
               }
             }
+          }
+        }
+      }
+    }
+
+    emailButton: wpPage(id: { eq: $id }) {
+      template {
+        ... on WpTemplate_AssetManagement {
+          pageAssetManagement {
+            emailButtonRequired
+            emailButtonText
+            emailButtonEmail
           }
         }
       }
