@@ -15,6 +15,8 @@ const AssetManagement = props => {
   const sectionsTabs =
     props.data.sections.template.pageAssetManagement.tabsContent
 
+    const emailBtnReq = false
+
   return (
     <Layout
       title={seoInfo.seoFields.swbThemeMetaTitle}
@@ -29,6 +31,8 @@ const AssetManagement = props => {
         location={props.location.pathname}
       />
       <PageIntro data={pageIntro} />
+      {!!emailBtnReq &&
+      
       <StyledButton>
         <div className="wrapper">
           <h2>Get Started</h2>
@@ -39,6 +43,7 @@ const AssetManagement = props => {
           </div>
         </div>
       </StyledButton>
+      }
       <Sections data={sectionsTabs} location={props.location} />
     </Layout>
   )
