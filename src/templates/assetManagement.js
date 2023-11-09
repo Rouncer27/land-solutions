@@ -18,12 +18,6 @@ const AssetManagement = props => {
   const emailBtnReq =
     props.data.emailButton.template.pageAssetManagement.emailButtonRequired
 
-  console.log("props", props)
-
-  console.log("props", props.data.emailButton.template.pageAssetManagement)
-
-  console.log("emailBtnReq", emailBtnReq)
-
   return (
     <Layout
       title={seoInfo.seoFields.swbThemeMetaTitle}
@@ -193,8 +187,11 @@ export const assetManagementTempQuery = graphql`
                 ... on WpTemplate_AssetManagement_Pageassetmanagement_tabsContent_Sections_BoxLink {
                   fieldGroupName
                   display
-                  buttonSlug
+                  buttonType
                   buttonText
+                  buttonSlug
+                  buttonEmail
+                  buttonExternal
                   content
                 }
 

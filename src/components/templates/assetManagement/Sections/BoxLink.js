@@ -9,13 +9,30 @@ import {
 } from "../../../../styles/helpers"
 
 const BoxLink = ({ data }) => {
+  console.log("BoxLink: ", data)
   return (
     <SectionStyled>
       <div className="wrapper">
         <div className="content">
           <p>{data.content}</p>
           <div>
-            <Link to={`/${data.buttonSlug}`}>{data.buttonText}</Link>
+            {data.buttonType === "email" ? (
+              <a
+                href={`mailto: ${data.buttonEmail}?subject=${data.buttonText}`}
+              >
+                {data.buttonText}
+              </a>
+            ) : data.buttonType === "external" ? (
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={`${data.buttonExternal}`}
+              >
+                {data.buttonText}
+              </a>
+            ) : data.buttonType === "internal" ? (
+              <Link to={`/${data.buttonSlug}`}>{data.buttonText}</Link>
+            ) : null}
           </div>
         </div>
       </div>
