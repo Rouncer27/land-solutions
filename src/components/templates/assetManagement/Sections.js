@@ -49,7 +49,7 @@ const Sections = ({ data, location }) => {
               return (
                 <TabStyled
                   activetab={index + 1 === activeTab}
-                  id={tab.tabId}
+                  id={tab.tabId ? tab.tabId : `Tab-${index + 1}`}
                   key={index}
                 >
                   <button
@@ -58,7 +58,7 @@ const Sections = ({ data, location }) => {
                     }}
                     type="button"
                   >
-                    {tab.tabTitle}
+                    {tab.tabTitle ? tab.tabTitle : `Tab-${index + 1}`}
                   </button>
                 </TabStyled>
               )
