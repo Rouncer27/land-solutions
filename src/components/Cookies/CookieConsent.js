@@ -31,13 +31,17 @@ const CookieConsentStyled = styled.div`
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 65rem;
+    width: 100%;
     padding: 2rem;
     transform: translate(-50%, -50%);
     background-color: ${colors.colorTertiary};
     border-radius: 0.5rem;
     text-align: center;
     z-index: 100000000;
+
+    @media (min-width: 768px) {
+      width: 65rem;
+    }
 
     p {
       ${B1White};
@@ -55,9 +59,16 @@ const CookieConsentStyled = styled.div`
 
     button {
       ${Btn1One};
+      margin-bottom: 2.5rem;
+
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+      }
 
       &:nth-of-type(2) {
-        margin-left: 1rem;
+        @media (min-width: 499px) {
+          margin-left: 1rem;
+        }
       }
     }
   }
@@ -93,7 +104,7 @@ const CookieConsent = () => {
 
   const checkForFuctions = () => {
     setIsFunctionsLoaded(
-      typeof window.getCookieConsent !== "undefined" ? true : false,
+      typeof window.getCookieConsent !== "undefined" ? true : false
     )
   }
 
