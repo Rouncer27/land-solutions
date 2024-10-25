@@ -53,15 +53,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: ["G-3VBE7MLB82"],
-      },
-      pluginConfig: {
-        head: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     trackingIds: ["G-3VBE7MLB82"],
+    //   },
+    //   pluginConfig: {
+    //     head: true,
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {

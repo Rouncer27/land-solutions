@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import PropTypes from "prop-types"
 import { ThemeProvider } from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Script } from "gatsby"
 import { LoadingContext } from "../context/LoadingContext"
 
 import theme from "../styles/theme/Theme"
@@ -11,6 +11,7 @@ import Header from "./Header"
 import HeaderInit from "./HeaderInit"
 import Seo from "./Seo"
 import Footer from "./Footer"
+import CookieConsent from "./Cookies/CookieConsent"
 import InitalLoad from "./InitalLoad/InitalLoad"
 
 const Layout = ({ title, description, metaImg, location, children }) => {
@@ -39,6 +40,12 @@ const Layout = ({ title, description, metaImg, location, children }) => {
 
   return (
     <>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-3VBE7MLB82"
+      />
+      <Script src="/scripts/ga.js" />
+      <Script src="/scripts/consent.js" />
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         {loadingState.initLoad && location === "/" ? (
@@ -56,6 +63,7 @@ const Layout = ({ title, description, metaImg, location, children }) => {
           <>
             <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
             <main>{children}</main>
+            <CookieConsent />
             <Footer />
           </>
         )}
